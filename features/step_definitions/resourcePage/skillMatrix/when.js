@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
-const { matrixTypeData } = require('../../components/matrix_page.component');
-const { timeout } = require('../../test.config').test;
+const { matrixTypeData } = require('../../../components/matrix_page.component');
+const { timeout } = require('../../../test.config').test;
 
 
 setDefaultTimeout(60 * 1000);

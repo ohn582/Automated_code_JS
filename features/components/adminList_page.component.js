@@ -1,5 +1,6 @@
 const locator = {
     admin_Page: {
+        menuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
         adminLink: `//*[text()="Administration"]`,
 
         //UDLD Save Btn
@@ -143,8 +144,9 @@ class adminListTypeData {
     //Resource List
     adminListSelect = async() => {
         let page=this.page;
-        let { adminLink }=locator.admin_Page;
+        let { menuSliderBtn, adminLink }=locator.admin_Page;
         let { listsLink }=locator.list_Page;
+        await page.click(menuSliderBtn).catch(e => e);
         await page.click(adminLink).catch(e => e);
         await page.click(listsLink).catch(e => e);
         await page.waitForTimeout(3000);
@@ -156,8 +158,10 @@ class adminListTypeData {
     //Partition List
     listPartitionsSelect = async() => {
         let page=this.page;
-        let { adminLink }=locator.admin_Page;
+        let { menuSliderBtn }=locator.admin_Page;
+        // let { adminLink }=locator.admin_Page;
         let { partitionsLink }=locator.list_Page;
+        await page.click(menuSliderBtn).catch(e => e);
         await page.click(partitionsLink).catch(e => e);
         await page.waitForTimeout(3000);
     }
@@ -183,7 +187,10 @@ class adminListTypeData {
     //Domain List
     listDomainsSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { domainsLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(1000);
         await page.click(domainsLink);
         await page.waitForTimeout(3000);
     }
@@ -208,7 +215,10 @@ class adminListTypeData {
     //Sponsors List
     listSponsorsSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { sponsorsLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(1000);
         await page.click(sponsorsLink);
         await page.waitForTimeout(3000);
     }
@@ -233,7 +243,10 @@ class adminListTypeData {
     //Categories List
     listCategoriesSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { categoriesLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(1000);
         await page.click(categoriesLink);
         await page.waitForTimeout(3000);
     }
@@ -258,7 +271,10 @@ class adminListTypeData {
     //Project Codes List
     listPCSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { pcLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(1000);
         await page.click(pcLink);
         await page.waitForTimeout(3000);
     }
@@ -282,7 +298,10 @@ class adminListTypeData {
     //Countries List
     listCountriesSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { countLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(3000);
         await page.click(countLink);
         await page.waitForTimeout(3000);
     }
@@ -306,7 +325,10 @@ class adminListTypeData {
     //Project States
     listPSSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { psLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(3000);
         await page.click(psLink);
         await page.waitForTimeout(3000);
     }
@@ -331,7 +353,10 @@ class adminListTypeData {
     //Locations
     listLocSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { locLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(3000);
         await page.click(locLink);
         await page.waitForTimeout(3000);
     }
@@ -358,7 +383,10 @@ class adminListTypeData {
     //Effort States
     listESSelect = async() => {
         let page=this.page;
+        let { menuSliderBtn }=locator.admin_Page;
         let { esLink }=locator.list_Page;
+        await page.click(menuSliderBtn);
+        await page.waitForTimeout(3000);
         await page.click(esLink);
         await page.waitForTimeout(3000);
     }

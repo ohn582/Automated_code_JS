@@ -1,17 +1,14 @@
 const locator = {
     project_Page: {
         //Project Data
-        projViewDropdown: `[id="ProjectListGrid-bodyWrap"] [id="projectListGridViews-bodyEl"]`,
-        projViewA: `//*[text()="Project Expanded-MR import"]`,
-        // projViewA: `[data-componentid="projectListGridViews-picker"] [data-recordindex="2"]`,
-
+        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
         projLink: `//*[text()="Project"]`,
         projData: `//*[text()="Project Data"]`,
+        
+        projDataAdd: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridAdd"]`,
 
-        //UDLD Save Btn
-        UDLDetailProjSave: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [id="button-1053"]`,
-        saveYes: `//*[text()="Yes"]`,
-        saveOk: `//*[text()="Ok"]`,
+        pdBoxB:`[id="gridview-1026"] [data-recordindex="10"] [data-columnid="checkcolumn-1040"]`,
+        pdBoxC:`[id="gridview-1026"] [data-recordindex="11"] [data-columnid="checkcolumn-1040"]`,
 
 
         //Project Demand
@@ -22,14 +19,6 @@ const locator = {
         projDemViewDrop: `[id="R1TDemand-body"] [id="demandGridViews"] [id="demandGridViews-trigger-picker"]`,
         projDemViewSelect: `[data-componentid="demandGridViews-picker"] [data-recordindex="0"]`,
 
-
-        //Project Assingnments
-        projAssignments: `//*[text()="Assignments"]`,
-        projAssignmentsFilter:`[id="r1LaborAssignmentPanel-bodyWrap"] [id="laborAssignmentViewsFilter"]`,
-
-        projAssignViewDrop: `[id="r1LaborAssignmentPanel-bodyWrap"] [id="laborAssignmentViews-trigger-picker"]`,
-        projAssignViewSelect: `[id="laborAssignmentViews-picker"] [data-recordindex="4"]`,
-        
     },
 
 }
@@ -40,24 +29,42 @@ class projectTypeData {
         //this.firstTuplebefore = null;
     }
 
-    //Project Data
+    //Project Data Create
     projLinkSelect = async() => {
         let page=this.page;
-        let { projLink, projData }=locator.project_Page;
+        let { MenuSliderBtn, projLink, projData }=locator.project_Page;
+        await page.click(MenuSliderBtn);
+        await page.waitForTimeout(1000);
         await page.click(projLink);
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(1000);
         await page.click(projData);
+        await page.waitForTimeout(1000);
+    }
+
+    projAddBtn = async() => {
+        let page=this.page;
+        let { projDataAdd }=locator.project_Page;
+        await page.click(projDataAdd);
         await page.waitForTimeout(3000);
     }
 
-    projViewSelect = async() => {
+
+
+    // Project Data Delete
+    projBoxSelectB = async() => {
         let page=this.page;
-        let { projViewDropdown, projViewA }=locator.project_Page;
-        await page.click(projViewDropdown);
-        await page.waitForTimeout(1000);
-        await page.click(projViewA);
+        let { pdBoxB }=locator.project_Page;
+        await page.click(pdBoxB);
         await page.waitForTimeout(3000);
     }
+
+    projBoxSelectC = async() => {
+        let page=this.page;
+        let { pdBoxC }=locator.project_Page;
+        await page.click(pdBoxC);
+        await page.waitForTimeout(3000);
+    }
+
 
 
 
@@ -81,33 +88,6 @@ class projectTypeData {
         await page.waitForTimeout(3000);
     }
 
-
-
-    //Project Assingnments 
-    projAssingnmentSelect = async() => {
-        let page=this.page;
-        let { projLink, projAssignments }=locator.project_Page;
-        await page.click(projLink);
-        await page.waitForTimeout(1000);
-        await page.click(projAssignments);
-        await page.waitForTimeout(3000);
-    }
-
-    projAssingFilterSelect = async() => {
-        let page=this.page;
-        let { projAssignmentsFilter }=locator.project_Page;
-        await page.click(projAssignmentsFilter);
-        await page.waitForTimeout(3000);
-    }
-
-    projAssingnmentView = async() => {
-        let page=this.page;
-        let { projAssignViewDrop, projAssignViewSelect }=locator.project_Page;
-        await page.click(projAssignViewDrop);
-        await page.waitForTimeout(1000);
-        await page.click(projAssignViewSelect);
-        await page.waitForTimeout(3000);
-    }
 }
 
 exports.projectTypeData = projectTypeData;

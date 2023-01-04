@@ -3,7 +3,8 @@ const { action } = require('../utilities/action')
 const locators = {        
     resourcePage: {
 
-        resAddBtn: `[id="R1TResourceData-bodyWrap"] [data-qtip="Add"]`,
+        LaborAddBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [id="toolbar-1044"] [data-componentid="laborAssignmentAddBtn"]`,
+
         addResOBSDropdown: `[id="resourceAddPanel-bodyWrap"] [id="r1ResourceAddNodes-trigger-_trigger1"]`,
         addResOBSName: `[id="resourceAddPanel-bodyWrap"] [id="r1ResourceAddName-inputEl"]`,
         addResOBSCostCategory: `[id="resourceAddPanel"] [id="resourceAddPanel-innerCt"] [id="combo-1085-trigger-picker"]`,
@@ -11,9 +12,7 @@ const locators = {
 
         //Resource Capacity
         capData1: `[id="gridview-1028"] [data-recordindex="1"] [data-columnid="numbercolumn-1046"]`,
-        capData2: `[id="gridview-1028"] [data-recordindex="7"] [data-columnid="numbercolumn-1045"]`,
-        capData3: `[id="gridview-1028"] [data-recordindex="4"] [data-columnid="numbercolumn-1048"]`,
-        capData4: `[id="gridview-1028"] [data-recordindex="11"] [data-columnid="numbercolumn-1050"]`,
+        
 
 
         //Save Btn
@@ -26,7 +25,7 @@ const locators = {
 
 }
 
-class resourcePage {
+class laborPage {
     constructor(page) {
         this.page = page;
     }
@@ -62,32 +61,6 @@ class resourcePage {
         await page.waitForTimeout(1000);
     }
 
-    capacityUpdateDataB = async() => {
-        let page=this.page;
-        let { capData2 }=locators.resourcePage;
-        let textInput = await page.$(capData2);
-        await textInput.click({clickCount: 3})
-        await page.keyboard.type('10');
-        await page.waitForTimeout(1000);
-    }
-
-    capacityUpdateDataC = async() => {
-        let page=this.page;
-        let { capData3 }=locators.resourcePage;
-        let textInput = await page.$(capData3);
-        await textInput.click({clickCount: 3})
-        await page.keyboard.type('2.53');
-        await page.waitForTimeout(1000);
-    }
-
-    capacityUpdateDataD = async() => {
-        let page=this.page;
-        let { capData4 }=locators.resourcePage;
-        let textInput = await page.$(capData4);
-        await textInput.click({clickCount: 3})
-        await page.keyboard.type('1.12');
-        await page.waitForTimeout(1000);
-    }
 
 
 
@@ -102,4 +75,4 @@ class resourcePage {
 
 }
 
-module.exports.resourcePage = resourcePage;
+module.exports.laborPage = laborPage;

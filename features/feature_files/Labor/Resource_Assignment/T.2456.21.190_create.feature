@@ -5,11 +5,10 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Reso" nav and click on "Skill Matrix"
-    @create @668 @T.4412.11.121
-    Scenario: @T.T.4412.11.121-testing user data
-        When I select Rescource and Skill Matrix
-        # Then I select multiple grid
-        Then I select multiple grid B
-        Then I select multiple grid C
-        Then I select multiple grid D
-        # Then I select Save button in the Matrix
+    @create @668 @T.2356.21.190
+    Scenario: @T.T.2356.21.190-testing user data
+        When I select Resource and Labor
+        
+        Then I Create Rescource Assignment Data for labor
+
+        Then I select Save button in the Capacity Nav
