@@ -9,7 +9,8 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select List
         When I select Categories
-        When I select tes1 in the Categories in data
+        When I select tes1 in the Categories checkbox
+        When I select tes3 in the Categories checkbox
         Then I delete the Categories data
         Then I clicked save button in Categories
         Then I clicked Reload button in Categories

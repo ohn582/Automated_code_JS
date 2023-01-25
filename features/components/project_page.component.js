@@ -3,12 +3,12 @@ const locator = {
         //Project Data
         MenuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
         projLink: `//*[text()="Project"]`,
-        projData: `//*[text()="Project Data"]`,
+        projData: `//*[text()="Data"]`,
         
         projDataAdd: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridAdd"]`,
 
-        pdBoxB:`[id="gridview-1026"] [data-recordindex="10"] [data-columnid="checkcolumn-1040"]`,
-        pdBoxC:`[id="gridview-1026"] [data-recordindex="11"] [data-columnid="checkcolumn-1040"]`,
+        pdBoxB:`[id="gridview-1031"] [data-recordindex="4"] [data-columnid="checkcolumn-1045"]`,
+        pdBoxC:`[id="gridview-1031"] [data-recordindex="5"] [data-columnid="checkcolumn-1045"]`,
 
 
         //Project Demand

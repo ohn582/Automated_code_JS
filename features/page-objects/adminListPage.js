@@ -3,19 +3,17 @@ const { action } = require('../utilities/action')
 const locators = {
     saveOkBtn: {
         // saveOK: `[role="alertdialog"] [role="button"]`,
-        saveOK: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [aria-label="Save"]`,
-        saveOKB: `//*[text()="OK"]`,
+        saveOK: `[data-componentid="messagebox-1001"] [id="button-1005"]`,
 
         //UDLD Save Btn
         UDLDetailProjSave: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [aria-label="Save"]`,
         saveYes: `//*[text()="Yes"]`,
         // saveOk: `[id="messagebox-1001"] [role="button"]`,
-
-        reloadYes: `//*[text()="Yes"]`,
     },
-
+    
     reload: {
         reloadBtnA: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [aria-label="Reload"]`,
+        reloadYes: `[id="messagebox-1001"] [id="messagebox-1001-toolbar"] [data-componentid="button-1006"]`,
     },
     
     //Admin List
@@ -56,11 +54,11 @@ const locators = {
     },
 
     categorieNav: {
-        cateBox: `[id="R1TCategories-body"] [data-columnid="gridcolumn-1046"]`,
+        cateBox: `[id="adminListsCategoryGrid-body"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"] [id="celleditor-1046"]`,
         cateSave: `[id="adminListsCategoryGrid-bodyWrap"] [data-componentid="adminListsCategoryGridSave"]`,
-        cateDeleteBtn: `[id="adminListsCategoryGrid-bodyWrap"] [id="adminListsCategoryGridRemove"]`,
-        cateTextA: `//div[text()="New Category tes1"]`,
-        cateTextB: `//div[text()="New Category tes2"]`,
+        cateDeleteBtn: `[id="adminListsCategoryGrid-bodyWrap"] [id="toolbar-1039"] [data-qtip="Remove"]`,
+        cateTextA: `//*[text()="tes3"]`,
+        cateTextB: `//*[text()="tes2"]`,
         cateDeleteBtnYes: `//*[text()="Yes"]`,
         // cateSaveBtn: `[id="adminListsCategoryGrid-body"] [data-recordindex="4"] [data-columnid="gridcolumn-1064"]`,
         cateReloadBtn: `[id="adminListsCategoryGrid-bodyWrap"] [id="adminListsCategoryGridReload"]`,
@@ -70,8 +68,8 @@ const locators = {
         pcBox: `[id="R1TProjectCodes-body"] [data-columnid="gridcolumn-1024"]`,
         pcSave: `[id="R1TProjectCodes-bodyWrap"] [id="adminListsProjectCodeGridSave-btnEl"]`,
         pcDeleteBtn: `[id="R1TProjectCodes-bodyWrap"] [id="adminListsProjectCodeGridRemove"]`,
-        pcTextA: `//div[text()="tes1"]`,
-        pcTextB: `//div[text()="tes3"]`,
+        pcTextA: `//*[text()="tes1"]`,
+        pcTextB: `//*[text()="tes3"]`,
         pcDeleteBtnYes: `//*[text()="Yes"]`,
         pcSaveBtn: `[id="R1TProjectCodes-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1064"]`,
         pcReloadBtn: `[id="R1TProjectCodes-bodyWrap"] [id="adminListsProjectCodeGridReload"]`,
@@ -81,8 +79,8 @@ const locators = {
         psBox: `[id="R1TProjectStates"] [data-columnid="gridcolumn-1024"]`,
         psSave: `[id="R1TProjectStates-bodyWrap"] [id="adminListsProjectStateGridSave-btnEl"]`,
         psDeleteBtn: `[id="R1TProjectStates-bodyWrap"] [id="adminListsProjectStateGridRemove"]`,
-        psTextA: `//div[text()="tes3"]`,
-        psTextB: `//div[text()="tes2"]`,
+        psTextA: `//*[text()="tes3"]`,
+        psTextB: `//*[text()="tes2"]`,
         psDeleteBtnYes: `//*[text()="Yes"]`,
         psSaveBtn: `[id="R1TProjectStates-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         psReloadBtn: `[id="R1TProjectStates-bodyWrap"] [id="adminListsProjectStateGridReload"]`,
@@ -92,8 +90,8 @@ const locators = {
         countBox: `[id="adminListsCountryGrid-body"] [data-columnid="gridcolumn-1024"]`,
         countSave: `[id="R1TCountries-bodyWrap"] [id="adminListsCountryGridSave-btnEl"]`,
         countDeleteBtn: `[id="R1TCountries-bodyWrap"] [id="adminListsCountryGridRemove"]`,
-        countTextA: `//div[text()="tes3"]`,
-        countTextB: `//div[text()="tes2"]`,
+        countTextA: `//*[text()="tes3"]`,
+        countTextB: `//*[text()="tes2"]`,
         countDeleteBtnYes: `//*[text()="Yes"]`,
         countSaveBtn: `[id="R1TCountries-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         countReloadBtn: `[id="R1TCountries-bodyWrap"] [id="adminListsCountryGridReload"]`,
@@ -103,8 +101,8 @@ const locators = {
         locBox: `[id="R1TLocations-body"] [data-columnid="gridcolumn-1024"]`,
         locSave: `[id="R1TLocations-bodyWrap"] [id="adminListsLocationGridSave-btnEl"]`,
         locDeleteBtn: `[id="R1TLocations-bodyWrap"] [id="adminListsLocationGridRemove"]`,
-        locTextA: `//div[text()="tes3"]`,
-        locTextB: `//div[text()="tes2"]`,
+        locTextA: `//*[text()="tes3"]`,
+        locTextB: `//*[text()="tes2"]`,
         locDeleteBtnYes: `//*[text()="Yes"]`,
         locSaveBtn: `[id="R1TLocations-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         locReloadBtn: `[id="R1TLocations-bodyWrap"] [id="adminListsLocationGridReload"]`,
@@ -114,30 +112,30 @@ const locators = {
         esBox: `[id="R1TEffortStates-body"] [data-columnid="gridcolumn-1024"]`,
         esSave: `[id="R1TEffortStates-bodyWrap"] [id="adminListsEffortStateGridSave-btnEl"]`,
         esDeleteBtn: `[id="R1TEffortStates-bodyWrap"] [id="adminListsEffortStateGridRemove"]`,
-        esTextA: `//div[text()="tes3"]`,
-        esTextB: `//div[text()="tes2"]`,
+        esTextA: `//*[text()="tes3"]`,
+        esTextB: `//*[text()="tes2"]`,
         esDeleteBtnYes: `//*[text()="Yes"]`,
         esSaveBtn: `[id="R1TEffortStates-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         esReloadBtn: `[id="R1TEffortStates-bodyWrap"] [id="adminListsEffortStateGridReload"]`,
     },
 
     ccNav: {
-        ccBox: `[id="R1TCostCategories-body"] [data-columnid="gridcolumn-1024"]`,
+        ccBox: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="0"] [data-columnid="gridcolumn-1025"]`,
         ccSave: `[id="R1TCostCategories-bodyWrap"] [id="adminListsCostCategoryGridSave-btnEl"]`,
         ccDeleteBtn: `[id="R1TCostCategories-bodyWrap"] [id="adminListsCostCategoryGridRemove"]`,
-        ccTextA: `//div[text()="tes3"]`,
-        ccTextB: `//div[text()="tes2"]`,
+        ccTextA: `//*[text()="tes3"]`,
+        ccTextB: `//*[text()="tes2"]`,
         ccDeleteBtnYes: `//*[text()="Yes"]`,
         ccSaveBtn: `[id="R1TCostCategories-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
-        ccReloadBtn: `[id="R1TCostCategories-bodyWrap"] [data-componentid="adminListsCategoryGridReload"]`,
+        ccReloadBtn: `[id="R1TCostCategories-body"] [id="toolbar-1058"] [data-componentid="adminListsCategoryGridReload"]`,
     },
 
     cicNav: {
         cicBox: `[id="R1TCostItemCategories-body"] [data-columnid="gridcolumn-1024"]`,
         cicSave: `[id="R1TCostItemCategories-bodyWrap"] [id="adminListsCostItemCategoryGridSave-btnEl"]`,
         cicDeleteBtn: `[id="R1TCostItemCategories-bodyWrap"] [id="adminListsCostItemCategoryGridRemove"]`,
-        cicTextA: `//div[text()="tes1"]`,
-        cicTextB: `//div[text()="tes3"]`,
+        cicTextA: `//*[text()="tes1"]`,
+        cicTextB: `//*[text()="tes3"]`,
         cicDeleteBtnYes: `//*[text()="Yes"]`,
         cicSaveBtn: `[id="R1TCostItemCategories-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         cicReloadBtn: `[id="R1TCostItemCategories-bodyWrap"] [id="adminListsCostItemCategoryGridReload"]`,
@@ -148,8 +146,8 @@ const locators = {
         ciBox: `[id="R1TCostItems-body"] [data-columnid="gridcolumn-1024"]`,
         ciSave: `[id="R1TCostItems-bodyWrap"] [id="adminListsCostItemGridSave-btnEl"]`,
         ciDeleteBtn: `[id="R1TCostItems-bodyWrap"] [id="adminListsCostItemGridRemove"]`,
-        ciTextA: `//div[text()="tes1"]`,
-        ciTextB: `//div[text()="tes3"]`,
+        ciTextA: `//*[text()="tes1"]`,
+        ciTextB: `//*[text()="tes3"]`,
         ciDeleteBtnYes: `//*[text()="Yes"]`,
         ciSaveBtn: `[id="R1TCostItems-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
         ciReloadBtn: `[id="R1TCostItems-bodyWrap"] [id="adminListsCostItemGridReload"]`,
@@ -157,22 +155,23 @@ const locators = {
     },
 
     btNav: {
-        btBox: `[id="R1TBaselineTypes-body"] [data-columnid="gridcolumn-1024"]`,
-        btSave: `[id="R1TBaselineTypes-bodyWrap"] [id="adminListsBaselineTypeGridSave-btnEl"]`,
-        btDeleteBtn: `[id="R1TBaselineTypes-bodyWrap"] [id="adminListsBaselineTypeGridRemove"]`,
-        btTextA: `[id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="5"] [data-columnid="gridcolumn-1024"]`,
-        btTextB: `[id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1024"]`,
+        btBox: `[id="adminListsBaselineTypeGrid-body"] [data-recordindex="0"] [data-columnid="gridcolumn-1027"] [id="celleditor-1046"]`,
+        btSave: `[id="toolbar-1039-innerCt"] [id="adminListsBaselineTypeGridSave"]`,
+        btDeleteBtn: `[id="adminListsBaselineTypeGrid-bodyWrap"] [id="toolbar-1039"] [data-qtip="Remove"]`,
+        // btTextA: `[id="gridview-1034"] [data-recordindex="4"] [data-columnid="gridcolumn-1027"]`,
+        // btTextB: `[id="gridview-1034"] [data-recordindex="5"] [data-columnid="gridcolumn-1027"]`,
+        btTextA: `//*[text()="tes2"]`,
+        btTextB: `//*[text()="tes3"]`,
         btDeleteBtnYes: `//*[text()="Yes"]`,
-        btSaveBtn: `[id="R1TBaselineTypes-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1045"]`,
-        btReloadBtn: `[id="R1TBaselineTypes-bodyWrap"] [id="adminListsBaselineTypeGridReload"]`,
+        btReloadBtn: `[id="toolbar-1039-innerCt"] [id="adminListsBaselineTypeGridReload"]`,
     },
 
     ftNav: {
         ftBox: `[id="R1TFeatureTypes-body"] [data-columnid="gridcolumn-1024"]`,
         ftSave: `[id="R1TFeatureTypes-bodyWrap"] [id="adminListsFeatureTypeGridSave-btnEl"]`,
         ftDeleteBtn: `[id="R1TFeatureTypes-bodyWrap"] [id="adminListsFeatureTypeGridRemove"]`,
-        ftTextA: `//div[text()="tes2"]`,
-        ftTextB: `//div[text()="tes3"]`,
+        ftTextA: `//*[text()="tes2"]`,
+        ftTextB: `//*[text()="tes3"]`,
         ftDeleteBtnYes: `//*[text()="Yes"]`,
         ftSaveBtn: `[id="R1TFeatureTypes-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1040"]`,
         ftReloadBtn: `[id="R1TFeatureTypes-bodyWrap"] [id="adminListsFeatureTypeGridReload"]`,
@@ -182,8 +181,8 @@ const locators = {
         fsBox: `[id="R1TFeatureStates-body"] [data-columnid="gridcolumn-1024"]`,
         fsSave: `[id="R1TFeatureStates-bodyWrap"] [id="adminListsFeatureStateGridSave-btnEl"]`,
         fsDeleteBtn: `[id="R1TFeatureStates-bodyWrap"] [id="adminListsFeatureStateGridRemove"]`,
-        fsTextA: `//div[text()="tes2"]`,
-        fsTextB: `//div[text()="tes3"]`,
+        fsTextA: `//*[text()="tes2"]`,
+        fsTextB: `//*[text()="tes3"]`,
         fsDeleteBtnYes: `//*[text()="Yes"]`,
         fsSaveBtn: `[id="R1TFeatureStates-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1040"]`,
         fsReloadBtn: `[id="R1TFeatureStates-bodyWrap"] [id="adminListsFeatureStateGridReload"]`,
@@ -193,8 +192,8 @@ const locators = {
         overBox: `[id="R1TOverheads-body"] [data-columnid="gridcolumn-1024"]`,
         overSave: `[id="R1TOverheads-bodyWrap"] [id="adminListsOverheadGridSave-btnEl"]`,
         overDeleteBtn: `[id="R1TOverheads-bodyWrap"] [id="adminListsOverheadGridRemove"]`,
-        overTextA: `//div[text()="tes1"]`,
-        overTextB: `//div[text()="tes2"]`,
+        overTextA: `//*[text()="tes1"]`,
+        overTextB: `//*[text()="tes2"]`,
         overDeleteBtnYes: `//*[text()="Yes"]`,
         overSaveBtn: `[id="R1TOverheads-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1040"]`,
         overReloadBtn: `[id="R1TOverheads-bodyWrap"] [id="adminListsOverheadGridReload"]`,
@@ -371,7 +370,7 @@ class adminListPage {
         let { partReloadBtn }=locators.partitionsNav;
         let { reloadYes }=locators.saveOkBtn;
         await page.click(partReloadBtn).catch(e => e);
-        // await page.click(reloadYes).catch(e => e);
+        await page.click(reloadYes).catch(e => e);
         await page.waitForTimeout(1000);
     }
 
@@ -535,32 +534,34 @@ class adminListPage {
 
 
 
-
     // Editing Categories Data select 
     listCategorieWriteA = async() => {
         let page=this.page;
-        // let { cateBox }=locators.categorieNav;
-        // let textInput = await page.$(cateBox);
-        // await textInput.click({clickCount: 3})
-        await page.keyboard.type(' tes1');
+        let { cateBox }=locators.categorieNav;
+        let textInput = await page.$(cateBox);
+        await textInput.click({clickCount: 3})
+
+        await page.keyboard.type('tes1');
         await page.waitForTimeout(1000);
     }
 
     listCategorieWriteB = async() => {
         let page=this.page;
-        // let { cateBox }=locators.categorieNav;
-        // let textInput = await page.$(cateBox);
-        // await textInput.click({clickCount: 3})
-        await page.keyboard.type(' tes2');
+        let { cateBox }=locators.categorieNav;
+        let textInput = await page.$(cateBox);
+        await textInput.click({clickCount: 3})
+
+        await page.keyboard.type('tes2');
         await page.waitForTimeout(1000);
     }
 
     listCategorieWriteC = async() => {
         let page=this.page;
-        // let { cateBox }=locators.categorieNav;
-        // let textInput = await page.$(cateBox);
-        // await textInput.click({clickCount: 3})
-        await page.keyboard.type(' tes3');
+        let { cateBox }=locators.categorieNav;
+        let textInput = await page.$(cateBox);
+        await textInput.click({clickCount: 3})
+
+        await page.keyboard.type('tes3');
         await page.waitForTimeout(1000);
     }
 
@@ -569,7 +570,7 @@ class adminListPage {
         let { cateTextA }=locators.categorieNav;
         let textInput = await page.$(cateTextA);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('NewA');
+        await page.keyboard.type(' NewA');
         await page.waitForTimeout(1000);
     }
 
@@ -579,7 +580,7 @@ class adminListPage {
         let textInput = await page.$(cateTextB);
         await textInput.click({clickCount: 3})
         await page.waitForTimeout(1000);
-        await page.keyboard.type('NewB');
+        await page.keyboard.type(' NewB');
     }
 
     listCategorieSave = async() => {
@@ -1009,6 +1010,7 @@ class adminListPage {
         let { ccBox }=locators.ccNav;
         let textInput = await page.$(ccBox);
         await textInput.click({clickCount: 3})
+        // await page.dblclick(ccBox);
         await page.keyboard.type('tes1');
         await page.waitForTimeout(1000);
     }
@@ -1282,7 +1284,7 @@ class adminListPage {
         let { btTextA }=locators.btNav;
         let textInput = await page.$(btTextA);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('NewA');
+        await page.keyboard.type(' NewA');
         await page.waitForTimeout(1000);
     }
 
@@ -1291,7 +1293,7 @@ class adminListPage {
         let { btTextB }=locators.btNav;
         let textInput = await page.$(btTextB);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('NewB');
+        await page.keyboard.type(' NewB');
         await page.waitForTimeout(1000);
     }
 
@@ -1308,9 +1310,10 @@ class adminListPage {
     listBTReload = async() => {
         let page=this.page;
         let { btReloadBtn }=locators.btNav;
-        let { reloadYes }=locators.saveOkBtn;
+        let { reloadYes }=locators.reload;
         await page.click(btReloadBtn).catch(e => e);
-        await page.waitForTimeout(1000);
+        await page.click(reloadYes).catch(e => e);
+        // await page.waitForTimeout(1000);
     }
 
 
@@ -1389,7 +1392,7 @@ class adminListPage {
     listFTReload = async() => {
         let page=this.page;
         let { ftReloadBtn }=locators.ftNav;
-        let { reloadYes }=locators.saveOkBtn;
+        let { reloadYes }=locators.reload;
         await page.click(ftReloadBtn).catch(e => e);
         await page.waitForTimeout(1000);
     }
@@ -1662,7 +1665,7 @@ class adminListPage {
     listUDLReloadRescource = async() => {
         let page=this.page;
         let { uldReload }=locators.udlNav;
-        let { reloadYes }=locators.saveOkBtn;
+        let { reloadYes }=locators.reload;
         await page.click(uldReload);
         // await page.waitForTimeout(3000);
         await page.click(reloadYes);
@@ -1833,7 +1836,7 @@ class adminListPage {
     listUDLReloadAssignment = async() => {
         let page=this.page;
         let { reloadBtnA }=locators.reload;
-        let { reloadYes }=locators.saveOkBtn;
+        let { reloadYes }=locators.reload;
         await page.click(reloadBtnA);
         // await page.waitForTimeout(3000);
         await page.click(reloadYes);

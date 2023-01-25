@@ -9,7 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.6220.21.003-testing user data
         When I select Administration and select List
         When I select Baseline Types
-        When I select Baseline Types in data
+        When I select Baseline Types Check Box
+        When I select Baseline Types Check Box B
         Then I delete the Baseline Types data
         Then I clicked save button in Baseline Types
         Then I clicked Reload button in Baseline Types

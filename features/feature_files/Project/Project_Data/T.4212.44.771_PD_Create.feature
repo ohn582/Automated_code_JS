@@ -14,18 +14,22 @@ Feature: Pdware Admin User Module
         Then I Click Apply
         Then I type the Project Name A
         Then I select Add & Close
+        Then I type multiple datas in Project Name A
 
         When I select Project Add Button
         Then I create a Project Data B
         Then I Click Apply
         Then I type the Project Name B
         Then I select Add & Close
+        Then I type multiple datas in Project Name B
 
         When I select Project Add Button
         Then I create a Project Data C
         Then I Click Apply
         Then I type the Project Name C
         Then I select Add & Close
+        Then I type multiple datas in Project Name C
 
         Then Select Save Button
+        Then Select Reload Button for project data
 

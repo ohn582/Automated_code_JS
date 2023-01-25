@@ -13,6 +13,13 @@ Then(`I create a Project Data`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`Select Reload Button for project data`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projReloadBtn();
+    await page.waitForTimeout(2000);
+})
+
 Then(`I create a Project Data B`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
@@ -34,13 +41,24 @@ Then(`I Click Apply`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+
+//Create Project Data 1
 Then(`I type the Project Name A`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
     listData.projectTypeA();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(2000)
 })
 
+Then(`I type multiple datas in Project Name A`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectUnitPriority();
+    await page.waitForTimeout(2000)
+})
+
+
+//Create Project Data 2
 Then(`I type the Project Name B`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
@@ -48,12 +66,33 @@ Then(`I type the Project Name B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I type multiple datas in Project Name B`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectUnitPriorityB();
+    await page.waitForTimeout(2000)
+})
+
+
+//Create Project Data 3
 Then(`I type the Project Name C`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
     listData.projectTypeC();
     await page.waitForTimeout(2000);
 })
+
+Then(`I type multiple datas in Project Name C`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectUnitPriorityC();
+    await page.waitForTimeout(2000)
+})
+
+
+
+
+
 
 Then(`I select Add & Close`, timeout, async function() {
     let page = this.page;
@@ -71,7 +110,10 @@ Then(`Select Save Button`, timeout, async function() {
 
 
 
-//Project Data Update
+
+
+
+//Project Data Update 1
 Then(`I Re-Type Diffrent Name A`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
@@ -79,6 +121,15 @@ Then(`I Re-Type Diffrent Name A`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I Re-Type multiple datas in Project Name A`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectDataUpdateA();
+    await page.waitForTimeout(2000);
+})
+
+
+//Project Data Update 2
 Then(`I Re-Type Diffrent Name B`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
@@ -86,12 +137,30 @@ Then(`I Re-Type Diffrent Name B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I Re-Type multiple datas in Project Name B`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectDataUpdateB();
+    await page.waitForTimeout(2000);
+})
+
+
+//Project Data Update 3
 Then(`I Re-Type Diffrent Name C`, timeout, async function() {
     let page = this.page;
     const listData = new projectPage(page);
     listData.projectUpdateC();
     await page.waitForTimeout(2000);
 })
+
+Then(`I Re-Type multiple datas in Project Name C`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectPage(page);
+    listData.projectDataUpdateC();
+    await page.waitForTimeout(2000);
+})
+
+
 
 //Project Data Delete
 Then(`I select Project Delete Button`, timeout, async function() {
@@ -100,6 +169,16 @@ Then(`I select Project Delete Button`, timeout, async function() {
     listData.projectDelete();
     await page.waitForTimeout(2000);
 })
+
+
+
+
+
+
+
+
+
+
 
 
 

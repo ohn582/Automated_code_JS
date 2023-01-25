@@ -108,12 +108,20 @@ When(`I select Add Button in the Categories`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select tes1 in the Categories in data`, timeout, async function() {
+When(`I select tes1 in the Categories checkbox`, timeout, async function() {
     let page = this.page;
     const listData = new adminListTypeData(page);
     listData.listCategorieSelectData();
     await page.waitForTimeout(2000);
 })
+
+When(`I select tes3 in the Categories checkbox`, timeout, async function() {
+    let page = this.page;
+    const listData = new adminListTypeData(page);
+    listData.listCategorieSelectDataB();
+    await page.waitForTimeout(2000);
+})
+
 
 
 
@@ -354,6 +362,20 @@ When(`I select Baseline Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+When(`I select Baseline Types Check Box`, timeout, async function() {
+    let page = this.page;
+    const listData = new adminListTypeData(page);
+    listData.listBTSelectData();
+    await page.waitForTimeout(2000);
+})
+
+When(`I select Baseline Types Check Box B`, timeout, async function() {
+    let page = this.page;
+    const listData = new adminListTypeData(page);
+    listData.listBTSelectDataB();
+    await page.waitForTimeout(2000);
+})
+
 When(`I select Add Button in the Baseline Types`, timeout, async function() {
     let page = this.page;
     const listData = new adminListTypeData(page);
@@ -361,12 +383,6 @@ When(`I select Add Button in the Baseline Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Baseline Types in data`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListTypeData(page);
-    listData.listBTSelectData();
-    await page.waitForTimeout(2000);
-})
 
 
 

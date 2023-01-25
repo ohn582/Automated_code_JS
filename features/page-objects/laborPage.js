@@ -1,26 +1,33 @@
 const { action } = require('../utilities/action')
 
-const locators = {        
+const locators = {   
+
     resourcePage: {
 
-        LaborAddBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [id="toolbar-1044"] [data-componentid="laborAssignmentAddBtn"]`,
+        LaborAddBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [data-componentid="laborAssignmentAddBtn"]`,
+        LaborDropdown: `//*[text()="Add Resource Assignment"]`,
 
-        addResOBSDropdown: `[id="resourceAddPanel-bodyWrap"] [id="r1ResourceAddNodes-trigger-_trigger1"]`,
-        addResOBSName: `[id="resourceAddPanel-bodyWrap"] [id="r1ResourceAddName-inputEl"]`,
-        addResOBSCostCategory: `[id="resourceAddPanel"] [id="resourceAddPanel-innerCt"] [id="combo-1085-trigger-picker"]`,
-        addResAddBtnWindow: `//*[text()="Add"]`,
+        laborPicker: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogProjectCombo-bodyEl"] [data-ref="triggerWrap"] [data-ref="inputWrap"]`,
+        laborPickerSelectA: `//*[text()="TEST 1 UPDATE A"]`,
 
-        //Resource Capacity
-        capData1: `[id="gridview-1028"] [data-recordindex="1"] [data-columnid="numbercolumn-1046"]`,
+        laborSkillPicker: `[id="AddResourceAssignmentDialogSkillCombo-picker-listWrap"] [data-recordindex="2"]`,
+
+        laborActivePicker: `[id="PdwInsertResourceAssignmentrActive-picker-listEl"] [data-recordindex="1"]`,
+
+
+        laborCheckBoxA: `[data-componentid="gridview-1119"] [data-recordindex="0"] [data-columnid="checkcolumn-1128"]`,
+        laborCheckBoxB: `[data-componentid="gridview-1119"] [data-recordindex="0"] [data-columnid="checkcolumn-1128"]`,
+
+        //Nav Labor
+        laborCreateBtn: `[id="toolbar-1126"] [data-componentid="AddResourceAssignmentDialogAddClose"]`,
+        laborSaveBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [id="toolbar-1044-innerCt"] [data-qtip="Save"]`,
         
 
-
-        //Save Btn
-        UDLDetailProjSave: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [id="button-1053"]`,
-        capSave: `[id="r1CapacityGrid-bodyWrap"] [data-componentid="capacityGridSave"]`,
-        capRefresh: `[id="r1CapacityGrid-bodyWrap"] [id="capacityGridReload"]`,
+        //Save Btn,
+        laborRefresh: `[id="r1CapacityGrid-bodyWrap"] [id="capacityGridReload"]`,
         saveYes: `//*[text()="Yes"]`,
-        saveOk: `[id="messagebox-1001"] [data-componentid="button-1005"]`,
+        saveOk: `//*[text()="OK"]`,
+
     },
 
 }
@@ -31,46 +38,78 @@ class laborPage {
     }
 
 
-    //Rescource data
-    resourceCreateData = async() => {
+    //Rescource Create data
+    laborCreateData = async() => {
         let page=this.page;
-        let { resAddBtn, addResOBSDropdown, addResOBSName, addResOBSCostCategory, addResAddBtnWindow }=locators.resourcePage;
+        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker }=locators.resourcePage;
 
-        await page.click(resAddBtn);
+        let textInputA = await page.$(laborPicker);
+        let textInputB = await page.$(laborSkillPicker);
+        let textInputC = await page.$(laborActivePicker);
+
+        await page.click(LaborAddBtn);
+        // await page.waitForTimeout(1000);
+        await page.click(LaborDropdown);
+        // await page.waitForTimeout(1000);
+        await textInputA.click({clickCount: 1})
+        await page.keyboard.type('TEST 1 UPDATE A');
+        await textInputB.click({clickCount: 1})
+        await page.keyboard.type('CAD');
+        await textInputC.click({clickCount: 1})
+        await page.keyboard.type('true');
+        await page.waitForTimeout(1000);
+
+    }
+
+    laborCreateDataB = async() => {
+        let page=this.page;
+        let { LaborAddBtn, LaborDropdown, laborAddName, laborPickerB, laborAddSkill, laborSkillPickerB, laborAddActive, laborActivePickerB, laborAddCostCategory, laborCostCategoryPickerB, laborCheckBoxB, laborCreateBtn }=locators.resourcePage;
+
+        await page.click(LaborAddBtn);
+        // await page.waitForTimeout(1000);
+        await page.click(LaborDropdown);
+        // await page.waitForTimeout(1000);
+        
+        await page.click(laborAddName);
+        // await page.waitForTimeout(1000);
+        await page.click(laborPickerB);
         // await page.waitForTimeout(2000);
-        await page.click(addResOBSDropdown);
+
+        await page.click(laborAddSkill);
+        // await page.waitForTimeout(1000);
+        await page.click(laborSkillPickerB);
         // await page.waitForTimeout(2000);
-        await page.click(addResOBSName);
-        await page.keyboard.type('ProjectC');
+        
+        await page.click(laborAddActive);
+        // await page.waitForTimeout(1000);
+        await page.click(laborActivePickerB);
         // await page.waitForTimeout(2000);
-        await page.click(addResOBSCostCategory);
+
+        await page.click(laborAddCostCategory);
+        await page.click(laborCostCategoryPickerB);
+        // await page.waitForTimeout(2000);
+
+        await page.click(laborAddActive);
+        await page.click(laborActivePickerB);
+  
+        await page.click(laborCheckBoxB);
+        
+        await page.click(laborCreateBtn);
         // await page.waitForTimeout(3000);
-        await page.click(addResAddBtnWindow);
+    }
+
+
+    //Rescource Update data
+
+
+
+    laborSave = async() => {
+        let page=this.page;
+        let { laborSaveBtn, saveOk, capRefresh }=locators.resourcePage;
+        await page.click(laborSaveBtn)
+        // await page.click(saveOk)
+        // await page.click(capRefresh)
         await page.waitForTimeout(3000);
-    }
-
-
-    
-    //Rescouce Capacity
-    capacityUpdateData = async() => {
-        let page=this.page;
-        let { capData1 }=locators.resourcePage;
-        let textInput = await page.$(capData1);
-        await textInput.click({clickCount: 3})
-        await page.keyboard.type('4');
-        await page.waitForTimeout(1000);
-    }
-
-
-
-
-    capacitySave = async() => {
-        let page=this.page;
-        let { capSave, saveOk, capRefresh }=locators.resourcePage;
-        await page.click(capSave)
-        await page.click(saveOk)
-        await page.click(capRefresh)
-        await page.waitForTimeout(1000);
     }
 
 }

@@ -43,7 +43,8 @@ const locator = {
 
         categoriesLink: `//*[text()="Categories"]`,
         cateAddBtn: `[id="adminListsCategoryGrid-bodyWrap"] [data-componentid="adminListsCategoryGridAdd"]`,
-        cateBoxCheckA: `[id="adminListsCategoryGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1040"]`,
+        cateBoxCheckA: `[id="gridview-1034"] [data-recordindex="4"] [data-columnid="checkcolumn-1043"]`,
+        cateBoxCheckB: `[id="gridview-1034"] [data-recordindex="6"] [data-columnid="checkcolumn-1043"]`,
 
         pcLink: `//*[text()="Project Codes"]`,
         pcAddBtn: `[id="adminListsProjectCodeGrid-bodyWrap"] [data-componentid="adminListsProjectCodeGridAdd"]`,
@@ -78,8 +79,9 @@ const locator = {
         ciBoxCheckA: `[id="adminListsCostItemGrid-body"] [data-recordindex="23"] [data-columnid="checkcolumn-1044"]`,
 
         btLink: `//*[text()="Baseline Types"]`,
-        btAddBtn: `[id="R1TBaselineTypes-body"] [id="adminListsBaselineTypeGridAdd"]`,
-        btBoxCheckA: `[id="adminListsBaselineTypeGrid-body"] [data-recordindex="6"] [data-columnid="checkcolumn-1040"]`,
+        btAddBtn: `[id="adminListsBaselineTypeGrid-bodyWrap"] [role="toolbar"] [data-qtip="Add"]`,
+        btBoxCheckA: `[id="gridview-1034"] [data-recordindex="4"] [data-columnid="checkcolumn-1043"]`,
+        btBoxCheckB: `[id="gridview-1034"] [data-recordindex="5"] [data-columnid="checkcolumn-1043"]`,
 
         ftLink: `//*[text()="Feature Types"]`,
         ftAddBtn: `[id="R1TFeatureTypes-body"] [id="adminListsFeatureTypeGridAdd"]`,
@@ -243,10 +245,7 @@ class adminListTypeData {
     //Categories List
     listCategoriesSelect = async() => {
         let page=this.page;
-        let { menuSliderBtn }=locator.admin_Page;
         let { categoriesLink }=locator.list_Page;
-        await page.click(menuSliderBtn);
-        await page.waitForTimeout(1000);
         await page.click(categoriesLink);
         await page.waitForTimeout(3000);
     }
@@ -262,6 +261,13 @@ class adminListTypeData {
         let page=this.page;
         let { cateBoxCheckA }=locator.list_Page;
         await page.click(cateBoxCheckA);
+        await page.waitForTimeout(3000);
+    }
+
+    listCategorieSelectDataB = async() => {
+        let page=this.page;
+        let { cateBoxCheckB }=locator.list_Page;
+        await page.click(cateBoxCheckB);
         await page.waitForTimeout(3000);
     }
 
@@ -502,11 +508,18 @@ class adminListTypeData {
         await page.click(btAddBtn);
         await page.waitForTimeout(3000);
     }
-        
+
     listBTSelectData = async() => {
         let page=this.page;
         let { btBoxCheckA }=locator.list_Page;
         await page.click(btBoxCheckA);
+        await page.waitForTimeout(3000);
+    }
+        
+    listBTSelectDataB = async() => {
+        let page=this.page;
+        let { btBoxCheckB }=locator.list_Page;
+        await page.click(btBoxCheckB);
         await page.waitForTimeout(3000);
     }
 
