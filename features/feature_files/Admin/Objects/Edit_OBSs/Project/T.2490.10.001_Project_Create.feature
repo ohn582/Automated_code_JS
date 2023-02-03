@@ -7,7 +7,8 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Edit OBSs"
     @create @668 @T.2490.10.001
     Scenario: @T.2490.10.001-testing user data
-        When I select Administration and select Edit OBSs
+        When I select Administration and select Objects and select Edit OBSs 
+
         When I select a name in the data
         When I select Add button in Project OBS
         Then I Select Add Sibling in project OBS
@@ -18,9 +19,9 @@ Feature: Pdware Admin User Module
         Then I type a new name in the new child A
 
         # When I select SIBLING TEST 1 in project data
-        # When I select Add button in Project OBS
-        # Then I Select Add Child OBS in project
-        # Then I type a new name in the new child B
+        When I select Add button in Project OBS
+        Then I Select Add Child OBS in project
+        Then I type a new name in the new child B
 
         # When I select Add button in Project OBS
         # Then I Select Add Sibling in project OBS

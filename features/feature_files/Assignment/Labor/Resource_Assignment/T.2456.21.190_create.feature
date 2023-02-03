@@ -10,6 +10,10 @@ Feature: Pdware Admin User Module
         When I select Resource and Labor
         
         Then I Create Rescource Assignment Data for labor
-        # Then I Create Rescource Assignment Data for labor B
+        Then I Create Rescource Assignment Data for labor B
+
+        Then I Create Rescource Assignment Data for labor C
+        Then I Create Rescource Assignment Data for labor D
+        
 
         Then I select Save button

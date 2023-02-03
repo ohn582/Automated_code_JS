@@ -2,12 +2,16 @@ const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
         adminLink: `//*[text()="Administration"]`,
+        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
+        objLink: `//*[text()="Objects"]`,
+        editObsLink: `//*[text()="Edit OBSs"]`,
     },
 
     //Administration
     adminNav: {
         //Projext
-        obsLink: `//*[text()="Edit OBSs"]`,
+
+
         projOBSAddBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [aria-label="Add"]`,
         // partBoxCheckA: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1039"]`,
         projOBSName: `//*[text()="Secure node"]`,
@@ -47,6 +51,25 @@ class administrationTypeData {
     }
 
     // Project OBS
+    adminOBSProjLink = async() => {
+        let page=this.page;
+        let { menuSliderBtn, adminLink, objLink, editObsLink }=locator.admin_Page;
+        await page.click(menuSliderBtn);
+        // await page.waitForTimeout(1000);
+        await page.click(adminLink);
+        // await page.waitForTimeout(1000);
+        await page.click(objLink);
+        // await page.waitForTimeout(1000);
+        await page.click(editObsLink);
+        await page.waitForTimeout(3000);
+    }
+
+
+
+
+
+
+
     adminOBSProjData = async() => {
         let page=this.page;
         let { projOBSName }=locator.adminNav;

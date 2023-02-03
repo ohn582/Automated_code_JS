@@ -7,7 +7,7 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [id="toolbar-1042"] [data-qtip="Save"]`,
+        saveBtn: `[id="R1TEditOBSs"] [id="toolbar-1045-innerCt"] [data-qtip="Save"]`,
         // saveOK: `[role="alertdialog"] [data-ref="btnWrap"]`,
         saveOK: `//*[text()="OK"]`,
         // saveOK: `[] [id="button-"]`,
@@ -30,7 +30,10 @@ const locators = {
         projOBSExtentionA: `//*[text()="New Project Node"]`,
 
 
-        projOBSRetypeSib: `//*[text()="New Project Node"]`,
+        projOBStypeSib: `//*[text()="New Project Node"]`,
+        projOBSSibText: `[id="container-1025"] [data-recordindex="4"] [data-componentid="treeview-1040"] [id="celleditor1070"]`,
+        // projOBStypeSib: `[id="AdminNodeTreeGrid"] [data-recordindex="4"] [data-columnid="treecolumn-1029"]`,
+        // projOBStypeSib: `[id="AdminNodeTreeGrid"] [data-recordindex="4"] [data-columnid="treecolumn-1029"]`,
 
 
         projOBSProjChildData: `[id="AdminNodeTreeGrid-body"] [data-recordindex="0"]`,
@@ -91,19 +94,21 @@ class administrationPage {
         await page.waitForTimeout(3000);
     }
 
-    projOBSRetypeSibling = async() => {
+    projOBStypeSibling = async() => {
         let page=this.page;
-        let { projOBSRetypeSib }=locators.editOBSNav;
-        let textInput = await page.$(projOBSRetypeSib);
+        let { projOBStypeSib, projOBSSibText }=locators.editOBSNav;
+        let textInput = await page.$(projOBSSibText);
+        await page.click(projOBStypeSib);
+        // await page.dblclick(projOBSSibText);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('SIBLING TEST 1');
+        await page.keyboard.type('SIBLING 1');
         await page.waitForTimeout(3000);
     }
 
     projOBSRetypeChildA = async() => {
         let page=this.page;
-        let { projOBSRetypeSib }=locators.editOBSNav;
-        let textInput = await page.$(projOBSRetypeSib);
+        let { projOBStypeSib }=locators.editOBSNav;
+        let textInput = await page.$(projOBStypeSib);
         await textInput.click({clickCount: 3})
         await page.keyboard.type('CHILD 1');
         await page.waitForTimeout(3000);
@@ -111,9 +116,8 @@ class administrationPage {
 
     projOBSRetypeChildB = async() => {
         let page=this.page;
-        let { projOBSRetypeSib, projOBSSiblingDataCreated }=locators.editOBSNav;
-        let textInput = await page.$(projOBSRetypeSib);
-        await page.click(projOBSSiblingDataCreated);
+        let { projOBStypeSib }=locators.editOBSNav;
+        let textInput = await page.$(projOBStypeSib);
         await textInput.click({clickCount: 3})
         await page.keyboard.type('CHILD 2');
         await page.waitForTimeout(3000);
