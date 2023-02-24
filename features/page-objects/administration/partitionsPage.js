@@ -1,4 +1,4 @@
-const { action } = require('../utilities/action')
+const { action } = require('../../utilities/action')
 
 const locators = {   
     //Admin List
@@ -10,10 +10,6 @@ const locators = {
         textBoxNameReTypeA: `[id="adminListsPartitionGrid-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1028"]`,
         textBoxNameReTypeB: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [data-columnid="gridcolumn-1028"]`,
         textBoxNameReTypeC: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [data-columnid="gridcolumn-1028"]`,
-
-        checkBoxSelectA: `[id="adminListsPartitionGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1037"]`,
-        checkBoxSelectB: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [data-columnid="checkcolumn-1037"]`,
-        checkBoxSelectC: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1037"]`,
 
         deleteBtn: `[id="toolbar-1032-innerCt"] [data-qtip="Remove"]`,
         deleteYes: `//*[text()="Yes"]`,
@@ -31,7 +27,7 @@ const locators = {
 
 
 
-class partitionsListPage {
+class partitionsPage {
     constructor(page) {
         this.page = page;
     }
@@ -46,7 +42,7 @@ class partitionsListPage {
 
         let textInput = await page.$(textBoxName);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('tes1');
+        await page.keyboard.type('data1');
         await page.waitForTimeout(3000);
     }
 
@@ -59,7 +55,7 @@ class partitionsListPage {
 
         let textInput = await page.$(textBoxName);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('tes2');
+        await page.keyboard.type('data2');
         await page.waitForTimeout(3000);
     }
 
@@ -72,9 +68,10 @@ class partitionsListPage {
 
         let textInput = await page.$(textBoxName);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('tes3');
+        await page.keyboard.type('data3');
         await page.waitForTimeout(3000);
     }
+
 
 
 
@@ -112,21 +109,8 @@ class partitionsListPage {
 
 
 
+
     // Delete multiple Partitions Data
-    partDeleteData = async() => {
-        let page=this.page;
-        let { checkBoxSelectA, checkBoxSelectB, checkBoxSelectC }=locators.partitions;
-
-        await page.click(checkBoxSelectA);
-        // await page.waitForTimeout(1000);
-        await page.click(checkBoxSelectB);
-        // await page.waitForTimeout(1000);
-        await page.click(checkBoxSelectC);
-
-        await page.waitForTimeout(3000);
-    }
-
-
     partitionDeleteButton = async() => {
         let page=this.page;
         let { deleteBtn, deleteYes }=locators.partitions;
@@ -137,9 +121,6 @@ class partitionsListPage {
 
         await page.waitForTimeout(3000);
     }
-
-
-
 
     partitionSave = async() => {
         let page=this.page;
@@ -153,10 +134,10 @@ class partitionsListPage {
         let page=this.page;
         let { partReloadBtn, reloadYes }=locators.partitions;
         await page.click(partReloadBtn);
-        await page.click(reloadYes);
-        await page.waitForTimeout(3000);
+        // await page.click(reloadYes);
+        // await page.waitForTimeout(3000);
     }
 
 }
 
-module.exports.partitionsListPage = partitionsListPage;
+module.exports.partitionsPage = partitionsPage;

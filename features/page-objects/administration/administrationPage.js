@@ -1,13 +1,14 @@
-const { action } = require('../utilities/action')
+const { action } = require('../../utilities/action')
 
 const locators = {
-    periodSaveNav: {
-        savePeriodBtn: `[id="R1TPeriods-bodyWrap"] [data-qtip="Save"]`,
+    periodNav: {
+        periodAddBtn: `[id="r1AdminMain"] [aria-label="Add"]`,
+        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     saveNav: {
-        saveBtn: `[id="R1TEditOBSs"] [id="toolbar-1045-innerCt"] [data-qtip="Save"]`,
+        saveBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [id="toolbar-1045-innerCt"] [tabindex="0"] [data-componentid="button-1064"]`,
         // saveOK: `[role="alertdialog"] [data-ref="btnWrap"]`,
         saveOK: `//*[text()="OK"]`,
         // saveOK: `[] [id="button-"]`,
@@ -21,6 +22,8 @@ const locators = {
     
     //Edit obs
     editOBSNav: {
+        
+
         uldpMenu: `//*[text()="Edit OBSs"]`,
         projAddSibling: `//*[text()="Add Sibling"]`,
 
@@ -31,34 +34,32 @@ const locators = {
 
 
         projOBStypeSib: `//*[text()="New Project Node"]`,
-        projOBSSibText: `[id="container-1025"] [data-recordindex="4"] [data-componentid="treeview-1040"] [id="celleditor1070"]`,
-        // projOBStypeSib: `[id="AdminNodeTreeGrid"] [data-recordindex="4"] [data-columnid="treecolumn-1029"]`,
-        // projOBStypeSib: `[id="AdminNodeTreeGrid"] [data-recordindex="4"] [data-columnid="treecolumn-1029"]`,
+        projOBSSibText: `[id="AdminNodeTreeGrid-body"] [data-recordindex="4"] [data-columnid="treecolumn-1043"] [id="celleditor-1084"]`,
 
 
         projOBSProjChildData: `[id="AdminNodeTreeGrid-body"] [data-recordindex="0"]`,
 
     },
 
+    //Edit periods
     adminPeriods: {
-        periodTypeA: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1031"]`,
-        periodTypeB: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1032"]`,
+        periodTypeA: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1033"] [id="celleditor-1066"]`,
+        periodTypeEndDate: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1034"]`,
+        periodTypeB2: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1034"] [id="celleditor-1068"]`,
 
-        periodTypeC: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1031"]`,
-        periodTypeD: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1032"]`,
+        periodTypeC: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1033"] [id="celleditor-1066"]`,
+        periodTypeD: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1034"] [id="celleditor-1068"]`,
 
-        periodTypeE: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1031"]`,
-        periodTypeF: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1032"]`,
-
-
+        periodTypeE: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1033"] [id="celleditor-1066"]`,
+        periodTypeF: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1034"] [id="celleditor-1068"]`,
         
-        periodDataA: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1031"]`,
-        periodDataB: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="datecolumn-1032"]`,
+        periodDataA: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1033"] [id="celleditor-1066"]`,
+        periodDataB: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1034"] [id="celleditor-1068"]`,
 
-        periodDeleteA: `[id="R1TPeriods-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1061"]`,
-        periodDeleteB: `[id="R1TPeriods-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1061"]`,
+        periodDeleteA: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="checkcolumn-1061"]`,
+        periodDeleteB: `[id="r1AdminMain"] [data-recordindex="2"] [data-columnid="checkcolumn-1061"]`,
 
-        periodDeleteBtn: `[id="R1TPeriods-body"] [aria-label="Delete"]`,
+        periodDeleteBtn: `[id="r1AdminMain"] [aria-label="Delete"]`,
         periodDeleteYes: `//*[text()="Yes"]`,
     },
 
@@ -97,11 +98,11 @@ class administrationPage {
     projOBStypeSibling = async() => {
         let page=this.page;
         let { projOBStypeSib, projOBSSibText }=locators.editOBSNav;
-        let textInput = await page.$(projOBSSibText);
-        await page.click(projOBStypeSib);
+        let textInput = await page.$(projOBStypeSib);
+        // await page.click(projOBStypeSib);
         // await page.dblclick(projOBSSibText);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('SIBLING 1');
+        await page.keyboard.type(' SIBLING 1');
         await page.waitForTimeout(3000);
     }
 
@@ -110,7 +111,7 @@ class administrationPage {
         let { projOBStypeSib }=locators.editOBSNav;
         let textInput = await page.$(projOBStypeSib);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('CHILD 1');
+        await page.keyboard.type(' CHILD 1');
         await page.waitForTimeout(3000);
     }
 
@@ -119,7 +120,7 @@ class administrationPage {
         let { projOBStypeSib }=locators.editOBSNav;
         let textInput = await page.$(projOBStypeSib);
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('CHILD 2');
+        await page.keyboard.type(' CHILD 2');
         await page.waitForTimeout(3000);
     }
 
@@ -175,9 +176,11 @@ class administrationPage {
 
 
     //Periods
-    adminPeriodsType = async() => {
+    periodOBStype = async() => {
         let page=this.page;
         let { periodTypeA }=locators.adminPeriods;
+        let { periodAddBtn }=locators.periodNav;
+        await page.click(periodAddBtn);
         await page.click(periodTypeA);
         await page.keyboard.type('01/01/2022');
         await page.waitForTimeout(3000);
@@ -185,13 +188,16 @@ class administrationPage {
 
     adminPeriodsTypeB = async() => {
         let page=this.page;
-        let { periodTypeB }=locators.adminPeriods;
-        await page.click(periodTypeB);
+        let { periodTypeEndDate, periodTypeB2 }=locators.adminPeriods;
+        await page.click(periodTypeEndDate);
+
+        let textInput = await page.$(periodTypeB2);
+        await textInput.click({clickCount: 2})
         await page.keyboard.type('02/19/2022');
+
+
         await page.waitForTimeout(3000);
     }
-
-
 
     adminPeriodsTypeC = async() => {
         let page=this.page;
@@ -234,7 +240,7 @@ class administrationPage {
 
     adminPeriodsSave = async() => {
         let page=this.page;
-        let { savePeriodBtn, savePeriodOK }=locators.periodSaveNav;
+        let { savePeriodBtn, savePeriodOK }=locators.periodNav;
         await page.click(savePeriodBtn);
         await page.waitForTimeout(3000);
         // await page.click(savePeriodOK);

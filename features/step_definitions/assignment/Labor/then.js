@@ -1,6 +1,6 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { laborPage } = require('../../page-objects/laborPage');
-const { timeout } = require('../../test.config').test;
+const { laborPage } = require('../../../page-objects/assignmentPage');
+const { timeout } = require('../../../test.config').test;
 
 
 setDefaultTimeout(60 * 1000);

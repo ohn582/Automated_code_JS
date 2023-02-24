@@ -10,8 +10,8 @@ Feature: Pdware Admin User Module
         When I select Administration and select Objects
         When I select Object Partitions
         
-        Then I delete multiple datas for partition
-        Then I select Delete button
+        When I select multiple datas for partition
+        Then I delete the Partitions data
 
         Then I select save button
         Then I select reload button

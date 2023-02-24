@@ -1,71 +1,10 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { adminListPage } = require('../../page-objects/adminListPage');
-const { timeout } = require('../../test.config').test;
+const { adminListPage } = require('../../../page-objects/adminListPage');
+const { timeout } = require('../../../test.config').test;
 
 
 
 setDefaultTimeout(60 * 1000);
-
-// List Partitions
-Then(`I typed a new partition tes1`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    await listData.listPartitionsWriteA();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I typed a new partition tes2`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    await listData.listPartitionsWriteB();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I typed a new partition tes3`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    await listData.listPartitionsWriteC();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I clicked save button in partition`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    listData.listPartitionSave();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I Re-Typed a new partition tes1`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    listData.listPartitionUpdateA();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I Re-Typed a new partition tes2`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    listData.listPartitionUpdateB();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I delete the Partitions data`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    listData.listPartitionDelete();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I clicked reload button for Partition`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListPage(page);
-    await listData.listPartitionReload();
-    await page.waitForTimeout(2000);
-})
-
-
-
-
 
 
 

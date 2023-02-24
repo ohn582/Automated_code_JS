@@ -156,36 +156,6 @@ class adminListTypeData {
 
 
 
-
-    //Partition List
-    listPartitionsSelect = async() => {
-        let page=this.page;
-        let { menuSliderBtn }=locator.admin_Page;
-        // let { adminLink }=locator.admin_Page;
-        let { partitionsLink }=locator.list_Page;
-        await page.click(menuSliderBtn).catch(e => e);
-        await page.click(partitionsLink).catch(e => e);
-        await page.waitForTimeout(3000);
-    }
-
-    listPartitionsAdd = async() => {
-        let page=this.page;
-        let { partAddBtn }=locator.list_Page;
-        await page.click(partAddBtn);
-        await page.waitForTimeout(3000);
-    }
-
-    listPartitionsSelectData = async() => {
-        let page=this.page;
-        let { partBoxCheckA }=locator.list_Page;
-        await page.waitForTimeout(1000);
-        await page.click(partBoxCheckA).catch(e => e);
-        await page.waitForTimeout(3000);
-    }
-
-
-
-
     //Domain List
     listDomainsSelect = async() => {
         let page=this.page;

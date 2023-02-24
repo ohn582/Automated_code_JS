@@ -224,6 +224,9 @@ class laborPage {
 
 
 
+
+    
+
     //Rescource Data Update
     laborUpdateData = async() => {
         let page=this.page;

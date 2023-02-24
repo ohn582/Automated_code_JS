@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
-const { adminListTypeData } = require('../../components/adminList_page.component');
-const { timeout } = require('../../test.config').test;
+const { adminListTypeData } = require('../../../components/adminList_page.component');
+const { timeout } = require('../../../test.config').test;
 
 
 setDefaultTimeout(60 * 1000);
@@ -10,31 +10,6 @@ When(`I select Administration and select List`, timeout, async function() {
     let page = this.page;
     const listData = new adminListTypeData(page);
     listData.adminListSelect();
-    await page.waitForTimeout(2000);
-})
-
-
-
-
-// Lists Partitions
-When(`I select Partitions`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListTypeData(page);
-    listData.listPartitionsSelect();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Add Button in the Partitions`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListTypeData(page);
-    listData.listPartitionsAdd();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select tes3 in the Partitions in data`, timeout, async function() {
-    let page = this.page;
-    const listData = new adminListTypeData(page);
-    listData.listPartitionsSelectData();
     await page.waitForTimeout(2000);
 })
 

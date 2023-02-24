@@ -5,6 +5,7 @@ const locator = {
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
         objLink: `//*[text()="Objects"]`,
         editObsLink: `//*[text()="Edit OBSs"]`,
+        periodsLink: `//*[text()="Periods"]`,
     },
 
     //Administration
@@ -172,12 +173,16 @@ class administrationTypeData {
 
 
     //Periods
-    adminPeriodsSelect = async() => {
+    adminOBSPeroidsLink = async() => {
         let page=this.page;
-        let { periodSelect }=locator.adminNav;
-        let { adminLink }=locator.admin_Page;
+        let { menuSliderBtn, adminLink, objLink, periodsLink }=locator.admin_Page;
+        await page.click(menuSliderBtn);
+        // await page.waitForTimeout(1000);
         await page.click(adminLink);
-        await page.dblclick(periodSelect);
+        // await page.waitForTimeout(1000);
+        await page.click(objLink);
+        // await page.waitForTimeout(1000);
+        await page.click(periodsLink);
         await page.waitForTimeout(3000);
     }
 

@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
-const { laborTypeData } = require('../../components/labor_page.component');
-const { timeout } = require('../../test.config').test;
+const { laborTypeData } = require('../../../components/assignment_page.component');
+const { timeout } = require('../../../test.config').test;
 
 
 setDefaultTimeout(60 * 1000);
