@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { partitionsPage } = require('../../../../page-objects/administration/partitionsPage');
+const { partitionsPage } = require('../../../../page-objects/administration/Objects/partitionsPage');
 const { timeout } = require('../../../../test.config').test;
 
 

@@ -1,4 +1,4 @@
-const { action } = require('../../utilities/action')
+const { action } = require('../../../utilities/action')
 
 const locators = {
     filtersNav: {

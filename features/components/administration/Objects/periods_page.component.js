@@ -4,23 +4,8 @@ const locator = {
         adminLink: `//*[text()="Administration"]`,
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
         objLink: `//*[text()="Objects"]`,
-        editObsLink: `//*[text()="Edit OBSs"]`,
         periodsLink: `//*[text()="Periods"]`,
-    },
-
-    //Administration
-    adminNav: {
-        //View
-        viewSelect: `//*[text()="Views"]`,
-        viewData: `//*[text()="Project Demand Analysis"]`,
-        viewDataSelect: `[id="AdminViewDetailGrid-bodyWrap"] [aria-label="Add"]`,
-    },
-
-        //Main User Defined Lists
-        uldLink: `//*[text()="User Defined Lists"]`,
-        uldAddBtn: `[id="R1TUserDefinedLists-body"] [id="AdminUserDefinedListGridAdd"]`,
-        UDLDetailAdd: `[id="toolbar-1047"] [aria-label="Add"]`,
-
+    }
 }
 
 class periodsTypeData {
@@ -32,14 +17,14 @@ class periodsTypeData {
     // Project OBS
     peroidsOBSLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink, objLink, editObsLink }=locator.admin_Page;
+        let { menuSliderBtn, adminLink, objLink, periodsLink }=locator.admin_Page;
         await page.click(menuSliderBtn);
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.click(objLink);
         // await page.waitForTimeout(1000);
-        await page.click(editObsLink);
+        await page.click(periodsLink);
         await page.waitForTimeout(3000);
     }
 }

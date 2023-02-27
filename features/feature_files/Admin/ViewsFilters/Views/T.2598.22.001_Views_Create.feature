@@ -8,8 +8,9 @@ Feature: Pdware Admin User Module
     @create @668 @T.2550.12.001
     Scenario: @T.2550.12.001-testing user data
         When I select Administration and select Views
-        When I select a name in the views data
-        When I select Add button in Views Details
+        When I select Resource Capacity in the dropdown filter
+
+        Then I create a new Views Data
 
 
         # Then I retype a new name in the Views Details

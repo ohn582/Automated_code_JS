@@ -1,5 +1,5 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
-const { partitionsTypeData } = require('../../../../components/administration/partitions_page.component');
+const { partitionsTypeData } = require('../../../../components/administration/Objects/partitions_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 

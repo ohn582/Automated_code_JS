@@ -1,6 +1,6 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { viewFilterPage } = require('../../../page-objects/administration/viewFilterPage');
-const { timeout } = require('../../../test.config').test;
+const { viewFilterPage } = require('../../../../page-objects/administration/ViewFilter/FiltersPage');
+const { timeout } = require('../../../../test.config').test;
 
 
 setDefaultTimeout(60 * 1000);

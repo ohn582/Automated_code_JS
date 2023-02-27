@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { periodsPage } = require('../../../../page-objects/administration/periodsPage');
+const { periodsPage } = require('../../../../page-objects/administration/Objects/periodsPage');
 const { timeout } = require('../../../../test.config').test;
 
 
