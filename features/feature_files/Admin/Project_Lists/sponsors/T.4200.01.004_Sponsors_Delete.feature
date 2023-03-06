@@ -9,7 +9,7 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select List
         When I select Sponsors
-        When I select NewB in the Sponsors in data
+        When I select multiple Sponsors datas
         Then I delete the Sponsor data
         Then I clicked save button in Sponsors
-        Then I clicked reload button for Sponsors
+        # Then I clicked reload button for Sponsors

@@ -7,13 +7,13 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @668 @T.4200.01.002
     Scenario: @T.4200.01.002-testing user data
-        When I select Administration and select List
+        When I select Administration and select Project List
         When I select Sponsors
         When I select Add Button in the Sponsors
-        Then I typed a new Sponsors tes1
+        Then I typed a new Sponsors
         When I select Add Button in the Sponsors
         Then I typed a new Sponsors tes2
         When I select Add Button in the Sponsors
         Then I typed a new Sponsors tes3
         Then I clicked save button in Sponsors
-        Then I clicked reload button for Sponsors
+        # Then I clicked reload button for Sponsors

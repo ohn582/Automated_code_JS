@@ -7,9 +7,10 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @668 @T.4100.01.012
     Scenario: @T.4100.01.012-testing user data
-        When I select Administration and select List
+        When I select Administration and select PC project Lists
         When I select Project Codes
-        Then I Re-Typed a new Project Codes tes3
+        Then I Re-Typed a new Project Codes
         Then I Re-Typed a new Project Codes tes2
+        Then I Re-Typed a new Project Codes tes3
         Then I clicked save button in Project Codes
-        Then I clicked reload button for Project Codes
+        # Then I clicked reload button for Project Codes

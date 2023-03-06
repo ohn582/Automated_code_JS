@@ -7,9 +7,9 @@ Feature: Pdware Admin User Module
     @create @668 @T.4100.01.013
     Scenario: @T.4100.01.013-testing user data
     #Creating the Data
-        When I select Administration and select List
+        When I select Administration and select PC project Lists
         When I select Project Codes
-        When I select New Project NewB in the Project Codes in data
+        When I select multiple Project Codes in data
         Then I delete the Project Codes data
         Then I clicked save button in Project Codes
-        Then I clicked reload button for Project Codes
+        # Then I clicked reload button for Project Codes

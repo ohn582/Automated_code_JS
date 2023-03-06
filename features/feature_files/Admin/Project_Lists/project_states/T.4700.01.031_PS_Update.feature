@@ -7,9 +7,10 @@ Feature: Pdware Admin User Module
     @create @668 @T.4600.01.031
     Scenario: @T.4600.01.031-testing user data
     #Creating the Data
-        When I select Administration and select List
+        When I select Administration and select PS project Lists
         When I select Project States
-        Then I Re-Typed a Project States tes3
+        Then I Re-Typed a Project States tes1
         Then I Re-Typed a Project States tes2
+        Then I Re-Typed a Project States tes3
         Then I clicked save button in Project States
-        Then I clicked reload button for Project States
+        # Then I clicked reload button for Project States

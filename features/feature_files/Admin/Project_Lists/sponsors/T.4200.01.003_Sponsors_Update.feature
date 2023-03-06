@@ -9,7 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.4200.01.003-testing user data
         When I select Administration and select List
         When I select Sponsors
-        Then I Re-Typed a new Sponsor tes3
+        Then I Re-Typed a new Sponsor
         Then I Re-Typed a new Sponsor tes2
+        Then I Re-Typed a new Sponsor tes3
         Then I clicked save button in Sponsors
-        Then I clicked reload button for Sponsors
+        # Then I clicked reload button for Sponsors

@@ -7,9 +7,11 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @668 @T.4100.01.011
     Scenario: @T.4100.01.011-testing user data
-        When I select Administration and select List
+        When I select Administration and select Project Lists
         When I select Domains
-        Then I Re-Typed a new Domain tes3
+        Then I Re-Typed a new Domain
         Then I Re-Typed a new Domain tes2
+        Then I Re-Typed a new Domain tes3
+
         Then I clicked save button in Domains
-        Then I clicked reload button for Domains
+        # Then I clicked reload button for Domains

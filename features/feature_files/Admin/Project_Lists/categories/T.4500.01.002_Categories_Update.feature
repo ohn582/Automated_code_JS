@@ -9,7 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.4500.01.002-testing user data
         When I select Administration and select List
         When I select Categories
-        Then I Re-Typed a new Categories tes3
+        Then I Re-Typed a new Categories
         Then I Re-Typed a new Categories tes2
+        Then I Re-Typed a new Categories tes3
         Then I clicked save button in Categories
-        Then I clicked Reload button in Categories
+        # Then I clicked Reload button in Categories

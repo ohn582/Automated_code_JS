@@ -13,14 +13,43 @@ Then(`I create a new Views Data`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I create a new Views Data B`, timeout, async function() {
+    let page = this.page;
+    const listData = new viewsPage(page);
+    listData.viewDataB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I create a new Views Data C`, timeout, async function() {
+    let page = this.page;
+    const listData = new viewsPage(page);
+    listData.viewDataC();
+    await page.waitForTimeout(2000);
+})
+
+
 
 
 
 // Filters: Update
-Then(`I re-type names in the Filters Data`, timeout, async function() {
+Then(`I re-type a old Views Data`, timeout, async function() {
     let page = this.page;
     const listData = new viewsPage(page);
-    listData.filterReTypeData();
+    listData.viewsReTypeData();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I re-type a old Views Data B`, timeout, async function() {
+    let page = this.page;
+    const listData = new viewsPage(page);
+    listData.viewsReTypeDataB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I re-type a old Views Data C`, timeout, async function() {
+    let page = this.page;
+    const listData = new viewsPage(page);
+    listData.viewsReTypeDataC();
     await page.waitForTimeout(2000);
 })
 

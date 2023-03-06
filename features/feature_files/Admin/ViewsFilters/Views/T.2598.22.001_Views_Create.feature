@@ -11,8 +11,9 @@ Feature: Pdware Admin User Module
         When I select Resource Capacity in the dropdown filter
 
         Then I create a new Views Data
+        Then I create a new Views Data B
+        Then I create a new Views Data C
 
-
-        # Then I retype a new name in the Views Details
-        # Then I save the data
-        # Then I clicked reload
+        Then I retype a new name in the Views Details
+        Then I save the data
+        Then I clicked reload
