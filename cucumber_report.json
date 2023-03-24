@@ -4,224 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "pdware-admin-user-module;@t.4600.01.011-testing-user-data",
-        "keyword": "Scenario",
-        "line": 8,
-        "name": "@T.4600.01.011-testing user data",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 589357800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I visit the pdware r1test landing page 'https://r1test.pdware.com/'",
-            "match": {
-              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1303958900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 5,
-            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
-            "match": {
-              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5992360499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
-            "match": {
-              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2013602100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "I select Administration and select PC project Lists",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2007701499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 11,
-            "name": "I select Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:14"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2015319300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "I select Add Button in the Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2015123700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "I typed a new Project Codes tes1",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2146274999.0000002
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 14,
-            "name": "I select Add Button in the Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2015181500
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 15,
-            "name": "I typed a new Project Codes tes2",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2115773499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 16,
-            "name": "I select Add Button in the Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2007773599
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "I typed a new Project Codes tes3",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:20"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2159742399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 18,
-            "name": "I clicked save button in Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:65"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5214451400
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 806299
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@create",
-            "line": 7
-          },
-          {
-            "name": "@668",
-            "line": 7
-          },
-          {
-            "name": "@T.4600.01.011",
-            "line": 7
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "pdware-admin-user-module",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Pdware Admin User Module",
-    "tags": [],
-    "uri": "features\\feature_files\\Admin\\Project_Lists\\project_codes\\T.4600.01.011_PC_Create.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "pdware-admin-user-module;@t.4100.01.012-testing-user-data",
+        "id": "pdware-admin-user-module;@t.4212.44.771-testing-user-data",
         "keyword": "Scenario",
         "line": 9,
-        "name": "@T.4100.01.012-testing user data",
+        "name": "@T.4212.44.771-testing user data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 474167999
+              "duration": 600283699
             }
           },
           {
@@ -234,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1338253899
+              "duration": 1547985299
             }
           },
           {
@@ -247,98 +40,254 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5729611300.000001
+              "duration": 6363812200
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 7,
-            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
+            "name": "I click over the \"Proj\" nav and click on \"Demand\"",
             "match": {
               "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
             },
             "result": {
               "status": "passed",
-              "duration": 2015092999
+              "duration": 2010985499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 10,
-            "name": "I select Administration and select PC project Lists",
+            "name": "I select Project and Project Data",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:7"
+              "location": "features\\step_definitions\\project\\when.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2016907500
+              "duration": 2010967299
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
-            "name": "I select Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:14"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2010476700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
             "line": 12,
-            "name": "I Re-Typed a new Project Codes",
+            "name": "I select Project Add Button",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:32"
+              "location": "features\\step_definitions\\project\\when.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2177558899
+              "duration": 2011776799
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 13,
-            "name": "I Re-Typed a new Project Codes tes3",
+            "name": "I create a Project Data",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:46"
+              "location": "features\\step_definitions\\project\\then.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2166135699
+              "duration": 2003189800
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 14,
-            "name": "I Re-Typed a new Project Codes tes2",
+            "name": "I Click Apply",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:39"
+              "location": "features\\step_definitions\\project\\then.js:37"
             },
             "result": {
               "status": "passed",
-              "duration": 2197249300
+              "duration": 2009807399
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 15,
-            "name": "I clicked save button in Project Codes",
+            "name": "I type the Project Name A",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:65"
+              "location": "features\\step_definitions\\project\\then.js:46"
             },
             "result": {
               "status": "passed",
-              "duration": 5188297799
+              "duration": 2009093400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I select Add & Close",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2013082400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I select Project Add Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2008732599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I create a Project Data B",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2012769800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I Click Apply",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2012929299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I type the Project Name B",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2004815700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I select Add & Close",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2007439999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I select Project Add Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2009499900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I create a Project Data C",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2013600899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "I Click Apply",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2014143699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I type the Project Name C",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2005657500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "I select Add & Close",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2003421499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Select Save Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2004936800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "Select Reload Button for project data",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2004697200
             }
           },
           {
@@ -346,7 +295,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 497900
+              "duration": 1053900
             }
           }
         ],
@@ -360,7 +309,7 @@
             "line": 8
           },
           {
-            "name": "@T.4100.01.012",
+            "name": "@T.4212.44.771",
             "line": 8
           }
         ],
@@ -372,24 +321,24 @@
     "keyword": "Feature",
     "name": "Pdware Admin User Module",
     "tags": [],
-    "uri": "features\\feature_files\\Admin\\Project_Lists\\project_codes\\T.4600.01.012_PC_Update.feature"
+    "uri": "features\\feature_files\\Project\\Project_data\\T.4212.44.771_PD_Create.feature"
   },
   {
     "description": "",
     "elements": [
       {
         "description": "",
-        "id": "pdware-admin-user-module;@t.4100.01.013-testing-user-data",
+        "id": "pdware-admin-user-module;@t.4212.44.772-testing-user-data",
         "keyword": "Scenario",
-        "line": 8,
-        "name": "@T.4100.01.013-testing user data",
+        "line": 9,
+        "name": "@T.4212.44.772-testing user data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 417918799
+              "duration": 493203299
             }
           },
           {
@@ -402,7 +351,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1339400399
+              "duration": 1545071300
             }
           },
           {
@@ -415,85 +364,98 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5799173100
+              "duration": 6372497600
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
-            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
+            "line": 7,
+            "name": "I click over the \"Proj\" nav and click on \"Demand\"",
             "match": {
               "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
             },
             "result": {
               "status": "passed",
-              "duration": 2013941699
+              "duration": 2011650499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 10,
-            "name": "I select Administration and select PC project Lists",
+            "name": "I select Project and Project Data",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:7"
+              "location": "features\\step_definitions\\project\\when.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2001689400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 11,
-            "name": "I select Project Codes",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:14"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2005609700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "I select multiple Project Codes in data",
-            "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\when.js:28"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2007147899
+              "duration": 2008567699
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 13,
-            "name": "I delete the Project Codes data",
+            "line": 12,
+            "name": "I Re-Type Diffrent Name A",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:58"
+              "location": "features\\step_definitions\\project\\then.js:117"
             },
             "result": {
               "status": "passed",
-              "duration": 2127807300
+              "duration": 2013970100
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 14,
-            "name": "I clicked save button in Project Codes",
+            "name": "I Re-Type Diffrent Name B",
             "match": {
-              "location": "features\\step_definitions\\administration\\ProjectLists\\Project_Codes\\then.js:65"
+              "location": "features\\step_definitions\\project\\then.js:133"
             },
             "result": {
               "status": "passed",
-              "duration": 5139295800
+              "duration": 2003722100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I Re-Type Diffrent Name C",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:149"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2005873399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Select Save Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2001895100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Select Reload Button for project data",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2007516199
             }
           },
           {
@@ -501,22 +463,22 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 439999
+              "duration": 619800
             }
           }
         ],
         "tags": [
           {
-            "name": "@create",
-            "line": 7
+            "name": "@update",
+            "line": 8
           },
           {
             "name": "@668",
-            "line": 7
+            "line": 8
           },
           {
-            "name": "@T.4100.01.013",
-            "line": 7
+            "name": "@T.4212.44.772",
+            "line": 8
           }
         ],
         "type": "scenario"
@@ -527,6 +489,187 @@
     "keyword": "Feature",
     "name": "Pdware Admin User Module",
     "tags": [],
-    "uri": "features\\feature_files\\Admin\\Project_Lists\\project_codes\\T.4600.01.013_PC_Delete.feature"
+    "uri": "features\\feature_files\\Project\\Project_data\\T.4212.44.772_PD_Update.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pdware-admin-user-module;@t.4212.44.773-testing-user-data",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "@T.4212.44.773-testing user data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 441633100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I visit the pdware r1test landing page 'https://r1test.pdware.com/'",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1504996799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6270675100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I click over the \"Proj\" nav and click on \"Demand\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2005252499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I select Project and Project Data",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2009174299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I select Project Check Box UPDATE A",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2008952100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I select Project Check Box UPDATE B",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2008140899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I select Project Check Box UPDATE C",
+            "match": {
+              "location": "features\\step_definitions\\project\\when.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2006915600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I select Project Delete Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:166"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2003963399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Select Save Button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2004589999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "I select refreshed button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:208"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3009762400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 539399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@delete",
+            "line": 8
+          },
+          {
+            "name": "@668",
+            "line": 8
+          },
+          {
+            "name": "@T.4212.44.773",
+            "line": 8
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pdware-admin-user-module",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pdware Admin User Module",
+    "tags": [],
+    "uri": "features\\feature_files\\Project\\Project_data\\T.4212.44.773_PD_Delete.feature"
   }
 ]

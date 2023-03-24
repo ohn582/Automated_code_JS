@@ -5,6 +5,8 @@ const locators = {
         
         //Project Data Add
         projAddDropDown: `[id="projectAddPanel-bodyWrap"] [id="r1ProjectAddNodes-bodyEl"] [id="r1ProjectAddNodes-trigger-_trigger1"]`,
+        projAddApply: `[id="ProjectNodeFieldTreePanel"] [role="toolbar"] [aria-label="Apply"]`,
+        projAddClose: `[id="projectAddPanel-bodyWrap"] [role="toolbar"] [aria-label="Add & Close"]`,
         
         dropSelectA: `[id="ProjectNodeFieldPanelTree-body"] [data-recordindex="2"]`,
         dropSelectB: `[id="ProjectNodeFieldPanelTree-body"] [data-recordindex="0"]`,
@@ -49,8 +51,6 @@ const locators = {
 
 
 
-
-
         //Update Project Data 1
         update_unitPriorityA: `[data-componentid="gridview-1033"] [data-recordindex="4"] [data-columnid="numbercolumn-1052"]`,
         update_pKeyA: `[data-componentid="gridview-1033"] [data-recordindex="4"] [data-columnid="gridcolumn-1054"]`,
@@ -89,7 +89,7 @@ const locators = {
         projSaveBtn: `[id="ProjectListToolBar-targetEl"] [id="projectListGridSave"]`,
         projApply: `[id="ProjectNodeFieldTreePanel"] [role="toolbar"] [aria-label="Apply"]`,
         addClosed: `//*[text()="Add & Close"]`,
-        projSaveOk: `[id="messagebox-1001"] [id="button-1005"]`,
+        projSaveOk: `[id="messagebox-1009"] [id="messagebox-1009-toolbar"] [tabindex="0"]`,
 
         projDeleteBtn: `[id="ProjectListGrid-bodyWrap"] [id="projectListGridRemove-btnIconEl"]`,
         projDeleteYes: `[data-componentid="messagebox-1001"] [data-componentid="button-1006"]`,
@@ -98,14 +98,9 @@ const locators = {
 
         projViewDropdown: `[id="r1DemandGrid-bodyWrap"] [id="demandGridValueMode"]`,
 
-        //Project Update
-        // reTypeProjA: `[id="ProjectListGrid-bodyWrap"] [data-columnid="templatecolumn-1143"] [data-recordindex="0"] [id="celleditor-1160"]`,
-        // reTypeProjB: `[id="ProjectListGrid-bodyWrap"] [data-columnid="templatecolumn-1143"] [data-recordindex="1"] [id="celleditor-1160"]`,
-        // reTypeProjC: `[id="ProjectListGrid-bodyWrap"] [data-columnid="templatecolumn-1143"] [data-recordindex="2"] [id="celleditor-1160"]`,
-
-        reTypeProjA: `//*[text()="TEST 1"]`,
-        reTypeProjB: `//*[text()="TEST 2"]`,
-        reTypeProjC: `//*[text()="TEST 3"]`,
+        reTypeProjA: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="templatecolumn-1059"]`,
+        reTypeProjB: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="templatecolumn-1059"]`,
+        reTypeProjC: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="templatecolumn-1059"]`,
         
         //Project Delete
         projDeleteBtn: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridRemove"]`,
@@ -125,7 +120,7 @@ class projectPage {
 
     projectAddData = async() => {
         let page=this.page;
-        let { projAddDropDown, dropSelectA }=locators.project_Page;
+        let { projAddDropDown, dropSelectA, projAddApply, projAddClose }=locators.project_Page;
 
         await page.click(projAddDropDown);
         await page.waitForTimeout(1000);
@@ -170,150 +165,34 @@ class projectPage {
 
     }
 
-    // projectTypeA = async() => {
-    //     let page=this.page;
-    //     let { projTextBox }=locators.project_Page;
-    //     let textInput = await page.$(projTextBox);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('TEST 1');
-    //     await page.waitForTimeout(1000);
-    // }
+    projectTypeA = async() => {
+        let page=this.page;
+        let { projTextBox }=locators.project_Page;
+        let textInput = await page.$(projTextBox);
+        await textInput.click({clickCount: 1})
+        await page.keyboard.type('TEST 1');
+        await page.waitForTimeout(1000);
+    }
 
-    // projectUnitPriority = async() => {
-    //     let page=this.page;
-    //     let { unitPriorityA, pKeyA, managerA, sponsorA, startA, finishA, projectStateA, domainA, categoryA }=locators.project_Page;
-    //     let textInput = await page.$(unitPriorityA);
-    //     let textInputB = await page.$(pKeyA);
-    //     let textInputC = await page.$(managerA);
-    //     let textInputD = await page.$(sponsorA);
-    //     let textInputE = await page.$(startA);
-    //     let textInputF = await page.$(finishA);
-    //     let textInputG = await page.$(projectStateA);
-    //     let textInputH = await page.$(domainA);
-    //     let textInputI = await page.$(categoryA);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('9590');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputB.click({clickCount: 1})
-    //     await page.keyboard.type('5255');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputC.click({clickCount: 1})
-    //     await page.keyboard.type('Wolf, Phil');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputD.click({clickCount: 1})
-    //     await page.keyboard.type('Gates, Bill');
-    //     await textInputE.click({clickCount: 1})
-    //     await page.keyboard.type('01/26/2023');
-    //     await textInputF.click({clickCount: 1})
-    //     await page.keyboard.type('01/27/2023');
-    //     await textInputG.click({clickCount: 1})
-    //     await page.keyboard.type('On Hold');
-    //     await textInputH.click({clickCount: 1})
-    //     await page.keyboard.type('Research');
-    //     await textInputI.click({clickCount: 1})
-    //     await page.keyboard.type('Growth');
-    //     await page.waitForTimeout(1000);
-    // }
+    projectTypeB = async() => {
+        let page=this.page;
+        let { projTextBox }=locators.project_Page;
+        let textInput = await page.$(projTextBox);
+        await textInput.click({clickCount: 1})
+        await page.keyboard.type('TEST 2');
+        await page.waitForTimeout(1000);
+    }
 
+    projectTypeC = async() => {
+        let page=this.page;
+        let { projTextBox }=locators.project_Page;
+        let textInput = await page.$(projTextBox);
+        await textInput.click({clickCount: 1})
+        await page.keyboard.type('TEST 3');
+        await page.waitForTimeout(1000);
+    }
 
-
-
-
-
-    // projectTypeB = async() => {
-    //     let page=this.page;
-    //     let { projTextBox }=locators.project_Page;
-    //     let textInput = await page.$(projTextBox);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('TEST 2');
-    //     await page.waitForTimeout(1000);
-    // }
-
-    // projectUnitPriorityB = async() => {
-    //     let page=this.page;
-    //     let { unitPriorityA, pKeyB, managerB, sponsorB, startB, finishB, projectStateB, domainB, categoryB }=locators.project_Page;
-    //     let textInput = await page.$(unitPriorityA);
-    //     let textInputB = await page.$(pKeyB);
-    //     let textInputC = await page.$(managerB);
-    //     let textInputD = await page.$(sponsorB);
-    //     let textInputE = await page.$(startB);
-    //     let textInputF = await page.$(finishB);
-    //     let textInputG = await page.$(projectStateB);
-    //     let textInputH = await page.$(domainB);
-    //     let textInputI = await page.$(categoryB);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('4500');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputB.click({clickCount: 1})
-    //     await page.keyboard.type('1234');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputC.click({clickCount: 1})
-    //     await page.keyboard.type('Kern, Bill');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputD.click({clickCount: 1})
-    //     await page.keyboard.type('Samarel, Paul');
-    //     await textInputE.click({clickCount: 1})
-    //     await page.keyboard.type('02/26/2023');
-    //     await textInputF.click({clickCount: 1})
-    //     await page.keyboard.type('03/17/2023');
-    //     await textInputG.click({clickCount: 1})
-    //     await page.keyboard.type('Started');
-    //     await textInputH.click({clickCount: 1})
-    //     await page.keyboard.type('NPD');
-    //     await textInputI.click({clickCount: 1})
-    //     await page.keyboard.type('Strategic');
-    //     await page.waitForTimeout(1000);
-    // }
-
-
-
-
-
-    // projectTypeC = async() => {
-    //     let page=this.page;
-    //     let { projTextBox }=locators.project_Page;
-    //     let textInput = await page.$(projTextBox);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('TEST 3');
-    //     await page.waitForTimeout(1000);
-    // }
-
-    // projectUnitPriorityC = async() => {
-    //     let page=this.page;
-    //     let { unitPriorityA, pKeyC, managerC, sponsorC, startC, finishC, projectStateC, domainC, categoryC }=locators.project_Page;
-    //     let textInput = await page.$(unitPriorityA);
-    //     let textInputB = await page.$(pKeyC);
-    //     let textInputC = await page.$(managerC);
-    //     let textInputD = await page.$(sponsorC);
-    //     let textInputE = await page.$(startC);
-    //     let textInputF = await page.$(finishC);
-    //     let textInputG = await page.$(projectStateC);
-    //     let textInputH = await page.$(domainC);
-    //     let textInputI = await page.$(categoryC);
-    //     await textInput.click({clickCount: 1})
-    //     await page.keyboard.type('9557');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputB.click({clickCount: 1})
-    //     await page.keyboard.type('8889');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputC.click({clickCount: 1})
-    //     await page.keyboard.type('Heinrich, Peter');
-    //     // await page.waitForTimeout(1000);
-    //     await textInputD.click({clickCount: 1})
-    //     await page.keyboard.type('Wolf, Phil');
-    //     await textInputE.click({clickCount: 1})
-    //     await page.keyboard.type('03/10/2023');
-    //     await textInputF.click({clickCount: 1})
-    //     await page.keyboard.type('08/20/2023');
-    //     await textInputG.click({clickCount: 1})
-    //     await page.keyboard.type('To Be Deleted');
-    //     await textInputH.click({clickCount: 1})
-    //     await page.keyboard.type('New Domain');
-    //     await textInputI.click({clickCount: 1})
-    //     await page.keyboard.type('Growth');
-    //     await page.waitForTimeout(1000);
-    // }
-
+    
 
 
 

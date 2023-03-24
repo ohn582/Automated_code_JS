@@ -1,14 +1,15 @@
 const locator = {
     project_Page: {
         //Project Data
-        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
+        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018-innerCt"] [data-componentid="r1NavToggle"]`,
         projLink: `//*[text()="Project"]`,
         projData: `//*[text()="Data"]`,
         
         projDataAdd: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridAdd"]`,
 
-        pdBoxB:`[id="gridview-1031"] [data-recordindex="4"] [data-columnid="checkcolumn-1045"]`,
-        pdBoxC:`[id="gridview-1031"] [data-recordindex="5"] [data-columnid="checkcolumn-1045"]`,
+        pdBoxA:`[id="ProjectListGrid-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1053"]`,
+        pdBoxB:`[id="ProjectListGrid-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1053"]`,
+        pdBoxC:`[id="ProjectListGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1053"]`,
 
 
         //Project Demand
@@ -20,7 +21,6 @@ const locator = {
         projDemViewSelect: `[data-componentid="demandGridViews-picker"] [data-recordindex="0"]`,
 
     },
-
 }
 
 class projectTypeData {
@@ -34,9 +34,9 @@ class projectTypeData {
         let page=this.page;
         let { MenuSliderBtn, projLink, projData }=locator.project_Page;
         await page.click(MenuSliderBtn);
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
         await page.click(projLink);
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
         await page.click(projData);
         await page.waitForTimeout(1000);
     }
@@ -51,6 +51,13 @@ class projectTypeData {
 
 
     // Project Data Delete
+    projBoxSelectA = async() => {
+        let page=this.page;
+        let { pdBoxA }=locator.project_Page;
+        await page.click(pdBoxA);
+        await page.waitForTimeout(3000);
+    }
+
     projBoxSelectB = async() => {
         let page=this.page;
         let { pdBoxB }=locator.project_Page;

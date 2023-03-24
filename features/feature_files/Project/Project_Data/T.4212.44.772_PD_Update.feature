@@ -9,13 +9,10 @@ Feature: Pdware Admin User Module
     Scenario: @T.4212.44.772-testing user data
         When I select Project and Project Data
 
-        # Then I Re-Type multiple datas in Project Name A
         Then I Re-Type Diffrent Name A
 
-        # Then I Re-Type multiple datas in Project Name B
         Then I Re-Type Diffrent Name B
 
-        # Then I Re-Type multiple datas in Project Name C
         Then I Re-Type Diffrent Name C
 
         Then Select Save Button

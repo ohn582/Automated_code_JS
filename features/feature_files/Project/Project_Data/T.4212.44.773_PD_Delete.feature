@@ -9,9 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.4212.44.773-testing user data
         When I select Project and Project Data
 
+        When I select Project Check Box UPDATE A
         When I select Project Check Box UPDATE B
-        Then I select Project Delete Button
-
         When I select Project Check Box UPDATE C
         Then I select Project Delete Button
 

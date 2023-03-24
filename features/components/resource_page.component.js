@@ -1,7 +1,7 @@
 const locator = {
 
     resource_Page: {
-        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
+        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
         resDropView: `//*[text()="Resource"]`,
 
         //Resource Data

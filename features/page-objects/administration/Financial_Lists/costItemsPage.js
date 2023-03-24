@@ -2,26 +2,26 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ciNav: {
-        ciAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostCategoryGridAdd"]`,
+        ciAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostItemGridAdd"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     ciData: {
         //Creating a data
-        ciName: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        ciPartition: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1035"]`,
+        ciName: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"] [id="celleditor-1054"]`,
+        ciPartition: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1043"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
 
-        ciNameA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1028"]`,
-        ciPartitionA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1035"]`,
+        ciNameA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1036"]`,
+        ciPartitionA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1043"]`,
 
-        ciNameB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1028"]`,
-        ciPartitionB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1035"]`,
+        ciNameB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1036"]`,
+        ciPartitionB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1043"]`,
 
-        ciNameC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1028"]`,
-        ciPartitionC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1035"]`,
+        ciNameC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1036"]`,
+        ciPartitionC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1043"]`,
     },
 
     deleteNav: {
@@ -31,7 +31,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsCostItemGrid"] [role="toolbar"] [data-componentid="adminListsCostItemGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
     },
 
     reloadBtn: {
@@ -43,7 +43,7 @@ const locators = {
 
 
 
-class costItemsPage {
+class CostItemsPage {
     constructor(page) {
         this.page = page;
     }
@@ -52,11 +52,11 @@ class costItemsPage {
     //Sponsor: Create
     listCIWriteA = async () => {
         let page = this.page;
-        let { costItemsName, costItemsPartition } = locators.ciData;
+        let { ciName, ciPartition } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsName);
-        let textInputB = await page.$(costItemsPartition);
+        let textInput = await page.$(ciName);
+        let textInputB = await page.$(ciPartition);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
@@ -67,11 +67,11 @@ class costItemsPage {
 
     listCIWriteB = async () => {
         let page = this.page;
-        let { costItemsName, costItemsPartition } = locators.ciData;
+        let { ciName, ciPartition } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsName);
-        let textInputB = await page.$(costItemsPartition);
+        let textInput = await page.$(ciName);
+        let textInputB = await page.$(ciPartition);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
@@ -82,11 +82,11 @@ class costItemsPage {
 
     listCIWriteC = async () => {
         let page = this.page;
-        let { costItemsName, costItemsPartition } = locators.ciData;
+        let { ciName, ciPartition } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsName);
-        let textInputB = await page.$(costItemsPartition);
+        let textInput = await page.$(ciName);
+        let textInputB = await page.$(ciPartition);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
@@ -101,11 +101,11 @@ class costItemsPage {
     //Sponsor: Update
     costItemsReTypeData = async () => {
         let page = this.page;
-        let { costItemsNameA, costItemsPartitionA } = locators.ciData;
+        let { ciNameA, ciPartitionA } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsNameA);
-        let textInputB = await page.$(costItemsPartitionA);
+        let textInput = await page.$(ciNameA);
+        let textInputB = await page.$(ciPartitionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
@@ -116,11 +116,11 @@ class costItemsPage {
 
     costItemsReTypeDataB = async () => {
         let page = this.page;
-        let { costItemsNameB, costItemsPartitionB } = locators.ciData;
+        let { ciNameB, ciPartitionB } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsNameB);
-        let textInputB = await page.$(costItemsPartitionB);
+        let textInput = await page.$(ciNameB);
+        let textInputB = await page.$(ciPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
@@ -131,11 +131,11 @@ class costItemsPage {
 
     costItemsReTypeDataC = async () => {
         let page = this.page;
-        let { costItemsNameC, costItemsPartitionC } = locators.ciData;
+        let { ciNameC, ciPartitionC } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(costItemsNameC);
-        let textInputB = await page.$(costItemsPartitionC);
+        let textInput = await page.$(ciNameC);
+        let textInputB = await page.$(ciPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
@@ -175,4 +175,4 @@ class costItemsPage {
     }
 }
 
-module.exports.costItemsPage = costItemsPage;
+module.exports.CostItemsPage = CostItemsPage;
