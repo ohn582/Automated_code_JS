@@ -29,7 +29,7 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="AdminRateSave"]`,
+        saveBtn: `[id="AdminRateGrid"] [role="toolbar"] [data-componentid="AdminRateSave"]`,
         saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
     },
 

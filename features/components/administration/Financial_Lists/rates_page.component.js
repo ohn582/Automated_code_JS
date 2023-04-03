@@ -15,9 +15,14 @@ const locator = {
 
     ratesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ratesBox: `[data-componentid="r1MainViewPort"] [id="AdminCurrency-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1074"]`,
-        ratesBoxB: `[data-componentid="r1MainViewPort"] [id="AdminCurrency-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1074"]`,
-        ratesBoxC: `[data-componentid="r1MainViewPort"] [id="AdminCurrency-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1074"]`
+        ratesBox: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="checkcolumn-1060"]`,
+        ratesBoxB: `[id="AdminMainContainer"] [data-recordindex="1"] [data-columnid="checkcolumn-1060"]`,
+        ratesBoxC: `[id="AdminMainContainer"] [data-recordindex="2"] [data-columnid="checkcolumn-1060"]`
+    },
+
+    reloadBtn: {
+        relBtn: `[id="r1AdminMain"] [id="AdminRateGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
+        reloadLoadRates: `//*[text()="Load Rates"]`,
     }
 }
 
@@ -63,6 +68,15 @@ class RatesTypeData {
         let { ratesAddBtn } = locator.ratesNav;
 
         await page.click(ratesAddBtn);
+        // await page.waitForTimeout(3000);
+    }
+
+    listRatesReloadRates = async () => {
+        let page = this.page;
+        let { relBtn, reloadLoadRates } = locator.reloadBtn;
+
+        // await page.click(relBtn);
+        await page.click(reloadLoadRates);
         // await page.waitForTimeout(3000);
     }
 }

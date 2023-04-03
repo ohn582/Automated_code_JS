@@ -54,7 +54,7 @@ Then(`I Updated my Rescource Assignment Data for labor B`, timeout, async functi
     await page.waitForTimeout(2000);
 })
 
-Then(`I Updated my Rescource Assignment Data for labor B`, timeout, async function() {
+Then(`I Updated my Rescource Assignment Data for labor C`, timeout, async function() {
     let page = this.page;
     const listData = new laborPage(page);
     listData.laborUpdateDataB();

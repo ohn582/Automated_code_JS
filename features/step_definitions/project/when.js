@@ -23,30 +23,12 @@ When(`I select Project Add Button`, timeout, async function() {
 
 
 // Project Data Delete
-When(`I select Project Check Box UPDATE A`, timeout, async function() {
+When(`I select multiple Project datas`, timeout, async function() {
     let page = this.page;
     const listData = new projectTypeData(page);
-    listData.projBoxSelectB();
+    listData.listProjectSelect();
     await page.waitForTimeout(2000);
 })
-
-When(`I select Project Check Box UPDATE B`, timeout, async function() {
-    let page = this.page;
-    const listData = new projectTypeData(page);
-    listData.projBoxSelectB();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Project Check Box UPDATE C`, timeout, async function() {
-    let page = this.page;
-    const listData = new projectTypeData(page);
-    listData.projBoxSelectB();
-    await page.waitForTimeout(2000);
-})
-
-
-
-
 
 
 //Project Demand

@@ -1,7 +1,7 @@
 const locator = {
     admin_Page: {
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [data-componentid="r1NavToggle"]`,
-        adminLink: `//*[text()="Administration"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-7"]`,
 
         //UDLD Save Btn
         UDLDetailProjSave: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [id="button-1053"]`,

@@ -12,3 +12,17 @@ Then(`I type a new name in the Periods Data`, timeout, async function() {
     listData.periodOBStype();
     await page.waitForTimeout(2000);
 })
+
+Then(`I type a new name in the Periods Data B`, timeout, async function() {
+    let page = this.page;
+    const listData = new periodsPage(page);
+    listData.periodOBStypeB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I type a new name in the Periods Data C`, timeout, async function() {
+    let page = this.page;
+    const listData = new periodsPage(page);
+    listData.periodOBStypeC();
+    await page.waitForTimeout(2000);
+})

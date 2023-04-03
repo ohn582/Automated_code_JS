@@ -9,6 +9,7 @@ Feature: Pdware Admin User Module
         #Creating the Data
         When I select Administration and select Rates Resource Lists
         When I select Rates
+        When I select Load Rates from reload button
         When I select multiple Rates datas
         Then I delete the Rates data
         Then I clicked save button in Rates

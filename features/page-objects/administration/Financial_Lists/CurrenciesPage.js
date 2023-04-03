@@ -30,7 +30,7 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="AdminCurrencySave"]`,
+        saveBtn: `[id="R1TCurrencies"] [role="toolbar"] [data-componentid="AdminCurrencySave"]`,
         saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
     },
 

@@ -9,6 +9,7 @@ Feature: Pdware Admin User Module
     Scenario: @T.T.4559.93.562-testing user data
         When I select Administration and select Rates Resource Lists
         When I select Rates
+        When I select Load Rates from reload button
         Then I Re-Typed a new Rates
         Then I Re-Typed a new Rates tes2
         Then I Re-Typed a new Rates tes3

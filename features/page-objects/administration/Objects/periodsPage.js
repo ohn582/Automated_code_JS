@@ -22,11 +22,12 @@ const locators = {
 
     //Edit periods
     adminPeriods: {
-        periodBoxA: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1048"]`,
-        periodTypeA: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1048"] [data-columnid="celleditor-1018"]`,
-        periodBoxB: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1049"]`,
-        periodTypeB: `[id="r1AdminMain"] [data-recordindex="0"] [data-columnid="datecolumn-1049"] [data-columnid="celleditor-1018"]`,
-
+        periodStartA: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1171"]`,
+        periodEndA: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1172"]`,
+        periodStartB: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1171"]`,
+        periodEndB: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1172"]`,
+        periodStartC: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1171"]`,
+        periodEndC: `[id="AdminPeriodsContainer"] [data-recordindex="0"] [data-columnid="datecolumn-1172"]`,
     }
 }
 
@@ -41,20 +42,64 @@ class periodsPage {
     periodOBStype = async() => {
         let page=this.page;
         let {  periodAddBtn }=locators.periodNav;
-        let {  periodBoxA, periodTypeA, periodBoxB, periodTypeB }=locators.adminPeriods;
+        let {  periodStartA, periodEndA, periodStartB, periodEndB }=locators.adminPeriods;
         await page.click(periodAddBtn);
 
-        // let textInput2 = await page.$(periodTypeB);
+        // let textInput2 = await page.$(periodEndB);
 
         // await textInput.click({clickCount: 1})
-        await page.click(periodBoxA);
-        // await page.click(periodTypeA);
+        await page.click(periodStartA);
+        // await page.click(periodEndA);
         await page.keyboard.type('10/04/2022');
-        // await action.type(page, periodBoxA, `10/04/2022`);
+        // await action.type(page, periodStartA, `10/04/2022`);
 
         // await textInput2.click({clickCount: 1})
-        await page.click(periodBoxB);
-        // await page.click(periodTypeB);
+        await page.click(periodStartB);
+        // await page.click(periodEndB);
+        await page.keyboard.type('1/04/2023');
+
+        await page.waitForTimeout(3000);
+    }
+
+    periodOBStypeB = async() => {
+        let page=this.page;
+        let {  periodAddBtn }=locators.periodNav;
+        let {  periodStartA, periodEndA, periodStartB, periodEndB }=locators.adminPeriods;
+        await page.click(periodAddBtn);
+
+        // let textInput2 = await page.$(periodEndB);
+
+        // await textInput.click({clickCount: 1})
+        await page.click(periodStartA);
+        // await page.click(periodEndA);
+        await page.keyboard.type('10/04/2022');
+        // await action.type(page, periodStartA, `10/04/2022`);
+
+        // await textInput2.click({clickCount: 1})
+        await page.click(periodStartB);
+        // await page.click(periodEndB);
+        await page.keyboard.type('1/04/2023');
+
+        await page.waitForTimeout(3000);
+    }
+
+    periodOBStypeC = async() => {
+        let page=this.page;
+        let {  periodAddBtn }=locators.periodNav;
+        let {  periodStartA, periodEndA, periodStartB, periodEndB }=locators.adminPeriods;
+        await page.click(periodAddBtn);
+
+        // let textInput2 = await page.$(periodEndB);
+
+        // await textInput.click({clickCount: 1})
+        await page.click(periodStartA);
+        // await page.click(periodEndA);
+        await page.keyboard.type('10/04/2022');
+        // await action.type(page, periodStartA, `10/04/2022`);
+
+        // await textInput2.click({clickCount: 1})
+        await page.click(periodStartB);
+        // await page.click(periodEndB);
         await page.keyboard.type('1/04/2023');
 
         await page.waitForTimeout(3000);

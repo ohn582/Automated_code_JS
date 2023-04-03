@@ -35,3 +35,10 @@ When(`I select multiple Rates datas`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
+
+When(`I select Load Rates from reload button`, timeout, async function () {
+    let page = this.page;
+    const listData = new RatesTypeData(page);
+    listData.listRatesReloadRates();
+    await page.waitForTimeout(2000);
+})

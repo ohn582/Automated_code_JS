@@ -183,20 +183,20 @@ Then(`I select Project Delete Button`, timeout, async function() {
 
 
 
-//Project Demand
-Then(`I slect multiple project to delete the data`, timeout, async function() {
-    let page = this.page;
-    const listData = new projectPage(page);
-    listData.projectDataSelect();
-    await page.waitForTimeout(2000);
-})
+// //Project Demand
+// Then(`I slect multiple project to delete the data`, timeout, async function() {
+//     let page = this.page;
+//     const listData = new projectPage(page);
+//     listData.projectDataSelect();
+//     await page.waitForTimeout(2000);
+// })
 
-Then(`I clicked the Demand Grid Value dropdown`, timeout, async function() {
-    let page = this.page;
-    const listData = new projectPage(page);
-    listData.projectDemandValue();
-    await page.waitForTimeout(3000);
-})
+// Then(`I clicked the Demand Grid Value dropdown`, timeout, async function() {
+//     let page = this.page;
+//     const listData = new projectPage(page);
+//     listData.projectDemandValue();
+//     await page.waitForTimeout(3000);
+// })
 
 
 

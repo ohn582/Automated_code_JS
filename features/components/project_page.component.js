@@ -2,7 +2,7 @@ const locator = {
     project_Page: {
         //Project Data
         MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018-innerCt"] [data-componentid="r1NavToggle"]`,
-        projLink: `//*[text()="Project"]`,
+        projLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-2"]`,
         projData: `//*[text()="Data"]`,
         
         projDataAdd: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridAdd"]`,
@@ -33,7 +33,7 @@ class projectTypeData {
     projLinkSelect = async() => {
         let page=this.page;
         let { MenuSliderBtn, projLink, projData }=locator.project_Page;
-        await page.click(MenuSliderBtn);
+        // await page.click(MenuSliderBtn);
         // await page.waitForTimeout(1000);
         await page.click(projLink);
         // await page.waitForTimeout(1000);
@@ -51,23 +51,11 @@ class projectTypeData {
 
 
     // Project Data Delete
-    projBoxSelectA = async() => {
+    listProjectSelect = async() => {
         let page=this.page;
-        let { pdBoxA }=locator.project_Page;
+        let { pdBoxA, pdBoxB, pdBoxC }=locator.project_Page;
         await page.click(pdBoxA);
-        await page.waitForTimeout(3000);
-    }
-
-    projBoxSelectB = async() => {
-        let page=this.page;
-        let { pdBoxB }=locator.project_Page;
         await page.click(pdBoxB);
-        await page.waitForTimeout(3000);
-    }
-
-    projBoxSelectC = async() => {
-        let page=this.page;
-        let { pdBoxC }=locator.project_Page;
         await page.click(pdBoxC);
         await page.waitForTimeout(3000);
     }
@@ -75,25 +63,28 @@ class projectTypeData {
 
 
 
-    //Project Demand
-    projDemandLink = async() => {
-        let page=this.page;
-        let { projLink, projDemand }=locator.project_Page;
-        await page.click(projLink);
-        await page.waitForTimeout(2000);
-        await page.click(projDemand);
-        await page.waitForTimeout(3000);
-    }
 
-    projDemandView = async() => {
-        let page=this.page;
-        let { projLink, projDemViewDrop, projDemViewSelect }=locator.project_Page;
-        await page.click(projLink);
-        await page.click(projDemViewDrop);
-        await page.waitForTimeout(1000);
-        await page.click(projDemViewSelect );
-        await page.waitForTimeout(3000);
-    }
+
+
+    // //Project Demand
+    // projDemandLink = async() => {
+    //     let page=this.page;
+    //     let { projLink, projDemand }=locator.project_Page;
+    //     await page.click(projLink);
+    //     await page.waitForTimeout(2000);
+    //     await page.click(projDemand);
+    //     await page.waitForTimeout(3000);
+    // }
+
+    // projDemandView = async() => {
+    //     let page=this.page;
+    //     let { projLink, projDemViewDrop, projDemViewSelect }=locator.project_Page;
+    //     await page.click(projLink);
+    //     await page.click(projDemViewDrop);
+    //     await page.waitForTimeout(1000);
+    //     await page.click(projDemViewSelect );
+    //     await page.waitForTimeout(3000);
+    // }
 
 }
 
