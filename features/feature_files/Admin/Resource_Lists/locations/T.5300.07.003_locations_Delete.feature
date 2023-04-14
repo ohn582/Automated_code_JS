@@ -4,7 +4,7 @@ Feature: Pdware Admin User Module
         Given I visit the pdware r1test landing page 'https://r1test.pdware.com/'
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.5300.07.003
+    @delete @467 @T.5300.07.003
     Scenario: @T.5300.07.003-testing user data
     #Creating the Data
         When I select Administration and select Location Resource Lists

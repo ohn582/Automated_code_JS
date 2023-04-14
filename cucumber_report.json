@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "pdware-admin-user-module;@t.7711.23.801-testing-user-data",
+        "id": "pdware-admin-user-module;@t.4212.44.773-testing-user-data",
         "keyword": "Scenario",
         "line": 9,
-        "name": "@T.7711.23.801-testing user data",
+        "name": "@T.4212.44.773-testing user data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1010089800
+              "duration": 599523699
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2114007298.9999998
+              "duration": 1627113899
             }
           },
           {
@@ -40,116 +40,107 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3815460900
+              "duration": 5872563699
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 7,
-            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
+            "name": "I click over the \"Proj\" nav and click on \"Demand\"",
             "match": {
               "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
             },
             "result": {
               "status": "passed",
-              "duration": 2008161200
+              "duration": 3009188300
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 10,
-            "name": "I select Administration and Features List",
+            "name": "I select Project and Project Data",
             "match": {
-              "location": "features\\step_definitions\\administration\\Settings\\Features\\when.js:10"
+              "location": "features\\step_definitions\\project\\when.js:9"
             },
             "result": {
-              "status": "failed",
-              "duration": 1654600,
-              "error_message": "page.click: Target page, context or browser has been closed\n    at FeaturesTypeData.settingListLink (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\components\\administration\\Settings\\Features\\features_page.component.js:20:20)\n    at CustomWorld.<anonymous> (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\step_definitions\\administration\\Settings\\Features\\when.js:13:14)"
+              "status": "passed",
+              "duration": 2003426200
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
-            "name": "I select Features",
+            "line": 12,
+            "name": "I select multiple Project datas",
             "match": {
-              "location": "features\\step_definitions\\administration\\Settings\\Features\\when.js:17"
+              "location": "features\\step_definitions\\project\\when.js:26"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2006794300
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 13,
-            "name": "I selected a diffrent color",
+            "name": "I select Project Delete Button",
             "match": {
-              "location": "features\\step_definitions\\administration\\Settings\\Features\\then.js:9"
+              "location": "features\\step_definitions\\project\\then.js:166"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2008931600
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 14,
-            "name": "I change the Session Timeout",
+            "line": 15,
+            "name": "Select Save Button",
             "match": {
-              "location": "features\\step_definitions\\administration\\Settings\\Features\\then.js:16"
+              "location": "features\\step_definitions\\project\\then.js:104"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2003760399
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 16,
-            "name": "I clicked Save button in Features",
+            "name": "I select refreshed button",
+            "match": {
+              "location": "features\\step_definitions\\project\\then.js:208"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "I clicked Reload button in Features",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 3010722000
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 917800,
-              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\support\\world.js:52:27)"
+              "status": "passed",
+              "duration": 687999
             }
           }
         ],
         "tags": [
           {
-            "name": "@create",
+            "name": "@delete",
             "line": 8
           },
           {
-            "name": "@668",
+            "name": "@112",
             "line": 8
           },
           {
-            "name": "@T.7711.23.801",
+            "name": "@T.4212.44.773",
             "line": 8
           }
         ],
@@ -161,6 +152,6 @@
     "keyword": "Feature",
     "name": "Pdware Admin User Module",
     "tags": [],
-    "uri": "features\\feature_files\\Admin\\settings\\Features\\T.7711.23.801_Features_Create.feature"
+    "uri": "features\\feature_files\\Project\\Project_data\\T.4212.44.773_PD_Delete.feature"
   }
 ]

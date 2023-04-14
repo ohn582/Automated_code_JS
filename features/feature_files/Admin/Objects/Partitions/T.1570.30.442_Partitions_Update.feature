@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Assing" nav and click on "Labor"
-    @update @668 @T.1570.30.442
+    @update @111 @T.1570.30.442
     Scenario: @T.1570.30.442-testing user data
         When I select Administration and select Objects
         When I select Object Partitions

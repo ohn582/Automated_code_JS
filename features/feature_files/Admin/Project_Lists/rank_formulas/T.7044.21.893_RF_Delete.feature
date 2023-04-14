@@ -4,7 +4,7 @@ Feature: Pdware Admin User Module
         Given I visit the pdware r1test landing page 'https://r1test.pdware.com/'
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.7044.21.893
+    @delete @067 @T.7044.21.893
     Scenario: @T.7044.21.893-testing user data
     #Creating the Data
         When I select Administration and select Rank Form Lists

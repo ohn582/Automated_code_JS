@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Reso" nav and click on "Skill Matrix"
-    @update @668 @T.3552.12.881
+    @update @646 @T.3552.12.881
     Scenario: @T.T.4412.11.121-testing user data
         When I select Resource and Capacity
         Then I select capacity grid

@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.8330.33.501
+    @create @774 @T.8330.33.501
     Scenario: @T.8330.33.501-testing user data
         When I select Administration and select Skills Resource Lists
         When I select Skills

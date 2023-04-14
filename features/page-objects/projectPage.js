@@ -98,9 +98,9 @@ const locators = {
 
         projViewDropdown: `[id="r1DemandGrid-bodyWrap"] [id="demandGridValueMode"]`,
 
-        reTypeProjA: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="templatecolumn-1059"]`,
-        reTypeProjB: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="templatecolumn-1059"]`,
-        reTypeProjC: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="templatecolumn-1059"]`,
+        reTypeProjA: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="templatecolumn-1062"]`,
+        reTypeProjB: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="templatecolumn-1062"]`,
+        reTypeProjC: `[id="ProjectListGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="templatecolumn-1062"]`,
         
         //Project Delete
         projDeleteBtn: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridRemove"]`,

@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Reso" nav and click on "Skill Matrix"
-    @create @668 @T.4412.11.122
+    @update @700 @T.4412.11.122
     Scenario: @T.T.4412.11.122-testing user data
         When I select Rescource and Skill Matrix
         Then I re-typed multiple grid A

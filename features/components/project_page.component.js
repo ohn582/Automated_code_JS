@@ -7,9 +7,9 @@ const locator = {
         
         projDataAdd: `[id="ProjectListToolBar-innerCt"] [data-componentid="projectListGridAdd"]`,
 
-        pdBoxA:`[id="ProjectListGrid-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1053"]`,
-        pdBoxB:`[id="ProjectListGrid-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1053"]`,
-        pdBoxC:`[id="ProjectListGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1053"]`,
+        pdBoxA:`[id="ProjectListGrid-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1055"]`,
+        pdBoxB:`[id="ProjectListGrid-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1055"]`,
+        pdBoxC:`[id="ProjectListGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1055"]`,
 
 
         //Project Demand

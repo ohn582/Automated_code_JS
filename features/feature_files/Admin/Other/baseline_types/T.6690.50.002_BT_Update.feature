@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.6690.50.002
+    @update @443 @T.6690.50.002
     Scenario: @T.6690.50.002-testing user data
         When I select Administration and Baseline Types List
         When I select Baseline Types

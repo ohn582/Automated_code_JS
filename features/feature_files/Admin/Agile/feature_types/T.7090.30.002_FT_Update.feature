@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.7090.30.002
+    @update @567 @T.7090.30.002
     Scenario: @T.7090.30.002-testing user data
         When I select Administration and select Feature Types Agile Lists
         When I select Feature Types

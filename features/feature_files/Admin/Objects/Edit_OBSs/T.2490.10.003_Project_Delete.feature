@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Edit OBSs"
-    @create @668 @T.2490.10.003
+    @delete @456 @T.2490.10.003
     Scenario: @T.2490.10.003-testing user data
         When I select Administration and select Edit OBSs
         When I select a name in the data

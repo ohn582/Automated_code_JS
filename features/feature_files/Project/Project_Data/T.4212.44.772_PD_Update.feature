@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Proj" nav and click on "Demand"
-    @update @668 @T.4212.44.772
+    @update @112 @T.4212.44.772
     Scenario: @T.4212.44.772-testing user data
         When I select Project and Project Data
 

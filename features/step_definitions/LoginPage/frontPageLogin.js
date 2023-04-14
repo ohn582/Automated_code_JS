@@ -35,9 +35,9 @@ When(`I login with the credentials : user {string} and {string}`, timeout, async
     await page.waitForTimeout(1000);
 })
 
-When(`I click over the {string} nav and click on {string}`, timeout, async function (nav, link) {
+When(`I click over the {string} nav and click on {string}`, timeout, async function (icon, link) {
     let page = this.page
     const homePage = new HomePage(page);
-    await homePage.click_navigation_link(nav, link)
-    await page.waitForTimeout(2000)
+    await homePage.click_navigation_link(link)
+    await page.waitForTimeout(3000)
 })

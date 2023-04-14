@@ -19,3 +19,10 @@ Then(`I change the Session Timeout`, timeout, async function() {
     await listData.sessionTimeoutEdit();
     await page.waitForTimeout(2000);
 })
+
+Then(`I clicked Save button in Features`, timeout, async function() {
+    let page = this.page;
+    const listData = new FeaturesPage(page);
+    await listData.featureSave();
+    await page.waitForTimeout(2000);
+})

@@ -2,69 +2,46 @@ const { expect } = require('chai').use(require('chai-as-promised'));
 const { action } = require('../utilities/action');
 
 const locators = {
-    proj: `'Project'`,
-    reso: `'Resource'`,
-    ana: `'Anaysis'`,
-    admin: `'Administration'`,
-    list: `'List'`,
+    proj: '"Project"',
+    reso: '"Resource"',
+    ana: '"Anaysis"',
+    admin: '"Administration"',
+    usersNavIcon: '.fa-users',
+    navCogIcon: '.fa-cogs',
     navbar: {
         project: {
             links: {
-                project_Data: `"Project Data"`,
-                demand: '"Demand"',
-                project_assignments: "'Assignments'",
+                project_Data: "'Data'",
+                demand: "'Demand'",
             }
         },
         rescource: {
             links: {
-                resource_Data: `"Rescource Data"`,
-                skill_Matrix: '"Skill Matrix"',
+                resource_Data: "'Rescource Data'",
+                skill_Matrix: "'Skill Matrix'",
                 capacity: "'Capacity'",
-                Utilization: '"Utilization"',
-                rescource_assignments: "'Assignments'",
+                Utilization: "'Utilization'",
             }
         },
         analysis: {
             links: {
-                project_Pivot: `"Project Pivot"`,
-                skill_Matrix: '"Skill Matrix"',
+                waterline: "'Waterline'",
+                kpi: "'KPIs'",
             }
         },
         administration: {
             links: {
-                settings: `"Settings"`,
-                edit_OBSs: '"Edit OBSs"',
-                columns: "'Columns'",
-                views: "'Views'",
-                lists: "'Lists'",
-                periods: "'Periods'",
-                baselines: "'Baselines'",
-                pulse: "'Pulse'",
-                about: "'About'",
+                settings: "'Settings'",
+                users: "'Users & Rights'",
+                objects: "'Objects'",
+                project_Lists: "'Project Lists'",
+                resource_Lists: "'Resource Lists'",
+                financial_Lists: "'Financial Lists'",
+                agile: "'Agile'",
+                views_Filters: "'Views & Filters'",
+                Other: "'Other'",
             }
         },
-        list: {
-            links: {
-                partitions: "'Partitions'",
-                domains: "'Domains'",
-                sponsors: "'Sponsors'",
-                categories: "'Categories'",
-                project_States: "'Project States'",
-                project_Codes: "'Project Codes'",
-                skills: "'Skills'",
-                proficiencies: "'Proficiencies'",
-                countries: "'Countries'",
-                locations: "'Locations'",
-                effort_States: "'Effort States'",
-                cost_Categories: "'Cost Categories'",
-                cost_Items: "'Cost Items'",
-                cost_Item_Categories: "'Cost Item Categories'",
-                baseline_Types: "'Baseline Types'",
-                feature_States: "'Feature States'",
-                overheads: "'Overheads'",
-                user_Defined_Lists: "'User Defined Lists'",
-            }
-        }
     }
 }
 
@@ -73,37 +50,31 @@ class HomePage {
         this.page = page;
     }
 
-    async click_navigation_link(icon, link) {
+    async click_navigation_link(link) {
         return new Promise(async (resolve, reject) => {
             try {
-                switch (String(icon)) {
-                    case `Project`:
-                        let { project_Data, demand, project_assignments } = locators.navbar.project.links
+                switch (String(link)) {
+                    case `project`:
+                        let { project_Data, demand } = locators.navbar.project.links
                         await action.hover(this.page, locators.navbar.project.icon);
                         expect(await this.page.$(project_Data)).to.be.ok;
                         expect(await this.page.$(demand)).to.be.ok;
-                        expect(await this.page.$(project_assignments)).to.be.ok;
                         switch (String(link)) {
-                            case `Project Data`:
+                            case `Data`:
                                 await action.click(this.page, project_Data);
                                 break;
                             case `Demand`:
                                 await action.click(this.page, demand);
                                 break;
-                            case `Assignments`:
-                                await action.click(this.page, project_assignments);
-                                await this.page.waitForTimeout(5000)
-                                break;
                         }
                     break;
                     case `Resource`:
-                        let { resource_Data, skill_Matrix, capacity, utilization, rescource_assignments } = locators.navbar.rescource.links
+                        let { resource_Data, skill_Matrix, capacity, utilization } = locators.navbar.rescource.links
                         await action.hover(this.page, locators.navbar.rescource.icon);
                         expect(await this.page.$(resource_Data)).to.be.ok;
                         expect(await this.page.$(skill_Matrix)).to.be.ok;
                         expect(await this.page.$(capacity)).to.be.ok;
                         expect(await this.page.$(utilization)).to.be.ok;
-                        expect(await this.page.$(rescource_assignments)).to.be.ok;
                         switch (String(link)) {
                             case `Resource Data`:
                                 await action.click(this.page, resource_Data);
@@ -119,144 +90,70 @@ class HomePage {
                                 await action.click(this.page, utilization);
                                 await this.page.waitForTimeout(5000)
                                 break;
-                            case `Assignments`:
-                                await action.click(this.page, rescource_assignments);
-                                await this.page.waitForTimeout(5000)
-                                break;
                         }
                     break;
                     case `Analysis`:
-                        let { project_Pivot, resource_Pivot } = locators.navbar.analysis.links
+                        let { waterline, kpi } = locators.navbar.analysis.links
                         await action.hover(this.page, locators.navbar.analysis.icon);
-                        expect(await this.page.$(project_Pivot)).to.be.ok;
-                        expect(await this.page.$(resource_Pivot)).to.be.ok;
+                        expect(await this.page.$(waterline)).to.be.ok;
+                        expect(await this.page.$(kpi)).to.be.ok;
                         switch (String(link)) {
-                            case `Project Data`:
-                                await action.click(this.page, project_Pivot);
+                            case `Demand`:
+                                await action.click(this.page, waterline);
                                 break;
-                            case `Skill Matrix`:
-                                await action.click(this.page, resource_Pivot);
+                            case `Project Data`:
+                                await action.click(this.page, kpi);
                                 break;
                         }
                     break;
+                    
 
                     case `Administration`:
-                        let { settings, edit_OBSs, columns, views, lists, periods, baselines, pulse, about } = locators.navbar.administration.links
+                        let { settings, users, objects, project_Lists, resource_Lists, financial_Lists, agile, views_Filters, Other } = locators.navbar.administration.links
                         await action.hover(this.page, locators.navbar.administration.icon);
                         expect(await this.page.$(settings)).to.be.ok;
-                        expect(await this.page.$(edit_OBSs)).to.be.ok;
-                        expect(await this.page.$(columns)).to.be.ok;
-                        expect(await this.page.$(views)).to.be.ok;
-                        expect(await this.page.$(lists)).to.be.ok;
-                        expect(await this.page.$(periods)).to.be.ok;
-                        expect(await this.page.$(baselines)).to.be.ok;
-                        expect(await this.page.$(pulse)).to.be.ok;
-                        expect(await this.page.$(about)).to.be.ok;
+                        expect(await this.page.$(users)).to.be.ok;
+                        expect(await this.page.$(objects)).to.be.ok;
+                        expect(await this.page.$(project_Lists)).to.be.ok;
+                        expect(await this.page.$(resource_Lists)).to.be.ok;
+                        expect(await this.page.$(financial_Lists)).to.be.ok;
+                        expect(await this.page.$(agile)).to.be.ok;
+                        expect(await this.page.$(views_Filters)).to.be.ok;
+                        expect(await this.page.$(Other)).to.be.ok;
                         switch (String(link)) {
                             case `Settings`:
                                 await action.click(this.page, settings);
                                 break;
                             case `Edit OBSs`:
-                                await action.click(this.page, edit_OBSs);
+                                await action.click(this.page, users);
                                 break;
                             case `Columns`:
-                                await action.click(this.page, columns);
+                                await action.click(this.page, objects);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `Views`:
-                                await action.click(this.page, views);
+                                await action.click(this.page, project_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `Lists`:
-                                await action.click(this.page, lists);
+                                await action.click(this.page, resource_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `Periods`:
-                                await action.click(this.page, periods);
+                                await action.click(this.page, financial_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `Baselines`:
-                                await action.click(this.page, baselines);
+                                await action.click(this.page, agile);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `Pulse`:
-                                await action.click(this.page, pulse);
+                                await action.click(this.page, views_Filters);
                                 await this.page.waitForTimeout(5000)
                                 break;
                             case `About`:
-                                await action.click(this.page, about);
+                                await action.click(this.page, Other);
                                 await this.page.waitForTimeout(5000)
-                                break;
-                        }
-                    break;
-                    case `List`:
-                        let { partitions, domains } = locators.navbar.list.links
-                        await action.hover(this.page, locators.navbar.list.icon);
-                        expect(await this.page.$(partitions)).to.be.ok;
-                        expect(await this.page.$(domains)).to.be.ok;
-                        switch (String(link)) {
-                            case `Partitions`:
-                                await action.click(this.page, partitions);
-                                break;
-                            case `Domains`:
-                                await action.click(this.page, domains);
-                                break;
-                            case `Sponsors`:
-                                await action.click(this.page, sponsors);
-                                break;
-                            case `Categories`:
-                                await action.click(this.page, categories);
-                                break;
-                            case `Project States`:
-                                await action.click(this.page, project_States);
-                                break;
-                            case `Project Codes`:
-                                await action.click(this.page, project_Codes);
-                                break;
-                            case `Skills`:
-                                await action.click(this.page, skills);
-                                break;
-                            case `Proficiencies`:
-                                await action.click(this.page, proficiencies);
-                                break;
-                            case `Countries`:
-                                await action.click(this.page, countries);
-                                break;
-                            case `Locations`:
-                                await action.click(this.page, locations);
-                                break;
-                            case `Effort States`:
-                                await action.click(this.page, effort_States);
-                                break;
-                            case `Cost Categories`:
-                                await action.click(this.page, cost_Categories);
-                                break;
-                            case `Locations`:
-                                await action.click(this.page, locations);
-                                break;
-                            case `Effort States`:
-                                await action.click(this.page, effort_States);
-                                break;
-                            case `Cost Categories`:
-                                await action.click(this.page, cost_Categories);
-                                break;
-                            case `Cost Items`:
-                                await action.click(this.page, cost_Items);
-                                break;
-                            case `Cost Item Categories`:
-                                await action.click(this.page, cost_Item_Categories);
-                                break;
-                            case `Baseline Types`:
-                                await action.click(this.page, baseline_Types);
-                                break;
-                            case `Feature States`:
-                                await action.click(this.page, feature_States);
-                                break;
-                            case `Overheads`:
-                                await action.click(this.page, overheads);
-                                break;
-                            case `User Defined Lists`:
-                                await action.click(this.page, user_Defined_Lists);
                                 break;
                         }
                     break;
@@ -285,8 +182,12 @@ class HomePage {
         await this.page.click(locators.ana)
     }
 
-    async clickList() {
-        await this.page.click(locators.list)
+    async hoverOverAssignments() {
+        await this.page.hover(locators.usersNavIcon)
+    }
+
+    async getNavCogIcon() {
+        return locators.navCogIcon
     }
 
     async verifyAssignments() {

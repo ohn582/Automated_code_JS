@@ -5,7 +5,7 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Lists"
-    @create @668 @T.4559.93.561
+    @create @227 @T.4559.93.561
     Scenario: @T.4559.93.561-testing user data
         When I select Administration and select Cost Item Categories Resource Lists
         When I select Cost Item Categories
