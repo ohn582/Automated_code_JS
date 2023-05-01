@@ -13,4 +13,4 @@ Feature: Pdware Admin User Module
         Then I Updated my Rescource Assignment Data for labor B
         Then I Updated my Rescource Assignment Data for labor C
 
-        Then I select Save button
+        Then I select Save button under labor

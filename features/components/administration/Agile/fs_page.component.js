@@ -1,15 +1,9 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[data-componentid="r1MainViewPort"] [id="R1Navigation"] [data-componentid="ext-customtreelistitem-7"]`,
         agileListLink: `//*[text()="Agile"]`,
         fsLink: `//*[text()="Feature States"]`,
-    },
-
-    fsNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        fsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
     },
 
     fsCheckBox: {
@@ -29,8 +23,7 @@ class FeatureStatesTypeData {
     // Project OBS
     agileListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
+        let { adminLink } = locator.admin_Page;
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
@@ -55,14 +48,6 @@ class FeatureStatesTypeData {
         await page.click(fsBoxB);
         await page.click(fsBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listFSAdd = async () => {
-        let page = this.page;
-        let { fsAddBtn } = locator.fsNav;
-
-        await page.click(fsAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

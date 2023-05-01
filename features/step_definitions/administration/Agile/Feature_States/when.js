@@ -21,13 +21,6 @@ When(`I select Feature States`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Feature States`, timeout, async function () {
-    let page = this.page;
-    const listData = new FeatureStatesTypeData(page);
-    listData.listFSAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Feature States in datas`, timeout, async function () {
     let page = this.page;
     const listData = new FeatureStatesTypeData(page);

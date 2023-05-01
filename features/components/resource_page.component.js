@@ -2,7 +2,7 @@ const locator = {
 
     resource_Page: {
         MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
-        resourceLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-3"]`,
+        resourceLink: `[id="R1MainNavigationTree-bodyWrap"] [data-componentid="R1Navigation"] [data-componentid="ext-customtreelistitem-3"]`,
 
         //Resource Data
         resOBSDropdownName: `//*[text()="Resource Data"]`,
@@ -13,8 +13,6 @@ const locator = {
 
     matrix_Page: {
         MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
-
-        resourceLink: `//*[text()="Resource"]`,
         resourceSkilMatrix: `//*[text()="Skill Matrix"]`,
     },
 
@@ -29,9 +27,7 @@ class resourceTypeData {
     //Rescource data
     resourceDataSelect = async() => {
         let page=this.page;
-        let { resourceLink, resOBSDropdownName, MenuSliderBtn }=locator.resource_Page;
-        // await page.click(MenuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { resourceLink, resOBSDropdownName }=locator.resource_Page;
         await page.click(resourceLink);
         // await page.waitForTimeout(1000);
         await page.click(resOBSDropdownName);
@@ -42,9 +38,7 @@ class resourceTypeData {
     //Rescouce Capacity
     capacityDataSelect = async() => {
         let page=this.page;
-        let { MenuSliderBtn, resourceLink, capacityLink }=locator.resource_Page;
-        // await page.click(MenuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { resourceLink, capacityLink }=locator.resource_Page;
         await page.click(resourceLink);
         // await page.waitForTimeout(1000);
         await page.click(capacityLink);
@@ -62,9 +56,8 @@ class resourceTypeData {
     //Skill Matrix
     matrixDataSelect = async() => {
         let page=this.page;
-        let { resourceLink, resourceSkilMatrix, MenuSliderBtn }=locator.matrix_Page;
-        await page.click(MenuSliderBtn);
-        await page.waitForTimeout(1000);
+        let { resourceLink }=locator.resource_Page;
+        let { resourceSkilMatrix }=locator.matrix_Page;
         await page.click(resourceLink);
         // await page.waitForTimeout(1000);
         await page.click(resourceSkilMatrix);

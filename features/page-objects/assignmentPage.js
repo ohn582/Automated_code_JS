@@ -13,7 +13,9 @@ const locators = {
 
         //Creating Labor Data 1
         tes1: `//*[text()="true"]`,
-        laborCheckBox: `[id="laborAssignmentGrid-body"] [data-recordindex="278"] [tabindex="-1"]`,
+        laborCheckBox: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="5"] [tabindex="-1"]`,
+
+        laborCAD: `//*[text()="CAD"]`,
 
         tes1LaborDataBox: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1082"]`,
         tes1LaborDataBoxB: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1093"]`,
@@ -32,7 +34,9 @@ const locators = {
 
         //Creating Labor Data 2
         tes2: `//*[text()="true"]`,
-        laborCheckBoxB: `[id="laborAssignmentGrid-body"] [data-recordindex="270"] [tabindex="-1"]`,
+        laborCheckBoxB: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="2] [tabindex="-1"]`,
+
+        laborDBA: `//*[text()="DBA"]`,
 
         tes2LaborDataBox: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="1"] [data-columnid="numbercolumn-1082"]`,
         tes2LaborDataBoxB: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="1"] [data-columnid="numbercolumn-1093"]`,
@@ -53,7 +57,9 @@ const locators = {
         
         //Creating Labor Data 3
         tes3: `//*[text()="true"]`,
-        laborCheckBoxC: `[id="laborAssignmentGrid-body"] data-recordindex="339"] [tabindex="-1"]`,
+        laborCheckBoxC: `[id="AddResourceAssignmentDialogResourceGrid-body"] data-recordindex="8"] [tabindex="-1"]`,
+
+        laborJava: `//*[text()="Java"]`,
 
         tes3LaborDataBox: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="1"] [data-columnid="numbercolumn-1082"]`,
         tes3LaborDataBoxB: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="1"] [data-columnid="numbercolumn-1093"]`,
@@ -78,7 +84,7 @@ const locators = {
         laborAddCloseBtn: `//*[text()="Add & Close"]`,
         
         //Save Btn,
-        laborSaveBtn: `[id="R1Main"] [role="toolbar"] [aria-label="Save"]`,
+        laborSaveBtn: `[id="r1AssignmentMain-innerCt"] [role="toolbar"] [aria-label="Save"]`,
         laborRefresh: `[id="r1CapacityGrid-bodyWrap"] [id="capacityGridReload"]`,
         saveYes: `//*[text()="Yes"]`,
         saveOk: `//*[text()="OK"]`,
@@ -97,25 +103,23 @@ class laborPage {
     //Rescource Create data
     laborCreateData = async() => {
         let page=this.page;
-        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker,laborCheckBox, tes1, laborAddCloseBtn }=locators.resourcePage;
+        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker,laborCheckBox, tes1, laborAddCloseBtn, laborCAD }=locators.resourcePage;
 
         await page.click(LaborAddBtn);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(LaborDropdown);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(laborPicker);
-        await page.keyboard.type('AABBCC');
-        // await page.waitForTimeout(1000);
+        await page.keyboard.type('A1002 Project');
+        await page.waitForTimeout(1000);
         await page.click(laborSkillPicker);
         await page.keyboard.type('CAD');
-        // await page.waitForTimeout(1000);
-        await page.click(laborActivePicker);
-        await page.keyboard.type('true');
-        await page.click(tes1);
-        // await page.waitForTimeout(1000);
+        await page.click(laborCAD);
+        await page.waitForTimeout(1000);
+
 
         await page.click(laborCheckBox);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
 
         await page.click(laborAddCloseBtn);
 
@@ -124,23 +128,22 @@ class laborPage {
 
     laborCreateDataB = async() => {
         let page=this.page;
-        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker, laborCheckBoxB, tes2, laborAddCloseBtn }=locators.resourcePage;
+        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker, laborCheckBoxB, tes2, laborAddCloseBtn, laborDBA }=locators.resourcePage;
 
         await page.click(LaborAddBtn);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(LaborDropdown);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(laborPicker);
-        await page.keyboard.type('Blaisdell');
-        // await page.waitForTimeout(1000);
+        await page.keyboard.type('B1001 Project');
+        await page.waitForTimeout(1000);
         await page.click(laborSkillPicker);
         await page.keyboard.type('DBA');
-        // await page.waitForTimeout(1000);
-        await page.click(laborActivePicker);
-        await page.keyboard.type('true');
-        await page.click(tes2);
+        await page.click(laborDBA);
+        await page.waitForTimeout(1000);
 
-        // await page.waitForTimeout(1000);
+
+
         await page.click(laborCheckBoxB);
 
         await page.click(laborAddCloseBtn);
@@ -150,23 +153,21 @@ class laborPage {
 
     laborCreateDataC = async() => {
         let page=this.page;
-        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker, laborCheckBoxB, tes3, laborAddCloseBtn }=locators.resourcePage;
+        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker, laborCheckBoxB, tes3, laborAddCloseBtn, laborJava }=locators.resourcePage;
 
         await page.click(LaborAddBtn);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(LaborDropdown);
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
         await page.click(laborPicker);
-        await page.keyboard.type('Product B');
-        // await page.waitForTimeout(1000);
+        await page.keyboard.type('Legacy East');
+        await page.waitForTimeout(1000);
         await page.click(laborSkillPicker);
         await page.keyboard.type('Java');
-        // await page.waitForTimeout(1000);
-        await page.click(laborActivePicker);
-        await page.keyboard.type('true');
-        await page.click(tes3);
+        await page.click(laborJava);
+        await page.waitForTimeout(1000);
+;
 
-        // await page.waitForTimeout(1000);
         await page.click(laborCheckBoxB);
 
         await page.click(laborAddCloseBtn);

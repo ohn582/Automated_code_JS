@@ -2,19 +2,26 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     fsNav: {
-        fsAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsFeatureStateGridAdd"]`,
+        fsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     fsData: {
         //Creating a data
-        fsName: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
+        // fsName: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
+        
+    
+        // fsHeaderName: `[id="adminListsFeatureStateGrid-bodyWrap"] [aria-label="Feature State Name"]`,
+        fsHeaderName: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+
+
         // domainsName: `//*[text()="New Domain"]`,
 
-        fsNameA: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        fsNameB: `[id="AdminMainContainer"] [data-recordindex="1"] [data-columnid="gridcolumn-1036"]`,
-        fsNameC: `[id="AdminMainContainer"] [data-recordindex="2"] [data-columnid="gridcolumn-1036"]`,
+
+        fsNameA: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        fsNameB: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="1"] [role="presentation"]`,
+        fsNameC: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="2"] [role="presentation"]`,
     },
 
     deleteNav: {
@@ -41,13 +48,15 @@ class FeatureStatesPage {
     }
 
 
-    //Sponsor: Create
+    //featureState: Create
     listFSWriteA = async () => {
         let page = this.page;
-        let { fsName } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsAddBtn } = locators.fsNav;
+        let { fsHeaderName } = locators.fsData;
 
-        let textInput = await page.$(fsName);
+        await page.click(fsAddBtn);
+
+        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
@@ -56,10 +65,12 @@ class FeatureStatesPage {
 
     listFSWriteB = async () => {
         let page = this.page;
-        let { fsName } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsAddBtn } = locators.fsNav;
+        let { fsHeaderName } = locators.fsData;
 
-        let textInput = await page.$(fsName);
+        await page.click(fsAddBtn);
+
+        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
@@ -68,10 +79,12 @@ class FeatureStatesPage {
 
     listFSWriteC = async () => {
         let page = this.page;
-        let { fsName } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsAddBtn } = locators.fsNav;
+        let { fsHeaderName } = locators.fsData;
 
-        let textInput = await page.$(fsName);
+        await page.click(fsAddBtn);
+
+        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
@@ -81,13 +94,16 @@ class FeatureStatesPage {
 
 
 
-    //Sponsor: Update
+    //featureState: Update
     featureStateReTypeData = async () => {
         let page = this.page;
+        let { fsHeaderName } = locators.fsData;
         let { fsNameA } = locators.fsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(fsNameA);
+
+        let updateFeatureStateNameColumnId = await page.$eval(fsHeaderName, el=>el.getAttribute("id"))
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');

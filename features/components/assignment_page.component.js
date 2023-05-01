@@ -17,9 +17,7 @@ class laborTypeData {
     //Rescource labor data
     laborLink = async() => {
         let page=this.page;
-        let { assignmentSelect, MenuSliderBtn, laborLink }=locator.labor_Page;
-        // await page.click(MenuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { assignmentSelect, laborLink }=locator.labor_Page;
         await page.click(assignmentSelect);
         // await page.waitForTimeout(1000);
         await page.click(laborLink);

@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
 const { HomePage } = require('../../../../page-objects/HomePage');
-const { FeaturesTypeData } = require('../../../../components/administration/Settings/Features/features_page.component');
+const { AlgorithumTypeData } = require('../../../../components/administration/Settings/Algorithm/algorithm_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -10,13 +10,13 @@ setDefaultTimeout(60 * 1000);
 When(`I select Administration and Settings`, timeout, async function() {
     let page = this.page;
     const listData = new AlgorithumTypeData(page);
-    listData.settingListLink();
+    listData.adminLink();
     await page.waitForTimeout(2000);
 })
 
 When(`I select Algorithum`, timeout, async function() {
     let page = this.page;
     const listData = new AlgorithumTypeData(page);
-    listData.algorithumLinks();
+    listData.algorithumSettingLink();
     await page.waitForTimeout(2000);
 })

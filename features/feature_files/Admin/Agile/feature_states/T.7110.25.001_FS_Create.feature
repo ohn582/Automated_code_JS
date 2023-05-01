@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.7110.25.001-testing user data
         When I select Administration and select Feature States Resource Lists
         When I select Feature States
-        When I select Add Button in the Feature States
         Then I typed a new Feature States
-        When I select Add Button in the Feature States
         Then I typed a new Feature States tes2
-        When I select Add Button in the Feature States
         Then I typed a new Feature States tes3
         Then I clicked save button in Feature States
         # Then I clicked Reload button in Feature States

@@ -4,11 +4,11 @@ const locators = {
     adminSettings_Page: {
         //Features
         topColorBar: `[id="AdminMainContainer"] [id="adminFeatureSetting-bodyWrap"] [id="adminServerSettingMainColor"] [id="adminServerSettingMainColor-triggerWrap"]`,
-        topColorR: `[id="window-1105"] [id="numberfield-1112"] [class="x-form-trigger-wrap x-form-trigger-wrap-default"]`,
-        topColorG: `[id="window-1105"] [id="numberfield-1113"] [class="x-form-trigger-wrap x-form-trigger-wrap-default"]`,
-        topColorB: `[id="window-1105"] [id="numberfield-1114"] [class="x-form-trigger-wrap x-form-trigger-wrap-default"]`,
+        topColorR: `[id="colorselector-1066"] [data-ref="innerCt"] [id="numberfield-1047-triggerWrap"]`,
+        topColorG: `[id="colorselector-1066"] [data-ref="innerCt"] [id="numberfield-1048-triggerWrap"]`,
+        topColorB: `[id="colorselector-1066"] [data-ref="innerCt"] [id="numberfield-1049-triggerWrap"]`,
 
-        colorOkBtn: `[id="window-1105"] [id="container-1135"] [data-componentid="button-1138"]`,
+        colorOkBtn: `[id="window-1065-body"] [id="container-1135"] [data-componentid="button-1138"]`,
 
         timeOutBar: `[id="AdminMainContainer"] [id="adminFeatureSetting-bodyWrap"] [id="adminServerSettingSessionTimeout"] [id="adminServerSettingSessionTimeout-triggerWrap"]`,
         featSaveBtn: `[id="R1TFeatures"] [id="container-1102"] [aria-label="Save"]`,

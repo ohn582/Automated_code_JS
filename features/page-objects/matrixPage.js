@@ -7,20 +7,20 @@ const locators = {
         selectL: `//*[text()="L"]`,
         selectM: `//*[text()="M"]`,
 
-        boxA: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1031"]`,
+        boxA: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1065"]`,
         dropdownA: `[id="celleditor-1059"]`,
 
-        boxB: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="3"] [data-columnid="gridcolumn-1030"]`,
-        dropdownB: `[id="celleditor-1061"]`,
+        boxB: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="3"] [data-columnid="gridcolumn-1048"]`,
+        dropdownB: `[id="celleditor-1089"]`,
 
-        boxC: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1034"]`,
-        dropdownC: `[id="celleditor-1068"]`,
+        boxC: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1053"]`,
+        dropdownC: `[id="celleditor-1087"]`,
 
-        boxD: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1030"]`,
-        dropdownD: `[id="celleditor-1072"]`,
+        boxD: `[id="r1SkillAssignmentGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1047"]`,
+        dropdownD: `[id="celleditor-1085"]`,
 
         saveBtn: `[id="r1SkillAssignmentGrid-bodyWrap"] [aria-label="Save"]`,
-        saveOk: `[id="messagebox-1001"] [id="messagebox-1001-toolbar"] [tabindex="0"]`
+        saveOk: `[id="messagebox-1009"] [role="button"]`
     },
 
 }
@@ -34,10 +34,9 @@ class matrixPage {
     resourceDropView = async() => {
         let page=this.page;
 
-        let { boxA, dropdownA, selectH }=locators.matrix_Page;
+        let { boxA, selectH }=locators.matrix_Page;
 
-        await page.click(boxA);
-        let textInput = await page.$(dropdownA); 
+        let textInput = await page.$(boxA); 
         await textInput.click({clickCount: 2})
         await page.keyboard.type('H');
         await page.click(selectH);
@@ -47,18 +46,10 @@ class matrixPage {
     resourceDropViewB = async() => {
         let page=this.page;
 
-        let { boxB, dropdownB, selectM }=locators.matrix_Page;
+        let { boxB, selectM }=locators.matrix_Page;
 
-        // await page.click(boxB);
-        // let textInputB = await page.$(dropdownB); 
-        // await textInputB.click({clickCount: 1})
-        // await page.keyboard.type('M');
-        // await page.click(selectM);
-        // await page.waitForTimeout(3000);
-
-        await page.dblclick(boxB);
-        // await page.click(dropdownB);
-        // await page.waitForTimeout(1000);
+        let textInput = await page.$(boxB); 
+        await textInput.click({clickCount: 2})
         await page.keyboard.type('M');
         await page.click(selectM);
         await page.waitForTimeout(3000);
@@ -68,14 +59,7 @@ class matrixPage {
     resourceDropViewC = async() => {
         let page=this.page;
 
-        let { boxC, dropdownC, selectM }=locators.matrix_Page;
-
-        // await page.click(boxC);
-        // let textInputC = await page.$(dropdownC); 
-        // await textInputC.click({clickCount: 1})
-        // await page.keyboard.type('M');
-        // await page.click(selectM);
-        // await page.waitForTimeout(3000);
+        let { boxC, selectM }=locators.matrix_Page;
 
         await page.dblclick(boxC);
         // await page.click(dropdownC);
@@ -89,15 +73,7 @@ class matrixPage {
     resourceDropViewD = async() => {
         let page=this.page;
 
-        let { boxD, dropdownD, selectL }=locators.matrix_Page;
-
-        // await page.click(boxD);
-        // let textInputC = await page.$(dropdownD); 
-        // await textInputC.click({clickCount: 1})
-        // await page.keyboard.type('L');
-        // await page.click(selectL);
-        // await page.waitForTimeout(3000);
-
+        let { boxD, selectL }=locators.matrix_Page;
 
         await page.dblclick(boxD);
         // await page.click(dropdownD);
@@ -109,7 +85,10 @@ class matrixPage {
     }
 
 
-    //Retype Matrix skill
+
+
+
+    //Update Matrix skill
     ReTypeResourceDataA = async() => {
         let page=this.page;
         let { boxA, selectL }=locators.matrix_Page;

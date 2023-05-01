@@ -67,7 +67,7 @@ Then(`I Updated my Rescource Assignment Data for labor C`, timeout, async functi
 
 
 //Assignment Labor save
-Then(`I select Save button`, timeout, async function() {
+Then(`I select Save button under labor`, timeout, async function() {
     let page = this.page;
     const listData = new laborPage(page);
     listData.laborSave();

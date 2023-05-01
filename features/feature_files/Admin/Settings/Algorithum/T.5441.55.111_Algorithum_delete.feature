@@ -7,7 +7,8 @@ Feature: Pdware Admin User Module
         When I click over the "Assing" nav and click on "Labor"
     @delete @808 @T.2356.21.191
     Scenario: @T.T.2356.21.191-testing user data
-        When I select Resource and Labor
+        When I select Administration and Settings
+        When I select Algorithum
         
         Then I delete my Algorithum Data for Assignment Allocation
         Then I delete my Algorithum Data for Assignment Allocation B
