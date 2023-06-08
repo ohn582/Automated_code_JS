@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select PM Lists
         When I select Phases Milestones
-        When I select Add Button in the Phases Milestones
         Then I typed a new Phases Milestones tes1
-        When I select Add Button in the Phases Milestones
         Then I typed a new Phases Milestones tes2
-        When I select Add Button in the Phases Milestones
         Then I typed a new Phases Milestones tes3
         Then I clicked save button in Phases Milestones
-        # Then I clicked reload button for Phases Milestones
+        Then I clicked reload button for Phases Milestones

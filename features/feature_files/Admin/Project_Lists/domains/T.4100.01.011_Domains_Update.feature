@@ -14,4 +14,4 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Domain tes3
 
         Then I clicked save button in Domains
-        # Then I clicked reload button for Domains
+        Then I clicked reload button for Domains

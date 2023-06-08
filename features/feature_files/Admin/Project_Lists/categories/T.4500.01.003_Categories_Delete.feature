@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
     @delete @989 @T.4500.01.003
     Scenario: @T.4500.01.003-testing user data
     #Creating the Data
-        When I select Administration and select List
+        When I select Administration and Categories Project List
         When I select Categories
         When I select multiple Categories datas
         Then I delete the Categories data

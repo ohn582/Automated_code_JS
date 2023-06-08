@@ -3,23 +3,26 @@ const { action } = require('../../../utilities/action')
 const locators = {   
     //Admin List
     partitions: {
+        //Create
         addBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsPartitionGridAdd"]`,
+        textBoxName: `[id="adminListsPartitionGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-        textBoxName: `[id="adminListsPartitionGrid-body"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"] [id="celleditor-1040"]`,
+        //Update
+        textBoxNameReTypeA: `//*[text()="data1"]`,
+        textBoxNameReTypeB: `//*[text()="data2"]`,
+        textBoxNameReTypeC: `//*[text()="data3"]`,
 
-        textBoxNameReTypeA: `[id="adminListsPartitionGrid-body"] [data-recordindex="2"] [data-columnid="gridcolumn-1028"]`,
-        textBoxNameReTypeB: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [data-columnid="gridcolumn-1028"]`,
-        textBoxNameReTypeC: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [data-columnid="gridcolumn-1028"]`,
-
-        deleteBtn: `[id="toolbar-1032-innerCt"] [data-qtip="Remove"]`,
+        //delete
+        deleteBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-qtip="Remove"]`,
         deleteYes: `//*[text()="Yes"]`,
         
-        partSaveBtn: `[id="adminListsPartitionGrid-bodyWrap"] [id="toolbar-1032"] [data-qtip="Save"]`,
-        saveBtnOK: `[aria-describedby="messagebox-1001-msg"] [data-componentid="button-1005"]`,
+        //Save
+        partSaveBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-qtip="Save"]`,
+        saveBtnOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
 
+        //Reload
         partReloadBtn: `[id="adminListsPartitionGrid-bodyWrap"] [id="adminListsPartitionGridReload-btnIconEl"]`,
-        reloadYes: `//*[text()="Yes"]`,
-        // partReloadYes: `//*[text()="Yes"]`,
+        reloadYes: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
         
     
@@ -38,12 +41,13 @@ class partitionsPage {
         let { addBtn, textBoxName }=locators.partitions;
         await page.click(addBtn);
 
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
 
-        let textInput = await page.$(textBoxName);
+        let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
+
         await textInput.click({clickCount: 3})
         await page.keyboard.type('data1');
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     partitionCreateDataB = async() => {
@@ -51,12 +55,12 @@ class partitionsPage {
         let { addBtn, textBoxName }=locators.partitions;
         await page.click(addBtn);
 
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
 
         let textInput = await page.$(textBoxName);
         await textInput.click({clickCount: 3})
         await page.keyboard.type('data2');
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     partitionCreateDataC = async() => {
@@ -64,12 +68,12 @@ class partitionsPage {
         let { addBtn, textBoxName }=locators.partitions;
         await page.click(addBtn);
 
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
 
         let textInput = await page.$(textBoxName);
         await textInput.click({clickCount: 3})
         await page.keyboard.type('data3');
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
 

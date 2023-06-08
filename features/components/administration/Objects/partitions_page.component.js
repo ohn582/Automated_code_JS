@@ -2,18 +2,16 @@ const locator = {
     //Administration
     partNav: {
         //Partition link
-        MenuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
-
-        adminLink: `//*[text()="Administration"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         objLink: `//*[text()="Objects"]`,
         partLink: `//*[text()="Partitions"]`,
 
     },
 
     partitions: {
-        checkBoxSelectA: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [data-columnid="checkcolumn-1037"]`,
-        checkBoxSelectB: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1037"]`,
-        checkBoxSelectC: `[id="adminListsPartitionGrid-body"] [data-recordindex="5"] [data-columnid="checkcolumn-1037"]`,
+        checkBoxSelectA: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        checkBoxSelectB: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        checkBoxSelectC: `[id="adminListsPartitionGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
     },
 
 }
@@ -27,8 +25,7 @@ class partitionsTypeData {
     // Partition link
     objectsLink = async() => {
         let page=this.page;
-        let { MenuSliderBtn, adminLink, objLink }=locator.partNav;
-        await page.click(MenuSliderBtn);
+        let { adminLink, objLink }=locator.partNav;
         await page.click(adminLink);
         await page.click(objLink);
         await page.waitForTimeout(3000);

@@ -17,21 +17,9 @@ const locators = {
         //Creating a data
         rlName: `[role="alertdialog"] [id="RankNewList"]`,
 
-
-
-        rlListItemName: `[id="AdminListItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1049"]`,
-        rlColor: `[id="AdminListItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1052"]`,
-
-
-
-        rlListItemNameA: `[id="AdminListItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1049"]`,
-        rlColorA: `[id="AdminListItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1052"]`,
-
-        rlListItemNameB: `[id="AdminListItemGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1049"]`,
-        rlColorB: `[id="AdminListItemGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1052"]`,
-
-        rlListItemNameC: `[id="AdminListItemGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1049"]`,
-        rlColorC: `[id="AdminListItemGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1052"]`,
+        rlListItemReTypeA: `//*[text()="Field 1"]`,
+        rlListItemReTypeB: `//*[text()="Field 2"]`,
+        rlListItemReTypeC: `//*[text()="Field 3"]`,
     },
 
     deleteNav: {
@@ -41,6 +29,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="AdminListGrid"] [role="toolbar"] [aria-label="Save"]`,
+        saveCloseDialog: `[id="SaveProgressDialog_header"] [id="SaveProgressDialog_header"] [data-qtip="Close dialog"]`,
         saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
     },
 
@@ -74,52 +63,33 @@ class RankListsPage {
         // await page.waitForTimeout(3000);
     }
 
-
-
-
-
-    listRLWriteA = async () => {
+    nameRLWriteB = async () => {
         let page = this.page;
-        let { rlListItemName, rlColor } = locators.rlData;
+        let { rlName } = locators.rlData;
+        let { rlAddBtnName, rlAddBtnWindow } = locators.rlNav;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rlListItemName);
-        let textInputB = await page.$(rlColor);
+        await page.click(rlAddBtnName);
+        let textInput = await page.$(rlName);
 
         await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('TestingA');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Yellow');
+        await page.keyboard.type('Field 2');
+        await page.click(rlAddBtnWindow);
         // await page.waitForTimeout(3000);
     }
 
-    listRLWriteB = async () => {
+    nameRLWriteC = async () => {
         let page = this.page;
-        let { rlListItemName, rlColor } = locators.rlData;
+        let { rlName } = locators.rlData;
+        let { rlAddBtnName, rlAddBtnWindow } = locators.rlNav;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rlListItemName);
-        let textInputB = await page.$(rlColor);
+        await page.click(rlAddBtnName);
+        let textInput = await page.$(rlName);
 
         await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('TestingB');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Green');
-        // await page.waitForTimeout(3000);
-    }
-
-    listRLWriteC = async () => {
-        let page = this.page;
-        let { rlListItemName, rlColor } = locators.rlData;
-        // await page.waitForTimeout(3000);
-
-        let textInput = await page.$(rlListItemName);
-        let textInputB = await page.$(rlColor);
-
-        await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('TestingC');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Blue');
+        await page.keyboard.type('Field 3');
+        await page.click(rlAddBtnWindow);
         // await page.waitForTimeout(3000);
     }
 
@@ -130,47 +100,38 @@ class RankListsPage {
     //Sponsor: Update
     rl_ReTypeData = async () => {
         let page = this.page;
-        let { rlListItemNameA, rlColorA } = locators.rlData;
+        let { rlListItemReTypeA } = locators.rlData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rlListItemNameA);
-        let textInputB = await page.$(rlColorA);
+        let textInput = await page.$(rlListItemReTypeA);
 
-        await textInput.click({ clickCount: 3 })
+        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Red');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     rl_ReTypeDataB = async () => {
         let page = this.page;
-        let { rlListItemNameB, rlColorB } = locators.rlData;
+        let { rlListItemReTypeB } = locators.rlData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rlListItemNameB);
-        let textInputB = await page.$(rlColorB);
+        let textInput = await page.$(rlListItemReTypeB);
 
-        await textInput.click({ clickCount: 3 })
+        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Blue');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     rl_ReTypeDataC = async () => {
         let page = this.page;
-        let { rlListItemNameC, rlColorC } = locators.rlData;
+        let { rlListItemReTypeC } = locators.rlData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rlListItemNameC);
-        let textInputB = await page.$(rlColorC);
+        let textInput = await page.$(rlListItemReTypeC);
 
-        await textInput.click({ clickCount: 3 })
+        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Green');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
 
@@ -191,6 +152,15 @@ class RankListsPage {
         let page = this.page;
         let { saveBtn, saveOK } = locators.saveNav;
         await page.click(saveBtn);
+        await page.click(saveOK);
+        await page.waitForTimeout(3000);
+    }
+
+    listRLSaveClosed = async () => {
+        let page = this.page;
+        let { saveBtn, saveOK, saveCloseDialog } = locators.saveNav;
+        await page.click(saveBtn);
+        await page.click(saveCloseDialog)
         await page.click(saveOK);
         await page.waitForTimeout(3000);
     }

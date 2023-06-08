@@ -5,7 +5,7 @@ const { timeout } = require('../../../../test.config').test;
 
 
 //Lists Project States
-When(`I select Administration and select PS project Lists`, timeout, async function() {
+When(`I select Administration and select Project States Lists`, timeout, async function() {
     let page = this.page;
     const listData = new psTypeData(page);
     listData.projectListLink();

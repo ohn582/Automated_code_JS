@@ -1,15 +1,9 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         projListLink: `//*[text()="Project Lists"]`,
         pmLink: `//*[text()="Phases & Milestones"]`,
-    },
-
-    pmNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        pmAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
     },
 
     pmCheckBox: {
@@ -27,27 +21,24 @@ class pmTypeData {
     }
 
     // Project OBS
-    projectListLink = async() => {
+    pmListLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { pmLink, adminLink }=locator.admin_Page;
         await page.click(adminLink);
+        await page.click(pmLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
     }
 
-    listPCSelect = async() => {
+    linkPMSelect = async() => {
         let page=this.page;
-        let { pmLink, projListLink }=locator.admin_Page;
+        let { projListLink }=locator.admin_Page;
 
         await page.click(projListLink);
-        // await page.waitForTimeout(1000);
-        await page.click(pmLink);
         await page.waitForTimeout(3000);
     }
 
-    listPCSelectData = async() => {
+    listPMSelectData = async() => {
         let page=this.page;
         let { pmBox, pmBoxB, pmBoxC }=locator.pmCheckBox;
 
@@ -55,14 +46,6 @@ class pmTypeData {
         await page.click(pmBoxB);
         await page.click(pmBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listPCAdd = async() => {
-        let page=this.page;
-        let { pmAddBtn }=locator.pmNav;
-
-        await page.click(pmAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

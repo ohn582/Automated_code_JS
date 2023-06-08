@@ -7,13 +7,10 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @567 @T.7090.30.001
     Scenario: @T.7090.30.001-testing user data
-        When I select Administration and select Feature Types Agile Lists
+        When I select Administration and select Agile link
         When I select Feature Types
-        When I select Add Button in the Feature Types
         Then I typed a new Feature Types tes1
-        When I select Add Button in the Feature Types
         Then I typed a new Feature Types tes2
-        When I select Add Button in the Feature Types
         Then I typed a new Feature Types tes3
         Then I clicked save button in Feature Types
         # Then I clicked Reload button in Feature Types

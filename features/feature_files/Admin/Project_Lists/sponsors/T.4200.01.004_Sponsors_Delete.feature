@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
     @delete @372 @T.4200.01.004
     Scenario: @T.4200.01.004-testing user data
     #Creating the Data
-        When I select Administration and select List
+        When I select Administration and select Project List
         When I select Sponsors
         When I select multiple Sponsors datas
         Then I delete the Sponsor data

@@ -10,7 +10,7 @@
     "testParallel": "cucumber-js features/**/*.feature --parallel 3 --retry 1 --exit -f json:cucumber_report.json && npm run report",
     "clearReport": "rimraf history && mkdir history",
     "testRetry": "cucumber-js features/**/*.feature --parallel 3 --retry 1 --exit -f json:cucumber_report.json && npm run report",
-    "featureStateDebug": "cucumber-js features/feature_files/Admin/Agile/feature_states/ --retry 0 --exit -f json:cucumber_report.json"
+    "featureStateDebug": "cucumber-js features/feature_files/Admin/Financial_Lists/Cost_Items/ --retry 0 --exit -f json:cucumber_report.json"
   },
   "author": "ISC Test",
   "license": "ISC",

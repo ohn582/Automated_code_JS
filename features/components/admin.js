@@ -137,7 +137,7 @@ const locator = {
     },
 }
 
-class adminListTypeData {
+class editOBSTypeData {
     constructor(page) {
         this.page = page;
         //this.firstTuplebefore = null;
@@ -668,4 +668,4 @@ class adminListTypeData {
 
 }
 
-exports.adminListTypeData = adminListTypeData;
+exports.editOBSTypeData = editOBSTypeData;

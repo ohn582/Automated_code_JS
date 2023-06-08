@@ -1,22 +1,16 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1MainNavigationTree-innerCt"] [data-componentid="R1Navigation"] [data-componentid="ext-customtreelistitem-8"]`,
         finListLink: `//*[text()="Financial Lists"]`,
         finLink: `//*[text()="Cost Item Categories"]`,
     },
 
-    cicNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        cicAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
-
     cicCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        cicBox: `[data-componentid="r1MainViewPort"] [id="adminListsCostItemCategoryGrid-bodyWrap"] [data-recordindex="5"] [data-columnid="checkcolumn-1046"]`,
-        cicBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsCostItemCategoryGrid-bodyWrap"] [data-recordindex="6"] [data-columnid="checkcolumn-1046"]`,
-        cicBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsCostItemCategoryGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="checkcolumn-1046"]`
+        cicBox: `[id="adminListsCostItemCategoryGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        cicBoxB: `[id="adminListsCostItemCategoryGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        cicBoxC: `[id="adminListsCostItemCategoryGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,19 +23,19 @@ class CostItemsCategoriesTypeData {
     // Project OBS
     financialListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
+        let { adminLink, finListLink } = locator.admin_Page;
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
+        await page.click(finListLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
     }
 
     listCICSelect = async () => {
         let page = this.page;
-        let { finLink, finListLink } = locator.admin_Page;
+        let { finLink } = locator.admin_Page;
 
-        await page.click(finListLink);
+        
         // await page.waitForTimeout(1000);
         await page.click(finLink);
         await page.waitForTimeout(3000);
@@ -55,14 +49,6 @@ class CostItemsCategoriesTypeData {
         await page.click(cicBoxB);
         await page.click(cicBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listCICAdd = async () => {
-        let page = this.page;
-        let { cicAddBtn } = locator.cicNav;
-
-        await page.click(cicAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

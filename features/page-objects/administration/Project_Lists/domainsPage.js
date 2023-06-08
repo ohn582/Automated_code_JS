@@ -2,26 +2,19 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     domainsNav: {
-        domainsAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsDomainGridAdd"]`,
+        domainsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="adminListsDomainGridAdd"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     domainsData: {
         //Creating a data
-        domainsName: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        domainPartition: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="0"] [data-columnid="gridcolumn-1031"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        domainSelect: `//*[text()="New Domain"]`,
 
-
-        domainsNameA: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="1"] [data-columnid="gridcolumn-1028"]`,
-        domainPartitionA: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="1"] [data-columnid="gridcolumn-1031"]`,
-
-        domainsNameB: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="2"] [data-columnid="gridcolumn-1028"]`,
-        domainPartitionB: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="2"] [data-columnid="gridcolumn-1031"]`,
-
-        domainsNameC: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="3"] [data-columnid="gridcolumn-1028"]`,
-        domainPartitionC: `[id="adminListsDomainGrid"] [data-componentid="gridview-1037"] [data-recordindex="3"] [data-columnid="gridcolumn-1031"]`,
+        //Update
+        textBoxNameReTypeA: `//*[text()="New Data 1"]`,
+        textBoxNameReTypeB: `//*[text()="New Data 2"]`,
+        textBoxNameReTypeC: `//*[text()="New Data 3"]`,
     },
 
     deleteNav: {
@@ -31,12 +24,12 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsDomainGrid"] [role="toolbar"] [data-componentid="adminListsDomainGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
-        reloadNavBtn: `//*[text()="Yes"]`,
+        reloadNavBtn: `[id="adminListsDomainGrid-bodyWrap"] [role="toolbar"] [id="adminListsDomainGridReload"]`,
+        yesBtn: `//*[text()="Yes"]`,
     }
 
 }
@@ -49,97 +42,79 @@ class domainPage {
     }
 
 
-    //Filters: Create
+    // Create
     listDomainWriteA = async() => {
         let page=this.page;
-        let { domainsName, domainPartition }=locators.domainsData;
+        let { domainsAddBtn }=locators.domainsNav;
+        let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
         
-        let textInput = await page.$(domainsName);
-        let textInputB = await page.$(domainPartition); 
+        await page.click(domainsAddBtn);
+        await page.dblclick(domainSelect);
 
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Data 1');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listDomainWriteB = async() => {
         let page=this.page;
-        let { domainsName, domainPartition }=locators.domainsData;
+        let { domainsAddBtn }=locators.domainsNav;
+        let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
         
-        let textInput = await page.$(domainsName); 
-        let textInputB = await page.$(domainPartition);
+        await page.click(domainsAddBtn);
+        await page.dblclick(domainSelect);
 
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Data 2');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     listDomainWriteC = async() => {
         let page=this.page;
-        let { domainsName, domainPartition }=locators.domainsData;
+        let { domainsAddBtn }=locators.domainsNav;
+        let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
         
-        let textInput = await page.$(domainsName); 
-        let textInputB = await page.$(domainPartition);
+        await page.click(domainsAddBtn);
+        await page.dblclick(domainSelect);
 
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Data 3');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     
 
-    //Filters: Update
+    //Update
     domainReTypeData = async() => {
         let page=this.page;
-        let { domainsNameA, domainPartitionA }=locators.domainsData;
+        let { textBoxNameReTypeA }=locators.domainsData;
         // await page.waitForTimeout(3000);
+        
+        await page.dblclick(textBoxNameReTypeA);
 
-        let textInput = await page.$(domainsNameA); 
-        let textInputB = await page.$(domainPartitionA); 
-
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     domainReTypeDataB = async() => {
         let page=this.page;
-        let { domainsNameB, domainPartitionB }=locators.domainsData;
+        let { textBoxNameReTypeB }=locators.domainsData;
         // await page.waitForTimeout(3000);
+        
+        await page.dblclick(textBoxNameReTypeB);
 
-        let textInput = await page.$(domainsNameB); 
-        let textInputB = await page.$(domainPartitionB);
-
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     domainReTypeDataC = async() => {
         let page=this.page;
-        let { domainsNameC, domainPartitionC }=locators.domainsData;
+        let { textBoxNameReTypeC }=locators.domainsData;
         // await page.waitForTimeout(3000);
+        
+        await page.dblclick(textBoxNameReTypeC);
 
-        let textInput = await page.$(domainsNameC); 
-        let textInputB = await page.$(domainPartitionC);
-
-        await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -167,9 +142,9 @@ class domainPage {
 
     listDomainReload = async() => {
         let page=this.page;
-        let { relBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(relBtn);
+        let { yesBtn, reloadNavBtn }=locators.reloadBtn;
         await page.click(reloadNavBtn);
+        // await page.click(yesBtn);
         await page.waitForTimeout(3000);
     }
 }

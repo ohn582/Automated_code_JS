@@ -1,22 +1,16 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [id="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         projListLink: `//*[text()="Project Lists"]`,
         rankFormLink: `//*[text()="Rank Formulas"]`,
     },
 
-    rankFormNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        rankFormAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
-
     rankFormCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        rankFormBox: `[data-componentid="r1MainViewPort"] [id="adminListsRankFormulaGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1053"]`,
-        rankFormBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsRankFormulaGrid-body"] [data-recordindex="3"] [data-columnid="checkcolumn-1053"]`,
-        rankFormBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsRankFormulaGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1053"]`
+        rankFormBox: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        rankFormBoxB: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        rankFormBoxC: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,8 +23,7 @@ class RankFormTypeData {
     // Project OBS
     projectListLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
+        let { adminLink }=locator.admin_Page;
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
@@ -55,14 +48,6 @@ class RankFormTypeData {
         await page.click(rankFormBoxB);
         await page.click(rankFormBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listRFAdd = async() => {
-        let page=this.page;
-        let { rankFormAddBtn }=locator.rankFormNav;
-
-        await page.click(rankFormAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

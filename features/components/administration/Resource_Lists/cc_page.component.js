@@ -1,22 +1,18 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         resListLink: `//*[text()="Resource Lists"]`,
         ccLink: `//*[text()="Cost Categories"]`,
     },
 
-    ccNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ccAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
+
 
     ccCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ccBox: `[data-componentid="r1MainViewPort"] [id="adminListsCostCategoryGrid-bodyWrap"] [data-recordindex="10"] [data-columnid="checkcolumn-1040"]`,
-        ccBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsCostCategoryGrid-bodyWrap"] [data-recordindex="11"] [data-columnid="checkcolumn-1040"]`,
-        ccBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsCostCategoryGrid-bodyWrap"] [data-recordindex="12"] [data-columnid="checkcolumn-1040"]`
+        ccBox: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="10"] [role="row"] [tabindex="-1"]`,
+        ccBoxB: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="11"] [role="row"] [tabindex="-1"]`,
+        ccBoxC: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="12"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,8 +25,7 @@ class ccTypeData {
     // Project OBS
     projectListLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
+        let { adminLink }=locator.admin_Page;
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
@@ -57,13 +52,6 @@ class ccTypeData {
         await page.waitForTimeout(3000);
     }
 
-    listCCAdd = async() => {
-        let page=this.page;
-        let { ccAddBtn }=locator.ccNav;
-
-        await page.click(ccAddBtn);
-        // await page.waitForTimeout(3000);
-    }
 }
 
 module.exports.ccTypeData = ccTypeData;

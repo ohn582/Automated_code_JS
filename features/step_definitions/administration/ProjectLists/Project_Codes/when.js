@@ -18,13 +18,6 @@ When(`I select Project Codes`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Project Codes`, timeout, async function () {
-    let page = this.page;
-    const listData = new pcTypeData(page);
-    listData.listPCAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Project Codes in data`, timeout, async function () {
     let page = this.page;
     const listData = new pcTypeData(page);

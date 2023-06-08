@@ -1,16 +1,16 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `[data-componentid="r1MainViewPort"] [id="R1Navigation"] [data-componentid="ext-customtreelistitem-7"]`,
+        adminLink: `[data-componentid="r1MainViewPort"] [id="R1Navigation"] [data-componentid="ext-customtreelistitem-8"]`,
         agileListLink: `//*[text()="Agile"]`,
         fsLink: `//*[text()="Feature States"]`,
     },
 
     fsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        fsBox: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="checkcolumn-1048"]`,
-        fsBoxB: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="checkcolumn-1048"]`,
-        fsBoxC: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="checkcolumn-1048"]`
+        fsBox: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        fsBoxB: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        fsBoxC: `[id="adminListsFeatureStateGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

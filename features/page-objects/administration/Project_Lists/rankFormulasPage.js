@@ -2,26 +2,16 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     rankFormNav: {
-        rankFormAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsRankFormulaGridAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        rankFormAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
     },
 
     rankFormData: {
         //Creating a data
-        rankFormName: `[id="gridview-1046"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        rankFormFormula: `[id="gridview-1046"] [data-recordindex="0"] [data-columnid="gridcolumn-1037"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        rankFormName: `//*[text()="New Rank Formula"]`,
 
-
-        rankFormNameA: `[id="gridview-1046"] [data-recordindex="4"] [data-columnid="gridcolumn-1036"]`,
-        rankFormFormulaA: `[id="gridview-1046"] [data-recordindex="4"] [data-columnid="gridcolumn-1037"]`,
-
-        rankFormNameB: `[id="gridview-1046"] [data-recordindex="5"] [data-columnid="gridcolumn-1036"]`,
-        rankFormFormulaB: `[id="gridview-1046"] [data-recordindex="5"] [data-columnid="gridcolumn-1037"]`,
-
-        rankFormNameC: `[id="gridview-1046"] [data-recordindex="6"] [data-columnid="gridcolumn-1036"]`,
-        rankFormFormulaC: `[id="gridview-1046"] [data-recordindex="6"] [data-columnid="gridcolumn-1037"]`,
+        rankFormNameDataA: `//*[text()="New Rank tes1"]`,
+        rankFormNameDataB: `//*[text()="New Rank tes2"]`,
+        rankFormNameDataC: `//*[text()="New Rank tes3"]`,
     },
 
     deleteNav: {
@@ -30,8 +20,8 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="adminListsRankFormulaGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Save"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -52,46 +42,46 @@ class RankFormPage {
     //Sponsor: Create
     listRankFormWriteA = async () => {
         let page = this.page;
-        let { rankFormName, rankFormFormula } = locators.rankFormData;
+        let { rankFormAddBtn }=locators.rankFormNav;
+        let { rankFormName } = locators.rankFormData;
         // await page.waitForTimeout(3000);
+        // let textInput = await page.$(rankFormNameB, el=>el.getAttribute("id"));
 
-        let textInput = await page.$(rankFormName);
-        let textInputB = await page.$(rankFormFormula);
+        await page.click(rankFormAddBtn);
+        await page.dblclick(rankFormName);
 
-        await textInput.click({ clickCount: 3 })
+        // await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('ABC');
         // await page.waitForTimeout(3000);
     }
 
     listRankFormWriteB = async () => {
         let page = this.page;
-        let { rankFormName, rankFormFormula } = locators.rankFormData;
+        let { rankFormAddBtn }=locators.rankFormNav;
+        let { rankFormName } = locators.rankFormData;
         // await page.waitForTimeout(3000);
+        // let textInput = await page.$(rankFormNameB, el=>el.getAttribute("id"));
 
-        let textInput = await page.$(rankFormName);
-        let textInputB = await page.$(rankFormFormula);
+        await page.click(rankFormAddBtn);
+        await page.dblclick(rankFormName);
 
-        await textInput.click({ clickCount: 3 })
+        // await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('123');
         // await page.waitForTimeout(3000);
     }
 
     listRankFormWriteC = async () => {
         let page = this.page;
-        let { rankFormName, rankFormFormula } = locators.rankFormData;
+        let { rankFormAddBtn }=locators.rankFormNav;
+        let { rankFormName } = locators.rankFormData;
         // await page.waitForTimeout(3000);
+        // let textInput = await page.$(rankFormNameB, el=>el.getAttribute("id"));
 
-        let textInput = await page.$(rankFormName);
-        let textInputB = await page.$(rankFormFormula);
+        await page.click(rankFormAddBtn);
+        await page.dblclick(rankFormName);
 
-        await textInput.click({ clickCount: 3 })
+        // await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('QRS');
         // await page.waitForTimeout(3000);
     }
 

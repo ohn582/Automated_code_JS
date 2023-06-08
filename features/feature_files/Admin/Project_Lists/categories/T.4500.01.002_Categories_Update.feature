@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @update @989 @T.4500.01.002
     Scenario: @T.4500.01.002-testing user data
-        When I select Administration and select List
+        When I select Administration and Categories Project List
         When I select Categories
         Then I Re-Typed a new Categories
         Then I Re-Typed a new Categories tes2

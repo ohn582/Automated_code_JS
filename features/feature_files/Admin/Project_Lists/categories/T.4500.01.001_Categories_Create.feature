@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.4500.01.001-testing user data
         When I select Administration and Categories Project List
         When I select Categories
-        When I select Add Button in the Categories
         Then I typed a new Categories
-        When I select Add Button in the Categories
         Then I typed a new Categories tes2
-        When I select Add Button in the Categories
         Then I typed a new Categories tes3
         Then I clicked save button in Categories
         # Then I clicked Reload button in Categories

@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.4559.93.561-testing user data
         When I select Administration and select Currencies Resource Lists
         When I select Currencies
-        When I select Add Button in the Currencies
         Then I typed a new Currencies
-        When I select Add Button in the Currencies
         Then I typed a new Currencies tes2
-        When I select Add Button in the Currencies
         Then I typed a new Currencies tes3
 
         Then I clicked save button in Currencies

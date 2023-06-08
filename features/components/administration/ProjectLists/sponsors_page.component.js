@@ -1,22 +1,16 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         projListLink: `//*[text()="Project Lists"]`,
         sponsorsLink: `//*[text()="Sponsors"]`,
     },
 
-    sponsorsNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        sponsorsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
-
     sponsorsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        sponsorsBox: `[data-componentid="r1MainViewPort"] [id="adminListsSponsorGrid-body"] [data-recordindex="4"] [data-columnid="checkcolumn-1042"]`,
-        sponsorsBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsSponsorGrid-body"] [data-recordindex="5"] [data-columnid="checkcolumn-1042"]`,
-        sponsorsBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsSponsorGrid-body"] [data-recordindex="6"] [data-columnid="checkcolumn-1042"]`
+        sponsorsBox: `[id="adminListsSponsorGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        sponsorsBoxB: `[id="adminListsSponsorGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        sponsorsBoxC: `[id="adminListsSponsorGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,9 +23,7 @@ class sponsorsTypeData {
     // Project OBS
     projectListLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink }=locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
@@ -55,14 +47,6 @@ class sponsorsTypeData {
         await page.click(sponsorsBoxB);
         await page.click(sponsorsBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listsponsorsAdd = async() => {
-        let page=this.page;
-        let { sponsorsAddBtn }=locator.sponsorsNav;
-
-        await page.click(sponsorsAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

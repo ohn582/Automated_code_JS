@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select RF Lists
         When I select Rank Fields
-        When I select Add Button in the Rank Fields
         Then I typed a new Rank Fields tes1
-        When I select Add Button in the Rank Fields
         Then I typed a new Rank Fields tes2
-        When I select Add Button in the Rank Fields
         Then I typed a new Rank Fields tes3
         Then I clicked save button in Rank Fields
         # Then I clicked reload button for Rank Fields

@@ -15,9 +15,9 @@ const locator = {
 
     ratesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ratesBox: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="checkcolumn-1060"]`,
-        ratesBoxB: `[id="AdminMainContainer"] [data-recordindex="1"] [data-columnid="checkcolumn-1060"]`,
-        ratesBoxC: `[id="AdminMainContainer"] [data-recordindex="2"] [data-columnid="checkcolumn-1060"]`
+        ratesBox: `[id="AdminMainContainer"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        ratesBoxB: `[id="AdminMainContainer"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        ratesBoxC: `[id="AdminMainContainer"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     },
 
     reloadBtn: {

@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.5700.10.001-testing user data
         When I select Administration and select Resource Lists
         When I select Cost Categories
-        When I select Add Button in the Cost Categories
-        Then I typed a new Cost Categories
-        When I select Add Button in the Cost Categories
+        Then I typed a new Cost Categories tes1
         Then I typed a new Cost Categories tes2
-        When I select Add Button in the Cost Categories
         Then I typed a new Cost Categories tes3
 
         Then I clicked save button in Cost Categories

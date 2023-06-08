@@ -7,7 +7,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Lists Categories
-When(`I select Administration and select Cost Item Categories Resource Lists`, timeout, async function () {
+When(`I select Administration and select Financial Lists`, timeout, async function () {
     let page = this.page;
     const listData = new CostItemsCategoriesTypeData(page);
     listData.financialListLink();
@@ -18,13 +18,6 @@ When(`I select Cost Item Categories`, timeout, async function () {
     let page = this.page;
     const listData = new CostItemsCategoriesTypeData(page);
     listData.listCICSelect();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Add Button in the Cost Item Categories`, timeout, async function () {
-    let page = this.page;
-    const listData = new CostItemsCategoriesTypeData(page);
-    listData.listCICAdd();
     await page.waitForTimeout(2000);
 })
 

@@ -21,13 +21,6 @@ When(`I select Currencies`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Currencies`, timeout, async function () {
-    let page = this.page;
-    const listData = new CurrenciesTypeData(page);
-    listData.listCurrenciesAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Currencies datas`, timeout, async function () {
     let page = this.page;
     const listData = new CurrenciesTypeData(page);

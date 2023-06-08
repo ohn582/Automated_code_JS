@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @645 @T.7110.25.001
     Scenario: @T.7110.25.001-testing user data
-        When I select Administration and select Feature States Resource Lists
+        When I select Administration and select Agile
         When I select Feature States
         Then I typed a new Feature States
         Then I typed a new Feature States tes2

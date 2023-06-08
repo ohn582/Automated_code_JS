@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @update @372 @T.4200.01.003
     Scenario: @T.4200.01.003-testing user data
-        When I select Administration and select List
+        When I select Administration and select Project List
         When I select Sponsors
         Then I Re-Typed a new Sponsor
         Then I Re-Typed a new Sponsor tes2

@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
     @delete @888 @T.2221.33.003
     Scenario: @T.2221.33.003-testing user data
         #Creating the Data
-        When I select Administration and select Cost Items Resource Lists
+        When I select Administration and select Cost Items Financial Lists
         When I select Cost Items
         When I select multiple Cost Items datas
         Then I delete the Cost Items data

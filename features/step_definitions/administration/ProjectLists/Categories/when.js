@@ -21,12 +21,6 @@ When(`I select Categories`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Categories`, timeout, async function() {
-    let page = this.page;
-    const listData = new categoriesTypeData(page);
-    listData.listCategoriesAdd();
-    await page.waitForTimeout(2000);
-})
 
 When(`I select multiple Categories datas`, timeout, async function() {
     let page = this.page;

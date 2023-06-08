@@ -7,13 +7,10 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @create @888 @T.2221.33.001
     Scenario: @T.2221.33.001-testing user data
-        When I select Administration and select Cost Items Resource Lists
+        When I select Administration and select Cost Items Financial Lists
         When I select Cost Items
-        When I select Add Button in the Cost Items
         Then I typed a new Cost Items
-        When I select Add Button in the Cost Items
         Then I typed a new Cost Items tes2
-        When I select Add Button in the Cost Items
         Then I typed a new Cost Items tes3
 
         Then I clicked save button in Cost Items

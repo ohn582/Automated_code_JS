@@ -2,26 +2,20 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ciNav: {
-        ciAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostItemGridAdd"]`,
+        ciAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     ciData: {
         //Creating a data
-        ciName: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"] [id="celleditor-1054"]`,
+        ciName: `[id="adminListsCostItemGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         ciPartition: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1043"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-
-        ciNameA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1036"]`,
-        ciPartitionA: `[id="adminListsCostItemGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1043"]`,
-
-        ciNameB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1036"]`,
-        ciPartitionB: `[id="adminListsCostItemGrid"] [data-recordindex="18"] [data-columnid="gridcolumn-1043"]`,
-
-        ciNameC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1036"]`,
-        ciPartitionC: `[id="adminListsCostItemGrid"] [data-recordindex="19"] [data-columnid="gridcolumn-1043"]`,
+        ciNameA: `//*[text()="tes1"]`,
+        ciNameB: `//*[text()="tes2"]`,
+        ciNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,7 +25,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsCostItemGrid"] [role="toolbar"] [data-componentid="adminListsCostItemGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -52,46 +46,47 @@ class CostItemsPage {
     //Sponsor: Create
     listCIWriteA = async () => {
         let page = this.page;
-        let { ciName, ciPartition } = locators.ciData;
+        let { ciAddBtn } = locators.ciNav;
+        let { ciName } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciName);
-        let textInputB = await page.$(ciPartition);
+        await page.click(ciAddBtn);
+
+        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listCIWriteB = async () => {
         let page = this.page;
-        let { ciName, ciPartition } = locators.ciData;
+        let { ciAddBtn } = locators.ciNav;
+        let { ciName } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciName);
-        let textInputB = await page.$(ciPartition);
+        await page.click(ciAddBtn);
+
+        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listCIWriteC = async () => {
         let page = this.page;
-        let { ciName, ciPartition } = locators.ciData;
+        let { ciAddBtn } = locators.ciNav;
+        let { ciName } = locators.ciData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciName);
-        let textInputB = await page.$(ciPartition);
+        await page.click(ciAddBtn);
+
+        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
+
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +96,37 @@ class CostItemsPage {
     //Sponsor: Update
     costItemsReTypeData = async () => {
         let page = this.page;
-        let { ciNameA, ciPartitionA } = locators.ciData;
+        let { ciNameA } = locators.ciData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ciNameA);
-        let textInputB = await page.$(ciPartitionA);
 
         await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
+        await page.keyboard.type('Re-Type 1');;
         // await page.waitForTimeout(3000);
     }
 
     costItemsReTypeDataB = async () => {
         let page = this.page;
-        let { ciNameB, ciPartitionB } = locators.ciData;
+        let { ciNameB } = locators.ciData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ciNameB);
-        let textInputB = await page.$(ciPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     costItemsReTypeDataC = async () => {
         let page = this.page;
-        let { ciNameC, ciPartitionC } = locators.ciData;
+        let { ciNameC } = locators.ciData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ciNameC);
-        let textInputB = await page.$(ciPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

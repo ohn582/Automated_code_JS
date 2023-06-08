@@ -6,7 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Categories: Create
-Then(`I typed a new Cost Categories`, timeout, async function() {
+Then(`I typed a new Cost Categories tes1`, timeout, async function() {
     let page = this.page;
     const listData = new ccPage(page);
     await listData.listCCWriteA();
@@ -30,7 +30,7 @@ Then(`I typed a new Cost Categories tes3`, timeout, async function() {
 
 
 // Categories: Update
-Then(`I Re-Typed a new Cost Categories`, timeout, async function() {
+Then(`I Re-Typed a new Cost Categories tes1`, timeout, async function() {
     let page = this.page;
     const listData = new ccPage(page);
     listData.ccReTypeData();

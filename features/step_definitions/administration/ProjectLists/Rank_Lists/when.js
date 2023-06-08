@@ -21,20 +21,6 @@ When(`I select Rank Lists`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I selected Field 1`, timeout, async function() {
-    let page = this.page;
-    const listData = new RankListsData(page);
-    listData.listRLDataSelect();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Add Button in the Rank List`, timeout, async function() {
-    let page = this.page;
-    const listData = new RankListsData(page);
-    listData.listRLAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Rank List datas`, timeout, async function() {
     let page = this.page;
     const listData = new RankListsData(page);

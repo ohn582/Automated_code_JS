@@ -15,13 +15,16 @@ const locators = {
         // fsHeaderName: `[id="adminListsFeatureStateGrid-bodyWrap"] [aria-label="Feature State Name"]`,
         fsHeaderName: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-
         // domainsName: `//*[text()="New Domain"]`,
 
+        fsNameGridA: `//*[text()="tes1"]`,
+        fsNameReTypeA: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-        fsNameA: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
-        fsNameB: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="1"] [role="presentation"]`,
-        fsNameC: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="2"] [role="presentation"]`,
+        fsNameGridB: `//*[text()="tes2"]`,
+        fsNameReTypeB: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="1"] [role="presentation"]`,
+
+        fsNameGridC: `//*[text()="tes3"]`,
+        fsNameReTypeC: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="2"] [role="presentation"]`,
     },
 
     deleteNav: {
@@ -31,7 +34,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="adminListsFeatureStateGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -97,13 +100,11 @@ class FeatureStatesPage {
     //featureState: Update
     featureStateReTypeData = async () => {
         let page = this.page;
-        let { fsHeaderName } = locators.fsData;
-        let { fsNameA } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsNameGridA, fsNameReTypeA } = locators.fsData;
 
-        let textInput = await page.$(fsNameA);
+        await page.click(fsNameGridA);
 
-        let updateFeatureStateNameColumnId = await page.$eval(fsHeaderName, el=>el.getAttribute("id"))
+        let textInput = await page.$(fsNameReTypeA, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
@@ -112,10 +113,11 @@ class FeatureStatesPage {
 
     featureStateReTypeDataB = async () => {
         let page = this.page;
-        let { fsNameB } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsNameGridB, fsNameReTypeB } = locators.fsData;
 
-        let textInput = await page.$(fsNameB);
+        await page.click(fsNameGridB);
+
+        let textInput = await page.$(fsNameReTypeB, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
@@ -124,10 +126,11 @@ class FeatureStatesPage {
 
     featureStateReTypeDataC = async () => {
         let page = this.page;
-        let { fsNameC } = locators.fsData;
-        // await page.waitForTimeout(3000);
+        let { fsNameGridC, fsNameReTypeC } = locators.fsData;
 
-        let textInput = await page.$(fsNameC);
+        await page.click(fsNameGridC);
+
+        let textInput = await page.$(fsNameReTypeC, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');

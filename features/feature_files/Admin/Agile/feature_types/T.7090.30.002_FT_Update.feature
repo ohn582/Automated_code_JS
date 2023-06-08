@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @update @567 @T.7090.30.002
     Scenario: @T.7090.30.002-testing user data
-        When I select Administration and select Feature Types Agile Lists
+        When I select Administration and select Agile link
         When I select Feature Types
         Then I Re-Typed a new Feature Types
         Then I Re-Typed a new Feature Types tes2

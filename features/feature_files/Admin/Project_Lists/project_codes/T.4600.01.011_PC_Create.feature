@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select PC project Lists
         When I select Project Codes
-        When I select Add Button in the Project Codes
         Then I typed a new Project Codes tes1
-        When I select Add Button in the Project Codes
         Then I typed a new Project Codes tes2
-        When I select Add Button in the Project Codes
         Then I typed a new Project Codes tes3
         Then I clicked save button in Project Codes
         # Then I clicked reload button for Project Codes

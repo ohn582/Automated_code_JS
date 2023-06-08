@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @update @888 @T.2221.33.002
     Scenario: @T.T.2221.33.002-testing user data
-        When I select Administration and select Cost Items Resource Lists
+        When I select Administration and select Cost Items Financial Lists
         When I select Cost Items
         When I Re-Typed a new Cost Items
         Then I Re-Typed a new Cost Items tes2

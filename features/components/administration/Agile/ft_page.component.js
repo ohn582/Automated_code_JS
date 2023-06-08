@@ -1,22 +1,15 @@
 const locator = {
     admin_Page: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1MainNavigationTree-innerCt"] [data-componentid="R1Navigation"] [data-componentid="ext-customtreelistitem-8"]`,
         agileListLink: `//*[text()="Agile"]`,
         ftLink: `//*[text()="Feature Types"]`,
     },
 
-    ftNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ftAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
-
     ftCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ftBox: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="checkcolumn-1046"]`,
-        ftBoxB: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="3"] [data-columnid="checkcolumn-1046"]`,
-        ftBoxC: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="4"] [data-columnid="checkcolumn-1046"]`
+        ftBox: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        ftBoxB: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        ftBoxC: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -26,25 +19,23 @@ class FeatureTypesData {
         this.page = page;
     }
 
-    // Project OBS
-    agileListLink = async () => {
+    // agile link
+    agileLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
+        let { adminLink, agileListLink } = locator.admin_Page;
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
-        // await page.waitForTimeout(1000);
-        await page.waitForTimeout(3000);
+        await page.click(agileListLink);
+
+        await page.waitForTimeout(2000);
     }
 
     listFTSelect = async () => {
         let page = this.page;
-        let { ftLink, agileListLink } = locator.admin_Page;
+        let { ftLink } = locator.admin_Page;
 
-        await page.click(agileListLink);
-        // await page.waitForTimeout(1000);
         await page.click(ftLink);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listFTSelectData = async () => {
@@ -55,14 +46,6 @@ class FeatureTypesData {
         await page.click(ftBoxB);
         await page.click(ftBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listFTAdd = async () => {
-        let page = this.page;
-        let { ftAddBtn } = locator.ftNav;
-
-        await page.click(ftAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

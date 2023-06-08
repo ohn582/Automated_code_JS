@@ -12,4 +12,4 @@ Feature: Pdware Admin User Module
         When I select multiple Domain datas
         Then I delete the Domain data
         Then I clicked save button in Domains
-        # Then I clicked reload button for Domains
+        Then I clicked reload button for Domains

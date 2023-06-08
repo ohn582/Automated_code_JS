@@ -2,25 +2,28 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     curNav: {
-        curAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminCurrencyAddMenu"]`,
+        curAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
+        curAddDropdownA: `//*[text()="Add Currency"]`,
+
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     curData: {
         //Creating a data
-        curName: `//*[text()="New Currency"]`,
+        curNameNew: `//*[text()="New Currency"]`,
+        curName: `[id="AdminCurrency-body"] [data-recordindex="0"] [role="presentation"]`,
         curCode: `[data-componentid="gridview-1062"] [data-recordindex="0"] [class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1053 x-unselectable"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
 
-        curNameA: `//*[text()="New Currency"]`,
+        curNameA: `//*[text()="tes1"]`,
         curCodeA: `[data-componentid="gridview-1062"] [data-recordindex="0"] [class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1053 x-unselectable"]`,
 
-        curNameB: `//*[text()="New Currency"]`,
+        curNameB: `//*[text()="tes2"]`,
         curCodeB: `[data-componentid="gridview-1062"] [data-recordindex="0"] [class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1053 x-unselectable"]`,
 
-        curNameC: `//*[text()="New Currency"]`,
+        curNameC: `//*[text()="tes3"]`,
         curCodeC: `[data-componentid="gridview-1062"] [data-recordindex="0"] [class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1053 x-unselectable"]`,
     },
 
@@ -30,7 +33,7 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="R1TCurrencies"] [role="toolbar"] [data-componentid="AdminCurrencySave"]`,
+        saveBtn: `[id="AdminCurrency-bodyWrap"] [role="toolbar"] [data-componentid="AdminCurrencySave"]`,
         saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
     },
 
@@ -47,46 +50,70 @@ class CurrenciesPage {
     //Sponsor: Create
     listCurrenciesWriteA = async () => {
         let page = this.page;
-        let { curName, curCode } = locators.curData;
+        let { curNameNew, curName, curCode } = locators.curData;
+        let { curAddBtn, curAddDropdownA } = locators.curNav;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(curName);
-        let textInputB = await page.$(curCode);
+        let textInputC = await page.$(curCode);
 
-        await textInput.click({ clickCount: 3 })
+        await page.click(curAddBtn);
+        await page.click(curAddDropdownA);
+
+        let textInputB = await page.$(curNameNew);
+        await textInputB.click({clickCount: 3})
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Code1');
+
+        // await textInput.click({ clickCount: 3 })
+        // await page.keyboard.type('tes1');
+
+        // await textInputB.click({ clickCount: 1 })
+        // await page.keyboard.type('Code1');
         // await page.waitForTimeout(3000);
     }
 
     listCurrenciesWriteB = async () => {
         let page = this.page;
-        let { curName, curCode } = locators.curData;
+        let { curNameNew, curName, curCode } = locators.curData;
+        let { curAddBtn, curAddDropdownA } = locators.curNav;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(curName);
-        let textInputB = await page.$(curCode);
+        let textInputC = await page.$(curCode);
 
-        await textInput.click({ clickCount: 3 })
+        await page.click(curAddBtn);
+        await page.click(curAddDropdownA);
+
+        let textInputB = await page.$(curNameNew);
+        await textInputB.click({clickCount: 3})
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Code2');
-        // await page.waitForTimeout(3000);
+
+        // await textInput.click({ clickCount: 3 })
+        // await page.keyboard.type('tes2');
+
+        // await textInputB.click({ clickCount: 1 })
+        // await page.keyboard.type('Code2');
+        // // await page.waitForTimeout(3000);
     }
 
     listCurrenciesWriteC = async () => {
         let page = this.page;
-        let { curName, curCode } = locators.curData;
+        let { curNameNew, curName, curCode } = locators.curData;
+        let { curAddBtn, curAddDropdownA } = locators.curNav;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(curName);
-        let textInputB = await page.$(curCode);
+        let textInputC = await page.$(curCode);
 
-        await textInput.click({ clickCount: 3 })
+        await page.click(curAddBtn);
+        await page.click(curAddDropdownA);
+
+        let textInputB = await page.$(curNameNew);
+        await textInputB.click({clickCount: 3})
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Code3');
+
+        // await textInput.click({ clickCount: 3 })
+        // await page.keyboard.type('tes3');
+
+        // await textInputB.click({ clickCount: 1 })
+        // await page.keyboard.type('Code3');
         // await page.waitForTimeout(3000);
     }
 
@@ -104,8 +131,8 @@ class CurrenciesPage {
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Re-Type Code 1');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('Re-Type Code 1');
         // await page.waitForTimeout(3000);
     }
 
@@ -119,8 +146,8 @@ class CurrenciesPage {
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Re-Type Code 2');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('Re-Type Code 2');
         // await page.waitForTimeout(3000);
     }
 
@@ -134,8 +161,8 @@ class CurrenciesPage {
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Re-Type Code 3');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('Re-Type Code 3');
         // await page.waitForTimeout(3000);
     }
 

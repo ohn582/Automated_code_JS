@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select Rank Form Lists
         When I select Rank Formulas
-        When I select Add Button in the Rank Formulas
         Then I typed a new Rank Formulas tes1
-        When I select Add Button in the Rank Formulas
         Then I typed a new Rank Formulas tes2
-        When I select Add Button in the Rank Formulas
         Then I typed a new Rank Formulas tes3
         Then I clicked save button in Rank Formulas
         # Then I clicked reload button for Rank Formulas

@@ -9,13 +9,11 @@ Feature: Pdware Admin User Module
     Scenario: @T.6665.79.322-testing user data
         When I select Administration and select Rank List
         When I select Rank Lists
-        When I selected Field 1
-        
-        # When I select Add Button in the ULD Team
-        Then I Re-Typed a new Rank List tes1
-        Then I Re-Typed a new Rank List tes2
-        Then I Re-Typed a new Rank List tes3
+
+        Then I Re-Typed a new Rank List Field 1
+        Then I Re-Typed a new Rank List Field 2
+        Then I Re-Typed a new Rank List Field 3
 
         # Then I Re-type Team tes1
-        Then I select save in the Rank List Data
+        Then I select save in the Rank List from updated Data
         # Then I clicked Reload button in Rank List

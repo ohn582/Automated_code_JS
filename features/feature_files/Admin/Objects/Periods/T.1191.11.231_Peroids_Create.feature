@@ -13,5 +13,5 @@ Feature: Pdware Admin User Module
         Then I type a new name in the Periods Data B
         Then I type a new name in the Periods Data C
         
-        Then I save the data
+        Then I save the Periods data
         Then I clicked reload Project OBS

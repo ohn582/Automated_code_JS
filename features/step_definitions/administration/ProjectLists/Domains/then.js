@@ -57,17 +57,13 @@ Then(`I Re-Typed a new Domain tes3`, timeout, async function() {
 
 
 
-// Filters: Delete
+// Delete
 Then(`I delete the Domain data`, timeout, async function() {
     let page = this.page;
     const listData = new domainPage(page);
     await listData.listDomainDelete();
     await page.waitForTimeout(2000);
 })
-
-
-
-
 
 Then(`I clicked save button in Domains`, timeout, async function() {
     let page = this.page;

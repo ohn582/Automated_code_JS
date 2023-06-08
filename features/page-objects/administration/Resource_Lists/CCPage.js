@@ -2,26 +2,16 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ccNav: {
-        ccAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostCategoryGridAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        ccAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
     },
 
     ccData: {
         //Creating a data
-        ccName: `[id="adminListsCostCategoryGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        ccPartition: `[id="adminListsCostCategoryGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1032"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        ccName: `[id="adminListsCostCategoryGrid"] [data-recordindex="0"] [role="presentation"]`,
 
-
-        ccNameA: `[id="adminListsCostCategoryGrid"] [data-recordindex="10"] [data-columnid="gridcolumn-1028"]`,
-        ccPartitionA: `[id="adminListsCostCategoryGrid"] [data-recordindex="10"] [data-columnid="gridcolumn-1032"]`,
-
-        ccNameB: `[id="adminListsCostCategoryGrid"] [data-recordindex="11"] [data-columnid="gridcolumn-1028"]`,
-        ccPartitionB: `[id="adminListsCostCategoryGrid"] [data-recordindex="11"] [data-columnid="gridcolumn-1032"]`,
-
-        ccNameC: `[id="adminListsCostCategoryGrid"] [data-recordindex="12"] [data-columnid="gridcolumn-1028"]`,
-        ccPartitionC: `[id="adminListsCostCategoryGrid"] [data-recordindex="12"] [data-columnid="gridcolumn-1032"]`,
+        ccNameA: `//*[text()="tes1"]`,
+        ccNameB: `//*[text()="tes2"]`,
+        ccNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,7 +21,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsCostCategoryGrid"] [role="toolbar"] [data-componentid="adminListsCostCategoryGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -48,50 +38,46 @@ class ccPage {
         this.page = page;
     }
 
-
     //Sponsor: Create
     listCCWriteA = async() => {
         let page=this.page;
-        let { ccName, ccPartition }=locators.ccData;
+        let { ccAddBtn }=locators.ccNav;
+        let { ccName }=locators.ccData;
         // await page.waitForTimeout(3000);
+        await page.click(ccAddBtn);
         
-        let textInput = await page.$(ccName);
-        let textInputB = await page.$(ccPartition); 
+        let textInput = await page.$(ccName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes1');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listCCWriteB = async() => {
         let page=this.page;
-        let { ccName, ccPartition }=locators.ccData;
+        let { ccAddBtn }=locators.ccNav;
+        let { ccName }=locators.ccData;
         // await page.waitForTimeout(3000);
+        await page.click(ccAddBtn);
         
-        let textInput = await page.$(ccName);
-        let textInputB = await page.$(ccPartition); 
+        let textInput = await page.$(ccName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes2');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listCCWriteC = async() => {
         let page=this.page;
-        let { ccName, ccPartition }=locators.ccData;
+        let { ccAddBtn }=locators.ccNav;
+        let { ccName }=locators.ccData;
         // await page.waitForTimeout(3000);
+        await page.click(ccAddBtn);
         
-        let textInput = await page.$(ccName);
-        let textInputB = await page.$(ccPartition); 
+        let textInput = await page.$(ccName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes3');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 

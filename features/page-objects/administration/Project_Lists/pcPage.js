@@ -3,25 +3,16 @@ const { action } = require('../../../utilities/action')
 const locators = {
     pcNav: {
         pcAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsProjectStateGridAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        pcAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
     },
 
     pcData: {
         //Creating a data
-        pcName: `[id="adminListsProjectCodeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        pcPartition: `[id="adminListsProjectCodeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1030"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        pcName: `[id="adminListsProjectCodeGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-
-        pcNameA: `[id="adminListsProjectCodeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        pcPartitionA: `[id="adminListsProjectCodeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1030"]`,
-
-        pcNameB: `[id="adminListsProjectCodeGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1028"]`,
-        pcPartitionB: `[id="adminListsProjectCodeGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1030"]`,
-
-        pcNameC: `[id="adminListsProjectCodeGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1028"]`,
-        pcPartitionC: `[id="adminListsProjectCodeGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1030"]`,
+        pcNameA: `//*[text()="tes1"]`,
+        pcNameB: `//*[text()="tes2"]`,
+        pcNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -30,13 +21,13 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="adminListsProjectCodeGrid"] [role="toolbar"] [data-componentid="adminListsProjectCodeGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveBtn: `[id="adminListsProjectCodeGrid"] [role="toolbar"] [data-qtip="Save"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsProjectCodeGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
-        reloadNavBtn: `//*[text()="Yes"]`,
+        relBtn: `[id="adminListsProjectCodeGrid-bodyWrap"] [id="toolbar"] [id="adminListsProjectCodeGridReload-btnIconEl"]`,
+        reloadNavBtn: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     }
 
 }
@@ -49,49 +40,43 @@ class pcPage {
     }
 
 
-    //Sponsor: Create
+    //Phases & Milestones: Create
     listPCWriteA = async () => {
         let page = this.page;
-        let { pcName, pcPartition } = locators.pcData;
+        let { pcName } = locators.pcData;
+        let { pcAddBtn } = locators.pcNav;
         // await page.waitForTimeout(3000);
+        await page.click(pcAddBtn);
 
-        let textInput = await page.$(pcName);
-        let textInputB = await page.$(pcPartition);
-
-        await textInput.click({ clickCount: 3 })
+        let textInputA = await page.$(pcName, el=>el.getAttribute("id"));
+        await textInputA.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listPCWriteB = async () => {
         let page = this.page;
-        let { pcName, pcPartition } = locators.pcData;
+        let { pcName } = locators.pcData;
+        let { pcAddBtn } = locators.pcNav;
         // await page.waitForTimeout(3000);
+        await page.click(pcAddBtn);
 
-        let textInput = await page.$(pcName);
-        let textInputB = await page.$(pcPartition);
-
-        await textInput.click({ clickCount: 3 })
+        let textInputA = await page.$(pcName, el=>el.getAttribute("id"));
+        await textInputA.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listPCWriteC = async () => {
         let page = this.page;
-        let { pcName, pcPartition } = locators.pcData;
+        let { pcName } = locators.pcData;
+        let { pcAddBtn } = locators.pcNav;
         // await page.waitForTimeout(3000);
+        await page.click(pcAddBtn);
 
-        let textInput = await page.$(pcName);
-        let textInputB = await page.$(pcPartition);
-
-        await textInput.click({ clickCount: 3 })
+        let textInputA = await page.$(pcName, el=>el.getAttribute("id"));
+        await textInputA.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +86,31 @@ class pcPage {
     //Sponsor: Update
     pcReTypeData = async () => {
         let page = this.page;
-        let { pcNameA, pcPartitionA } = locators.pcData;
+        let { pcNameA } = locators.pcData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(pcNameA);
-        let textInputB = await page.$(pcPartitionA);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(pcNameA);
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     pcReTypeDataB = async () => {
         let page = this.page;
-        let { pcNameB, pcPartitionB } = locators.pcData;
+        let { pcNameB } = locators.pcData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(pcNameB);
-        let textInputB = await page.$(pcPartitionB);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(pcNameB);
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     pcReTypeDataC = async () => {
         let page = this.page;
-        let { pcNameC, pcPartitionC } = locators.pcData;
+        let { pcNameC } = locators.pcData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(pcNameC);
-        let textInputB = await page.$(pcPartitionC);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(pcNameC);
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

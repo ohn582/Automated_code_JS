@@ -7,7 +7,7 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @delete @113 @T.4600.01.032
     Scenario: @T.4600.01.032-testing user data
-        When I select Administration and select PS project Lists
+        When I select Administration and select Project States Lists
         When I select Project States
         When I select Project States in data
         Then I delete the Project States data

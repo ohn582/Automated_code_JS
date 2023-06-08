@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
 const { HomePage } = require('../../../../page-objects/HomePage');
-const { rfTypeData } = require('../../../../components/administration/ProjectLists/rf_page.component');
+const { rfTypeData } = require('../../../../components/administration/ProjectLists/rankFields_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -16,13 +16,6 @@ When(`I select Rank Fields`, timeout, async function() {
     let page = this.page;
     const listData = new rfTypeData(page);
     listData.listRFSelect();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Add Button in the Rank Fields`, timeout, async function() {
-    let page = this.page;
-    const listData = new rfTypeData(page);
-    listData.listRFAdd();
     await page.waitForTimeout(2000);
 })
 

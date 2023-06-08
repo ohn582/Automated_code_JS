@@ -1,22 +1,17 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
         projListLink: `//*[text()="Project Lists"]`,
         domainsLink: `//*[text()="Domains"]`,
     },
 
-    domainsNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        domainAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
-
     domainsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        domainBox: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="5"] [data-columnid="checkcolumn-1044"]`,
-        domainBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="6"] [data-columnid="checkcolumn-1044"]`,
-        domainBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="7"] [data-columnid="checkcolumn-1044"]`
+        domainBox: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        domainBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        domainBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,9 +24,7 @@ class domainsTypeData {
     // Project OBS
     domainsLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink }=locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
@@ -57,13 +50,7 @@ class domainsTypeData {
         await page.waitForTimeout(3000);
     }
 
-    listDomainsAdd = async() => {
-        let page=this.page;
-        let { domainAddBtn }=locator.domainsNav;
 
-        await page.click(domainAddBtn);
-        // await page.waitForTimeout(3000);
-    }
 }
 
 exports.domainsTypeData = domainsTypeData;

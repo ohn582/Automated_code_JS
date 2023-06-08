@@ -2,26 +2,19 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     rfNav: {
-        rfAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="AdminRankFieldAdd"]`,
+        rfAddBtn: `[id="AdminRankFieldGrid-bodyWrap"] [role="toolbar"] [data-componentid="AdminRankFieldAdd"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     rfData: {
         //Creating a data
-        rfName: `[id="AdminRankFieldGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        rfDescription: `[id="AdminRankFieldGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1037"]`,
-        // domainsName: `//*[text()="New Domain"]`,
-
+        rfName: `[id="AdminRankFieldGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        // rfName: `//*[text()="New Rank Field"]`,
 
         rfNameA: `[id="AdminRankFieldGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        rfDescriptionA: `[id="AdminRankFieldGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1037"]`,
-
         rfNameB: `[id="AdminRankFieldGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1036"]`,
-        rfDescriptionB: `[id="AdminRankFieldGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1037"]`,
-
         rfNameC: `[id="AdminRankFieldGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1036"]`,
-        rfDescriptionC: `[id="AdminRankFieldGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1037"]`,
     },
 
     deleteNav: {
@@ -52,18 +45,20 @@ class rfPage {
     //Sponsor: Create
     listRFWriteA = async () => {
         let page = this.page;
-        let { rfName, rfDescription } = locators.rfData;
+        let { rfAddBtn }=locators.rfNav;
+        let { rfName } = locators.rfData;
         // await page.waitForTimeout(3000);
+        let textInput = await page.$(rfName, el=>el.getAttribute("id"));
 
-        let textInput = await page.$(rfName);
-        let textInputB = await page.$(rfDescription);
+        await page.click(rfAddBtn);
+
+        // await page.click(rfName);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
+    
 
     listRFWriteB = async () => {
         let page = this.page;

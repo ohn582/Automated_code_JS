@@ -2,26 +2,18 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ftNav: {
-        ftAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostItemGridAdd"]`,
+        ftAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     ftData: {
         //Creating a data
-        ftName: `[id="adminListsFeatureTypeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        ftPartition: `[id="adminListsFeatureTypeGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1038"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        ftHeaderName: `[id="adminListsFeatureTypeGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-
-        ftNameA: `[id="adminListsFeatureTypeGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1036"]`,
-        ftPartitionA: `[id="adminListsFeatureTypeGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1038"]`,
-
-        ftNameB: `[id="adminListsFeatureTypeGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1036"]`,
-        ftPartitionB: `[id="adminListsFeatureTypeGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1038"]`,
-
-        ftNameC: `[id="adminListsFeatureTypeGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1036"]`,
-        ftPartitionC: `[id="adminListsFeatureTypeGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1038"]`,
+        ftNameA: `//*[text()="tes1"]`,
+        ftNameB: `//*[text()="tes2"]`,
+        ftNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,7 +23,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsFeatureTypeGrid"] [role="toolbar"] [data-componentid="adminListsFeatureTypeGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -52,46 +44,46 @@ class FeatureTypesPage {
     //Sponsor: Create
     listFTWriteA = async () => {
         let page = this.page;
-        let { ftName, ftPartition } = locators.ftData;
+        let { ftAddBtn } = locators.ftNav;
+        let { ftHeaderName } = locators.ftData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ftName);
-        let textInputB = await page.$(ftPartition);
+        await page.click(ftAddBtn);
+
+        let textInput = await page.$(ftHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listFTWriteB = async () => {
         let page = this.page;
-        let { ftName, ftPartition } = locators.ftData;
+        let { ftAddBtn } = locators.ftNav;
+        let { ftHeaderName } = locators.ftData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ftName);
-        let textInputB = await page.$(ftPartition);
+        await page.click(ftAddBtn);
+
+        let textInput = await page.$(ftHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listFTWriteC = async () => {
         let page = this.page;
-        let { ftName, ftPartition } = locators.ftData;
+        let { ftAddBtn } = locators.ftNav;
+        let { ftHeaderName } = locators.ftData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ftName);
-        let textInputB = await page.$(ftPartition);
+        await page.click(ftAddBtn);
+
+        let textInput = await page.$(ftHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +93,37 @@ class FeatureTypesPage {
     //Sponsor: Update
     featureTypesReTypeData = async () => {
         let page = this.page;
-        let { ftNameA, ftPartitionA } = locators.ftData;
+        let { ftNameA } = locators.ftData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ftNameA);
-        let textInputB = await page.$(ftPartitionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     featureTypesReTypeDataB = async () => {
         let page = this.page;
-        let { ftNameB, ftPartitionB } = locators.ftData;
+        let { ftNameB } = locators.ftData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ftNameB);
-        let textInputB = await page.$(ftPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     featureTypesReTypeDataC = async () => {
         let page = this.page;
-        let { ftNameC, ftPartitionC } = locators.ftData;
+        let { ftNameC } = locators.ftData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ftNameC);
-        let textInputB = await page.$(ftPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

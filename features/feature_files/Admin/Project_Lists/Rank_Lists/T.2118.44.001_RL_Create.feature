@@ -9,15 +9,9 @@ Feature: Pdware Admin User Module
         When I select Administration and select Rank List
         When I select Rank Lists
 
-        Then I create a new Rank List name
-        When I selected Field 1
-
-        When I select Add Button in the Rank List
-        Then I typed a new Rank List tes1
-        When I select Add Button in the Rank List
-        Then I typed a new Rank List tes2
-        When I select Add Button in the Rank List
-        Then I typed a new Rank List tes3
+        Then I create a new Rank List name tes1
+        Then I create a new Rank List name tes2
+        Then I create a new Rank List name tes3
      
         Then I select save in the Rank List Data
         # Then I clicked Reload button in Rank List

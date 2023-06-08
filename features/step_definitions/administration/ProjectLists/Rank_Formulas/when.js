@@ -19,13 +19,6 @@ When(`I select Rank Formulas`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Rank Formulas`, timeout, async function() {
-    let page = this.page;
-    const listData = new RankFormTypeData(page);
-    listData.listRFAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Rank Formulas in data`, timeout, async function() {
     let page = this.page;
     const listData = new RankFormTypeData(page);

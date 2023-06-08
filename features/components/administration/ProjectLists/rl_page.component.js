@@ -1,9 +1,8 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
-        otherLink: `//*[text()="Project Lists"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
+        projectListLink: `//*[text()="Project Lists"]`,
         rlLink: `//*[text()="Rank Lists"]`,
     },
 
@@ -17,9 +16,9 @@ const locator = {
 
     rlCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        rlBox: `[data-componentid="r1MainViewPort"] [id="AdminListGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="checkcolumn-1055"]`,
-        rlBoxB: `[data-componentid="r1MainViewPort"] [id="AdminListGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="checkcolumn-1055"]`,
-        rlBoxC: `[data-componentid="r1MainViewPort"] [id="AdminListGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="checkcolumn-1055"]`
+        rlBox: `[id="AdminListGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        rlBoxB: `[id="AdminListGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        rlBoxC: `[id="AdminListGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -32,9 +31,7 @@ class RankListsData {
     // Project OBS
     otherListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink } = locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
@@ -42,10 +39,9 @@ class RankListsData {
 
     listRLSelect = async () => {
         let page = this.page;
-        let { rlLink, otherLink } = locator.admin_Page;
+        let { projectListLink, rlLink } = locator.admin_Page;
 
-        await page.click(otherLink);
-        // await page.waitForTimeout(1000);
+        await page.click(projectListLink);
         await page.click(rlLink);
         await page.waitForTimeout(3000);
     }
@@ -79,13 +75,7 @@ class RankListsData {
         await page.waitForTimeout(3000);
     }
 
-    listRLAdd = async () => {
-        let page = this.page;
-        let { rlAddDetailsBtn } = locator.rlNav;
 
-        await page.click(rlAddDetailsBtn);
-        // await page.waitForTimeout(3000);
-    }
 }
 
 module.exports.RankListsData = RankListsData;

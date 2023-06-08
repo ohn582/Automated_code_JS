@@ -2,26 +2,17 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     psNav: {
-        psAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsProjectStateGridAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        psAddBtn: `[id="adminListsProjectStateGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsProjectStateGridAdd"]`,
     },
 
     psData: {
         //Creating a data
-        psName: `[id="adminListsProjectStateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        psPartition: `[id="adminListsProjectStateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1033"]`,
+        psName: `[id="adminListsProjectStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-
-        psNameA: `[id="adminListsProjectStateGrid"] [data-recordindex="10"] [data-columnid="gridcolumn-1028"]`,
-        psPartitionA: `[id="adminListsProjectStateGrid"] [data-recordindex="10"] [data-columnid="gridcolumn-1033"]`,
-
-        psNameB: `[id="adminListsProjectStateGrid"] [data-recordindex="11"] [data-columnid="gridcolumn-1028"]`,
-        psPartitionB: `[id="adminListsProjectStateGrid"] [data-recordindex="11"] [data-columnid="gridcolumn-1033"]`,
-
-        psNameC: `[id="adminListsProjectStateGrid"] [data-recordindex="12"] [data-columnid="gridcolumn-1028"]`,
-        psPartitionC: `[id="adminListsProjectStateGrid"] [data-recordindex="12"] [data-columnid="gridcolumn-1033"]`,
+        psNameA: `//*[text()="tes1"]`,
+        psNameB: `//*[text()="tes2"]`,
+        psNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,11 +22,11 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsProjectStateGrid"] [role="toolbar"] [data-componentid="adminListsProjectStateGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsProjectStateGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
+        relBtn: `[id="r1AdminMain"] [id="toolbar"] [id="adminListsProjectStateGridReload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
     }
 
@@ -52,47 +43,44 @@ class psPage {
     //Sponsor: Create
     listPSWriteA = async() => {
         let page=this.page;
-        let { psName, psPartition }=locators.psData;
+        let { psName }=locators.psData;
+        let { psAddBtn }=locators.psNav;
+        await page.click(psAddBtn);
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(psName);
-        let textInputB = await page.$(psPartition); 
+
+        let textInput = await page.$(psName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes1');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Testing');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     listPSWriteB = async() => {
         let page=this.page;
-        let { psName, psPartition }=locators.psData;
+        let { psName }=locators.psData;
+        let { psAddBtn }=locators.psNav;
+        await page.click(psAddBtn);
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(psName);
-        let textInputB = await page.$(psPartition); 
+
+        let textInput = await page.$(psName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes2');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('API');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     listPSWriteC = async() => {
         let page=this.page;
-        let { psName, psPartition }=locators.psData;
+        let { psName }=locators.psData;
+        let { psAddBtn }=locators.psNav;
+        await page.click(psAddBtn);
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(psName);
-        let textInputB = await page.$(psPartition); 
+
+        let textInput = await page.$(psName, el=>el.getAttribute("id"));
 
         await textInput.click({clickCount: 3})
         await page.keyboard.type('tes3');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Consulting');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
 
@@ -101,47 +89,38 @@ class psPage {
     //Sponsor: Update
     psReTypeData = async() => {
         let page=this.page;
-        let { psNameA, psPartitionA }=locators.psData;
+        let { psNameA }=locators.psData;
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(psNameA); 
-        let textInputB = await page.$(psPartitionA); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('API');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     psReTypeDataB = async() => {
         let page=this.page;
-        let { psNameB, psPartitionB }=locators.psData;
+        let { psNameB }=locators.psData;
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(psNameB); 
-        let textInputB = await page.$(psPartitionB); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Consulting');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
     
     psReTypeDataC = async() => {
         let page=this.page;
-        let { psNameC, psPartitionC }=locators.psData;
+        let { psNameC }=locators.psData;
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(psNameC); 
-        let textInputB = await page.$(psPartitionC); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Testing');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     

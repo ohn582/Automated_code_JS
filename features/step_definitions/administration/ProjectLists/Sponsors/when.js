@@ -21,13 +21,6 @@ When(`I select Sponsors`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Sponsors`, timeout, async function() {
-    let page = this.page;
-    const listData = new sponsorsTypeData(page);
-    listData.listsponsorsAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Sponsors datas`, timeout, async function() {
     let page = this.page;
     const listData = new sponsorsTypeData(page);
