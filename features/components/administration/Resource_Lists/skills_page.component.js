@@ -1,22 +1,19 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
         resListLink: `//*[text()="Resource Lists"]`,
         skillsLink: `//*[text()="Skills"]`,
     },
 
-    skillsNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        skillsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
-    },
+
 
     skillsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        skillsBox: `[data-componentid="r1MainViewPort"] [id="adminListsSkillGrid-bodyWrap"] [data-recordindex="12"] [data-columnid="checkcolumn-1041"]`,
-        skillsBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsSkillGrid-bodyWrap"] [data-recordindex="13"] [data-columnid="checkcolumn-1041"]`,
-        skillsBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsSkillGrid-bodyWrap"] [data-recordindex="14"] [data-columnid="checkcolumn-1041"]`
+        skillsBox: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        skillsBoxB: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        skillsBoxC: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -29,9 +26,7 @@ class skillsTypeData {
     // Project OBS
     projectListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink } = locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
@@ -55,14 +50,6 @@ class skillsTypeData {
         await page.click(skillsBoxB);
         await page.click(skillsBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listSkillsAdd = async () => {
-        let page = this.page;
-        let { skillsAddBtn } = locator.skillsNav;
-
-        await page.click(skillsAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

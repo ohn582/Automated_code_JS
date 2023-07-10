@@ -15,6 +15,9 @@ Feature: Pdware Admin User Module
         Then I create a new data for partition C
 
         Then I select save button
-        Then I select reload button
+        Then I verify the Edit OBSs data by re-loging admin account
 
-        # Then I select Save button
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Objects
+        When I select Object Partitions
+

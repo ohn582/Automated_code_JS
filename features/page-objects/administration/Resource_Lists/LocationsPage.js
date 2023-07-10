@@ -2,26 +2,20 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     locationsNav: {
-        locationsAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCostCategoryGridAdd"]`,
+        locationsAddBtn: `[id="R1TLocations"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     locationsData: {
         //Creating a data
-        locationsName: `[id="adminListsLocationGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
-        locationsPartition: `[id="adminListsLocationGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1031"]`,
+        // locationsName: `//*[text()="New Location"]`,
+        locationsName: `[id="adminListsLocationGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-
-        locationsNameA: `[id="adminListsLocationGrid"] [data-recordindex="15"] [data-columnid="gridcolumn-1028"]`,
-        locationsPartitionA: `[id="adminListsLocationGrid"] [data-recordindex="15"] [data-columnid="gridcolumn-1031"]`,
-
-        locationsNameB: `[id="adminListsLocationGrid"] [data-recordindex="16"] [data-columnid="gridcolumn-1028"]`,
-        locationsPartitionB: `[id="adminListsLocationGrid"] [data-recordindex="16"] [data-columnid="gridcolumn-1031"]`,
-
-        locationsNameC: `[id="adminListsLocationGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1028"]`,
-        locationsPartitionC: `[id="adminListsLocationGrid"] [data-recordindex="17"] [data-columnid="gridcolumn-1031"]`,
+        locationsNameA: `//*[text()="New tes1"]`,
+        locationsNameB: `//*[text()="New tes2"]`,
+        locationsNameC: `//*[text()="New tes3"]`,
     },
 
     deleteNav: {
@@ -31,7 +25,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsLocationGrid"] [role="toolbar"] [data-componentid="adminListsLocationGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -52,46 +46,40 @@ class LocationsPage {
     //Sponsor: Create
     listLocationsWriteA = async () => {
         let page = this.page;
-        let { locationsName, locationsPartition } = locators.locationsData;
+        let { locationsAddBtn } = locators.locationsNav;
+        let { locationsName } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(locationsName);
-        let textInputB = await page.$(locationsPartition);
+        await page.click(locationsAddBtn)
 
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(locationsName)
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listLocationsWriteB = async () => {
         let page = this.page;
-        let { locationsName, locationsPartition } = locators.locationsData;
+        let { locationsAddBtn } = locators.locationsNav;
+        let { locationsName } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(locationsName);
-        let textInputB = await page.$(locationsPartition);
+        await page.click(locationsAddBtn)
 
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(locationsName)
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listLocationsWriteC = async () => {
         let page = this.page;
-        let { locationsName, locationsPartition } = locators.locationsData;
+        let { locationsAddBtn } = locators.locationsNav;
+        let { locationsName } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(locationsName);
-        let textInputB = await page.$(locationsPartition);
+        await page.click(locationsAddBtn)
 
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(locationsName)
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +89,37 @@ class LocationsPage {
     //Sponsor: Update
     locationsReTypeData = async () => {
         let page = this.page;
-        let { locationsNameA, locationsPartitionA } = locators.locationsData;
+        let { locationsNameA } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(locationsNameA);
-        let textInputB = await page.$(locationsPartitionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     locationsReTypeDataB = async () => {
         let page = this.page;
-        let { locationsNameB, locationsPartitionB } = locators.locationsData;
+        let { locationsNameB } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(locationsNameB);
-        let textInputB = await page.$(locationsPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     locationsReTypeDataC = async () => {
         let page = this.page;
-        let { locationsNameC, locationsPartitionC } = locators.locationsData;
+        let { locationsNameC } = locators.locationsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(locationsNameC);
-        let textInputB = await page.$(locationsPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

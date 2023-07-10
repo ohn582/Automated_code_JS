@@ -14,4 +14,7 @@ Feature: Pdware Admin User Module
         Then I type a new name in the new Sibling and child C
         
         Then I save the OBSdata
-        Then I clicked reload Project OBS
+        Then I verify the Edit OBSs data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Objects and select Edit OBSs

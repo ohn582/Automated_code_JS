@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.5300.07.001-testing user data
         When I select Administration and select Location Resource Lists
         When I select Locations
-        When I select Add Button in the Locations
         Then I typed a new Locations tes1
-        When I select Add Button in the Locations
         Then I typed a new Locations tes2
-        When I select Add Button in the Locations
         Then I typed a new Locations tes3
         Then I clicked save button in Locations
         # Then I clicked Reload button in Locations

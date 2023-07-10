@@ -1,7 +1,7 @@
 const expect = require("chai").use(require("chai-as-promised")).expect;
 
 
-// /** @type {import('playwright').Page} **/
+// /** @type {import('').Page} **/
 // let page;
 
 

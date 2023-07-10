@@ -21,13 +21,6 @@ When(`I select Skills`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Skills`, timeout, async function () {
-    let page = this.page;
-    const listData = new skillsTypeData(page);
-    listData.listSkillsAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Skills datas`, timeout, async function () {
     let page = this.page;
     const listData = new skillsTypeData(page);

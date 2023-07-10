@@ -2,25 +2,27 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     countriesNav: {
-        countriesAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsCountryGridAdd"]`,
+        countriesAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
+
     countriesData: {
         //Creating a data
-        countriesName: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1028"]`,
+        countriesName: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
+        // countriesName: `//*[text()="New Country"]`,
         countriesPartition: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1032"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
 
-        countriesNameA: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1028"]`,
+        countriesNameA: `//*[text()="New tes1"]`,
         countriesPartitionA: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1032"]`,
 
-        countriesNameB: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="8"] [data-columnid="gridcolumn-1028"]`,
+        countriesNameB: `//*[text()="New tes2"]`,
         countriesPartitionB: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="8"] [data-columnid="gridcolumn-1032"]`,
 
-        countriesNameC: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1028"]`,
+        countriesNameC: `//*[text()="New tes3"]`,
         countriesPartitionC: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1032"]`,
     },
 
@@ -31,7 +33,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsCountryGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsCountryGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -48,50 +50,61 @@ class CountriesPage {
         this.page = page;
     }
 
-
     //Sponsor: Create
     listCountriesWriteA = async() => {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
+        let { countriesAddBtn }=locators.countriesNav;
+        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        // let textInput = await page.$(countriesName); 
+        // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(countriesName);
-        let textInputB = await page.$(countriesPartition); 
 
-        await textInput.click({clickCount: 3})
+
+        await page.click(countriesAddBtn);
+        
+        // await textInput.click({clickCount: 3})
+        await page.dblclick(countriesName);
         await page.keyboard.type('tes1');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Testing');
+        // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listCountriesWriteB = async() => {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
+        let { countriesAddBtn }=locators.countriesNav;
+        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        // let textInput = await page.$(countriesName); 
+        // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(countriesName);
-        let textInputB = await page.$(countriesPartition); 
 
-        await textInput.click({clickCount: 3})
+
+        await page.click(countriesAddBtn);
+        
+        // await textInput.click({clickCount: 3})
+        await page.dblclick(countriesName);
         await page.keyboard.type('tes2');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('API');
+        // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listCountriesWriteC = async() => {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
+        let { countriesAddBtn }=locators.countriesNav;
+        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        // let textInput = await page.$(countriesName); 
+        // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-        
-        let textInput = await page.$(countriesName);
-        let textInputB = await page.$(countriesPartition); 
 
-        await textInput.click({clickCount: 3})
+
+        await page.click(countriesAddBtn);
+        
+        // await textInput.click({clickCount: 3})
+        await page.dblclick(countriesName);
         await page.keyboard.type('tes3');
-        await textInputB.click({clickCount: 1})
-        await page.keyboard.type('Consulting');
+        // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
@@ -109,8 +122,8 @@ class CountriesPage {
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('API');
+        // await textInputB.click({clickCount: 3})
+        // await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
@@ -124,8 +137,8 @@ class CountriesPage {
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Consulting');
+        // await textInputB.click({clickCount: 3})
+        // await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
     
@@ -139,8 +152,8 @@ class CountriesPage {
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Testing');
+        // await textInputB.click({clickCount: 3})
+        // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

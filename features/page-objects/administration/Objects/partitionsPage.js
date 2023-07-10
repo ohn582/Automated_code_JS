@@ -24,8 +24,13 @@ const locators = {
         partReloadBtn: `[id="adminListsPartitionGrid-bodyWrap"] [id="adminListsPartitionGridReload-btnIconEl"]`,
         reloadYes: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
-        
-    
+
+    partitionsLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
+    }
+           
 }
 
 
@@ -135,11 +140,12 @@ class partitionsPage {
     }
 
     partitionReload = async() => {
-        let page=this.page;
-        let { partReloadBtn, reloadYes }=locators.partitions;
-        await page.click(partReloadBtn);
-        // await page.click(reloadYes);
-        // await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.partitionsLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 
 }

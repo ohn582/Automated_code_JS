@@ -2,7 +2,7 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     baseNav: {
-        baseAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsBaselineTypeGridAdd"]`,
+        baseAddBtn: `[id="adminListsBaselineTypeGrid"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
@@ -10,18 +10,10 @@ const locators = {
     baseData: {
         //Creating a data
         baseName: `[id="adminBaselineGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1035"]`,
-        baseVersion: `[id="adminBaselineGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1037"]`,
-        // domainsName: `//*[text()="New Domain"]`,
 
-
-        baseNameA: `[id="adminBaselineGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1035"]`,
-        baseVersionA: `[id="adminBaselineGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1037"]`,
-
-        baseNameB: `[id="adminBaselineGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1035"]`,
-        baseVersionB: `[id="adminBaselineGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1037"]`,
-
-        baseNameC: `[id="adminBaselineGrid"] [data-recordindex="5"] [data-columnid="gridcolumn-1035"]`,
-        baseVersionC: `[id="adminBaselineGrid"] [data-recordindex="5"] [data-columnid="gridcolumn-1037"]`,
+        baseNameA: `//*[text()="tes1"]`,
+        baseNameB: `//*[text()="tes2"]`,
+        baseNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -52,46 +44,46 @@ class BaselinePage {
     //Sponsor: Create
     listBaselineWriteA = async () => {
         let page = this.page;
-        let { baseName, basePartition } = locators.baseData;
+        let { baseAddBtn } = locators.baseNav;
+        let { baseName } = locators.baseData;
         // await page.waitForTimeout(3000);
 
+        await page.click(baseAddBtn);
+
         let textInput = await page.$(baseName);
-        let textInputB = await page.$(basePartition);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('1');
         // await page.waitForTimeout(3000);
     }
 
     listBaselineWriteB = async () => {
         let page = this.page;
-        let { baseName, baseVerison } = locators.baseData;
+        let { baseAddBtn } = locators.baseNav;
+        let { baseName } = locators.baseData;
         // await page.waitForTimeout(3000);
 
+        await page.click(baseAddBtn);
+
         let textInput = await page.$(baseName);
-        let textInputB = await page.$(baseVerison);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('2');
         // await page.waitForTimeout(3000);
     }
 
     listBaselineWriteC = async () => {
         let page = this.page;
-        let { baseName, baseVerison } = locators.baseData;
+        let { baseAddBtn } = locators.baseNav;
+        let { baseName } = locators.baseData;
         // await page.waitForTimeout(3000);
 
+        await page.click(baseAddBtn);
+
         let textInput = await page.$(baseName);
-        let textInputB = await page.$(baseVerison);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('3');
         // await page.waitForTimeout(3000);
     }
 

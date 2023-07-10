@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Baseline Types
         When I select multiple Baseline Types datas
         Then I delete the Baseline Types data
+
         Then I clicked save button in Baseline Types
-        # Then I clicked Reload button in Baseline Types
+        Then I verify the Baseline Types data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Baseline Types List
+        When I select Baseline Types

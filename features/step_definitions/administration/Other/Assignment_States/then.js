@@ -54,7 +54,7 @@ Then(`I Re-Typed a new Assignment States tes3`, timeout, async function() {
 
 
 
-// Categories: Delete
+// Assignment States: Delete
 Then(`I delete the Assignment States data`, timeout, async function() {
     let page = this.page;
     const listData = new AssignmentStatePage(page);
@@ -62,6 +62,7 @@ Then(`I delete the Assignment States data`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+// Assignment States: Save
 Then(`I clicked save button in Assignment States`, timeout, async function() {
     let page = this.page;
     const listData = new AssignmentStatePage(page);
@@ -69,7 +70,8 @@ Then(`I clicked save button in Assignment States`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Assignment States`, timeout, async function() {
+// Assignment States: Reload
+Then(`I verify the Assignment States data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new AssignmentStatePage(page);
     await listData.listASReload();

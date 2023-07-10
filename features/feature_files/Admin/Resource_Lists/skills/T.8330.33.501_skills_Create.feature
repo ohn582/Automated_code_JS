@@ -9,11 +9,9 @@ Feature: Pdware Admin User Module
     Scenario: @T.8330.33.501-testing user data
         When I select Administration and select Skills Resource Lists
         When I select Skills
-        When I select Add Button in the Skills
         Then I typed a new Skills
-        When I select Add Button in the Skills
         Then I typed a new Skills tes2
-        When I select Add Button in the Skills
         Then I typed a new Skills tes3
 
         Then I clicked save button in Skills
+        Then I clicked Reload button in Skills

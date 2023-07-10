@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Scenario Status
         When I select multiple Scenario Status datas
         Then I delete the Scenario Status data
+
         Then I clicked save button in Scenario Status
-        # Then I clicked Reload button in Scenario Status
+        Then I verify the Scenario Status data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Scenario Status List
+        When I select Scenario Status

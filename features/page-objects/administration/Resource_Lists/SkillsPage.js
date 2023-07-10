@@ -2,26 +2,20 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     skillsNav: {
-        skillsAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsSkillsGridAdd"]`,
+        skillsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     skillsData: {
         //Creating a data
-        skillsName: `[id="adminListsSkillGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1029"]`,
-        skillsPartition: `[id="adminListsSkillGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1033"]`,
+        skillsName: `[id="adminListsSkillGrid"] [data-recordindex="0"] [role="presentation"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
 
-        skillsNameA: `[id="adminListsSkillGrid"] [data-recordindex="13"] [data-columnid="gridcolumn-1029"]`,
-        skillsPartitionA: `[id="adminListsSkillGrid"] [data-recordindex="13"] [data-columnid="gridcolumn-1033"]`,
-
-        skillsNameB: `[id="adminListsSkillGrid"] [data-recordindex="14"] [data-columnid="gridcolumn-1029"]`,
-        skillsPartitionB: `[id="adminListsSkillGrid"] [data-recordindex="14"] [data-columnid="gridcolumn-1033"]`,
-
-        skillsNameC: `[id="adminListsSkillGrid"] [data-recordindex="15"] [data-columnid="gridcolumn-1029"]`,
-        skillsPartitionC: `[id="adminListsSkillGrid"] [data-recordindex="15"] [data-columnid="gridcolumn-1033"]`,
+        skillsNameA: `//*[text()="tes1"]`,
+        skillsNameB: `//*[text()="tes2"]`,
+        skillsNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,11 +25,11 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="adminListsSkillGrid"] [role="toolbar"] [data-componentid="adminListsSkillGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsSkillGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
+        relBtn: `[id="r1AdminMain"] [id="adminListsSkillGrid"] [id="toolbar"] [aria-label="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
     }
 
@@ -52,46 +46,43 @@ class SkillsPage {
     //Sponsor: Create
     listSkillsWriteA = async () => {
         let page = this.page;
-        let { skillsName, skillsPartition } = locators.skillsData;
+        let { skillsName } = locators.skillsData;
+        let { skillsAddBtn } = locators.skillsNav;
         // await page.waitForTimeout(3000);
+        await page.click(skillsAddBtn);
 
-        let textInput = await page.$(skillsName);
-        let textInputB = await page.$(skillsPartition);
+        let textInput = await page.$(skillsName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listSkillsWriteB = async () => {
         let page = this.page;
-        let { skillsName, skillsPartition } = locators.skillsData;
+        let { skillsName } = locators.skillsData;
+        let { skillsAddBtn } = locators.skillsNav;
         // await page.waitForTimeout(3000);
+        await page.click(skillsAddBtn);
 
-        let textInput = await page.$(skillsName);
-        let textInputB = await page.$(skillsPartition);
+        let textInput = await page.$(skillsName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listSkillsWriteC = async () => {
         let page = this.page;
-        let { skillsName, skillsPartition } = locators.skillsData;
+        let { skillsName } = locators.skillsData;
+        let { skillsAddBtn } = locators.skillsNav;
         // await page.waitForTimeout(3000);
+        await page.click(skillsAddBtn);
 
-        let textInput = await page.$(skillsName);
-        let textInputB = await page.$(skillsPartition);
+        let textInput = await page.$(skillsName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +92,37 @@ class SkillsPage {
     //Sponsor: Update
     skillsReTypeData = async () => {
         let page = this.page;
-        let { skillsNameA, skillsPartitionA } = locators.skillsData;
+        let { skillsNameA } = locators.skillsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(skillsNameA);
-        let textInputB = await page.$(skillsPartitionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     skillsReTypeDataB = async () => {
         let page = this.page;
-        let { skillsNameB, skillsPartitionB } = locators.skillsData;
+        let { skillsNameB } = locators.skillsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(skillsNameB);
-        let textInputB = await page.$(skillsPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     skillsReTypeDataC = async () => {
         let page = this.page;
-        let { skillsNameC, skillsPartitionC } = locators.skillsData;
+        let { skillsNameC } = locators.skillsData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(skillsNameC);
-        let textInputB = await page.$(skillsPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

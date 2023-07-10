@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Assignment States
         When I select multiple Assignment States datas
         Then I delete the Assignment States data
+
         Then I clicked save button in Assignment States
-        # Then I clicked Reload button in Assignment States
+        Then I verify the Assignment States data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Assignment States List
+        When I select Assignment States

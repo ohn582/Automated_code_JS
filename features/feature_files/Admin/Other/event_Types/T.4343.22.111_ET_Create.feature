@@ -9,11 +9,13 @@ Feature: Pdware Admin User Module
     Scenario: @T.4343.22.111-testing user data
         When I select Administration and Event Types List
         When I select Event Types
-        When I select Add Button in the Event Types
         Then I typed a new Event Types tes1
-        When I select Add Button in the Event Types
         Then I typed a new Event Types tes2
-        When I select Add Button in the Event Types
         Then I typed a new Event Types tes3
+
         Then I clicked save button in Event Types
-        # Then I clicked Reload button in Event Types
+        Then I verify the Event Types data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Event Types List
+        When I select Event Types

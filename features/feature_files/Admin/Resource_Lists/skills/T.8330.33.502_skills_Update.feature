@@ -12,4 +12,6 @@ Feature: Pdware Admin User Module
         When I Re-Typed a new Skills
         Then I Re-Typed a new Skills tes2
         Then I Re-Typed a new Skills tes3
+
         Then I clicked save button in Skills
+        Then I clicked Reload button in Skills

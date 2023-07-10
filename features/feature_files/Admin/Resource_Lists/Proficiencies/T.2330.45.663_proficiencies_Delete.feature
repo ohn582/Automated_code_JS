@@ -12,3 +12,5 @@ Feature: Pdware Admin User Module
         When I select multiple Proficiencies datas
         Then I delete the Proficiencies data
         Then I clicked save button in Proficiencies
+
+        Then I clicked save button in Proficiencies

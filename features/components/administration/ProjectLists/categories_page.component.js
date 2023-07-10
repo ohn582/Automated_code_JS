@@ -6,11 +6,6 @@ const locator = {
         categoriesLink: `//*[text()="Categories"]`,
     },
 
-    categoriesNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        
-    },
-
     categoriesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
         categoriesBox: `[id="adminListsCategoryGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,

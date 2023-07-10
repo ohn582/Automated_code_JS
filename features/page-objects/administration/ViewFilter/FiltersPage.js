@@ -8,7 +8,7 @@ const locators = {
     },
 
     filtersData: {
-        filterDataAdd: `[role="alertdialog"] [id="messagebox-1001-bodyWrap"] [id="messagebox-1001-toolbar"] [data-componentid="button-1005"]`,
+        filterDataAdd: `[id="adminListsCostItemCategoryGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         filterName: `[role="alertdialog"] [id="messagebox-1001-bodyWrap"] [id="container-1003-innerCt"] [id="FinancialNewFilter"]`,
 
         filterPartition: `[id="ext-element-692"] [data-componentid="gridview-1036"] [data-recordindex="0"] [class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1030 x-grid-cell-first x-unselectable"]`,

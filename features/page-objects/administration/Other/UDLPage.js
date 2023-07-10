@@ -2,15 +2,10 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     udlNav: {
-        // udlAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsBaselineTypeGridAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
-        udlAddBtnName: `[id="AdminUserDefinedListGrid-bodyWrap"] [role="toolbar"] [aria-label="Add"]`,
-
-        udlAddBtnValue: `[id="AdminUserDefinedListGrid-bodyWrap"] [role="toolbar"] [aria-label="Add"]`,
+        udlAddDetailsBtn: `[id="AdminUserDefinedListGrid-bodyWrap"] [role="toolbar"] [aria-label="Add"]`,
 
         //WindowNav
-        udlAddBtnWindow: `[id="AdminUdfListAddWindow"] [role="toolbar"] [aria-label="Add"]`,
+        udlAddBtnWindowAlert: `[id="AdminUdfListAddWindow"] [role="toolbar"] [tabindex="0"]`,
     },
     
     udlData: {
@@ -62,15 +57,16 @@ class UserDefinedPage {
     nameUDLWrite = async () => {
         let page = this.page;
         let { udlName } = locators.udlData;
-        let { udlAddBtnName, udlAddBtnWindow } = locators.udlNav;
+        let { udlAddDetailsBtn, udlAddBtnWindowAlert } = locators.udlNav;
         // await page.waitForTimeout(3000);
 
-        await page.click(udlAddBtnName);
+        await page.click(udlAddDetailsBtn);
         let textInput = await page.$(udlName);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Field 3');
-        await page.click(udlAddBtnWindow);
+        
+        await page.click(udlAddBtnWindowAlert);
         // await page.waitForTimeout(3000);
     }
 

@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Baseline Types tes1
         Then I Re-Typed a new Baseline Types tes2
         Then I Re-Typed a new Baseline Types tes3
+
         Then I clicked save button in Baseline Types
-        # Then I clicked Reload button in Baseline Types
+        Then I verify the Baseline Types data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Baseline Types List
+        When I select Baseline Types

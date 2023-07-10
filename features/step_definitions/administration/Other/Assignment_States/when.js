@@ -21,13 +21,6 @@ When(`I select Assignment States`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Assignment States`, timeout, async function() {
-    let page = this.page;
-    const listData = new AssignmentStatesData(page);
-    listData.listAS_Add();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Assignment States datas`, timeout, async function() {
     let page = this.page;
     const listData = new AssignmentStatesData(page);

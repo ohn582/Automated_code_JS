@@ -9,11 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.5000.02.001-testing user data
         When I select Administration and select Countries resource Lists
         When I select Countries
-        When I select Add Button in the Countries
         Then I typed a new Countries tes1
-        When I select Add Button in the Countries
         Then I typed a new Countries tes2
-        When I select Add Button in the Countries
         Then I typed a new Countries tes3
         Then I clicked save button in Countries
         # Then I clicked Reload button in Countries

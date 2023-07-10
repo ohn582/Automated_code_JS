@@ -10,9 +10,9 @@ const locator = {
 
     ccCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ccBox: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="10"] [role="row"] [tabindex="-1"]`,
-        ccBoxB: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="11"] [role="row"] [tabindex="-1"]`,
-        ccBoxC: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="12"] [role="row"] [tabindex="-1"]`
+        ccBox: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        ccBoxB: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        ccBoxC: `[id="adminListsCostCategoryGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

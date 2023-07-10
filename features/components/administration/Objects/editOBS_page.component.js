@@ -7,7 +7,6 @@ const locator = {
         obsLink: `//*[text()="Edit OBSs"]`,
         objectLink: `//*[text()="Objects"]`,
     },
-
 }
 
 class editOBSTypeData {

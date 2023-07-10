@@ -11,5 +11,9 @@ Feature: Pdware Admin User Module
         When I select a name in the data
 
         Then I select delete in the OBS data
-        Then I save the data
-        Then I clicked reload Project OBS
+
+        Then I save the OBSdata
+        Then I verify the Edit OBSs data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Objects and select Edit OBSs

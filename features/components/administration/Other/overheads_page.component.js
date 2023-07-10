@@ -1,23 +1,16 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         otherLink: `//*[text()="Other"]`,
         overLink: `//*[text()="Overheads"]`,
     },
 
-    overNav: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        overAddBtn: `[id="adminListsOverheadGrid"] [role="toolbar"] [data-qtip="Add"]`,
-
-    },
-
     overCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        overBox: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="3"] [data-columnid="checkcolumn-1047"]`,
-        overBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="4"] [data-columnid="checkcolumn-1047"]`,
-        overBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="5"] [data-columnid="checkcolumn-1047"]`
+        overBox: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        overBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        overBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -30,9 +23,7 @@ class OverheadsTypeData {
     // Project OBS
     otherListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink } = locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.waitForTimeout(3000);
@@ -56,14 +47,6 @@ class OverheadsTypeData {
         await page.click(overBoxB);
         await page.click(overBoxC);
         await page.waitForTimeout(3000);
-    }
-
-    listOverAdd = async () => {
-        let page = this.page;
-        let { overAddBtn } = locator.overNav;
-
-        await page.click(overAddBtn);
-        // await page.waitForTimeout(3000);
     }
 }
 

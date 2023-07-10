@@ -55,23 +55,23 @@ Then(`I Re-Typed a new Overheads tes3`, timeout, async function() {
 
 
 // Categories: Delete
-Then(`I delete the Overheads Types data`, timeout, async function() {
+Then(`I delete the Overheads data`, timeout, async function() {
     let page = this.page;
     const listData = new OverheadsPage(page);
     await listData.listOverDelete();
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked save button in Overheads Types`, timeout, async function() {
+Then(`I clicked save button in Overheads`, timeout, async function() {
     let page = this.page;
     const listData = new OverheadsPage(page);
     await listData.listOverSave();
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I clicked Reload button in Overheads Types`, timeout, async function() {
+Then(`I verify the Overheads data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new OverheadsPage(page);
-    await listData.listOverReload();
+    await listData.listOverheadReload();
     await page.waitForTimeout(2000);
 })

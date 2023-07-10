@@ -8,9 +8,9 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [role="toolbar"] [data-qtip="Save"]`,
+        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [aria-label="Save"]`,
         // saveOK: `[role="alertdialog"] [data-ref="btnWrap"]`,
-        saveOK: `//*[text()="OK"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
         // saveOK: `[] [id="button-"]`,
     },
 
@@ -31,7 +31,7 @@ const locators = {
         projOBSAddChild: `//*[text()="Add Child"]`,
 
 
-        lifeScience: `//*[text()="Life Sciences"]`,
+        enterprise: `//*[text()="Enterprise"]`,
         data1: `//*[text()="New SIBLING 1 Node"]`,
         data2: `//*[text()="New SIBLING 2 Node"]`,
         data3: `//*[text()="New SIBLING 3 Node"]`,
@@ -41,11 +41,10 @@ const locators = {
         projOBSProjChildData: `[id="AdminNodeTreeGrid-body"] [data-recordindex="0"]`,
     },
 
-
-    adminPulse: {
-        pulseTypeNameA: `[id="AdminSettingPulseSettingAddPulseWindow-body"] [id="NewPulseName-bodyEl"]`,
-        pulseTypeDescriptionA: `[id="AdminSettingPulseSettingAddPulseWindow-body"] [id="NewPulseDescription-inputEl"]`,
-        pulseAddBtn: `[id="AdminSettingPulseSettingAddPulseWindow"] [data-ref="btnWrap"]`,
+    editOBSLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 }
 
@@ -70,12 +69,12 @@ class editOBSPage {
 
     projOBStypeSibling = async() => {
         let page=this.page;
-        let { lifeScience }=locators.editOBSNav;
+        let { enterprise }=locators.editOBSNav;
         let { projOBSExtentionA, projOBSAddSibling, obsAddDropdown, data1 }=locators.editOBSNav;
         let { projOBSAddChild }=locators.editOBSNav;
 
         //Creating Sibling
-        await page.click(lifeScience)
+        await page.click(enterprise)
 
         await page.click(obsAddDropdown)
         // await page.waitForTimeout(1000);
@@ -85,7 +84,7 @@ class editOBSPage {
         await page.keyboard.type('SIBLING 1 ');
         // await page.waitForTimeout(1000);
         
-        await page.click(lifeScience)
+        await page.click(enterprise)
         // await page.waitForTimeout(1000);
         await page.click(data1)
 
@@ -101,12 +100,12 @@ class editOBSPage {
 
     projOBStypeSiblingB = async() => {
         let page=this.page;
-        let { lifeScience }=locators.editOBSNav;
+        let { enterprise }=locators.editOBSNav;
         let { projOBSExtentionA, projOBSAddSibling, obsAddDropdown, data2 }=locators.editOBSNav;
         let { projOBSAddChild }=locators.editOBSNav;
 
         //Creating Sibling
-        await page.dblclick(lifeScience)
+        await page.dblclick(enterprise)
 
         await page.click(obsAddDropdown)
         // await page.waitForTimeout(1000);
@@ -116,7 +115,7 @@ class editOBSPage {
         await page.keyboard.type('SIBLING 2 ');
         // await page.waitForTimeout(1000);
         
-        await page.click(lifeScience)
+        await page.click(enterprise)
         // await page.waitForTimeout(1000);
         await page.click(data2)
 
@@ -132,12 +131,12 @@ class editOBSPage {
 
     projOBStypeSiblingC = async() => {
         let page=this.page;
-        let { lifeScience }=locators.editOBSNav;
+        let { enterprise }=locators.editOBSNav;
         let { projOBSExtentionA, projOBSAddSibling, obsAddDropdown, data3 }=locators.editOBSNav;
         let { projOBSAddChild }=locators.editOBSNav;
 
         //Creating Sibling
-        await page.dblclick(lifeScience)
+        await page.dblclick(enterprise)
 
         await page.click(obsAddDropdown)
         // await page.waitForTimeout(1000);
@@ -147,7 +146,7 @@ class editOBSPage {
         await page.keyboard.type('SIBLING 3 ');
         // await page.waitForTimeout(1000);
         
-        await page.click(lifeScience)
+        await page.click(enterprise)
         // await page.waitForTimeout(1000);
         await page.click(data3)
 
@@ -195,15 +194,17 @@ class editOBSPage {
         let { saveBtn, saveOK }=locators.saveNav;
         await page.click(saveBtn);
         // await page.waitForTimeout(1000);
-        await page.click(saveOK);
+        // await page.click(saveOK);
         await page.waitForTimeout(5000);
     }
 
     projOBSReload = async() => {
-        let page=this.page;
-        let { relBtn }=locators.reloadBtn;
-        await page.click(relBtn);
-        await page.waitForTimeout(5000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.editOBSLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 
 }

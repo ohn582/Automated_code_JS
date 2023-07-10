@@ -21,7 +21,7 @@ When(`I select User Defined Lists`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select ULD Team from a drpodown nav`, timeout, async function() {
+When(`I select Resource Team from a drpodown nav`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedData(page);
     listData.listUDL_Dropdown();

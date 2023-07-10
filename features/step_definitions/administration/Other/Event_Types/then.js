@@ -5,7 +5,7 @@ const { timeout } = require('../../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-// Categories: Create
+// Event Type: Create
 Then(`I typed a new Event Types tes1`, timeout, async function() {
     let page = this.page;
     const listData = new EventTypePage(page);
@@ -29,7 +29,7 @@ Then(`I typed a new Event Types tes3`, timeout, async function() {
 
 
 
-// Categories: Update
+// Event Type: Update
 Then(`I Re-Typed a new Event Types tes1`, timeout, async function() {
     let page = this.page;
     const listData = new EventTypePage(page);
@@ -54,7 +54,7 @@ Then(`I Re-Typed a new Event Types tes3`, timeout, async function() {
 
 
 
-// Categories: Delete
+// Event Type: Delete
 Then(`I delete the Event Types data`, timeout, async function() {
     let page = this.page;
     const listData = new EventTypePage(page);
@@ -69,9 +69,10 @@ Then(`I clicked save button in Event Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I clicked Reload button in Event Types`, timeout, async function() {
+Then(`I verify the Event Types data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new EventTypePage(page);
     await listData.listETReload();
     await page.waitForTimeout(2000);
 })
+

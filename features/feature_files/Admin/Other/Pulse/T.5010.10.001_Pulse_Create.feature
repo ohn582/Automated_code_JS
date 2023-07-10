@@ -18,16 +18,11 @@ Feature: Pdware Admin User Module
         Then I type a new name and Description in the Pulse dataC
         Then I select add to th Pulse data
 
+        Then I clicked save button in Overheads
+        Then I verify the Overheads data by re-loging admin account
 
-        # Then I type a new Dates in the Periods Details B
-        # When I select Add button in Periods Details
-        # Then I type a new Dates in the Periods Details C
-        # Then I type a new Dates in the Periods Details D
-        # When I select Add button in Periods Details
-        # Then I type a new Dates in the Periods Details E
-        # Then I type a new Dates in the Periods Details F
-        # Then I save the data in project data
-        # Then I clicked reload Project
+        Given I visit the pdware r1test landing page 'https://r1test.pdware.com/'
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Overheads List
+        When I select Overheads
 
-
-        # Then I retype a new name in the Views Details

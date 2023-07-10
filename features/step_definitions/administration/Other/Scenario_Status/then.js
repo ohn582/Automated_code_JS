@@ -69,7 +69,7 @@ Then(`I clicked save button in Scenario Status`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I clicked Reload button in Scenario Status`, timeout, async function() {
+Then(`I verify the Scenario Status data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new ScenarioStatusPage(page);
     await listData.listSS_Reload();

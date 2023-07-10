@@ -21,13 +21,6 @@ When(`I select Proficiencies`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Proficiencies`, timeout, async function () {
-    let page = this.page;
-    const listData = new ProficienciesTypeData(page);
-    listData.listProficienciesAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Proficiencies datas`, timeout, async function () {
     let page = this.page;
     const listData = new ProficienciesTypeData(page);

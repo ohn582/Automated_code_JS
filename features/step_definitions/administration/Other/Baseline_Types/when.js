@@ -21,13 +21,6 @@ When(`I select Baseline Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Baseline Types`, timeout, async function() {
-    let page = this.page;
-    const listData = new BaselineTypesData(page);
-    listData.listBaseTypeAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Baseline Types datas`, timeout, async function() {
     let page = this.page;
     const listData = new BaselineTypesData(page);

@@ -11,4 +11,6 @@ Feature: Pdware Admin User Module
         When I select Skills
         When I select multiple Skills datas
         Then I delete the Skills data
+
         Then I clicked save button in Skills
+        Then I clicked Reload button in Skills

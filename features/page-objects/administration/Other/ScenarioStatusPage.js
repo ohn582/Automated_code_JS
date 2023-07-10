@@ -2,25 +2,17 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     scenarStatNav: {
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        scenarStatAddBtn: `[id="AdminScenarioStatusGrid-bodyWrap"] [role="toolbar"] [data-qtip="Add"]`,
     },
 
     scenarStatData: {
         //Creating a data
-        scenarStatName: `[id="AdminScenarioStatusGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        scenarStatPartition: `[id="AdminScenarioStatusGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1041"]`,
+        scenarStatName: `[id="AdminScenarioStatusGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-
-        scenarStatNameA: `[id="AdminScenarioStatusGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        scenarStatPartitionA: `[id="AdminScenarioStatusGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1041"]`,
-
-        scenarStatNameB: `[id="AdminScenarioStatusGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1036"]`,
-        scenarStatPartitionB: `[id="AdminScenarioStatusGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1041"]`,
-
-        scenarStatNameC: `[id="AdminScenarioStatusGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1036"]`,
-        scenarStatPartitionC: `[id="AdminScenarioStatusGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1041"]`,
+        scenarStatNameA: `//*[text()="tes1"]`,
+        scenarStatNameB: `//*[text()="tes2"]`,
+        scenarStatNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -36,8 +28,13 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [data-componentid="AdminScenarioStatusReload"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
-    }
+    },
 
+    scenarStatLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
+    }
 }
 
 
@@ -51,46 +48,43 @@ class ScenarioStatusPage {
     //Sponsor: Create
     listSS_WriteA = async () => {
         let page = this.page;
-        let { scenarStatName, scenarStatPartition } = locators.scenarStatData;
+        let { scenarStatAddBtn } = locators.scenarStatNav;
+        let { scenarStatName } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
+        await page.click(scenarStatAddBtn);
 
-        let textInput = await page.$(scenarStatName);
-        let textInputB = await page.$(scenarStatPartition);
+        let textInput = await page.$(scenarStatName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listSS_WriteB = async () => {
         let page = this.page;
-        let { scenarStatName, scenarStatPartition } = locators.scenarStatData;
+        let { scenarStatAddBtn } = locators.scenarStatNav;
+        let { scenarStatName } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
+        await page.click(scenarStatAddBtn);
 
-        let textInput = await page.$(scenarStatName);
-        let textInputB = await page.$(scenarStatPartition);
+        let textInput = await page.$(scenarStatName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listSS_WriteC = async () => {
         let page = this.page;
-        let { scenarStatName, scenarStatPartition } = locators.scenarStatData;
+        let { scenarStatAddBtn } = locators.scenarStatNav;
+        let { scenarStatName } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
+        await page.click(scenarStatAddBtn);
 
-        let textInput = await page.$(scenarStatName);
-        let textInputB = await page.$(scenarStatPartition);
+        let textInput = await page.$(scenarStatName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -100,46 +94,37 @@ class ScenarioStatusPage {
     //Sponsor: Update
     ss_ReTypeData = async () => {
         let page = this.page;
-        let { scenarStatNameA, scenarStatPartitionA } = locators.scenarStatData;
+        let { scenarStatNameA } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(scenarStatNameA);
-        let textInputB = await page.$(scenarStatPartitionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     ss_ReTypeDataB = async () => {
         let page = this.page;
-        let { scenarStatNameB, scenarStatPartitionB } = locators.scenarStatData;
+        let { scenarStatNameB } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(scenarStatNameB);
-        let textInputB = await page.$(scenarStatPartitionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     ss_ReTypeDataC = async () => {
         let page = this.page;
-        let { scenarStatNameC, scenarStatPartitionC } = locators.scenarStatData;
+        let { scenarStatNameC } = locators.scenarStatData;
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(scenarStatNameC);
-        let textInputB = await page.$(scenarStatPartitionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
@@ -167,10 +152,11 @@ class ScenarioStatusPage {
 
     listSS_Reload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.scenarStatLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

@@ -1,42 +1,40 @@
 const { action } = require('../../../utilities/action')
 
 const locators = {
-    overTypeNav: {
-        overTypeAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="adminListsOverheadGridAdd"]`,
+    overheadNav: {
+        overAddBtn: `[id="adminListsOverheadGrid"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
-    overTypeData: {
+    overheadData: {
         //Creating a data
-        overTypeName: `[id="adminListsOverheadGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        overTypePartition: `[id="adminListsOverheadGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1038"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        overheadName: `[id="adminListsOverheadGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
 
-
-        overTypeNameA: `[id="adminListsOverheadGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1036"]`,
-        overTypePartitionA: `[id="adminListsOverheadGrid"] [data-recordindex="3"] [data-columnid="gridcolumn-1038"]`,
-
-        overTypeNameB: `[id="adminListsOverheadGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1036"]`,
-        overTypePartitionB: `[id="adminListsOverheadGrid"] [data-recordindex="4"] [data-columnid="gridcolumn-1038"]`,
-
-        overTypeNameC: `[id="adminListsOverheadGrid"] [data-recordindex="5"] [data-columnid="gridcolumn-1036"]`,
-        overTypePartitionC: `[id="adminListsOverheadGrid"] [data-recordindex="5"] [data-columnid="gridcolumn-1038"]`,
+        overheadNameA: `//*[text()="tes1"]`,
+        overheadNameB: `//*[text()="tes2"]`,
+        overheadNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
-        deleteBtn: `[id="adminListsOverheadGrid"] [role="toolbar"] [data-qtip="Remove"]`,
+        deleteBtn: `[id="adminListsOverheadGrid-bodyWrap"] [role="toolbar"] [data-qtip="Remove"]`,
         yesDeleteBtn: `//*[text()="Yes"]`,
     },
 
     saveNav: {
-        saveBtn: `[id="adminListsOverheadGrid"] [role="toolbar"] [data-componentid="adminListsOverheadGridSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveBtn: `[id="adminListsOverheadGrid-bodyWrap"] [role="toolbar"] [aria-label="Save"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="toolbar"] [data-componentid="adminListsOverheadGridReload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    overheadLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -52,46 +50,46 @@ class OverheadsPage {
     //Sponsor: Create
     listOverWriteA = async () => {
         let page = this.page;
-        let { baseTypeName, baseTypePartition } = locators.baseTypeData;
+        let { overAddBtn } = locators.overheadNav;
+        let { overheadName } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeName);
-        let textInputB = await page.$(baseTypePartition);
+        await page.click(overAddBtn);
+
+        let textInput = await page.$(overheadName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
     listOverWriteB = async () => {
         let page = this.page;
-        let { baseTypeName, baseTypePartition } = locators.baseTypeData;
+        let { overAddBtn } = locators.overheadNav;
+        let { overheadName } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeName);
-        let textInputB = await page.$(baseTypePartition);
+        await page.click(overAddBtn);
+
+        let textInput = await page.$(overheadName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     listOverWriteC = async () => {
         let page = this.page;
-        let { baseTypeName, baseTypePartition } = locators.baseTypeData;
+        let { overAddBtn } = locators.overheadNav;
+        let { overheadName } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeName);
-        let textInputB = await page.$(baseTypePartition);
+        await page.click(overAddBtn);
+
+        let textInput = await page.$(overheadName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -101,46 +99,37 @@ class OverheadsPage {
     //Sponsor: Update
     overReTypeData = async () => {
         let page = this.page;
-        let { baseTypeNameA, baseTypePartitionA } = locators.baseTypeData;
+        let { overheadNameA } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeNameA);
-        let textInputB = await page.$(baseTypePartitionA);
+        let textInput = await page.$(overheadNameA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     overReTypeDataB = async () => {
         let page = this.page;
-        let { baseTypeNameB, baseTypePartitionB } = locators.baseTypeData;
+        let { overheadNameB } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeNameB);
-        let textInputB = await page.$(baseTypePartitionB);
+        let textInput = await page.$(overheadNameB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
     overReTypeDataC = async () => {
         let page = this.page;
-        let { baseTypeNameC, baseTypePartitionC } = locators.baseTypeData;
+        let { overheadNameC } = locators.overheadData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(baseTypeNameC);
-        let textInputB = await page.$(baseTypePartitionC);
+        let textInput = await page.$(overheadNameC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
@@ -166,12 +155,13 @@ class OverheadsPage {
         await page.waitForTimeout(3000);
     }
 
-    listOverReload = async () => {
+    listOverheadReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.overheadLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

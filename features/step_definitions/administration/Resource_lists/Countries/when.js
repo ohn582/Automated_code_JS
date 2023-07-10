@@ -18,13 +18,6 @@ When(`I select Countries`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Countries`, timeout, async function () {
-    let page = this.page;
-    const listData = new countriesTypeData(page);
-    listData.listCountriesAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select a data in Countries`, timeout, async function () {
     let page = this.page;
     const listData = new countriesTypeData(page);

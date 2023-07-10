@@ -25,7 +25,7 @@ const locators = {
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsCostCategoryGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
+        relBtn: `[id="r1AdminMain"] [id="adminListsCostCategoryGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
     }
 
@@ -87,46 +87,37 @@ class ccPage {
     //Sponsor: Update
     ccReTypeData = async() => {
         let page=this.page;
-        let { ccNameA, ccPartitionA }=locators.ccData;
+        let { ccNameA }=locators.ccData;
         // await page.waitForTimeout(3000);
     
-        let textInput = await page.$(ccNameA); 
-        let textInputB = await page.$(ccPartitionA); 
+        let textInput = await page.$(ccNameA);  
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('API');
         // await page.waitForTimeout(3000);
     }
 
     ccReTypeDataB = async() => {
         let page=this.page;
-        let { ccNameB, ccPartitionB }=locators.ccData;
+        let { ccNameB }=locators.ccData;
         // await page.waitForTimeout(3000);
     
-        let textInput = await page.$(ccNameB); 
-        let textInputB = await page.$(ccPartitionB); 
+        let textInput = await page.$(ccNameB);  
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
     
     ccReTypeDataC = async() => {
         let page=this.page;
-        let { ccNameC, ccPartitionC }=locators.ccData;
+        let { ccNameC }=locators.ccData;
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(ccNameC); 
-        let textInputB = await page.$(ccPartitionC); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({clickCount: 3})
-        await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 

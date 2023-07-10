@@ -21,13 +21,6 @@ When(`I select Locations`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Locations`, timeout, async function () {
-    let page = this.page;
-    const listData = new LocationsTypeData(page);
-    listData.listLocationsAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Locations datas`, timeout, async function () {
     let page = this.page;
     const listData = new LocationsTypeData(page);

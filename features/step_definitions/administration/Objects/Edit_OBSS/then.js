@@ -80,7 +80,7 @@ Then(`I save the OBSdata`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload Project OBS`, timeout, async function() {
+Then(`I verify the Edit OBSs data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new editOBSPage(page);
     listData.projOBSReload();

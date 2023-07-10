@@ -69,7 +69,7 @@ Then(`I clicked save button in Baseline Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I clicked Reload button in Baseline Types`, timeout, async function() {
+Then(`I verify the Baseline Types data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new BaselineTypePage(page);
     await listData.listBTReload();

@@ -9,7 +9,8 @@ Feature: Pdware Admin User Module
     Scenario: @T.2330.45.662-testing user data
         When I select Administration and select Proficiencies Resource Lists
         When I select Proficiencies
-        When I Re-Typed a new Proficiencies
+        When I Re-Typed a new Proficiencies tes1
         Then I Re-Typed a new Proficiencies tes2
         Then I Re-Typed a new Proficiencies tes3
+
         Then I clicked save button in Proficiencies

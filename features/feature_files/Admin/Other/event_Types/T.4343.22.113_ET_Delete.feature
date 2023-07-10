@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Event Types
         When I select multiple Event Types datas
         Then I delete the Event Types data
+
         Then I clicked save button in Event Types
-        # Then I clicked Reload button in Event Types
+        Then I verify the Event Types data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Event Types List
+        When I select Event Types
