@@ -36,6 +36,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[id="AdminListGrid"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    baseTypeLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -167,10 +173,11 @@ class RankListsPage {
 
     listRLReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.baseTypeLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

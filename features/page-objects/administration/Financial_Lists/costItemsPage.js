@@ -1,21 +1,21 @@
 const { action } = require('../../../utilities/action')
 
 const locators = {
-    ciNav: {
-        ciAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
+    costItemNav: {
+        costItemAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
-    ciData: {
+    costItemData: {
         //Creating a data
-        ciName: `[id="adminListsCostItemGrid-body"] [data-recordindex="0"] [role="presentation"]`,
-        ciPartition: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1043"]`,
+        costItemName: `[id="adminListsCostItemGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        costItemPartition: `[id="adminListsCostItemGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1043"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-        ciNameA: `//*[text()="tes1"]`,
-        ciNameB: `//*[text()="tes2"]`,
-        ciNameC: `//*[text()="tes3"]`,
+        costItemNameA: `//*[text()="tes1"]`,
+        costItemNameB: `//*[text()="tes2"]`,
+        costItemNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,6 +31,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsCostItemGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    costItemLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -46,13 +52,13 @@ class CostItemsPage {
     //Sponsor: Create
     listCIWriteA = async () => {
         let page = this.page;
-        let { ciAddBtn } = locators.ciNav;
-        let { ciName } = locators.ciData;
+        let { costItemAddBtn } = locators.costItemNav;
+        let { costItemName } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        await page.click(ciAddBtn);
+        await page.click(costItemAddBtn);
 
-        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
+        let textInput = await page.$(costItemName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
@@ -61,13 +67,13 @@ class CostItemsPage {
 
     listCIWriteB = async () => {
         let page = this.page;
-        let { ciAddBtn } = locators.ciNav;
-        let { ciName } = locators.ciData;
+        let { costItemAddBtn } = locators.costItemNav;
+        let { costItemName } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        await page.click(ciAddBtn);
+        await page.click(costItemAddBtn);
 
-        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
+        let textInput = await page.$(costItemName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
@@ -76,13 +82,13 @@ class CostItemsPage {
 
     listCIWriteC = async () => {
         let page = this.page;
-        let { ciAddBtn } = locators.ciNav;
-        let { ciName } = locators.ciData;
+        let { costItemAddBtn } = locators.costItemNav;
+        let { costItemName } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        await page.click(ciAddBtn);
+        await page.click(costItemAddBtn);
 
-        let textInput = await page.$(ciName, el=>el.getAttribute("id"));
+        let textInput = await page.$(costItemName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
@@ -96,10 +102,10 @@ class CostItemsPage {
     //Sponsor: Update
     costItemsReTypeData = async () => {
         let page = this.page;
-        let { ciNameA } = locators.ciData;
+        let { costItemNameA } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciNameA);
+        let textInput = await page.$(costItemNameA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');;
@@ -108,10 +114,10 @@ class CostItemsPage {
 
     costItemsReTypeDataB = async () => {
         let page = this.page;
-        let { ciNameB } = locators.ciData;
+        let { costItemNameB } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciNameB);
+        let textInput = await page.$(costItemNameB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
@@ -120,10 +126,10 @@ class CostItemsPage {
 
     costItemsReTypeDataC = async () => {
         let page = this.page;
-        let { ciNameC } = locators.ciData;
+        let { costItemNameC } = locators.costItemData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ciNameC);
+        let textInput = await page.$(costItemNameC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
@@ -154,10 +160,11 @@ class CostItemsPage {
 
     listCIReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.costItemLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Project Codes
         When I select multiple Project Codes in data
         Then I delete the Project Codes data
+
         Then I clicked save button in Project Codes
-        # Then I clicked reload button for Project Codes
+        Then I verify the Project Codes by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select PC project Lists
+        When I select Project Codes

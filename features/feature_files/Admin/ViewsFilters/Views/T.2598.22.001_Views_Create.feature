@@ -16,4 +16,8 @@ Feature: Pdware Admin User Module
 
         Then I retype a new name in the Views Details
         Then I save the data
-        Then I clicked reload
+        Then I verify the Feature Types by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Views
+        When I select Resource Capacity in the dropdown filter

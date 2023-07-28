@@ -6,7 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Categories: Create
-Then(`I typed a new Rates`, timeout, async function() {
+Then(`I typed a new Rates tes1`, timeout, async function() {
     let page = this.page;
     const listData = new RatesPage(page);
     await listData.listRatesWriteA();

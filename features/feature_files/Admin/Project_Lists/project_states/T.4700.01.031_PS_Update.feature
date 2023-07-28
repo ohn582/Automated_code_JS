@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a Project States tes1
         Then I Re-Typed a Project States tes2
         Then I Re-Typed a Project States tes3
+
         Then I clicked save button in Project States
-        # Then I clicked reload button for Project States
+        Then I verify the Project States by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project States Lists
+        When I select Project States

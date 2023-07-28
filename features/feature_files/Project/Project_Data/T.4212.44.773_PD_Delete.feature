@@ -12,6 +12,9 @@ Feature: Pdware Admin User Module
         When I select multiple Project datas
         Then I select Project Delete Button
 
-        Then Select Save Button
-        Then I select refreshed button
+        Then Select Save Button for Project Data
+        Then I verify the Project Data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Project and Project Data
 

@@ -9,8 +9,13 @@ Feature: Pdware Admin User Module
     Scenario: @T.7110.25.001-testing user data
         When I select Administration and select Agile
         When I select Feature States
-        Then I typed a new Feature States
+        Then I typed a new Feature States tes1
         Then I typed a new Feature States tes2
         Then I typed a new Feature States tes3
+
         Then I clicked save button in Feature States
-        # Then I clicked Reload button in Feature States
+        Then I verify the Feature States by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Agile
+        When I select Feature States

@@ -8,9 +8,9 @@ const locator = {
 
     countriesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        countriesBox: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
-        countriesBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="8"] [role="row"] [tabindex="-1"]`,
-        countriesBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="9"] [role="row"] [tabindex="-1"]`
+        countriesBox: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        countriesBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        countriesBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

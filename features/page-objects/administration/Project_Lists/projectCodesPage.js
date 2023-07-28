@@ -28,6 +28,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[id="adminListsProjectCodeGrid-bodyWrap"] [id="toolbar"] [id="adminListsProjectCodeGridReload-btnIconEl"]`,
         reloadNavBtn: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
+    },
+
+    pcLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -138,10 +144,11 @@ class pcPage {
 
     listPCReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.pcLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

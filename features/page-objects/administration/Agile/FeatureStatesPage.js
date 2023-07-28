@@ -1,30 +1,28 @@
 const { action } = require('../../../utilities/action')
 
 const locators = {
-    fsNav: {
-        fsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+    featureStatesNav: {
+        featureStatesAddBtn: `[id="adminListsFeatureStateGrid-bodyWrap"] [role="toolbar"] [data-qtip="Add"]`,
     },
 
-    fsData: {
+    featureStatesData: {
         //Creating a data
-        // fsName: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
+        // featureStatesName: `[id="AdminMainContainer"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
         
     
-        // fsHeaderName: `[id="adminListsFeatureStateGrid-bodyWrap"] [aria-label="Feature State Name"]`,
-        fsHeaderName: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        // featureStatesHeaderName: `[id="adminListsFeatureStateGrid-bodyWrap"] [aria-label="Feature State Name"]`,
+        featureStatesHeaderName: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
         // domainsName: `//*[text()="New Domain"]`,
 
-        fsNameGridA: `//*[text()="tes1"]`,
-        fsNameReTypeA: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        featureStatesNameGridA: `//*[text()="tes1"]`,
+        featureStatesNameReTypeA: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
-        fsNameGridB: `//*[text()="tes2"]`,
-        fsNameReTypeB: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="1"] [role="presentation"]`,
+        featureStatesNameGridB: `//*[text()="tes2"]`,
+        featureStatesNameReTypeB: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="1"] [role="presentation"]`,
 
-        fsNameGridC: `//*[text()="tes3"]`,
-        fsNameReTypeC: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="2"] [role="presentation"]`,
+        featureStatesNameGridC: `//*[text()="tes3"]`,
+        featureStatesNameReTypeC: `[id="adminListsFeatureStateGrid-body"] [data-recordindex="2"] [role="presentation"]`,
     },
 
     deleteNav: {
@@ -33,12 +31,18 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="adminListsFeatureStateGridSave"]`,
+        saveBtn: `[id="AdminMainContainer"] [role="toolbar"] [aria-label="Save"]`,
         saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
         relBtn: `[id="AdminMainContainer"] [role="toolbar"] [id="adminListsFeatureStateGridReload"] [id="toolbar"] [data-qtip="Reload"]`,
+    },
+
+    featureStatesLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -54,12 +58,12 @@ class FeatureStatesPage {
     //featureState: Create
     listFSWriteA = async () => {
         let page = this.page;
-        let { fsAddBtn } = locators.fsNav;
-        let { fsHeaderName } = locators.fsData;
+        let { featureStatesAddBtn } = locators.featureStatesNav;
+        let { featureStatesHeaderName } = locators.featureStatesData;
 
-        await page.click(fsAddBtn);
+        await page.click(featureStatesAddBtn);
 
-        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
+        let textInput = await page.$(featureStatesHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
@@ -68,12 +72,12 @@ class FeatureStatesPage {
 
     listFSWriteB = async () => {
         let page = this.page;
-        let { fsAddBtn } = locators.fsNav;
-        let { fsHeaderName } = locators.fsData;
+        let { featureStatesAddBtn } = locators.featureStatesNav;
+        let { featureStatesHeaderName } = locators.featureStatesData;
 
-        await page.click(fsAddBtn);
+        await page.click(featureStatesAddBtn);
 
-        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
+        let textInput = await page.$(featureStatesHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
@@ -82,12 +86,12 @@ class FeatureStatesPage {
 
     listFSWriteC = async () => {
         let page = this.page;
-        let { fsAddBtn } = locators.fsNav;
-        let { fsHeaderName } = locators.fsData;
+        let { featureStatesAddBtn } = locators.featureStatesNav;
+        let { featureStatesHeaderName } = locators.featureStatesData;
 
-        await page.click(fsAddBtn);
+        await page.click(featureStatesAddBtn);
 
-        let textInput = await page.$(fsHeaderName, el=>el.getAttribute("id"));
+        let textInput = await page.$(featureStatesHeaderName, el=>el.getAttribute("id"));
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
@@ -100,39 +104,27 @@ class FeatureStatesPage {
     //featureState: Update
     featureStateReTypeData = async () => {
         let page = this.page;
-        let { fsNameGridA, fsNameReTypeA } = locators.fsData;
+        let { featureStatesNameGridA, featureStatesNameReTypeA } = locators.featureStatesData;
 
-        await page.click(fsNameGridA);
-
-        let textInput = await page.$(fsNameReTypeA, el=>el.getAttribute("id"));
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(featureStatesNameGridA);
         await page.keyboard.type('Re-Type 1');
         // await page.waitForTimeout(3000);
     }
 
     featureStateReTypeDataB = async () => {
         let page = this.page;
-        let { fsNameGridB, fsNameReTypeB } = locators.fsData;
+        let { featureStatesNameGridB, featureStatesNameReTypeB } = locators.featureStatesData;
 
-        await page.click(fsNameGridB);
-
-        let textInput = await page.$(fsNameReTypeB, el=>el.getAttribute("id"));
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(featureStatesNameGridB);
         await page.keyboard.type('Re-Type 2');
         // await page.waitForTimeout(3000);
     }
 
     featureStateReTypeDataC = async () => {
         let page = this.page;
-        let { fsNameGridC, fsNameReTypeC } = locators.fsData;
+        let { featureStatesNameGridC, featureStatesNameReTypeC } = locators.featureStatesData;
 
-        await page.click(fsNameGridC);
-
-        let textInput = await page.$(fsNameReTypeC, el=>el.getAttribute("id"));
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(featureStatesNameGridC);
         await page.keyboard.type('Re-Type 3');
         // await page.waitForTimeout(3000);
     }
@@ -161,9 +153,11 @@ class FeatureStatesPage {
 
     listFSReload = async () => {
         let page = this.page;
-        let { relBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.featureStatesLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

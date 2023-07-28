@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I typed a new Rank Formulas tes1
         Then I typed a new Rank Formulas tes2
         Then I typed a new Rank Formulas tes3
+
         Then I clicked save button in Rank Formulas
-        # Then I clicked reload button for Rank Formulas
+        Then I verify the Rank Formulas by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Rank Form Lists
+        When I select Rank Formulas

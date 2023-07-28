@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
 const { HomePage } = require('../../../../page-objects/HomePage');
-const { psTypeData } = require('../../../../components/administration/ProjectLists/ps_page.component');
+const { psTypeData } = require('../../../../components/administration/ProjectLists/projectStates_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 

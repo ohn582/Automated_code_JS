@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Locations
         Then I Re-Typed a new Locations tes2
         Then I Re-Typed a new Locations tes3
+
         Then I clicked save button in Locations
-        # Then I clicked Reload button in Locations
+        Then I verify the Location by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Location Resource Lists
+        When I select Locations

@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         When I Re-Typed a new Cost Item Categories
         Then I Re-Typed a new Cost Item Categories tes2
         Then I Re-Typed a new Cost Item Categories tes3
+
         Then I clicked save button in Cost Item Categories
-# Then I clicked Reload button in Cost Categories
+        Then I verify the Cost Item Categories by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Financial Lists
+        When I select Cost Item Categories

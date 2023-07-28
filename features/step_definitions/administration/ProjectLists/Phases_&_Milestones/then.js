@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { pmPage } = require('../../../../page-objects/administration/Project_Lists/pmPage');
+const { pmPage } = require('../../../../page-objects/administration/Project_Lists/phasesMilestonesPage');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -33,21 +33,21 @@ Then(`I typed a new Phases Milestones tes3`, timeout, async function() {
 
 
 // Update
-Then(`I Re-Typed a new Domain`, timeout, async function() {
+Then(`Re-Typed a new Phases Milestones tes1`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeData();
     await page.waitForTimeout(2000);
 })
 
-Then(`I Re-Typed a new Domain tes2`, timeout, async function() {
+Then(`Re-Typed a new Phases Milestones tes2`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeDataB();
     await page.waitForTimeout(2000);
 })
 
-Then(`I Re-Typed a new Domain tes3`, timeout, async function() {
+Then(`Re-Typed a new Phases Milestones tes3`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeDataC();
@@ -72,7 +72,7 @@ Then(`I clicked save button in Phases Milestones`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Phases Milestones`, timeout, async function() {
+Then(`I verify the Phases Milestones by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     await listData.pmReload();

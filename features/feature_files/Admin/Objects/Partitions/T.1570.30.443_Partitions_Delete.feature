@@ -14,9 +14,11 @@ Feature: Pdware Admin User Module
         Then I delete the Partitions data
 
         Then I select save button
-        Then I verify the Edit OBSs data by re-loging admin account
+        Then I verify the partition data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Administration and select Objects and select Edit OBSs
+        When I select Administration and select Objects
+        When I select Object Partitions
+
 
         # Then I select Save button

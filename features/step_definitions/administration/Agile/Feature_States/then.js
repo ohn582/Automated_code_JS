@@ -6,7 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Categories: Create
-Then(`I typed a new Feature States`, timeout, async function() {
+Then(`I typed a new Feature States tes1`, timeout, async function() {
     let page = this.page;
     const listData = new FeatureStatesPage(page);
     await listData.listFSWriteA();
@@ -30,7 +30,7 @@ Then(`I typed a new Feature States tes3`, timeout, async function() {
 
 
 // Categories: Update
-Then(`I Re-Typed a new Feature States`, timeout, async function() {
+Then(`I Re-Typed a new Feature States tes1`, timeout, async function() {
     let page = this.page;
     const listData = new FeatureStatesPage(page);
     listData.featureStateReTypeData();
@@ -69,7 +69,7 @@ Then(`I clicked save button in Feature States`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Feature States`, timeout, async function() {
+Then(`I verify the Feature States by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new FeatureStatesPage(page);
     await listData.listFSReload();

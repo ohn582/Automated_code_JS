@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { pcPage } = require('../../../../page-objects/administration/Project_Lists/pcPage');
+const { pcPage } = require('../../../../page-objects/administration/Project_Lists/projectCodesPage');
 const { timeout } = require('../../../../test.config').test;
 
 // List Project Codes
@@ -69,7 +69,7 @@ Then(`I clicked save button in Project Codes`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Project Codes`, timeout, async function () {
+Then(`I verify the Project Codes by re-loging admin account`, timeout, async function () {
     let page = this.page;
     const listData = new pcPage(page);
     await listData.listPCReload();

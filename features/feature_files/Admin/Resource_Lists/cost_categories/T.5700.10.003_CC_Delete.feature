@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Cost Categories
         When I select multiple Cost Categories datas
         Then I delete the Cost Categories data
+
         Then I clicked save button in Cost Categories
-        # Then I clicked Reload button in Cost Categories
+        Then I verify the Cost Categories by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Resource Lists
+        When I select Cost Categories

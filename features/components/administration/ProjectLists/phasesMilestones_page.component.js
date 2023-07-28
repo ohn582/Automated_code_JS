@@ -8,9 +8,9 @@ const locator = {
 
     pmCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        pmBox: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1038"]`,
-        pmBoxB: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1038"]`,
-        pmBoxC: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1038"]`
+        pmBox: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        pmBoxB: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        pmBoxC: `[data-componentid="r1MainViewPort"] [id="AdminListsTaskDefaultGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

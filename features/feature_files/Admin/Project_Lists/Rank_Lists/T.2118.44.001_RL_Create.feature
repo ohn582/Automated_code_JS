@@ -14,4 +14,8 @@ Feature: Pdware Admin User Module
         Then I create a new Rank List name tes3
      
         Then I select save in the Rank List Data
-        # Then I clicked Reload button in Rank List
+        Then I verify the Rank Lists by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Rank List
+        When I select Rank Lists

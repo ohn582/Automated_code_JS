@@ -5,7 +5,7 @@ const { timeout } = require('../../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-// Categories: Create
+// Locations: Create
 Then(`I typed a new Locations tes1`, timeout, async function () {
     let page = this.page;
     const listData = new LocationsPage(page);
@@ -29,7 +29,7 @@ Then(`I typed a new Locations tes3`, timeout, async function () {
 
 
 
-// Categories: Update
+// Locations: Update
 Then(`I Re-Typed a new Locations`, timeout, async function () {
     let page = this.page;
     const listData = new LocationsPage(page);
@@ -54,7 +54,7 @@ Then(`I Re-Typed a new Locations tes3`, timeout, async function () {
 
 
 
-// Categories: Delete
+// Locations: Delete
 Then(`I delete the Locations data`, timeout, async function () {
     let page = this.page;
     const listData = new LocationsPage(page);
@@ -73,7 +73,7 @@ Then(`I clicked save button in Locations`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Locations`, timeout, async function () {
+Then(`I verify the Location by re-loging admin account`, timeout, async function () {
     let page = this.page;
     const listData = new LocationsPage(page);
     await listData.listLocationsReload();

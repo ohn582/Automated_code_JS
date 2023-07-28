@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Countries
         When I select a data in Countries
         Then I delete the Countries data
+
         Then I clicked save button in Countries
-        # Then I clicked Reload button in Countries
+        Then I verify the Countries by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Resource Lists
+        When I select Countries

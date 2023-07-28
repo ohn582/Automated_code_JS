@@ -27,6 +27,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[id="r1AdminMain"] [id="adminListsCostCategoryGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    ccLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -144,11 +150,12 @@ class ccPage {
     }
 
     listCCReload = async() => {
-        let page=this.page;
-        let { relBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.ccLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

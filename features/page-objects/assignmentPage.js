@@ -13,23 +13,6 @@ const locators = {
 
         //Creating Labor Data 1
         tes1: `//*[text()="true"]`,
-        laborCheckBox: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="5"] [tabindex="-1"]`,
-
-        laborCAD: `//*[text()="CAD"]`,
-
-        tes1LaborDataBox: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1082"]`,
-        tes1LaborDataBoxB: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1093"]`,
-        tes1LaborDataBoxC: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1094"]`,
-        tes1LaborDataBoxD: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1095"]`,
-        tes1LaborDataBoxE: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1096"]`,
-        tes1LaborDataBoxF: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1097"]`,
-        tes1LaborDataBoxG: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1098"]`,
-        tes1LaborDataBoxH: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1099"]`,
-        tes1LaborDataBoxI: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1100"]`,
-        tes1LaborDataBoxJ: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1101"]`,
-        tes1LaborDataBoxK: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1102"]`,
-        tes1LaborDataBoxL: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1103"]`,
-        tes1LaborDataBoxM: `[id="laborAssignmentGrid-bodyWrap"] [id="ext-element-56"] [data-recordindex="0"] [data-columnid="numbercolumn-1104"]`,
 
 
         //Creating Labor Data 2
@@ -101,27 +84,10 @@ class laborPage {
 
 
     //Rescource Create data
-    laborCreateData = async() => {
+    resourceCreateData = async() => {
         let page=this.page;
-        let { LaborAddBtn, LaborDropdown, laborPicker, laborSkillPicker, laborActivePicker,laborCheckBox, tes1, laborAddCloseBtn, laborCAD }=locators.resourcePage;
+        let { LaborAddBtn }=locators.resourcePage;
 
-        await page.click(LaborAddBtn);
-        await page.waitForTimeout(1000);
-        await page.click(LaborDropdown);
-        await page.waitForTimeout(1000);
-        await page.click(laborPicker);
-        await page.keyboard.type('A1002 Project');
-        await page.waitForTimeout(1000);
-        await page.click(laborSkillPicker);
-        await page.keyboard.type('CAD');
-        await page.click(laborCAD);
-        await page.waitForTimeout(1000);
-
-
-        await page.click(laborCheckBox);
-        await page.waitForTimeout(1000);
-
-        await page.click(laborAddCloseBtn);
 
         // await page.waitForTimeout(3000);
     }

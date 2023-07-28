@@ -69,7 +69,7 @@ Then(`I clicked save button in Feature Types`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Feature Types`, timeout, async function() {
+Then(`I verify the Feature Types by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new FeatureTypesPage(page);
     await listData.listFTReload();

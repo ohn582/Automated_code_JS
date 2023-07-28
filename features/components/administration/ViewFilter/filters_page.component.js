@@ -1,8 +1,7 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         viewFilterLink: `//*[text()="Views & Filters"]`,
         filterLink: `//*[text()="Filters"]`,
     },
@@ -45,9 +44,7 @@ class viewFilterTypeData {
     // Project OBS
     adminOBSPeroidsLink = async() => {
         let page=this.page;
-        let { menuSliderBtn, adminLink, viewFilterLink, filterLink }=locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink, viewFilterLink, filterLink }=locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
         await page.click(viewFilterLink);

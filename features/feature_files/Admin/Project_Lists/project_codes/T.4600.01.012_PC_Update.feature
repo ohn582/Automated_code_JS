@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Project Codes
         Then I Re-Typed a new Project Codes tes2
         Then I Re-Typed a new Project Codes tes3
+
         Then I clicked save button in Project Codes
-        # Then I clicked reload button for Project Codes
+        Then I verify the Project Codes by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select PC project Lists
+        When I select Project Codes

@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Rank Fields
         When I select multiple Rank Fields in data
         Then I delete the Rank Fields data
+
         Then I clicked save button in Rank Fields
-        # Then I clicked reload button for Rank Fields
+        Then I verify the Rank Fields by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select PM Lists
+        When I select Rank Fields

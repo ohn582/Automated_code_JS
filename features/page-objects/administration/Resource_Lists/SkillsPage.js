@@ -3,8 +3,6 @@ const { action } = require('../../../utilities/action')
 const locators = {
     skillsNav: {
         skillsAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     skillsData: {
@@ -31,6 +29,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[id="r1AdminMain"] [id="adminListsSkillGrid"] [id="toolbar"] [aria-label="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    skillsLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -150,10 +154,11 @@ class SkillsPage {
 
     listSkillsReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.skillsLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

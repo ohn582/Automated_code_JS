@@ -9,12 +9,12 @@ const locators = {
 
     domainsData: {
         //Creating a data
-        domainSelect: `//*[text()="New Domain"]`,
+        domainSelect: `[id="adminListsDomainGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
 
         //Update
-        textBoxNameReTypeA: `//*[text()="New Data 1"]`,
-        textBoxNameReTypeB: `//*[text()="New Data 2"]`,
-        textBoxNameReTypeC: `//*[text()="New Data 3"]`,
+        textBoxNameReTypeA: `//*[text()="Data 1"]`,
+        textBoxNameReTypeB: `//*[text()="Data 2"]`,
+        textBoxNameReTypeC: `//*[text()="Data 3"]`,
     },
 
     deleteNav: {
@@ -23,15 +23,20 @@ const locators = {
     },
 
     saveNav: {
-        saveBtn: `[id="adminListsDomainGrid"] [role="toolbar"] [data-componentid="adminListsDomainGridSave"]`,
+        saveBtn: `[id="adminListsDomainGrid"] [role="toolbar"] [aria-label="Save"]`,
         saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
         reloadNavBtn: `[id="adminListsDomainGrid-bodyWrap"] [role="toolbar"] [id="adminListsDomainGridReload"]`,
         yesBtn: `//*[text()="Yes"]`,
-    }
+    },
 
+    domainsLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
+    }
 }
 
 
@@ -48,10 +53,11 @@ class domainPage {
         let { domainsAddBtn }=locators.domainsNav;
         let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
-        
         await page.click(domainsAddBtn);
-        await page.dblclick(domainSelect);
 
+        let textInput = await page.$(domainSelect, el=>el.getAttribute("id"));
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Data 1');
         // await page.waitForTimeout(3000);
     }
@@ -61,10 +67,11 @@ class domainPage {
         let { domainsAddBtn }=locators.domainsNav;
         let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
-        
         await page.click(domainsAddBtn);
-        await page.dblclick(domainSelect);
 
+        let textInput = await page.$(domainSelect, el=>el.getAttribute("id"));
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Data 2');
         // await page.waitForTimeout(3000);
     }
@@ -74,10 +81,11 @@ class domainPage {
         let { domainsAddBtn }=locators.domainsNav;
         let { domainSelect }=locators.domainsData;
         // await page.waitForTimeout(3000);
-        
         await page.click(domainsAddBtn);
-        await page.dblclick(domainSelect);
 
+        let textInput = await page.$(domainSelect, el=>el.getAttribute("id"));
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Data 3');
         // await page.waitForTimeout(3000);
     }
@@ -141,11 +149,12 @@ class domainPage {
     }
 
     listDomainReload = async() => {
-        let page=this.page;
-        let { yesBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(reloadNavBtn);
-        // await page.click(yesBtn);
-        await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.domainsLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

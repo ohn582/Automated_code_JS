@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Feature Types
         When I select Feature Types in the checkbox data
         Then I delete the Feature Types data
+
         Then I clicked save button in Feature Types
-        # Then I clicked Reload button in Feature Types
+        Then I verify the Feature Types by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Agile link
+        When I select Feature Types

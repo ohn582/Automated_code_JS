@@ -16,4 +16,5 @@ Feature: Pdware Admin User Module
 
         Then I retype a new name in the Views Details
         Then I save the data
-        Then I clicked reload
+        When I select Administration and select Views
+        When I select Resource Capacity in the dropdown filter

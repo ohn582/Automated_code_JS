@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I typed a new Sponsors tes1
         Then I typed a new Sponsors tes2
         Then I typed a new Sponsors tes3
+
         Then I clicked save button in Sponsors
-        # Then I clicked reload button for Sponsors
+        Then I verify the Sponsors by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project List
+        When I select Sponsors

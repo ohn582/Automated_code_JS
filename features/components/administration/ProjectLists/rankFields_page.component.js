@@ -8,9 +8,9 @@ const locator = {
 
     rfCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        rfBox: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="0"] [data-columnid="checkcolumn-1064"]`,
-        rfBoxB: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="1"] [data-columnid="checkcolumn-1064"]`,
-        rfBoxC: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="2"] [data-columnid="checkcolumn-1064"]`
+        rfBox: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        rfBoxB: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        rfBoxC: `[data-componentid="r1MainViewPort"] [id="AdminRankFieldGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

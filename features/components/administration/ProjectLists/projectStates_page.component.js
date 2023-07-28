@@ -8,9 +8,9 @@ const locator = {
 
     psCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        psBox: `[id="adminListsProjectStateGrid-body"] [data-recordindex="10"] [role="row"] [tabindex="-1"]`,
-        psBoxB: `[id="adminListsProjectStateGrid-body"] [data-recordindex="11"] [role="row"] [tabindex="-1"]`,
-        psBoxC: `[id="adminListsProjectStateGrid-body"] [data-recordindex="12"] [role="row"] [tabindex="-1"]`
+        psBox: `[id="adminListsProjectStateGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
+        psBoxB: `[id="adminListsProjectStateGrid-body"] [data-recordindex="6"] [role="row"] [tabindex="-1"]`,
+        psBoxC: `[id="adminListsProjectStateGrid-body"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`
     }
 }
 

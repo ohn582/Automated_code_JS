@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Cost Items
         When I select multiple Cost Items datas
         Then I delete the Cost Items data
+
         Then I clicked save button in Cost Items
-# Then I clicked Reload button in Cost Categories
+        Then I verify the Cost Item by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Cost Items Financial Lists
+        When I select Cost Items

@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Sponsors
         When I select multiple Sponsors datas
         Then I delete the Sponsor data
+
         Then I clicked save button in Sponsors
-        # Then I clicked reload button for Sponsors
+        Then I verify the Sponsors by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project List
+        When I select Sponsors

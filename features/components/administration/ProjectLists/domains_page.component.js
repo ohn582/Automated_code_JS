@@ -9,9 +9,9 @@ const locator = {
 
     domainsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        domainBox: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
-        domainBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
-        domainBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
+        domainBox: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        domainBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        domainBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsDomainGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
     }
 }
 

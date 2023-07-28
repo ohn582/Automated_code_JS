@@ -69,7 +69,7 @@ Then(`I clicked save button in Countries`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Countries`, timeout, async function () {
+Then(`I verify the Countries by re-loging admin account`, timeout, async function () {
     let page = this.page;
     const listData = new CountriesPage(page);
     await listData.listCountriesReload();

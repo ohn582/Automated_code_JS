@@ -17,4 +17,6 @@ Feature: Pdware Admin User Module
 
         # Then I Re-type Team tes1
         Then I select save in the Rank List Data
-        # Then I clicked Reload button in Rank List
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Rank List
+        When I select Rank Lists

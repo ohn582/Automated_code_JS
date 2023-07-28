@@ -29,6 +29,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsFeatureTypeGridReload-btnWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    ftLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -151,10 +157,11 @@ class FeatureTypesPage {
 
     listFTReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.ftLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

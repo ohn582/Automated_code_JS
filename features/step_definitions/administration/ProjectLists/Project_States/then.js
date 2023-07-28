@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { psPage } = require('../../../../page-objects/administration/Project_Lists/psPage');
+const { psPage } = require('../../../../page-objects/administration/Project_Lists/projectStatesPage');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -71,7 +71,7 @@ Then(`I clicked save button in Project States`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Project States`, timeout, async function() {
+Then(`I verify the Project States by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new psPage(page);
     await listData.listPSReload();

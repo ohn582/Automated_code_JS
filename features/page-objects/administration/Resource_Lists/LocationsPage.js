@@ -3,8 +3,6 @@ const { action } = require('../../../utilities/action')
 const locators = {
     locationsNav: {
         locationsAddBtn: `[id="R1TLocations"] [role="toolbar"] [data-qtip="Add"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     locationsData: {
@@ -13,9 +11,9 @@ const locators = {
         locationsName: `[id="adminListsLocationGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
-        locationsNameA: `//*[text()="New tes1"]`,
-        locationsNameB: `//*[text()="New tes2"]`,
-        locationsNameC: `//*[text()="New tes3"]`,
+        locationsNameA: `//*[text()="tes1"]`,
+        locationsNameB: `//*[text()="tes2"]`,
+        locationsNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -31,6 +29,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsLocationGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    locationsLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -52,7 +56,8 @@ class LocationsPage {
 
         await page.click(locationsAddBtn)
 
-        await page.dblclick(locationsName)
+        let textInput = await page.$(locationsName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3});
         await page.keyboard.type('tes1');
         // await page.waitForTimeout(3000);
     }
@@ -65,7 +70,8 @@ class LocationsPage {
 
         await page.click(locationsAddBtn)
 
-        await page.dblclick(locationsName)
+        let textInput = await page.$(locationsName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3});
         await page.keyboard.type('tes2');
         // await page.waitForTimeout(3000);
     }
@@ -78,7 +84,8 @@ class LocationsPage {
 
         await page.click(locationsAddBtn)
 
-        await page.dblclick(locationsName)
+        let textInput = await page.$(locationsName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3});
         await page.keyboard.type('tes3');
         // await page.waitForTimeout(3000);
     }
@@ -147,10 +154,11 @@ class LocationsPage {
 
     listLocationsReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.locationsLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

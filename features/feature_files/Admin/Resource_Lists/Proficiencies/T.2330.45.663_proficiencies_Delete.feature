@@ -14,3 +14,8 @@ Feature: Pdware Admin User Module
         Then I clicked save button in Proficiencies
 
         Then I clicked save button in Proficiencies
+        Then I verify the Proficiencies by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Proficiencies Resource Lists
+        When I select Proficiencies

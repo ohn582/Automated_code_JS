@@ -12,9 +12,9 @@ const locators = {
         rfName: `[id="AdminRankFieldGrid-body"] [data-recordindex="0"] [role="presentation"]`,
         // rfName: `//*[text()="New Rank Field"]`,
 
-        rfNameA: `[id="AdminRankFieldGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1036"]`,
-        rfNameB: `[id="AdminRankFieldGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1036"]`,
-        rfNameC: `[id="AdminRankFieldGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1036"]`,
+        rfNameA: `//*[text()="tes1"]`,
+        rfNameB: `//*[text()="tes2"]`,
+        rfNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -24,12 +24,18 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="AdminRankFieldGrid"] [role="toolbar"] [data-componentid="AdminRankFieldSave"]`,
-        saveOK: `[data-componentid="messagebox-1001"] [id="messagebox-1001-toolbar"] [id="button-1005"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
         relBtn: `[id="AdminRankFieldGrid"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    rfLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -48,10 +54,10 @@ class rfPage {
         let { rfAddBtn }=locators.rfNav;
         let { rfName } = locators.rfData;
         // await page.waitForTimeout(3000);
-        let textInput = await page.$(rfName, el=>el.getAttribute("id"));
-
+        
         await page.click(rfAddBtn);
-
+        
+        let textInput = await page.$(rfName, el=>el.getAttribute("id"));
         // await page.click(rfName);
 
         await textInput.click({ clickCount: 3 })
@@ -62,32 +68,34 @@ class rfPage {
 
     listRFWriteB = async () => {
         let page = this.page;
-        let { rfName, rfDescription } = locators.rfData;
+        let { rfAddBtn }=locators.rfNav;
+        let { rfName } = locators.rfData;
         // await page.waitForTimeout(3000);
-
-        let textInput = await page.$(rfName);
-        let textInputB = await page.$(rfDescription);
+        
+        await page.click(rfAddBtn);
+        
+        let textInput = await page.$(rfName, el=>el.getAttribute("id"));
+        // await page.click(rfName);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('API');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
     listRFWriteC = async () => {
         let page = this.page;
-        let { rfName, rfDescription } = locators.rfData;
+        let { rfAddBtn }=locators.rfNav;
+        let { rfName } = locators.rfData;
         // await page.waitForTimeout(3000);
-
-        let textInput = await page.$(rfName);
-        let textInputB = await page.$(rfDescription);
+        
+        await page.click(rfAddBtn);
+        
+        let textInput = await page.$(rfName, el=>el.getAttribute("id"));
+        // await page.click(rfName);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('Consulting');
-        // await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 
 
@@ -100,12 +108,13 @@ class rfPage {
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(rfNameA);
-        let textInputB = await page.$(rfDescriptionA);
+        // let textInputB = await page.$(rfDescriptionA);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 1');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('API');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('API');
+
         // await page.waitForTimeout(3000);
     }
 
@@ -115,12 +124,12 @@ class rfPage {
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(rfNameB);
-        let textInputB = await page.$(rfDescriptionB);
+        // let textInputB = await page.$(rfDescriptionB);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 2');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Consulting');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('Consulting');
         // await page.waitForTimeout(3000);
     }
 
@@ -130,12 +139,12 @@ class rfPage {
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(rfNameC);
-        let textInputB = await page.$(rfDescriptionC);
+        // let textInputB = await page.$(rfDescriptionC);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('Re-Type 3');
-        await textInputB.click({ clickCount: 3 })
-        await page.keyboard.type('Testing');
+        // await textInputB.click({ clickCount: 3 })
+        // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
     }
 
@@ -163,10 +172,11 @@ class rfPage {
 
     listRFReload = async () => {
         let page = this.page;
-        let { relBtn, reloadNavBtn } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.rfLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

@@ -10,9 +10,9 @@ const locator = {
 
     proficienciesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        proficienciesBox: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
-        proficienciesBoxB: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        proficienciesBoxC: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
+        proficienciesBox: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        proficienciesBoxB: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        proficienciesBoxC: `[id="adminListsProficiencyGrid-bodyWrap"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`
     }
 }
 

@@ -2,9 +2,7 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ratesNav: {
-        ratesAddBtn: `[id="r1AdminMain"] [role="toolbar"] [data-componentid="AdminRateAdd"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        ratesAddBtn: `[id="AdminRateGrid-bodyWrap"] [role="toolbar"] [data-qtip="Add"]`,
     },
 
     ratesData: {
@@ -30,7 +28,7 @@ const locators = {
 
     saveNav: {
         saveBtn: `[id="AdminRateGrid"] [role="toolbar"] [data-componentid="AdminRateSave"]`,
-        saveOK: `[data-componentid="messagebox-1009"] [id="messagebox-1009-toolbar"] [id="button-1013"]`,
+        saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
@@ -55,7 +53,7 @@ class RatesPage {
         // await page.waitForTimeout(3000);
 
         let textInput = await page.$(ratesSkill);
-        let textInputB = await page.$(ratesCostCategory);
+        // let textInputB = await page.$(ratesCostCategory);
 
         await textInput.click({ clickCount: 3 })
         await page.keyboard.type('CAD');

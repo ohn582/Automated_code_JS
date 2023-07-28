@@ -13,4 +13,8 @@ Feature: Pdware Admin User Module
         Then I delete the Skills data
 
         Then I clicked save button in Skills
-        Then I clicked Reload button in Skills
+        Then I verify the Skills by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Resource Lists
+        When I select Skills

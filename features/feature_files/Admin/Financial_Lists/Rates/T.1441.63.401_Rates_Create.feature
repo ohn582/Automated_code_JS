@@ -9,12 +9,13 @@ Feature: Pdware Admin User Module
     Scenario: @T.4559.93.561-testing user data
         When I select Administration and select Rates Resource Lists
         When I select Rates
-        When I select Add Button in the Rates
-        Then I typed a new Rates
-        When I select Add Button in the Rates
+        Then I typed a new Rates tes1
         Then I typed a new Rates tes2
-        When I select Add Button in the Rates
         Then I typed a new Rates tes3
 
         Then I clicked save button in Rates
-        Then I clicked Reload button in Rates
+        Then I verify the Rates by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Rates Resource Lists
+        When I select Rates

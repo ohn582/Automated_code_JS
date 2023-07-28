@@ -12,5 +12,9 @@ Feature: Pdware Admin User Module
         Then I typed a new Categories
         Then I typed a new Categories tes2
         Then I typed a new Categories tes3
+
         Then I clicked save button in Categories
-        # Then I clicked Reload button in Categories
+        Then I verify the Categories data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Categories Project List

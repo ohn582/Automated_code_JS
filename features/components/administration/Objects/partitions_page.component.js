@@ -9,9 +9,9 @@ const locator = {
     },
 
     partitions: {
-        checkBoxSelectA: `[id="adminListsPartitionGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
-        checkBoxSelectB: `[id="adminListsPartitionGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
-        checkBoxSelectC: `[id="adminListsPartitionGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
+        checkBoxSelectA: `[id="adminListsPartitionGrid-body"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
+        checkBoxSelectB: `[id="adminListsPartitionGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        checkBoxSelectC: `[id="adminListsPartitionGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
     },
 
 }

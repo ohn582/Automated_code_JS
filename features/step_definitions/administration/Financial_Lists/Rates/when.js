@@ -21,20 +21,12 @@ When(`I select Rates`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Add Button in the Rates`, timeout, async function () {
-    let page = this.page;
-    const listData = new RatesTypeData(page);
-    listData.listRatesAdd();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select multiple Rates datas`, timeout, async function () {
     let page = this.page;
     const listData = new RatesTypeData(page);
     listData.listRatesSelectData();
     await page.waitForTimeout(2000);
 })
-
 
 When(`I select Load Rates from reload button`, timeout, async function () {
     let page = this.page;

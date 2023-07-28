@@ -8,13 +8,15 @@ Feature: Pdware Admin User Module
     @update @112 @T.4212.44.772
     Scenario: @T.4212.44.772-testing user data
         When I select Project and Project Data
+        When I select Project Grid Mode
 
         Then I Re-Type Diffrent Name A
-
         Then I Re-Type Diffrent Name B
-
         Then I Re-Type Diffrent Name C
 
-        Then Select Save Button
-        Then Select Reload Button for project data
+        Then Select Save Button for Project Data
+        Then I verify the Project Data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Project and Project Data
 

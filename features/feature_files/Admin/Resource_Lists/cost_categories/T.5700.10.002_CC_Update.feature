@@ -14,4 +14,8 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Cost Categories tes3
         
         Then I clicked save button in Cost Categories
-        # Then I clicked Reload button in Cost Categories
+        Then I verify the Cost Categories by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Resource Lists
+        When I select Cost Categories

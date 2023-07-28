@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Domains
         When I select multiple Domain datas
         Then I delete the Domain data
+
         Then I clicked save button in Domains
-        Then I clicked reload button for Domains
+        Then I verify the Domains data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project Lists
+        When I select Domains

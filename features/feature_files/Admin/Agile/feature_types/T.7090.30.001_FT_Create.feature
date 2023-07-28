@@ -12,5 +12,10 @@ Feature: Pdware Admin User Module
         Then I typed a new Feature Types tes1
         Then I typed a new Feature Types tes2
         Then I typed a new Feature Types tes3
+
         Then I clicked save button in Feature Types
-        # Then I clicked Reload button in Feature Types
+        Then I verify the Feature Types by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Agile link
+        When I select Feature Types

@@ -29,7 +29,7 @@ class RankListsData {
     }
 
     // Project OBS
-    otherListLink = async () => {
+    rlListLink = async () => {
         let page = this.page;
         let { adminLink } = locator.admin_Page;
         await page.click(adminLink);

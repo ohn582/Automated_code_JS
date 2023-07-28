@@ -73,7 +73,7 @@ Then(`I clicked save button in Sponsors`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Sponsors`, timeout, async function() {
+Then(`I verify the Sponsors by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new sponsorsPage(page);
     await listData.listSponsorReload();

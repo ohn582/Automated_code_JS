@@ -72,7 +72,7 @@ Then(`I clicked save button in Domains`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Domains`, timeout, async function() {
+Then(`I verify the Domains data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new domainPage(page);
     await listData.listDomainReload();

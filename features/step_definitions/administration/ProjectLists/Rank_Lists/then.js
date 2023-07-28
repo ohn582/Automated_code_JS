@@ -78,7 +78,7 @@ Then(`I select save in the Rank List from updated Data`, timeout, async function
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I clicked Reload button in Rank List`, timeout, async function() {
+Then(`I verify the Rank Lists by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new RankListsPage(page);
     await listData.listRLReload();

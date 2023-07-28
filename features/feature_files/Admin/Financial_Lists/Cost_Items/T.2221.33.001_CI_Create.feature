@@ -14,4 +14,8 @@ Feature: Pdware Admin User Module
         Then I typed a new Cost Items tes3
 
         Then I clicked save button in Cost Items
-# Then I clicked Reload button in Cost Categories
+        Then I verify the Cost Item by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Cost Items Financial Lists
+        When I select Cost Items

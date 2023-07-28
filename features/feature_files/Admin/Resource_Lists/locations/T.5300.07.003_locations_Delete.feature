@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Locations
         When I select multiple Locations datas
         Then I delete the Locations data
+
         Then I clicked save button in Locations
-        # Then I clicked Reload button in Locations
+        Then I verify the Location by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Location Resource Lists
+        When I select Locations

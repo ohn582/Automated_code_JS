@@ -12,18 +12,18 @@ const locators = {
         //Creating a data
         countriesName: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
         // countriesName: `//*[text()="New Country"]`,
-        countriesPartition: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1032"]`,
+        // countriesPartition: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="gridcolumn-1032"]`,
         // domainsName: `//*[text()="New Domain"]`,
 
 
-        countriesNameA: `//*[text()="New tes1"]`,
-        countriesPartitionA: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1032"]`,
+        countriesNameA: `//*[text()="tes1"]`,
+        // countriesPartitionA: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="7"] [data-columnid="gridcolumn-1032"]`,
 
-        countriesNameB: `//*[text()="New tes2"]`,
-        countriesPartitionB: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="8"] [data-columnid="gridcolumn-1032"]`,
+        countriesNameB: `//*[text()="tes2"]`,
+        // countriesPartitionB: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="8"] [data-columnid="gridcolumn-1032"]`,
 
-        countriesNameC: `//*[text()="New tes3"]`,
-        countriesPartitionC: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1032"]`,
+        countriesNameC: `//*[text()="tes3"]`,
+        // countriesPartitionC: `[id="adminListsCountryGrid-bodyWrap"] [data-recordindex="9"] [data-columnid="gridcolumn-1032"]`,
     },
 
     deleteNav: {
@@ -39,6 +39,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsCountryGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    countriesLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -55,16 +61,15 @@ class CountriesPage {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
         let { countriesAddBtn }=locators.countriesNav;
-        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
-        // let textInput = await page.$(countriesName); 
+
         // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-
-
+        
         await page.click(countriesAddBtn);
         
-        // await textInput.click({clickCount: 3})
-        await page.dblclick(countriesName);
+        let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3})
+        // await page.dblclick(countriesName);
         await page.keyboard.type('tes1');
         // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
@@ -74,16 +79,15 @@ class CountriesPage {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
         let { countriesAddBtn }=locators.countriesNav;
-        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
-        // let textInput = await page.$(countriesName); 
+
         // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-
-
+        
         await page.click(countriesAddBtn);
         
-        // await textInput.click({clickCount: 3})
-        await page.dblclick(countriesName);
+        let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3})
+        // await page.dblclick(countriesName);
         await page.keyboard.type('tes2');
         // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
@@ -93,16 +97,15 @@ class CountriesPage {
         let page=this.page;
         let { countriesName, countriesPartition }=locators.countriesData;
         let { countriesAddBtn }=locators.countriesNav;
-        // let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
-        // let textInput = await page.$(countriesName); 
+
         // let textInputB = await page.$(countriesPartition); 
         // await page.waitForTimeout(3000);
-
-
+        
         await page.click(countriesAddBtn);
         
-        // await textInput.click({clickCount: 3})
-        await page.dblclick(countriesName);
+        let textInput = await page.$(countriesName, el=>el.getAttribute("id"));
+        await textInput.click({clickCount: 3})
+        // await page.dblclick(countriesName);
         await page.keyboard.type('tes3');
         // await page.keyboard.type('Testing');
         // await page.waitForTimeout(3000);
@@ -118,7 +121,7 @@ class CountriesPage {
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(countriesNameA); 
-        let textInputB = await page.$(countriesPartitionA); 
+        // let textInputB = await page.$(countriesPartitionA); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 1');
@@ -133,7 +136,7 @@ class CountriesPage {
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(countriesNameB); 
-        let textInputB = await page.$(countriesPartitionB); 
+        // let textInputB = await page.$(countriesPartitionB); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 2');
@@ -148,7 +151,7 @@ class CountriesPage {
         // await page.waitForTimeout(3000);
     
         let textInput = await page.$(countriesNameC); 
-        let textInputB = await page.$(countriesPartitionC); 
+        // let textInputB = await page.$(countriesPartitionC); 
     
         await textInput.click({clickCount: 3})
         await page.keyboard.type('Re-Type 3');
@@ -180,11 +183,12 @@ class CountriesPage {
     }
 
     listCountriesReload = async() => {
-        let page=this.page;
-        let { relBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.countriesLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

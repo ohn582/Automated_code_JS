@@ -73,7 +73,7 @@ Then(`I clicked save button in Proficiencies`, timeout, async function () {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Proficiencies`, timeout, async function () {
+Then(`I verify the Proficiencies by re-loging admin account`, timeout, async function () {
     let page = this.page;
     const listData = new ProficienciesPage(page);
     await listData.listProficienciesReload();

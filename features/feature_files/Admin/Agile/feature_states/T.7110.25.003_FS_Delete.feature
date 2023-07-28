@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Feature States
         When I select multiple Feature States in datas
         Then I delete the Feature States data
+
         Then I clicked save button in Feature States
-        # Then I clicked Reload button in Feature States
+        Then I verify the Feature States by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Agile
+        When I select Feature States

@@ -2,9 +2,7 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     filtersNav: {
-        filterAddBtn: `[role="toolbar"] [aria-label="Add"]`,
-        savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
-        savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
+        filterAddBtn: `[id="AdminFilterDesginer-bodyWrap"] [role="toolbar"] [aria-label="Add"]`,
     },
 
     filtersData: {

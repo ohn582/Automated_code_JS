@@ -33,7 +33,11 @@ const locators = {
         pmAddBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Add"]`
     },
         
-    
+    pmLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
+    },
 }
 
 
@@ -147,12 +151,13 @@ class pmPage {
         await page.waitForTimeout(3000);
     }
 
-    pmReload = async() => {
-        let page=this.page;
-        let { partReloadBtn, reloadYes }=locators.pmData;
-        await page.click(partReloadBtn);
-        await page.click(reloadYes);
-        // await page.waitForTimeout(3000);
+    pmReload = async () => {
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.pmLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 
 }

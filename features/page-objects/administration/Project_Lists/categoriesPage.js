@@ -28,8 +28,13 @@ const locators = {
     reloadBtn: {
         relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsCategoryGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
-    }
+    },
 
+    listCategorieReload: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
+    }
 }
 
 
@@ -148,11 +153,12 @@ class categoriesPage {
     }
 
     listCategorieReload = async() => {
-        let page=this.page;
-        let { relBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.listCategorieReload;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

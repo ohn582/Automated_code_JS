@@ -9,8 +9,13 @@ Feature: Pdware Admin User Module
     Scenario: @T.7707.07.012-testing user data
         When I select Administration and select PM Lists
         When I select Phases Milestones
-        Then I Re-Typed a new Phases Milestones
+        Then I Re-Typed a new Phases Milestones tes1
         Then I Re-Typed a new Phases Milestones tes2
         Then I Re-Typed a new Phases Milestones tes3
+
         Then I clicked save button in Phases Milestones
-        # Then I clicked reload button for Project Codes
+        Then I verify the Phases Milestones by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select PM Lists
+        When I select Phases Milestones

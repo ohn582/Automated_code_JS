@@ -73,7 +73,7 @@ Then(`I clicked save button in Cost Item Categories`, timeout, async function() 
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Cost Item Categories`, timeout, async function() {
+Then(`I verify the Cost Item Categories by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new CostItemCategoriesPage(page);
     await listData.listCICReload();

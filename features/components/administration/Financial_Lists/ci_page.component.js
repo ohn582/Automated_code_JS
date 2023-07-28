@@ -8,9 +8,9 @@ const locator = {
 
     ciCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ciBox: `[id="adminListsCostItemGrid-body"] [data-recordindex="17"] [role="row"] [tabindex="-1"]`,
-        ciBoxB: `[id="adminListsCostItemGrid-body"] [data-recordindex="18"] [role="row"] [tabindex="-1"]`,
-        ciBoxC: `[id="adminListsCostItemGrid-body"] [data-recordindex="19"] [role="row"] [tabindex="-1"]`,
+        ciBox: `[id="adminListsCostItemGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        ciBoxB: `[id="adminListsCostItemGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
+        ciBoxC: `[id="adminListsCostItemGrid-body"] [data-recordindex="6"] [role="row"] [tabindex="-1"]`,
     }
 }
 

@@ -1,5 +1,5 @@
 const { Then, setDefaultTimeout } = require('@cucumber/cucumber');
-const { ccPage } = require('../../../../page-objects/administration/Resource_Lists/ccPage');
+const { ccPage } = require('../../../../page-objects/administration/Resource_Lists/costCategoriesPage');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -73,7 +73,7 @@ Then(`I clicked save button in Cost Categories`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Cost Categories`, timeout, async function() {
+Then(`I verify the Cost Categories by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new ccPage(page);
     await listData.listCCReload();

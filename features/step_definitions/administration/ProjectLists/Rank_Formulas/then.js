@@ -71,7 +71,7 @@ Then(`I clicked save button in Rank Formulas`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked reload button for Rank Formulas`, timeout, async function() {
+Then(`I verify the Rank Formulas by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new RankFormPage(page);
     await listData.listRankFormReload();

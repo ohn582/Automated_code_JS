@@ -8,25 +8,15 @@ Feature: Pdware Admin User Module
     @create @112 @T.4212.44.771
     Scenario: @T.4212.44.771-testing user data
         When I select Project and Project Data
+        When I select Project Grid Mode
 
-        When I select Project Add Button
         Then I create a Project Data
-        Then I Click Apply
-        Then I type the Project Name A
-        Then I select Add & Close
-
-        When I select Project Add Button
         Then I create a Project Data B
-        Then I Click Apply
-        Then I type the Project Name B
-        Then I select Add & Close
-
-        When I select Project Add Button
         Then I create a Project Data C
-        Then I Click Apply
-        Then I type the Project Name C
-        Then I select Add & Close
 
-        Then Select Save Button
-        Then Select Reload Button for project data
+        # Then Select Save Button for Project Data
+        Then I verify the Project Data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Project and Project Data
 

@@ -28,6 +28,12 @@ const locators = {
     reloadBtn: {
         relBtn: `[id="r1AdminMain"] [id="toolbar"] [id="adminListsProjectStateGridReload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
+    },
+
+    psLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -146,11 +152,12 @@ class psPage {
     }
 
     listPSReload = async() => {
-        let page=this.page;
-        let { relBtn, reloadNavBtn }=locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.psLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

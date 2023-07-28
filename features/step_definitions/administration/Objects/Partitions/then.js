@@ -71,7 +71,7 @@ Then(`I select save button`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I verify the Edit OBSs data by re-loging admin account`, timeout, async function() {
+Then(`I verify the partition data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new partitionsPage(page);
     await listData.partitionReload();

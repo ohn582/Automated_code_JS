@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
 const { HomePage } = require('../../../../page-objects/HomePage');
-const { ccTypeData } = require('../../../../components/administration/Resource_Lists/cc_page.component');
+const { ccTypeData } = require('../../../../components/administration/Resource_Lists/costCategories_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 

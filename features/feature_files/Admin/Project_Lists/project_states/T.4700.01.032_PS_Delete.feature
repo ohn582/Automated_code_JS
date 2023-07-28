@@ -11,5 +11,10 @@ Feature: Pdware Admin User Module
         When I select Project States
         When I select Project States in data
         Then I delete the Project States data
+
         Then I clicked save button in Project States
-        # Then I clicked reload button for Project States
+        Then I verify the Project States by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project States Lists
+        When I select Project States

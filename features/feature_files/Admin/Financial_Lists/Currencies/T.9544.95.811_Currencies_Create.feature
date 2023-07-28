@@ -14,4 +14,8 @@ Feature: Pdware Admin User Module
         Then I typed a new Currencies tes3
 
         Then I clicked save button in Currencies
-# Then I clicked Reload button in Cost Categories
+        Then I verify the Currencies by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Currencies Resource Lists
+        When I select Currencies

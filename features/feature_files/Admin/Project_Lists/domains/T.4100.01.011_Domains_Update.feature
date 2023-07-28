@@ -14,4 +14,8 @@ Feature: Pdware Admin User Module
         Then I Re-Typed a new Domain tes3
 
         Then I clicked save button in Domains
-        Then I clicked reload button for Domains
+        Then I verify the Domains data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Project Lists
+        When I select Domains

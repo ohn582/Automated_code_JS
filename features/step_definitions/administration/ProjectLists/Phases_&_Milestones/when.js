@@ -1,6 +1,6 @@
 const { When, setDefaultTimeout } = require('@cucumber/cucumber');
 const { HomePage } = require('../../../../page-objects/HomePage');
-const { pmTypeData } = require('../../../../components/administration/ProjectLists/pm_page.component');
+const { pmTypeData } = require('../../../../components/administration/ProjectLists/phasesMilestones_page.component');
 const { timeout } = require('../../../../test.config').test;
 
 
@@ -21,7 +21,7 @@ When(`I select Phases Milestones`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select multiple Domain datas`, timeout, async function() {
+When(`I select multiple Phases Milestones in data`, timeout, async function() {
     let page = this.page;
     const listData = new pmTypeData(page);
     listData.listPMSelectData();

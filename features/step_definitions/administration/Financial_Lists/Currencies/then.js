@@ -73,7 +73,7 @@ Then(`I clicked save button in Currencies`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Currencies`, timeout, async function() {
+Then(`I verify the Currencies by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new CurrenciesPage(page);
     await listData.listCurrenciesReload();

@@ -11,5 +11,9 @@ Feature: Pdware Admin User Module
         When I select Categories
         When I select multiple Categories datas
         Then I delete the Categories data
+
         Then I clicked save button in Categories
-        # Then I clicked Reload button in Categories
+        Then I verify the Categories data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and Categories Project List
