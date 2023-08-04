@@ -1,4 +1,4 @@
-const { action } = require('../utilities/action')
+const { action } = require('../../../utilities/action')
 
 const locators = {        
     projectNav: {
@@ -38,7 +38,7 @@ const locators = {
     }
 }
 
-class projectPage {
+class projectDataPage {
     constructor(page) {
         this.page = page;
     }
@@ -169,4 +169,4 @@ class projectPage {
 
 }
 
-module.exports.projectPage = projectPage;
+module.exports.projectDataPage = projectDataPage;

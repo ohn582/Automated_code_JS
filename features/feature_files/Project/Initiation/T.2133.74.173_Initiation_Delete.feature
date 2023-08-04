@@ -7,14 +7,14 @@ Feature: Pdware Admin User Module
         When I click over the "Proj" nav and click on "Demand"
     @delete @112 @T.4212.44.773
     Scenario: @T.4212.44.773-testing user data
-        When I select Project and Project Data
+        When I select Project and Initiation
 
-        When I select multiple Project datas
-        Then I select Project Delete Button
+        Then I Delete Initiation Data A
+        Then I Delete Initiation Data B
+        Then I Delete Initiation Data C
 
-        Then Select Save Button
-        Then I verify the Project Data by re-loging admin account
+        Then I verify the Project Initiation by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Project and Project Data
+        When I select Project and Initiation
 

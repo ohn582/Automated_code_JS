@@ -7,16 +7,14 @@ Feature: Pdware Admin User Module
         When I click over the "Proj" nav and click on "Demand"
     @update @112 @T.4212.44.772
     Scenario: @T.4212.44.772-testing user data
-        When I select Project and Project Data
-        When I select Project Grid Mode
+        When I select Project and Initiation
 
-        Then I Re-Type Diffrent Name A
-        Then I Re-Type Diffrent Name B
-        Then I Re-Type Diffrent Name C
+        Then I Re-Type Diffrent Initiation Name A
+        Then I Re-Type Diffrent Initiation Name B
+        Then I Re-Type Diffrent Initiation Name C
 
-        Then Select Save Button
-        Then I verify the Project Data by re-loging admin account
+        Then I verify the Project Initiation by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Project and Project Data
+        When I select Project and Initiation
 

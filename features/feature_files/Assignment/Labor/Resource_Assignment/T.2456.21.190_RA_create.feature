@@ -9,7 +9,7 @@ Feature: Pdware Admin User Module
     Scenario: @T.2356.21.190-testing user data
         When I select Resource and Labor
         
-        Then I Create Rescource Assignment Data for labor
+        Then I Create Rescource Assignment Data for labor A
         Then I Create Rescource Assignment Data for labor B
         Then I Create Rescource Assignment Data for labor C
         

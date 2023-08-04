@@ -1,7 +1,6 @@
 const locator = {
 
     labor_Page: {
-        MenuSliderBtn: `[id="toolbar-1010-innerCt"] [data-ref="targetEl"] [id="r1NavToggle"]`,
         assignmentSelect: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-4"]`,
         laborLink: `//*[text()="Labor"]`,
     },
