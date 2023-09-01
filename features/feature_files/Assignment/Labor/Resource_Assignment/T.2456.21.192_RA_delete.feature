@@ -5,13 +5,13 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Assing" nav and click on "Labor"
-    @create @302 @T.2356.21.190
-    Scenario: @T.2356.21.190-testing user data
+    @delete @302 @T.2356.21.191
+    Scenario: @T.2356.21.191-testing user data
         When I select Resource and Labor
         
-        Then I Create Rescource Assignment Data for labor A
-        Then I Create Rescource Assignment Data for labor B
-        
+        Then I delete Labor Data A
+        Then I delete Labor Data B
+
         Then I select Save button for Labor Data
         Then I verify the Labor data by re-loging admin account
 

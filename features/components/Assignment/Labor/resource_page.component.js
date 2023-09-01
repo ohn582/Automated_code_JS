@@ -7,7 +7,7 @@ const locator = {
 
 }
 
-class laborTypeData {
+class resourceTypeData {
     constructor(page) {
         this.page = page;
         //this.firstTuplebefore = null;
@@ -25,4 +25,4 @@ class laborTypeData {
 
 }
 
-exports.laborTypeData = laborTypeData;
+exports.resourceTypeData = resourceTypeData;

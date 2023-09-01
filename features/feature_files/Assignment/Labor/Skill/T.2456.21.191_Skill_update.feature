@@ -7,10 +7,15 @@ Feature: Pdware Admin User Module
         When I click over the "Assing" nav and click on "Labor"
     @delete @302 @T.2356.21.191
     Scenario: @T.2356.21.191-testing user data
-        When I select Resource and Labor
+        When I select Assignment Menu
+        When I select Labor
         
-        Then I Updated my Rescource Assignment Data for labor
-        Then I Updated my Rescource Assignment Data for labor B
-        Then I Updated my Rescource Assignment Data for labor C
+        Then I delete Skill Assignment Data A
+        Then I delete Skill Assignment Data B
 
-        Then I select Save button under labor
+        Then I select Save button for Skill Assignment Data
+        Then I verify the Skill Assignment data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Assignment Menu
+        When I select Labor

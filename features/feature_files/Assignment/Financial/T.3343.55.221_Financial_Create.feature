@@ -5,15 +5,17 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "proj" nav and click on "Demand"
-    @create @112 @T.4212.44.771
-    Scenario: @T.4212.44.771-testing user data
-        When I select Assignment and Financial
+    @create @112 @T.3343.55.221
+    Scenario: @T.3343.55.221-testing user data
+        When I select Assignment
+        When I select Financial
 
-        Then I create a Project Data
-        Then I create multiple datas within Project TEST1
+        Then I Create Rescource Assignment Data for Financial A
+        Then I Create Rescource Assignment Data for Financial B
 
-        Then Select Save Button
+        Then Select Save Button for Financial
         Then I verify the Location by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Project and Project Data
+        When I select Assignment
+        When I select Financial
