@@ -7,11 +7,11 @@ const locators = {
 
     categoriesData: {
         //Creating a data
-        categoriesSelect: `//*[text()="New Category"]`,
+        categoriesSelect: `[id="adminListsCategoryGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
 
-        categoriesReTypeA: `//*[text()="New tes1"]`,
-        categoriesReTypeB: `//*[text()="New tes2"]`,
-        categoriesReTypeC: `//*[text()="New tes3"]`,
+        categoriesReTypeA: `//*[text()="tes1"]`,
+        categoriesReTypeB: `//*[text()="tes2"]`,
+        categoriesReTypeC: `//*[text()="tes3"]`,
 
     },
 
@@ -48,44 +48,50 @@ class categoriesPage {
     //categories: Create
     listCategoriesWriteA = async() => {
         let page=this.page;
-        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
         let { categoriesAddBtn }=locators.categoriesNav;
+        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
 
         // await page.waitForTimeout(3000); 
 
         await page.click(categoriesAddBtn);
-        await page.dblclick(categoriesSelect);
 
+        let textInput = await page.$(categoriesSelect);
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes1');
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listCategoriesWriteB = async() => {
         let page=this.page;
-        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
         let { categoriesAddBtn }=locators.categoriesNav;
+        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
 
         // await page.waitForTimeout(3000); 
 
         await page.click(categoriesAddBtn);
-        await page.dblclick(categoriesSelect);
 
+        let textInput = await page.$(categoriesSelect);
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes2');
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listCategoriesWriteC = async() => {
         let page=this.page;
-        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
         let { categoriesAddBtn }=locators.categoriesNav;
+        let { categoriesSelect, categoriesNameType }=locators.categoriesData;
 
         // await page.waitForTimeout(3000); 
 
         await page.click(categoriesAddBtn);
-        await page.dblclick(categoriesSelect);
 
+        let textInput = await page.$(categoriesSelect);
+
+        await textInput.click({ clickCount: 3 })
         await page.keyboard.type('tes3');
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
 

@@ -4,8 +4,8 @@ const locators = {
     //Admin List
     partitions: {
         //Create
-        addBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsPartitionGridAdd"]`,
-        textBoxName: `[id="adminListsPartitionGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        addBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-componentid="adminListsPartitionGridAdd"]`,
+        textBoxName: `[id="adminListsParitionGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
         //Update
         textBoxNameReTypeA: `//*[text()="data1"]`,
@@ -13,15 +13,15 @@ const locators = {
         textBoxNameReTypeC: `//*[text()="data3"]`,
 
         //delete
-        deleteBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-qtip="Remove"]`,
+        deleteBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Remove"]`,
         deleteYes: `//*[text()="Yes"]`,
         
         //Save
-        partSaveBtn: `[id="adminListsPartitionGrid-bodyWrap"] [role="toolbar"] [data-qtip="Save"]`,
+        partSaveBtn: `[id="AdminMainContainer"] [role="toolbar"] [data-qtip="Save"]`,
         saveBtnOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
 
         //Reload
-        partReloadBtn: `[id="adminListsPartitionGrid-bodyWrap"] [id="adminListsPartitionGridReload-btnIconEl"]`,
+        partReloadBtn: `[id="AdminMainContainer"] [id="adminListsPartitionGridReload-btnIconEl"]`,
         reloadYes: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 

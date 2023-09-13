@@ -7,12 +7,12 @@ const locators = {
 
     rankFormData: {
         //Creating a data
-        // rankFormName: `[id="adminListsRankFormulaGrid"] [data-recordindex="0"] [role="presentation"]`,
-        rankFormName: `//*[text()="New Rank Formula"]`,
+        rankFormName: `[id="adminListsRankFormulaGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
+        // rankFormName: `//*[text()="New Rank Formula"]`,
 
-        rankFormNameDataA: `//*[text()="tes1"]`,
-        rankFormNameDataB: `//*[text()="tes2"]`,
-        rankFormNameDataC: `//*[text()="tes3"]`,
+        rankFormNameA: `//*[text()="tes1"]`,
+        rankFormNameB: `//*[text()="tes2"]`,
+        rankFormNameC: `//*[text()="tes3"]`,
     },
 
     deleteNav: {
@@ -97,10 +97,7 @@ class RankFormPage {
         let { rankFormNameA, rankFormFormulaA } = locators.rankFormData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rankFormNameA);
-        let textInputB = await page.$(rankFormFormulaA);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(rankFormNameA)
         await page.keyboard.type('Re-Type 1');
         // await textInputB.click({ clickCount: 3 })
         // await page.keyboard.type('EFG');
@@ -109,13 +106,10 @@ class RankFormPage {
 
     rankFormReTypeDataB = async () => {
         let page = this.page;
-        let { rankFormNameB, rankFormFormulaB } = locators.rankFormData;
+        let { rankFormNameB, rankFormFormulaA } = locators.rankFormData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rankFormNameB);
-        let textInputB = await page.$(rankFormFormulaB);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(rankFormNameB)
         await page.keyboard.type('Re-Type 2');
         // await textInputB.click({ clickCount: 3 })
         // await page.keyboard.type('JKL');
@@ -124,13 +118,10 @@ class RankFormPage {
 
     rankFormReTypeDataC = async () => {
         let page = this.page;
-        let { rankFormNameC, rankFormFormulaC } = locators.rankFormData;
+        let { rankFormNameC, rankFormFormulaA } = locators.rankFormData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(rankFormNameC);
-        let textInputB = await page.$(rankFormFormulaC);
-
-        await textInput.click({ clickCount: 3 })
+        await page.dblclick(rankFormNameC)
         await page.keyboard.type('Re-Type 3');
         // await textInputB.click({ clickCount: 3 })
         // await page.keyboard.type('MNO');

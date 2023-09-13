@@ -7,9 +7,9 @@ const locator = {
 
     ftCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        ftBox: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
-        ftBoxB: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        ftBoxC: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
+        ftBox: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        ftBoxB: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        ftBoxC: `[id="adminListsFeatureTypeGrid-bodyWrap"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
     }
 }
 

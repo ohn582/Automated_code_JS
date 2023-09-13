@@ -73,7 +73,7 @@ Then(`I clicked save button in Categories`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`Then I verify the Categories data by re-loging admin account`, timeout, async function() {
+Then(`I verify the Categories data by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new categoriesPage(page);
     await listData.listCategorieReload();

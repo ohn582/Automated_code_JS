@@ -8,9 +8,9 @@ const locator = {
 
     eventTypeCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        eventTypeBox: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        eventTypeBoxB: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
-        eventTypeBoxC: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`
+        eventTypeBox: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        eventTypeBoxB: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        eventTypeBoxC: `[data-componentid="r1MainViewPort"] [id="AdminEventTypeGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`
     }
 }
 

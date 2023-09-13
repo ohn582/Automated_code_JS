@@ -6,7 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-// Lists Domains
+// Lists PM
 When(`I select Administration and select PM Lists`, timeout, async function() {
     let page = this.page;
     const listData = new pmTypeData(page);

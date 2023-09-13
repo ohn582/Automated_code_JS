@@ -8,9 +8,9 @@ const locator = {
 
     categoriesCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        categoriesBox: `[id="adminListsCategoryGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
-        categoriesBoxB: `[id="adminListsCategoryGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
-        categoriesBoxC: `[id="adminListsCategoryGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
+        categoriesBox: `[id="adminListsCategoryGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        categoriesBoxB: `[id="adminListsCategoryGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        categoriesBoxC: `[id="adminListsCategoryGrid-body"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`
     }
 }
 

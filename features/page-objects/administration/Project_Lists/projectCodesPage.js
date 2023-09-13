@@ -8,7 +8,7 @@ const locators = {
 
     pcData: {
         //Creating a data
-        pcName: `[id="adminListsProjectCodeGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        pcName: `[id="adminListsProjectCodeGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
 
         pcNameA: `//*[text()="tes1"]`,
         pcNameB: `//*[text()="tes2"]`,

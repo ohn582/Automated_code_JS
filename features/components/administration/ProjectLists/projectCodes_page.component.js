@@ -3,7 +3,7 @@ const locator = {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
         adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         projListLink: `//*[text()="Project Lists"]`,
-        pcLink: `//*[text()="Project Codes"]`,
+        pcLink: `//*[text()="Codes"]`,
     },
 
     pcCheckBox: {
@@ -27,7 +27,7 @@ class pcTypeData {
 
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(1000);
     }
 
     listPCSelect = async() => {
@@ -37,7 +37,7 @@ class pcTypeData {
         await page.click(projListLink);
         // await page.waitForTimeout(1000);
         await page.click(pcLink);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(1000);
     }
 
     listPCSelectData = async() => {
@@ -47,7 +47,7 @@ class pcTypeData {
         await page.click(pcBox);
         await page.click(pcBoxB);
         await page.click(pcBoxC);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(1000);
     }
 }
 

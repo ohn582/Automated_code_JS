@@ -7,8 +7,9 @@ Feature: Pdware Admin User Module
     @delete @909 @T.7707.07.013
     Scenario: @T.7707.07.013-testing user data
     #Creating the Data
-        When I select Administration and select Phases Milestones Lists
+        When I select Administration and select PM Lists
         When I select Phases Milestones
+        
         When I select multiple Phases Milestones in data
         Then I delete the Phases Milestones data
 

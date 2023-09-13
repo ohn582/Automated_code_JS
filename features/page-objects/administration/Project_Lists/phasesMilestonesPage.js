@@ -5,11 +5,9 @@ const locators = {
     pmData: {
         //Create
         pmAddBtn: `[id="AdminListsTaskDefaultGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsTaskDefaultGridAdd"]`,
-        textBoxName: `[id="AdminListsTaskDefaultGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        textBoxName: `[id="AdminListsTaskDefaultGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
 
         //Update
-        pmDataSelect: `//*[text()="New Phase"]`,
-
         textBoxNameReTypeA: `//*[text()="data1"]`,
         textBoxNameReTypeB: `//*[text()="data2"]`,
         textBoxNameReTypeC: `//*[text()="data3"]`,
@@ -50,13 +48,11 @@ class pmPage {
     // Creating multiple Partitions Data
     pmCreateData = async() => {
         let page=this.page;
-        let { pmAddBtn, pmDataSelect, textBoxName }=locators.pmData;
+        let { pmAddBtn, textBoxName }=locators.pmData;
 
         await page.click(pmAddBtn);
 
-        await page.dblclick(pmDataSelect);
         let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
-
         // await page.waitForTimeout(1000);
         await textInput.click({clickCount: 3})
         await page.keyboard.type('data1');
@@ -65,13 +61,11 @@ class pmPage {
 
    pmCreateDataB = async() => {
     let page=this.page;
-    let { pmAddBtn, pmDataSelect, textBoxName }=locators.pmData;
+    let { pmAddBtn, textBoxName }=locators.pmData;
 
     await page.click(pmAddBtn);
 
-    await page.dblclick(pmDataSelect);
     let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
-
     // await page.waitForTimeout(1000);
     await textInput.click({clickCount: 3})
     await page.keyboard.type('data2');
@@ -80,13 +74,11 @@ class pmPage {
 
    pmCreateDataC = async() => {
     let page=this.page;
-    let { pmAddBtn, pmDataSelect, textBoxName }=locators.pmData;
+    let { pmAddBtn, textBoxName }=locators.pmData;
 
     await page.click(pmAddBtn);
 
-    await page.dblclick(pmDataSelect);
     let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
-
     // await page.waitForTimeout(1000);
     await textInput.click({clickCount: 3})
     await page.keyboard.type('data3');

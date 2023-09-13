@@ -9,9 +9,9 @@ const locator = {
         projData: `//*[text()="Data"]`,
 
 
-        pdBoxA:`[role="rowgroup"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
-        pdBoxB:`[role="rowgroup"] [data-recordindex="6"] [role="row"] [tabindex="-1"]`,
-        pdBoxC:`[role="rowgroup"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
+        pdBoxA:`[role="rowgroup"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
+        pdBoxB:`[role="rowgroup"] [data-recordindex="8"] [role="row"] [tabindex="-1"]`,
+        // pdBoxC:`[role="rowgroup"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
     },
 }
 
@@ -48,7 +48,7 @@ class projectTypeData {
         let { pdBoxA, pdBoxB, pdBoxC }=locator.project_Page;
         await page.click(pdBoxA);
         await page.click(pdBoxB);
-        await page.click(pdBoxC);
+        // await page.click(pdBoxC);
         await page.waitForTimeout(3000);
     }
 

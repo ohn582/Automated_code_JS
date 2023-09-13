@@ -4,7 +4,7 @@ const locator = {
     },
 
     obsLink: {
-        obsLink: `//*[text()="Edit OBSs"]`,
+        obsLink: `//*[text()="OBSs"]`,
         objectLink: `//*[text()="Objects"]`,
     },
 }

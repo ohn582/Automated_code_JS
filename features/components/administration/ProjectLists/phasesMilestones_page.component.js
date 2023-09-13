@@ -20,7 +20,7 @@ class pmTypeData {
         this.page = page;
     }
 
-    // Project OBS
+    // Project PM
     pmListLink = async() => {
         let page=this.page;
         let { pmLink, adminLink }=locator.admin_Page;

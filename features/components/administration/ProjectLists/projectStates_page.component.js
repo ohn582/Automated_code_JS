@@ -3,7 +3,7 @@ const locator = {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
         adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         projListLink: `//*[text()="Project Lists"]`,
-        psLink: `//*[text()="Project States"]`,
+        psLink: `//*[text()="States"]`,
     },
 
     psCheckBox: {

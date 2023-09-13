@@ -11,9 +11,9 @@ const locator = {
 
     skillsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        skillsBox: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
-        skillsBoxB: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        skillsBoxC: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
+        skillsBox: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        skillsBoxB: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`,
+        skillsBoxC: `[id="adminListsSkillGrid-bodyWrap"] [data-recordindex="6"] [role="row"] [tabindex="-1"]`
     }
 }
 

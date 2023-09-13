@@ -8,9 +8,9 @@ const locator = {
 
     rankFormCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        rankFormBox: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
-        rankFormBoxB: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
-        rankFormBoxC: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
+        rankFormBox: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
+        rankFormBoxB: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        rankFormBoxC: `[id="adminListsRankFormulaGrid-body"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`
     }
 }
 
@@ -27,7 +27,7 @@ class RankFormTypeData {
         // await page.waitForTimeout(1000);
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listRFSelect = async() => {
@@ -37,7 +37,7 @@ class RankFormTypeData {
         await page.click(projListLink);
         // await page.waitForTimeout(1000);
         await page.click(rankFormLink);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listRFSelectData = async() => {
@@ -47,7 +47,7 @@ class RankFormTypeData {
         await page.click(rankFormBox);
         await page.click(rankFormBoxB);
         await page.click(rankFormBoxC);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 }
 

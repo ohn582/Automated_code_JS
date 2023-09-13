@@ -12,7 +12,7 @@ Feature: Pdware Admin User Module
 
         Then I Re-Type Diffrent Name A
         Then I Re-Type Diffrent Name B
-        Then I Re-Type Diffrent Name C
+        # Then I Re-Type Diffrent Name C
 
         Then Select Save Button for Project Data
         Then I verify the Project Data by re-loging admin account

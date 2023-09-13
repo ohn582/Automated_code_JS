@@ -16,5 +16,5 @@ Feature: Pdware Admin User Module
         Then I verify the Rank Fields by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Administration and select PM Lists
+        When I select Administration and select RF Lists
         When I select Rank Fields

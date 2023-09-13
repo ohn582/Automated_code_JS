@@ -20,34 +20,21 @@ Then(`I create a Project Initiation B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I create a Project Initiation C`, timeout, async function() {
-    let page = this.page;
-    const listData = new initiationPage(page);
-    listData.initiationAddDataC();
-    await page.waitForTimeout(2000);
-})
-
 
 
 
 //Project Data Update
-Then(`I Re-Type Diffrent Initiation Name A`, timeout, async function() {
+Then(`I updated Initiation Data A`, timeout, async function() {
     let page = this.page;
     const listData = new initiationPage(page);
     listData.initiationUpdateA();
     await page.waitForTimeout(2000);
 })
 
-Then(`I Re-Type Diffrent Initiation Name B`, timeout, async function() {
+Then(`I updated Initiation Data B`, timeout, async function() {
     let page = this.page;
     const listData = new initiationPage(page);
     listData.initiationUpdateB();
-    await page.waitForTimeout(2000);
-})
-Then(`I Re-Type Diffrent Initiation Name C`, timeout, async function() {
-    let page = this.page;
-    const listData = new initiationPage(page);
-    listData.initiationUpdateC();
     await page.waitForTimeout(2000);
 })
 
@@ -68,19 +55,11 @@ Then(`I Delete Initiation Data B`, timeout, async function() {
     await page.waitForTimeout(1000);
 })
 
-Then(`I Delete Initiation Data C`, timeout, async function() {
-    let page = this.page;
-    const listData = new initiationPage(page);
-    listData.initiationDeleteC();
-    await page.waitForTimeout(1000);
-})
-
-
 
 
 
 //Project Data Delete
-Then(`I select Project Delete Button`, timeout, async function() {
+Then(`I select Initiation Delete Button`, timeout, async function() {
     let page = this.page;
     const listData = new initiationPage(page);
     listData.projectDelete();

@@ -8,9 +8,9 @@ const locator = {
 
     baseTypeCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        baseTypeBox: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
-        baseTypeBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        baseTypeBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
+        baseTypeBox: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        baseTypeBoxB: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`,
+        baseTypeBoxC: `[data-componentid="r1MainViewPort"] [id="adminListsBaselineTypeGrid-bodyWrap"] [data-recordindex="5"] [role="row"] [tabindex="-1"]`
     }
 }
 

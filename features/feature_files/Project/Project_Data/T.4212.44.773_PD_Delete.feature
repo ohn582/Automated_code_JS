@@ -8,6 +8,7 @@ Feature: Pdware Admin User Module
     @delete @112 @T.4212.44.773
     Scenario: @T.4212.44.773-testing user data
         When I select Project and Project Data
+        When I select Project Grid Mode
 
         When I select multiple Project datas
         Then I select Project Delete Button

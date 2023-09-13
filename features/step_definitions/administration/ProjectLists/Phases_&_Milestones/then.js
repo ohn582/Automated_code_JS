@@ -33,21 +33,21 @@ Then(`I typed a new Phases Milestones tes3`, timeout, async function() {
 
 
 // Update
-Then(`Re-Typed a new Phases Milestones tes1`, timeout, async function() {
+Then(`I Re-Typed a new Phases Milestones tes1`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeData();
     await page.waitForTimeout(2000);
 })
 
-Then(`Re-Typed a new Phases Milestones tes2`, timeout, async function() {
+Then(`I Re-Typed a new Phases Milestones tes2`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeDataB();
     await page.waitForTimeout(2000);
 })
 
-Then(`Re-Typed a new Phases Milestones tes3`, timeout, async function() {
+Then(`I Re-Typed a new Phases Milestones tes3`, timeout, async function() {
     let page = this.page;
     const listData = new pmPage(page);
     listData.pmReTypeDataC();

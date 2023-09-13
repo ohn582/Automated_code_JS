@@ -49,14 +49,6 @@ class initiationTypeData {
         await page.waitForTimeout(1000);
     }
 
-    listInitiationSelectC = async() => {
-        let page=this.page;
-        let { projectGridMode }=locator.projectNav;
-
-        await page.click(projectGridMode);
-        await page.waitForTimeout(1000);
-    }
-
     // Project Data Delete
     listProjectSelect = async() => {
         let page=this.page;

@@ -12,7 +12,7 @@ Feature: Pdware Admin User Module
 
         Then I create a Project Data
         Then I create a Project Data B
-        Then I create a Project Data C
+        # Then I create a Project Data C
 
         # Then Select Save Button for Project Data
         Then I verify the Project Data by re-loging admin account

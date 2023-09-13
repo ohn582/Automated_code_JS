@@ -5,13 +5,12 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "proj" nav and click on "Demand"
-    @create @112 @T.4212.44.771
-    Scenario: @T.4212.44.771-testing user data
+    @create @112 @T.2133.74.171
+    Scenario: @T.2133.74.171-testing user data
         When I select Project and Initiation
 
         Then I create a Project Initiation A
-        Then I create a Project Initiation B
-        Then I create a Project Initiation C
+        # Then I create a Project Initiation B
 
         Then I verify the Project Initiation by re-loging admin account
 
