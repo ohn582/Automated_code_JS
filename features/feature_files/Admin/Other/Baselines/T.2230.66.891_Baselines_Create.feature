@@ -8,7 +8,7 @@ Feature: Pdware Admin User Module
     @create @300 @T.2230.66.891
     Scenario: @T.2230.66.891-testing user data
         When I select Administration and Baselines List
-        When I select Baselines
+
         Then I typed a new Baselines tes1
         Then I typed a new Baselines tes2
         Then I typed a new Baselines tes3
@@ -18,5 +18,4 @@ Feature: Pdware Admin User Module
 
         Given I visit the pdware r1test landing page 'https://r1test.pdware.com/'
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Administration and Baseline Types List
-        When I select Baseline Types
+        When I select Administration and Baselines List

@@ -2,23 +2,15 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     ratesNav: {
-        ratesAddBtn: `[id="AdminRateGrid-bodyWrap"] [role="toolbar"] [data-qtip="Add"]`,
+        ratesAddBtn: `[id="R1TRates"] [id="AdminRateGrid-bodyWrap"] [role="toolbar"] [data-componentid="AdminRateAdd"]`,
     },
 
     ratesData: {
         //Creating a data
-        ratesSkill: `[id="AdminRateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1039"]`,
-        ratesCostCategory: `[id="AdminRateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1040"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        ratesNode: `[id="AdminRateGrid-body"] [data-recordindex="0"] [class="x-grid-cell-inner x-grid-checkcolumn-cell-inner"]`,
 
-        ratesSkillA: `[id="AdminRateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1039"]`,
-        ratesCostCategoryA: `[id="AdminRateGrid"] [data-recordindex="0"] [data-columnid="gridcolumn-1040"]`,
 
-        ratesSkillB: `[id="AdminRateGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1039"]`,
-        ratesCostCategoryB: `[id="AdminRateGrid"] [data-recordindex="1"] [data-columnid="gridcolumn-1040"]`,
-
-        ratesSkillC: `[id="AdminRateGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1039"]`,
-        ratesCostCategoryC: `[id="AdminRateGrid"] [data-recordindex="2"] [data-columnid="gridcolumn-1040"]`,
+        ratesEnterprise: `//*[text()="Enterprise"]`,
     },
 
     deleteNav: {
@@ -31,9 +23,10 @@ const locators = {
         saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
-    reloadBtn: {
-        relBtn: `[id="r1AdminMain"] [id="AdminRateGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
-        reloadLoadRates: `[data-componentid="menu-1053"] [id="menu-1053-bodyWrap"] [aria-label="Load Rates"]`,
+    periodsLogoutBtn: {
+        adminUserBtn: `//*[text()="Administrator"]`,
+        logoutUserBtn: `//*[text()="Logout"]`,
+        hereLinkLogout: `//*[text()=" here"]`,
     }
 
 }
@@ -49,47 +42,152 @@ class RatesPage {
     //Sponsor: Create
     listRatesWriteA = async () => {
         let page = this.page;
-        let { ratesSkill, ratesCostCategory } = locators.ratesData;
+        let { ratesAddBtn } = locators.ratesNav;
+        let { ratesNode } = locators.ratesData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ratesSkill);
-        // let textInputB = await page.$(ratesCostCategory);
+        await page.click(ratesAddBtn);
 
-        await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('CAD');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('EE 1');
-        // await page.waitForTimeout(3000);
+        await page.click(ratesNode)
+
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.type('Enterprise');
+
+        await page.waitForTimeout(1000);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('DBA');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('IT FTE');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('USA');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('New York');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('10/18/2024');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('01/07/2025');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('44');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('97');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 1');
+        await page.keyboard.press('Enter');
+
+        await page.waitForTimeout(2000);
     }
 
     listRatesWriteB = async () => {
         let page = this.page;
-        let { ratesSkill, ratesCostCategory } = locators.ratesData;
+        let { ratesAddBtn } = locators.ratesNav;
+        let { ratesNode } = locators.ratesData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ratesSkill);
-        let textInputB = await page.$(ratesCostCategory);
+        await page.click(ratesAddBtn);
 
-        await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('Java');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('QA 1');
-        // await page.waitForTimeout(3000);
+        await page.click(ratesNode)
+
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.type('Acme Life Sciences');
+
+        await page.waitForTimeout(1000);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Project Manager');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Writer 1');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Israel');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Mumbai');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('12/10/2024');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('03/03/2025');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('56');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('11');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 2');
+        await page.keyboard.press('Enter');
+
+        await page.waitForTimeout(2000);
     }
 
     listRatesWriteC = async () => {
         let page = this.page;
-        let { ratesSkill, ratesCostCategory } = locators.ratesData;
+        let { ratesAddBtn } = locators.ratesNav;
+        let { ratesNode } = locators.ratesData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(ratesSkill);
-        let textInputB = await page.$(ratesCostCategory);
+        await page.click(ratesAddBtn);
 
-        await textInput.click({ clickCount: 3 })
-        await page.keyboard.type('DBA');
-        await textInputB.click({ clickCount: 1 })
-        await page.keyboard.type('MB 1');
-        // await page.waitForTimeout(3000);
+        await page.click(ratesNode)
+
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.type('Demo');
+
+        await page.waitForTimeout(1000);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Mech Engineer');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('IT Contractor');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Israel');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Switzerland');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('05/12/2025');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('02/07/2026');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('87');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('123');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Acme Life Sciences');
+        await page.keyboard.press('Enter');
+
+        await page.waitForTimeout(2000);
     }
 
 
@@ -165,10 +263,11 @@ class RatesPage {
 
     listRatesReload = async () => {
         let page = this.page;
-        let { relBtn, reloadLoadRates } = locators.reloadBtn;
-        await page.click(relBtn);
-        await page.click(reloadLoadRates);
-        await page.waitForTimeout(3000);
+        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.periodsLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);
+        await page.click(hereLinkLogout);
     }
 }
 

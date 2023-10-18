@@ -5,56 +5,73 @@ const { timeout } = require('../../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-// Categories: Create
-Then(`I create a new ULD name`, timeout, async function() {
+// User Defined Lists: Create
+Then(`I create a new UDL name A`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
-    await listData.nameUDLWrite();
+    await listData.nameUDLWriteA();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I create a new multiple User Defined Lists A`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.addDefinedListDetailsA();
+    await page.waitForTimeout(2000);
+})
+
+
+Then(`I create a new UDL name B`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.nameUDLWriteB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I create a new multiple User Defined Lists B`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.addDefinedListDetailsB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I create a new UDL name C`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.nameUDLWriteC();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I create a new multiple User Defined Lists C`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.addDefinedListDetailsC();
     await page.waitForTimeout(2000);
 })
 
 
 
 
-Then(`I typed a new User Defined Lists tes1`, timeout, async function() {
-    let page = this.page;
-    const listData = new UserDefinedPage(page);
-    await listData.listUDLWriteA();
-    await page.waitForTimeout(2000);
-})
 
-Then(`I typed a new User Defined Lists tes2`, timeout, async function() {
-    let page = this.page;
-    const listData = new UserDefinedPage(page);
-    await listData.listUDLWriteB();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I typed a new User Defined Lists tes3`, timeout, async function() {
-    let page = this.page;
-    const listData = new UserDefinedPage(page);
-    await listData.listUDLWriteC();
-    await page.waitForTimeout(2000);
-})
 
 
 
 // Categories: Update
-Then(`I Re-Typed a new User Defined Lists tes1`, timeout, async function() {
+Then(`I Re-Typed a new User Defined Lists Field 31`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
-    listData.udl_ReTypeData();
+    listData.udl_ReTypeDataA();
     await page.waitForTimeout(2000);
 })
 
-Then(`I Re-Typed a new User Defined Lists tes2`, timeout, async function() {
+Then(`I Re-Typed a new User Defined Lists Field 144`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
     listData.udl_ReTypeDataB();
     await page.waitForTimeout(2000);
 })
 
-Then(`I Re-Typed a new User Defined Lists tes3`, timeout, async function() {
+Then(`I Re-Typed a new User Defined Lists Cost Notes`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
     listData.udl_ReTypeDataC();
@@ -65,14 +82,34 @@ Then(`I Re-Typed a new User Defined Lists tes3`, timeout, async function() {
 
 
 // Categories: Delete
-Then(`I delete the User Defined Lists data`, timeout, async function() {
+Then(`I Delete all User Defined Lists Field 31`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
-    await listData.listUDLDelete();
+    await listData.listUDLDeleteA();
     await page.waitForTimeout(2000);
 })
 
-Then(`I select save in the UDLD Team`, timeout, async function() {
+Then(`I Delete all User Defined Lists Field 144`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.listUDLDeleteB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I Delete all User Defined Lists Cost Notes`, timeout, async function() {
+    let page = this.page;
+    const listData = new UserDefinedPage(page);
+    await listData.listUDLDeleteC();
+    await page.waitForTimeout(2000);
+})
+
+
+
+
+
+
+
+Then(`I select save in the UDL Data`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedPage(page);
     await listData.listUDLSave();

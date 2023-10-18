@@ -7,7 +7,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Lists Categories
-When(`I select Administration and User Defined Lists`, timeout, async function() {
+When(`I select Administration`, timeout, async function() {
     let page = this.page;
     const listData = new UserDefinedData(page);
     listData.otherListLink();

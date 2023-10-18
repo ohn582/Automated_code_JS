@@ -7,14 +7,16 @@ Feature: Pdware Admin User Module
         When I click over the "Assing" nav and click on "Labor"
     @update @111 @T.1570.30.442
     Scenario: @T.1570.30.442-testing user data
-        When I select Administration and select Objects
-        When I select Object Partitions
+        When I select Administration and select Objects and select Periods 
         
         Then I re-type the old data for periods A
         Then I re-type the old data for periods B
         Then I re-type the old data for periods C
 
         Then I save the Periods data
-        Then I select reload button
+        Then I verify the Periods data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Objects and select Periods 
 
         # Then I select Save button

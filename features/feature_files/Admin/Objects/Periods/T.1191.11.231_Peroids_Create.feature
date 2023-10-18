@@ -9,12 +9,17 @@ Feature: Pdware Admin User Module
     Scenario: @T.1191.11.231-testing user data
         When I select Administration and select Objects and select Periods 
 
-        Then I type a new name in the Periods Data
-        # Then I type a new name in the Periods Data B
-        # Then I type a new name in the Periods Data C
+        Then I type a new name in the Periods Data A
+        Then I type a new name in the Periods Data B
+        Then I type a new name in the Periods Data C
         
         Then I save the Periods data
-        Then I verify the partition data by re-loging admin account
+        Then I verify the Periods data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Administration and select Objects and select Periods 
+        When I select Administration and select Objects and select Periods 
+
+        Then I type Start and End Date to verify the data A
+        Then I type Start and End Date to verify the data B
+        Then I type Start and End Date to verify the data C

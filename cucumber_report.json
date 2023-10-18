@@ -1,0 +1,222 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pdware-admin-user-module;@t.4559.93.561-testing-user-data",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "@T.4559.93.561-testing user data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 602038200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I visit the pdware r1test landing page 'https://r1test.pdware.com/'",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1555928499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7357312700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3015352600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I select Administration and select Rates Resource Lists",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2006116600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I select Rates",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2007778100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I typed a new Rates tes1",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5619830199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I typed a new Rates tes2",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5683034300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I typed a new Rates tes3",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5800430099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I clicked save button in Rates",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5223691200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I verify the Rates by re-loging admin account",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3393618999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4023760100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I select Administration and select Rates Resource Lists",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2002267199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I select Rates",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2011267400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1164799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@create",
+            "line": 8
+          },
+          {
+            "name": "@343",
+            "line": 8
+          },
+          {
+            "name": "@T.4559.93.561",
+            "line": 8
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pdware-admin-user-module",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pdware Admin User Module",
+    "tags": [],
+    "uri": "features\\feature_files\\Admin\\Financial_Lists\\Rates\\T.1441.63.401_Rates_Create.feature"
+  }
+]

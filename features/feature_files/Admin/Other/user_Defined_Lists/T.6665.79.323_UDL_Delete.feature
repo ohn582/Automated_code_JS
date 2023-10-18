@@ -7,16 +7,19 @@ Feature: Pdware Admin User Module
         When I click over the "Admin" nav and click on "Lists"
     @delete @279 @T.6665.79.323
     Scenario: @T.6665.79.323-testing user data
-        When I select Administration and User Defined Lists
+        When I select Administration
         When I select User Defined Lists
-        When I select ULD Team from a drpodown nav
-        When I selected Field 3
 
-        # When I select Add Button in the ULD Team
-        When I select multiple ULD Team datas
+        Then I Delete all User Defined Lists Field 31
+        Then I select save in the UDL Data
+        # Then I Delete all User Defined Lists Field 144
+        # Then I select save in the UDL Data
+        # Then I Delete all User Defined Lists Field Cost Notes
+        # Then I select save in the UDL Data
 
-        Then I delete the User Defined Lists data
+        Then I verify the Scenario Status data by re-loging admin account
 
-        # Then I Re-type Team tes1
-        Then I select save in the UDLD Team
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration
+        When I select User Defined Lists
         # Then I clicked Reload button in User Defined Lists

@@ -9,6 +9,7 @@ Feature: Pdware Admin User Module
     Scenario: @T.T.5700.10.002-testing user data
         When I select Administration and select Resource Lists
         When I select Cost Categories
+
         When I Re-Typed a new Cost Categories tes1
         Then I Re-Typed a new Cost Categories tes2
         Then I Re-Typed a new Cost Categories tes3

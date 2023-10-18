@@ -8,9 +8,9 @@ const locator = {
 
     sponsorsCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        sponsorsBox: `[id="adminListsParitionGrid-bodyWrap"] [data-recordindex="0"] [role="row"] [tabindex="-1"]`,
-        sponsorsBoxB: `[id="adminListsParitionGrid-bodyWrap"] [data-recordindex="1"] [role="row"] [tabindex="-1"]`,
-        sponsorsBoxC: `[id="adminListsParitionGrid-bodyWrap"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`
+        sponsorsBox: `[id="R1TSponsors"] [data-recordindex="2"] [role="row"] [tabindex="-1"]`,
+        sponsorsBoxB: `[id="R1TSponsors"] [data-recordindex="3"] [role="row"] [tabindex="-1"]`,
+        sponsorsBoxC: `[id="R1TSponsors"] [data-recordindex="4"] [role="row"] [tabindex="-1"]`
     }
 }
 

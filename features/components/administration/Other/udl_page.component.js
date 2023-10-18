@@ -8,16 +8,13 @@ const locator = {
 
     udlNav: {
         udlAddDetailsBtn: `[id="AdminUserDefinedListDetailGrid-bodyWrap"] [role="toolbar"] [aria-label="Add"]`,
-
-        // selectin Feild 3 
-        udlSelecting: `[id="AdminUdfListsGrid-body"] [data-boundview="gridview-1035"]`,
     },
 
     udlCheckBox: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        udlBox: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="0"] [data-columnid="checkcolumn-1069"]`,
-        udlBoxB: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="1"] [data-columnid="checkcolumn-1069"]`,
-        udlBoxC: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="2"] [data-columnid="checkcolumn-1069"]`
+        udlBox: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="0"] [class="x-grid-checkcolumn"]`,
+        udlBoxB: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="1"] [class="x-grid-checkcolumn"]`,
+        udlBoxC: `[data-componentid="r1MainViewPort"] [id="AdminUserDefinedListDetailGrid-bodyWrap"] [data-recordindex="2"] [class="x-grid-checkcolumn"]`
     }
 }
 

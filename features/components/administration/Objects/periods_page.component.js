@@ -5,7 +5,7 @@ const locator = {
         menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1010"] [data-componentid="r1NavToggle"]`,
         objLink: `//*[text()="Objects"]`,
         periodsLink: `//*[text()="Periods"]`,
-    }
+    },
 }
 
 class periodsTypeData {
@@ -24,8 +24,10 @@ class periodsTypeData {
         await page.click(objLink);
         // await page.waitForTimeout(1000);
         await page.click(periodsLink);
-        await page.waitForTimeout(3000);
+
+        // await page.waitForTimeout(3000);
     }
+    
 }
 
 exports.periodsTypeData = periodsTypeData;

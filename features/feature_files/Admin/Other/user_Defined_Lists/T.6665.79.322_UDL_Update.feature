@@ -5,20 +5,20 @@ Feature: Pdware Admin User Module
         When I login with the credentials : user "admin" and "zhti8d4R_"
         # Then I should be able to successfully login and validate user "Richman, Mike"
         When I click over the "Admin" nav and click on "Lists"
-    @create @279 @T.6665.79.321
-    Scenario: @T.6665.79.321-testing user data
-        When I select Administration and User Defined Lists
+    @update @279 @T.6665.79.322
+    Scenario: @T.6665.79.322-testing user data
+        When I select Administration
         When I select User Defined Lists
 
-        Then I create a new ULD name
-
-        Then I typed a new User Defined Lists tes1
-        Then I typed a new User Defined Lists tes2
-        Then I typed a new User Defined Lists tes3
-     
-        Then I select save in the UDLD Team
+        Then I Re-Typed a new User Defined Lists Field 31
+        Then I select save in the UDL Data
+        # Then I Re-Typed a new User Defined Lists Field 144
+        # Then I select save in the UDL Data
+        # Then I Re-Typed a new User Defined Lists Cost Notes
+        # Then I select save in the UDL Data
+        
         Then I verify the Scenario Status data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Administration and Scenario Status List
-        When I select Scenario Status
+        When I select Administration
+        When I select User Defined Lists

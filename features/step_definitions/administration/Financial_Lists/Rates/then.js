@@ -73,7 +73,7 @@ Then(`I clicked save button in Rates`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I clicked Reload button in Rates`, timeout, async function() {
+Then(`I verify the Rates by re-loging admin account`, timeout, async function() {
     let page = this.page;
     const listData = new RatesPage(page);
     await listData.listRatesReload();

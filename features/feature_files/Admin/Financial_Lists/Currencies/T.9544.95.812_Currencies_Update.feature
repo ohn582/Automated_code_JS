@@ -18,4 +18,5 @@ Feature: Pdware Admin User Module
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Administration and select Currencies Resource Lists
+        When I select Administration and select Currencies Resource Lists
         When I select Currencies

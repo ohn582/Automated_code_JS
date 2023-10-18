@@ -6,7 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Categories: Create
-Then(`I typed a new Currencies`, timeout, async function() {
+Then(`I typed a new Currencies tes1`, timeout, async function() {
     let page = this.page;
     const listData = new CurrenciesPage(page);
     await listData.listCurrenciesWriteA();
@@ -33,7 +33,7 @@ Then(`I typed a new Currencies tes3`, timeout, async function() {
 Then(`I Re-Typed a new Currencies`, timeout, async function() {
     let page = this.page;
     const listData = new CurrenciesPage(page);
-    listData.currenciesReTypeData();
+    listData.currenciesReTypeDataA();
     await page.waitForTimeout(2000);
 })
 

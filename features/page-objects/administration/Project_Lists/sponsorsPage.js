@@ -2,14 +2,14 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     sponsorsNav: {
-        sponsorsAddBtn: `[id="adminListsParitionGrid-bodyWrap"] [role="toolbar"] [data-componentid="adminListsSponsorGridAdd"]`,
+        sponsorsAddBtn: `[id="R1TSponsors"] [role="toolbar"] [data-componentid="adminListsSponsorGridAdd"]`,
         savePeriodBtn: `[id="r1AdminMain"] [data-qtip="Save"]`,
         savePeriodOK: `[id="messagebox-1001"] [data-ref="btnWrap"]`,
     },
 
     sponsorsData: {
         //Creating a data
-        sponsorsName: `[id="adminListsParitionGrid-bodyWrap"] [data-recordindex="0"] [role="presentation"]`,
+        sponsorsName: `[id="R1TSponsors"] [data-recordindex="0"] [role="presentation"]`,
         // sponsorsName: `[id="adminListsSponsorGrid-body"] [data-recordindex="0"] [role="presentation"]`,
 
         sponsorsNameA: `//*[text()="tes1"]`,
@@ -18,17 +18,17 @@ const locators = {
     },
 
     deleteNav: {
-        deleteBtn: `[id="adminListsParitionGrid-bodyWrap"] [role="toolbar"] [data-qtip="Remove"]`,
+        deleteBtn: `[id="R1TSponsors"] [role="toolbar"] [data-qtip="Remove"]`,
         yesDeleteBtn: `//*[text()="Yes"]`,
     },
 
     saveNav: {
-        saveBtn: `[id="adminListsParitionGrid-bodyWrap"] [role="toolbar"] [aria-label="Save"]`,
+        saveBtn: `[id="R1TSponsors"] [role="toolbar"] [aria-label="Save"]`,
         saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
     },
 
     reloadBtn: {
-        relBtn: `[data-componentid="r1MainViewPort"] [id="adminListsParitionGrid-bodyWrap"] [id="toolbar"] [data-qtip="Reload"]`,
+        relBtn: `[data-componentid="r1MainViewPort"] [id="R1TSponsors"] [id="toolbar"] [data-qtip="Reload"]`,
         reloadNavBtn: `//*[text()="Yes"]`,
     },
 

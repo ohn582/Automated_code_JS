@@ -7,13 +7,15 @@ Feature: Pdware Admin User Module
         When I click over the "Assing" nav and click on "Labor"
     @delete @111 @T.1570.30.443
     Scenario: @T.1570.30.443-testing user data
-        When I select Administration and select Objects
-        When I select Object Partitions
+        When I select Administration and select Objects and select Periods 
         
         When I select multiple datas for partition
-        Then I delete the Partitions data
+        Then I delete the Periods data
 
         Then I save the Periods data
-        Then I select reload button
+        Then I verify the Periods data by re-loging admin account
+
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Objects and select Periods 
 
         # Then I select Save button

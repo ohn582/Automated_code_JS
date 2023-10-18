@@ -6,7 +6,7 @@ const locators = {
     },
     // [id="r1AdminMain"] [role="toolbar"]
     saveNav: {
-        saveBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [id="toolbar-1045-innerCt"] [tabindex="0"] [data-componentid="button-1064"]`,
+        saveBtn: `[id="AdminNodeTreeGrid-bodyWrap"] [role="toolbar"] [aria-label="Save"]`,
         // saveOK: `[role="alertdialog"] [data-ref="btnWrap"]`,
         saveOK: `[role="alertdialog"] [role="presentation"] [role="button"] [data-ref="btnWrap"]`,
         // saveOK: `[] [id="button-"]`,
@@ -25,12 +25,26 @@ const locators = {
         textBoxNameB: `[id="AdminPeriodsContainer"] [role="rowgroup"] [data-recordindex="0"] [role="gridcell"]`,
 
 
-        periodStartA: `//*[text()="10/04/2022"]`,
-        periodEndA: `//*[text()="1/04/2023"]`,
-        periodStartB: `//*[text()="10/04/2022"]`,
-        periodEndB: `//*[text()="1/04/2023"]`,
-        periodStartC: `//*[text()="1/04/2023"]`,
-        periodEndC: `//*[text()="1/04/2023"]`,
+        periodStartA: `//*[text()="01/02/2023"]`,
+        periodEndA: `//*[text()="03/08/2023"]`,
+
+        periodStartB: `//*[text()="02/25/2023"]`,
+        periodEndB: `//*[text()="06/07/2023"]`,
+
+        periodStartC: `//*[text()="06/14/2023"]`,
+        periodEndC: `//*[text()="11/17/2023"]`,
+    },
+
+    //Periods Filter
+    periodFilter: {
+        filterSlider: `[id="AdminMainContainer"] [role="toolbar"] [aria-label="Expand panel"]`,
+    },
+
+    periodfilterVerify: {
+        periodStartDate: `[class="x-fieldset x-fieldset-default"] [id="adminPeriodStartDateFilter-inputWrap"]`,
+        periodEndDate: `[class="x-fieldset x-fieldset-default"] [id="adminPeriodStartDateFilter-inputWrap"]`,
+
+        loadPeriods: `[class="x-toolbar x-docked x-toolbar-footer x-box-layout-ct"] [aria-label="Load"]`,
     },
 
     periodsLogoutBtn: {
@@ -41,14 +55,13 @@ const locators = {
 }
 
 
-
 class periodsPage {
     constructor(page) {
         this.page = page;
     }
 
     //Periods:Fields create
-    periodOBStype = async() => {
+    periodOBStypeA = async() => {
         let page=this.page;
         let {  periodAddBtn }=locators.periodNav;
         let { textBoxName, textBoxNameB }=locators.adminPeriods;
@@ -58,84 +71,179 @@ class periodsPage {
         let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
         
         await textInput.click({clickCount: 3})
-        await page.keyboard.type('10/04/2022');
+        await page.keyboard.type('01/02/2040');
 
+        await page.keyboard.press('Tab');
 
+        await page.keyboard.type('05/08/2041');
+        // await page.waitForTimeout(3000);
+    }
 
-        let holder = await page.$(textBoxNameB, el=>el.getAttribute("data-columnid"));
-
-        await holder.click({clickCount: 3});
-        await page.keyboard.type('1/04/2023');
+    periodOBStypeB = async() => {
+        let page=this.page;
+        let {  periodAddBtn }=locators.periodNav;
+        let { textBoxName, textBoxNameB }=locators.adminPeriods;
         
-        // for (var i = 0; i < holder.length; i++) {
-        // }
+        await page.click(periodAddBtn);
 
-        // // var sliderList = $(holder[i]).getAttribute('data-columnid');
-        // // let sliderList = await page.$(holder[i], el=>el.getAttribute("data-columnid"));
-        // let sliderList = await page.$(holder[i]);
+        let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
+        
+        await textInput.click({clickCount: 3})
+        await page.keyboard.type('02/25/2023');
 
-        // // await val.type('1/04/2023');
-        // await sliderList.click({clickCount: 1});
+        await page.keyboard.press('Tab');
 
-        await page.waitForTimeout(3000);
+        await page.keyboard.type('01/07/2041');
+        // await page.waitForTimeout(3000);
+    }
+
+    periodOBStypeC = async() => {
+        let page=this.page;
+        let {  periodAddBtn }=locators.periodNav;
+        let { textBoxName, textBoxNameB }=locators.adminPeriods;
+        
+        await page.click(periodAddBtn);
+
+        let textInput = await page.$(textBoxName, el=>el.getAttribute("id"));
+        
+        await textInput.click({clickCount: 3})
+        await page.keyboard.type('06/14/2023');
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.type('11/17/2041');
+        // await page.waitForTimeout(3000);
     }
 
 
+
+    //period filter verify
+    periodfilterVerifyA = async() => {
+        let page=this.page;
+        let { filterSlider }=locators.periodFilter;
+        let { periodStartDate, periodEndDate, loadPeriods }=locators.periodfilterVerify;
+    
+        await page.click(filterSlider);
+    
+        await page.waitForTimeout(1000)
+            
+        await page.click(periodStartDate)
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('01/02/2023');
+    
+        // await page.waitForTimeout(1000)
+    
+        await page.keyboard.press('Tab');
+    
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('05/08/2041');
+    
+        await page.click(loadPeriods);
+    
+        await page.waitForTimeout(3000);
+    }
+    
+    periodfilterVerifyB = async() => {
+        let page=this.page;
+        let { filterSlider }=locators.periodFilter;
+        let { periodStartDate, periodEndDate, loadPeriods }=locators.periodfilterVerify;
+    
+        await page.click(filterSlider);
+    
+        await page.waitForTimeout(1000)
+            
+        await page.click(periodStartDate)
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('02/25/2023');
+    
+        // await page.waitForTimeout(1000)
+    
+        await page.keyboard.press('Tab');
+    
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('01/07/2041');
+    
+        await page.click(loadPeriods);
+    
+        await page.waitForTimeout(3000);
+    }
+    
+    periodfilterVerifyC = async() => {
+        let page=this.page;
+        let { filterSlider }=locators.periodFilter;
+        let { periodStartDate, periodEndDate, loadPeriods }=locators.periodfilterVerify;
+    
+        await page.click(filterSlider);
+    
+        await page.waitForTimeout(1000)
+            
+        await page.click(periodStartDate)
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('06/14/2023');
+    
+        // await page.waitForTimeout(1000)
+    
+        await page.keyboard.press('Tab');
+    
+        await page.keyboard.press('Control+A');
+        await page.keyboard.type('11/17/2041');
+    
+        await page.click(loadPeriods);
+    
+        await page.waitForTimeout(3000);
+    }
+
     
 
-    // periodOBStypeB = async() => {
-    //     let page=this.page;
-    //     let {  periodAddBtn }=locators.periodNav;
-    //     let {  periodStartA, periodEndA, periodStartB, periodEndB }=locators.adminPeriods;
-    //     await page.click(periodAddBtn);
 
-    //     // let textInput2 = await page.$(periodEndB);
+    //Periods:Fields update
+    periodsRetypeDataA = async() => {
+        let page=this.page;
+        let { periodStartA, periodEndA }=locators.adminPeriods;
+            
+        await periodStartA.click({clickCount: 3})
+        await page.keyboard.type('02/22/2023');
+    
+        await page.keyboard.press('Tab');
+    
+        await periodEndA.click({clickCount: 3})
+        await page.keyboard.type('04/12/2023');
+        // await page.waitForTimeout(3000);
+    }
 
-    //     // await textInput.click({clickCount: 1})
-    //     await page.click(periodStartA);
-    //     // await page.click(periodEndA);
-    //     await page.keyboard.type('10/04/2022');
-    //     // await action.type(page, periodStartA, `10/04/2022`);
+    periodsRetypeDataB = async() => {
+        let page=this.page;
+        let { periodStartB, periodEndB }=locators.adminPeriods;
+        
+        await periodStartB.click({clickCount: 3})
+        await page.keyboard.type('04/11/2023');
 
-    //     // await textInput2.click({clickCount: 1})
-    //     await page.click(periodStartB);
-    //     // await page.click(periodEndB);
-    //     await page.keyboard.type('1/04/2023');
+        await page.keyboard.press('Tab');
 
-    //     await page.waitForTimeout(3000);
-    // }
+        await periodEndB.click({clickCount: 3})
+        await page.keyboard.type('05/02/2023');
+        // await page.waitForTimeout(3000);
+    }
 
+    periodsRetypeDataC = async() => {
+        let page=this.page;
+        let { periodStartC, periodEndC }=locators.adminPeriods;
+        
+        await periodStartC.click({clickCount: 3})
+        await page.keyboard.type('07/22/2024');
 
+        await page.keyboard.press('Tab');
 
-    // periodOBStypeC = async() => {
-    //     let page=this.page;
-    //     let {  periodAddBtn }=locators.periodNav;
-    //     let {  periodStartA, periodEndA, periodStartB, periodEndB }=locators.adminPeriods;
-    //     await page.click(periodAddBtn);
-
-    //     // let textInput2 = await page.$(periodEndB);
-
-    //     // await textInput.click({clickCount: 1})
-    //     await page.click(periodStartA);
-    //     // await page.click(periodEndA);
-    //     await page.keyboard.type('10/04/2022');
-    //     // await action.type(page, periodStartA, `10/04/2022`);
-
-    //     // await textInput2.click({clickCount: 1})
-    //     await page.click(periodStartB);
-    //     // await page.click(periodEndB);
-    //     await page.keyboard.type('1/04/2023');
-
-    //     await page.waitForTimeout(3000);
-    // }
-
-
+        await periodEndC.click({clickCount: 3})
+        await page.keyboard.type('10/20/2024');
+        // await page.waitForTimeout(3000);
+    }
 
 
 
 
     //Sponsor: Delete
-    listBTDelete = async () => {
+    periodDeleteButton = async () => {
         let page = this.page;
         let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
         // await page.waitForTimeout(3000);
@@ -146,15 +254,15 @@ class periodsPage {
     }
 
     //Periods:Save
-    listBTSave = async () => {
+    periodSave = async () => {
         let page = this.page;
         let { saveBtn, saveOK } = locators.saveNav;
         await page.click(saveBtn);
         await page.click(saveOK);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
-    listBTReload = async () => {
+    periodsReload = async () => {
         let page = this.page;
         let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.periodsLogoutBtn;
     

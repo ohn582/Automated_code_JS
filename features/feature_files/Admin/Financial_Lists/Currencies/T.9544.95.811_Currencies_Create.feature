@@ -9,7 +9,7 @@ Feature: Pdware Admin User Module
     Scenario: @T.4559.93.561-testing user data
         When I select Administration and select Currencies Resource Lists
         When I select Currencies
-        Then I typed a new Currencies
+        Then I typed a new Currencies tes1
         Then I typed a new Currencies tes2
         Then I typed a new Currencies tes3
 
@@ -17,5 +17,6 @@ Feature: Pdware Admin User Module
         Then I verify the Currencies by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Administration and select Currencies Resource Lists
         When I select Administration and select Currencies Resource Lists
         When I select Currencies

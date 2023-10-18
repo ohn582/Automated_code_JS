@@ -1,8 +1,7 @@
 const locator = {
     admin_Page: {
         // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `//*[text()="Administration"]`,
-        menuSliderBtn: `[data-componentid="r1MainViewPort"] [id="toolbar-1018"] [data-componentid="r1NavToggle"]`,
+        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
         otherLink: `//*[text()="Other"]`,
         baseLink: `//*[text()="Baseline Types"]`,
     },
@@ -24,21 +23,14 @@ class BaselineData {
     // Project OBS
     otherListLink = async () => {
         let page = this.page;
-        let { menuSliderBtn, adminLink } = locator.admin_Page;
-        await page.click(menuSliderBtn);
-        // await page.waitForTimeout(1000);
+        let { adminLink, baseLink, otherLink } = locator.admin_Page;
         await page.click(adminLink);
         // await page.waitForTimeout(1000);
-        await page.waitForTimeout(3000);
-    }
-
-    listBaseSelect = async () => {
-        let page = this.page;
-        let { baseLink, otherLink } = locator.admin_Page;
 
         await page.click(otherLink);
         // await page.waitForTimeout(1000);
         await page.click(baseLink);
+
         await page.waitForTimeout(3000);
     }
 

@@ -9,6 +9,7 @@ Feature: Pdware Admin User Module
     #Creating the Data
         When I select Administration and select Resource Lists
         When I select Cost Categories
+        
         When I select multiple Cost Categories datas
         Then I delete the Cost Categories data
 

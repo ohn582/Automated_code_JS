@@ -14,13 +14,6 @@ When(`I select Administration and Baseline List`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-When(`I select Baseline`, timeout, async function() {
-    let page = this.page;
-    const listData = new BaselineData(page);
-    listData.listBaseTypeSelect();
-    await page.waitForTimeout(2000);
-})
-
 When(`I select Add Button in the Baseline`, timeout, async function() {
     let page = this.page;
     const listData = new BaselineData(page);
