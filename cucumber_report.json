@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "pdware-admin-user-module;@t.4559.93.561-testing-user-data",
+        "id": "pdware-admin-user-module;@t.3343.55.223-testing-user-data",
         "keyword": "Scenario",
         "line": 9,
-        "name": "@T.4559.93.561-testing user data",
+        "name": "@T.3343.55.223-testing user data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 602038200
+              "duration": 578799000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1555928499
+              "duration": 1617002900
             }
           },
           {
@@ -40,111 +40,98 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7357312700
+              "duration": 6515420800
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 7,
-            "name": "I click over the \"Admin\" nav and click on \"Lists\"",
+            "name": "I click over the \"Assing\" nav and click on \"Labor\"",
             "match": {
               "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
             },
             "result": {
               "status": "passed",
-              "duration": 3015352600
+              "duration": 3014812100
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 10,
-            "name": "I select Administration and select Rates Resource Lists",
+            "name": "I select Assignment",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:10"
+              "location": "features\\step_definitions\\assignment\\Financial\\when.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2006116600
+              "duration": 2004239599
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 11,
-            "name": "I select Rates",
+            "name": "I select Financial",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:17"
+              "location": "features\\step_definitions\\assignment\\Financial\\when.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2007778100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "I typed a new Rates tes1",
-            "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5619830199
+              "duration": 2012838899
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 13,
-            "name": "I typed a new Rates tes2",
+            "name": "I delete Financial Data A",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:16"
+              "location": "features\\step_definitions\\assignment\\Financial\\then.js:43"
             },
             "result": {
               "status": "passed",
-              "duration": 5683034300
+              "duration": 2009140799
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 14,
-            "name": "I typed a new Rates tes3",
+            "name": "I delete Financial Data B",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:23"
+              "location": "features\\step_definitions\\assignment\\Financial\\then.js:50"
             },
             "result": {
               "status": "passed",
-              "duration": 5800430099
+              "duration": 2013253800
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 16,
-            "name": "I clicked save button in Rates",
+            "name": "Select Save Button for Financial",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:69"
+              "location": "features\\step_definitions\\assignment\\Financial\\then.js:62"
             },
             "result": {
               "status": "passed",
-              "duration": 5223691200
+              "duration": 2008670099
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 17,
-            "name": "I verify the Rates by re-loging admin account",
+            "name": "I verify the Location by re-loging admin account",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\then.js:76"
+              "location": "features\\step_definitions\\administration\\Resource_lists\\Locations\\then.js:76"
             },
             "result": {
               "status": "passed",
-              "duration": 3393618999
+              "duration": 3339187900
             }
           },
           {
@@ -157,33 +144,33 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4023760100
+              "duration": 3977459299
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 20,
-            "name": "I select Administration and select Rates Resource Lists",
+            "name": "I select Assignment",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:10"
+              "location": "features\\step_definitions\\assignment\\Financial\\when.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2002267199
+              "duration": 2009921899
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 21,
-            "name": "I select Rates",
+            "name": "I select Financial",
             "match": {
-              "location": "features\\step_definitions\\administration\\Financial_Lists\\Rates\\when.js:17"
+              "location": "features\\step_definitions\\assignment\\Financial\\when.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2011267400
+              "duration": 2016117300
             }
           },
           {
@@ -191,21 +178,21 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1164799
+              "duration": 1196099
             }
           }
         ],
         "tags": [
           {
-            "name": "@create",
+            "name": "@delete",
             "line": 8
           },
           {
-            "name": "@343",
+            "name": "@302",
             "line": 8
           },
           {
-            "name": "@T.4559.93.561",
+            "name": "@T.3343.55.223",
             "line": 8
           }
         ],
@@ -217,6 +204,6 @@
     "keyword": "Feature",
     "name": "Pdware Admin User Module",
     "tags": [],
-    "uri": "features\\feature_files\\Admin\\Financial_Lists\\Rates\\T.1441.63.401_Rates_Create.feature"
+    "uri": "features\\feature_files\\Assignment\\Financial\\T.3343.55.223_Financial_Delete.feature"
   }
 ]

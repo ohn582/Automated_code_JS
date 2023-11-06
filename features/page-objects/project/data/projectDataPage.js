@@ -56,9 +56,12 @@ class projectDataPage {
         await page.keyboard.type('tes1');
         // await page.waitForTimeout(1000);
         
-        await page.click(projectOwner);
-        await page.click(projectDropdownEnterprise);
-        await page.click(projDropdownApply);
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Acme Life Sciences');
+        await page.waitForTimeout(1000);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('24');
         await page.waitForTimeout(1000);
 
         await page.click(projAddClose);

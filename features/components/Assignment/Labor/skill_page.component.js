@@ -13,17 +13,12 @@ class skillTypeData {
         //this.firstTuplebefore = null;
     }
 
-    //Rescource labor data
-    AssignmentLink = async() => {
-        let page=this.page;
-        let { assignmentSelect }=locator.labor_Page;
-        await page.click(assignmentSelect);
-        await page.waitForTimeout(3000);
-    }
-    
+    //Rescource labor data    
     laborLink = async() => {
         let page=this.page;
-        let { laborLink }=locator.labor_Page;
+        let { assignmentSelect, laborLink }=locator.labor_Page;
+        await page.click(assignmentSelect);
+        // await page.waitForTimeout(1000);
         await page.click(laborLink);
         await page.waitForTimeout(3000);
     }

@@ -21,7 +21,6 @@ Then(`I Create Rescource Assignment Data for labor B`, timeout, async function()
 })
 
 
-
 //Labor Data Update
 Then(`I Updated my Rescource Assignment Data for labor A`, timeout, async function() {
     let page = this.page;
@@ -40,17 +39,10 @@ Then(`I Updated my Rescource Assignment Data for labor B`, timeout, async functi
 
 
 //Labor Data Delete
-Then(`I delete Labor Data A`, timeout, async function() {
+Then(`I delete Labor Data`, timeout, async function() {
     let page = this.page;
     const listData = new resourcePage(page);
     listData.laborDeleteDataA();
-    await page.waitForTimeout(2000);
-})
-
-Then(`I delete Labor Data B`, timeout, async function() {
-    let page = this.page;
-    const listData = new resourcePage(page);
-    listData.laborDeleteDataB();
     await page.waitForTimeout(2000);
 })
 
@@ -71,5 +63,12 @@ Then(`I verify the Labor data by re-loging admin account`, timeout, async functi
     let page = this.page;
     const listData = new resourcePage(page);
     listData.laborReload();
+    await page.waitForTimeout(3000);
+})
+
+Then(`I verify the Labor data by re-loging admin account B`, timeout, async function() {
+    let page = this.page;
+    const listData = new resourcePage(page);
+    listData.laborReloadB();
     await page.waitForTimeout(3000);
 })

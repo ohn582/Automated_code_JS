@@ -33,7 +33,7 @@ Then(`I typed a new Assignment States tes3`, timeout, async function() {
 Then(`I Re-Typed a new Assignment States tes1`, timeout, async function() {
     let page = this.page;
     const listData = new AssignmentStatePage(page);
-    listData.asReTypeData();
+    listData.asReTypeDataA();
     await page.waitForTimeout(2000);
 })
 

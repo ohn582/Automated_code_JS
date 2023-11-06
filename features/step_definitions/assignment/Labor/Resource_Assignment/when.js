@@ -13,3 +13,9 @@ When(`I select Resource and Labor`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+When(`I select multiple Labor Data`, timeout, async function() {
+    let page = this.page;
+    const listData = new resourceTypeData(page);
+    listData.laborCheckBox();
+    await page.waitForTimeout(2000);
+})

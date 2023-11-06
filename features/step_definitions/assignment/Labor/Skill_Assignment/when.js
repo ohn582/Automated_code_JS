@@ -6,14 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 setDefaultTimeout(60 * 1000);
 
 // Labor
-When(`I select Assignment Menu`, timeout, async function() {
-    let page = this.page;
-    const listData = new skillTypeData(page);
-    listData.AssignmentLink();
-    await page.waitForTimeout(2000);
-})
-
-When(`I select Labor`, timeout, async function() {
+When(`I select Labor from Resources`, timeout, async function() {
     let page = this.page;
     const listData = new skillTypeData(page);
     listData.laborLink();

@@ -5,6 +5,13 @@ const locator = {
         laborLink: `//*[text()="Labor"]`,
     },
 
+    labor_CheckBox: {
+        assignmentSelectA: `[id="r1LaborAssignmentPanel-innerCt"] [class="x-grid-scroll-container "] [data-recordindex="12"] [role="gridcell"]`,
+        assignmentSelectB: `[id="r1LaborAssignmentPanel-innerCt"] [class="x-grid-scroll-container "] [data-recordindex="13"] [role="gridcell"]`,
+
+        laborGridBoxA: `//*[text()="3456"]`,
+        laborGridBoxB: `//*[text()="3456"]`,
+    },
 }
 
 class resourceTypeData {
@@ -23,6 +30,14 @@ class resourceTypeData {
         await page.waitForTimeout(3000);
     }
 
+    laborCheckBox = async() => {
+        let page=this.page;
+        let { assignmentSelectA, assignmentSelectB }=locator.labor_CheckBox;
+        await page.click(assignmentSelectA);
+        // await page.waitForTimeout(1000);
+        await page.click(assignmentSelectB);
+        await page.waitForTimeout(3000);
+    }
 }
 
 exports.resourceTypeData = resourceTypeData;

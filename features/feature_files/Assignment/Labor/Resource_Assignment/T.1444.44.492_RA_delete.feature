@@ -8,12 +8,13 @@ Feature: Pdware Admin User Module
     @delete @302 @T.1444.44.492
     Scenario: @T.1444.44.492-testing user data
         When I select Resource and Labor
+
+        When I select multiple Labor Data
         
-        Then I delete Labor Data A
-        # Then I delete Labor Data B
+        Then I delete Labor Data
 
         Then I select Save button for Labor Data
-        Then I verify the Labor data by re-loging admin account
+        Then I verify the Labor data by re-loging admin account B
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Resource and Labor

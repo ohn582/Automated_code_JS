@@ -2,7 +2,8 @@ const { action } = require('../../../utilities/action')
 
 const locators = {
     laborTypeNav: {
-        laborTypeAddBtn: `[id="AssignmentMainContainer"] [role="toolbar"] [data-qtip="Add Assignment"]`,
+        // laborTypeAddBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [role="toolbar"] [data-qtip="Add Assignment"]`,
+        laborTypeAddBtn: `[id="r1LaborAssignmentPanel-bodyWrap"] [role="toolbar"] [role="presentation"]`,
     },
 
     laborTypeData: {
@@ -10,27 +11,36 @@ const locators = {
         skillCheckBox: `//*[text()="Has Skill"]`,
 
         addResourceAssignment: `//*[text()="Add Resource Assignment"]`,
-        laborProject: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogProjectCombo-bodyEl"] [id="AddResourceAssignmentDialogProjectCombo-trigger-picker"]`,
 
-        laborSkill: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogSkillCombo"] [id="AddResourceAssignmentDialogSkillCombo-trigger-picker"]`,
+        laborEnterprise: `[class="x-panel x-grid-header-hidden x-layer x-panel-default x-tree-panel x-tree-lines x-grid x-border-box"] [data-recordindex="2"]`,
+        laborDemo: `[class="x-panel x-grid-header-hidden x-layer x-panel-default x-tree-panel x-tree-lines x-grid x-border-box"] [data-recordindex="1"]`,
+        laborAcmeLifeSciences: `[class="x-panel x-grid-header-hidden x-layer x-panel-default x-tree-panel x-tree-lines x-grid x-border-box"] [data-recordindex="0"]`,
+
+        laborProject: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogProjectCombo-bodyEl"] [id="AddResourceAssignmentDialogProjectCombo-trigger-picker"]`,
+        laborOrg: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogResourceNode-bodyEl"] [id="AddResourceAssignmentDialogResourceNode-trigger-picker"]`,
+        laborSkill: `[id="insert_resource_assignment_form"] [id="AddResourceAssignmentDialogSkillCombo-inputEl"] [id="AddResourceAssignmentDialogSkillCombo-trigger-picker"]`,
+        laborActive: `[id="insert_resource_assignment_form"] [id="PdwInsertResourceAssignmentrActive-inputEl"] [id="PdwInsertResourceAssignmentrActive-trigger-picker"]`,
 
         laborGridselectA: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="0"]`,
-        // laborGridselectB: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="3"]`,
+        laborGridselectB: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="3"]`,
+        laborGridselectC: `[id="AddResourceAssignmentDialogResourceGrid-body"] [data-recordindex="2"]`,
 
         addCloseButton: `//*[text()="Add & Close"]`,
 
-        laborOrgA: `[id="r1LaborAssignmentPanel-body"] [role="grid"] [data-recordindex="0"] [class="x-grid-cell-inner "]`,
-        laborOrgB: `[id="r1LaborAssignmentPanel-body"] [role="grid"] [data-recordindex="9"] [class="x-grid-cell-inner "]`,
-        laborDropdownTrigger:`[data-recordindex="0"] [aria-selected="true"] [role="presentation"]`,
+        laborGridBoxA: `//*[text()="3456"]`,
+        laborGridBoxB: `//*[text()="3456"]`,
 
-        //Labor selecting check boxes
-        laborDemo: `//*[text()="Demo"]`,
-        laborNode: `//*[text()="New Resource Node"]`,
+        laborIDGridBoxA: `//*[text()="13"]`,
+        laborIDGridBoxB: `//*[text()="14"]`,
 
 
-        //Labor selecting check boxes
-        laborCheckBoxA: `[id="r1LaborAssignmentPanel-body"] [role="grid"] [data-recordindex="0"] [tabindex="-1"]`,
-        laborCheckBoxB: `[id="r1LaborAssignmentPanel-body"] [role="grid"] [data-recordindex="9"] [tabindex="-1"]`,
+        // For updating labor data
+        laborOrgA: `//*[text()="Cary"]`,
+        laborOrgB: `//*[text()="Biosciences"]`,
+
+        //Labor selecting Assignment: Update
+        laborUpdateA: `//*[text()="Acme Life Sciences"]`,
+        laborUpdateB: `//*[text()="Demo"]`,
     },
 
     deleteNav: {
@@ -51,7 +61,8 @@ const locators = {
     laborTypeLogoutBtn: {
         adminUserBtn: `//*[text()="Administrator"]`,
         logoutUserBtn: `//*[text()="Logout"]`,
-        hereLinkLogout: `//*[text()=" here"]`,
+        logOutYes: `//*[text()="Yes"]`,
+        logoutHereLink: `//*[text()=" here"]`,
     }
 
 }
@@ -63,53 +74,29 @@ class resourcePage {
         this.page = page;
     }
 
-
-    //Labor: Create
     laborCreateDataA = async () => {
         let page = this.page;
         let { laborTypeAddBtn } = locators.laborTypeNav;
-        let { addResourceAssignment, laborProject, laborSkill, skillCheckBox, laborGridselectA, addCloseButton } = locators.laborTypeData;
+        let { addResourceAssignment, laborOrg, laborProject, skillCheckBox, laborGridselectB, addCloseButton, laborDemo, laborGridBoxB} = locators.laborTypeData;
         // await page.waitForTimeout(3000);
 
         await page.click(laborTypeAddBtn);
-
-        await page.click(addResourceAssignment);
-        await page.click(laborProject);
-        await page.keyboard.type("ATest");
-
-        // await page.waitForTimeout(1000)
-
-        await page.click(laborSkill);
-        await page.keyboard.type("DBA 2");
-
-        // await page.waitForTimeout(1000)
-
-        await page.click(skillCheckBox);
-        await page.click(laborGridselectA);
-
-        // await page.waitForTimeout(1000)
-
-        await page.click(addCloseButton);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Enter');
         
-        // await page.waitForTimeout(1000);
-    }
-
-    laborCreateDataB = async () => {
-        let page = this.page;
-        let { laborTypeAddBtn } = locators.laborTypeNav;
-        let { addResourceAssignment, laborProject, laborSkill, skillCheckBox, laborGridselectB, addCloseButton } = locators.laborTypeData;
-        // await page.waitForTimeout(3000);
-
-        await page.click(laborTypeAddBtn);
-
         await page.click(addResourceAssignment);
+
         await page.click(laborProject);
-        await page.keyboard.type("xxx");
+        await page.keyboard.type("Source");
+
+        await page.click(laborOrg);
+        await page.click(laborDemo);
+        await page.keyboard.press('Tab');
 
         // await page.waitForTimeout(1000)
 
-        await page.click(laborSkill);
-        await page.keyboard.type("QA Analyst");
+        await page.keyboard.type("DBA");
+        await page.keyboard.press('Enter');
 
         // await page.waitForTimeout(1000)
 
@@ -120,7 +107,84 @@ class resourcePage {
 
         await page.click(addCloseButton);
         
-        // await page.waitForTimeout(1000);
+        // await page.waitForTimeout(2000);
+
+        await page.click(laborGridBoxB);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+
+        await page.keyboard.press('Enter');
+        await page.keyboard.type("3.4");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("5");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+
+        await page.waitForTimeout(3000);
+    }
+
+    laborCreateDataB = async () => {
+        let page = this.page;
+        let { laborTypeAddBtn } = locators.laborTypeNav;
+        let { laborOrg, laborProject, laborSkill, skillCheckBox, laborGridselectC, addCloseButton, laborEnterprise, laborGridBoxB } = locators.laborTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(laborTypeAddBtn);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
+        
+        await page.click(laborProject);
+        await page.keyboard.type("Source");
+
+        await page.click(laborOrg);
+        await page.click(laborEnterprise);
+
+        // await page.waitForTimeout(1000)
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("QA Analyst");
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        // await page.waitForTimeout(1000)
+
+        await page.click(skillCheckBox);
+        await page.click(laborGridselectC);
+
+        // await page.waitForTimeout(1000)
+
+        await page.click(addCloseButton);
+        
+        // await page.waitForTimeout(2000);
+
+        await page.click(laborGridBoxB);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+
+        await page.keyboard.press('Enter');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("3");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+
+        await page.waitForTimeout(3000);
     }
 
     
@@ -129,61 +193,43 @@ class resourcePage {
     //Labor: Update
     laborUpdateDataA = async () => {
         let page = this.page;
-        let { laborOrgA, laborDemo } = locators.laborTypeData;
+        let { laborOrgA, laborIDGridBoxA } = locators.laborTypeData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(laborOrgA);
-
-        textInput.click({ clickCount: 3 })
-        await page.click(laborDemo);
+        await page.click(laborIDGridBoxA);    
         
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowRight');
+        await page.waitForTimeout(1000);
+        await page.click(laborOrgA); 
+
         // await page.waitForTimeout(3000);
     }
 
     laborUpdateDataB = async () => {
         let page = this.page;
-        let { laborOrgB,  laborNode } = locators.laborTypeData;
+        let { laborOrgB, laborIDGridBoxB } = locators.laborTypeData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(laborOrgB);
-
-        textInput.click({ clickCount: 2 })
-        await page.click(laborNode);
+        await page.click(laborIDGridBoxB);    
+        
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowRight');
+        await page.waitForTimeout(1000);
+        await page.click(laborOrgB);
+         
         
         // await page.waitForTimeout(3000);
     }
-
-
-
-    //Labor: Delete
-    laborDeleteDataA = async () => {
-        let page = this.page;
-        let { laborCheckBoxA } = locators.laborTypeData;
-        let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
-        // await page.waitForTimeout(3000);
-    
-        await page.click(laborCheckBoxA);
-    
-        await page.click(deleteBtn);
-        await page.click(yesDeleteBtn);
-            
-        // await page.waitForTimeout(3000);
-    }
-    
-    laborDeleteDataB = async () => {
-        let page = this.page;
-        let { laborCheckBoxB,  laborResNode } = locators.laborTypeData;
-        let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
-        // await page.waitForTimeout(3000);
-    
-        await page.click(laborCheckBoxB);
-
-        await page.click(deleteBtn);
-        await page.click(yesDeleteBtn);
-            
-        // await page.waitForTimeout(3000);
-    }
-
 
 
 
@@ -199,23 +245,37 @@ class resourcePage {
     }
 
     //Labor: Delete
-    listBTDelete = async () => {
+    laborDeleteDataA = async () => {
         let page = this.page;
         let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
         // await page.waitForTimeout(3000);
-
+    
         await page.click(deleteBtn);
         await page.click(yesDeleteBtn);
+            
         // await page.waitForTimeout(3000);
     }
 
+
     laborReload = async () => {
         let page = this.page;
-        let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.laborTypeLogoutBtn;
+        let { adminUserBtn, logoutUserBtn, logOutYes, logoutHereLink } = locators.laborTypeLogoutBtn;
     
         await page.click(adminUserBtn);
-        await page.click(logoutUserBtn);
-        await page.click(hereLinkLogout);
+        await page.click(logoutUserBtn);;
+        await page.click(logOutYes);
+
+        await page.click(logoutHereLink);
+    }
+
+    laborReloadB = async () => {
+        let page = this.page;
+        let { adminUserBtn, logoutUserBtn, logoutHereLink } = locators.laborTypeLogoutBtn;
+    
+        await page.click(adminUserBtn);
+        await page.click(logoutUserBtn);;
+
+        await page.click(logoutHereLink);
     }
 }
 

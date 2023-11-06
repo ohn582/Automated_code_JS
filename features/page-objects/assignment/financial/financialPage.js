@@ -29,16 +29,14 @@ const locators = {
 
     
         //Financial: Org
-        financialRepDemo: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="0"] [class="x-grid-cell-inner "]`,
-        financialRepDemoB: `[role="treegrid"] [data-recordindex="0"]`,
+        financialRepDemo: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="0"] [class="x-grid-cell-inner x-grid-checkcolumn-cell-inner"]`,
 
-        financialRepNode: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="3"] [class="x-grid-cell-inner "]`,
-        financialRepNodeB: `[role="treegrid"] [data-recordindex="2"]`,
+        financialRepNode: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="3"] [class="x-grid-cell-inner x-grid-checkcolumn-cell-inner"]`,
 
 
         //Financial: selecting created checkbox
-        checkBoxDataA: `[role="rowgroup"] [data-recordindex="0"] [tabindex="-1"]`,
-        checkBoxDataB: `[role="rowgroup"] [data-recordindex="2"] [tabindex="-1"]`,
+        checkBoxDataA: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="0"] [tabindex="-1"]`,
+        checkBoxDataB: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="2"] [tabindex="-1"]`,
     },
 
     deleteNav: {
@@ -87,18 +85,19 @@ class financialPage {
 
         // await page.waitForTimeout(1000)
 
-        await page.dblclick(financialCostCenter);
+        await page.click(financialCostCenter);
         await page.click(financialEnterprise);
 
-        // await page.waitForTimeout(1000)
+
+        await page.waitForTimeout(1000)
 
         await page.click(financialCheckboxA);
 
-        // await page.waitForTimeout(1000)
+        await page.waitForTimeout(1000)
 
         await page.click(addCloseButton);
         
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(2000);
     }
 
     financialCreateDataB = async () => {
@@ -113,20 +112,22 @@ class financialPage {
         await page.keyboard.type("Jerry Test Project Alpha");
         await page.click(financialJerryTest);
 
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
         // await page.waitForTimeout(1000)
 
-        await page.dblclick( financialCostCenter);
+        // await page.dblclick( financialCostCenter);
         await page.click(financialNewResourceNode);
 
-        // await page.waitForTimeout(1000)
+        await page.waitForTimeout(1000)
 
         await page.click(financialCheckboxB);
 
-        // await page.waitForTimeout(1000)
+        await page.waitForTimeout(1000)
 
         await page.click(addCloseButton);
         
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
     }
 
     
@@ -135,24 +136,40 @@ class financialPage {
     //Labor: Update
     financialUpdateA = async () => {
         let page = this.page;
-        let { financialRepDemo, financialRepDemoB } = locators.financialTypeData;
+        let { financialRepDemo } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(financialRepDemo);
-        textInput.click({ clickCount: 3 })
-        await page.click(financialRepDemoB)
+        await page.click(financialRepDemo)
+
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
 
         // await page.waitForTimeout(3000);
     }
 
     financialUpdateB = async () => {
         let page = this.page;
-        let { financialRepNode, financialRepNodeB } = locators.financialTypeData;
+        let { financialRepNode } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(financialRepNode);
-        textInput.click({ clickCount: 2 })
-        await page.click(financialRepNodeB)
+        await page.click(financialRepNode)
+
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
 
         // await page.waitForTimeout(3000);
     }

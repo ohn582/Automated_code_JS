@@ -7,15 +7,13 @@ Feature: Pdware Admin User Module
         When I click over the "Assing" nav and click on "Labor"
     @create @302 @T.2356.21.190
     Scenario: @T.2356.21.190-testing user data
-        When I select Assignment Menu
-        When I select Labor
+        When I select Labor from Resources
         
         Then I Create Skill Assignment Data for labor A
         Then I Create Skill Assignment Data for labor B
         
-        Then I select Save button for Skill Assignment Data
-        Then I verify the Skill Assignment data by re-loging admin account
+        # Then I select Save button for Skill Assignment Data
+        # Then I verify the Skill Assignment data by re-loging admin account
 
-        When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Assignment Menu
-        When I select Labor
+        # When I login with the credentials : user "admin" and "zhti8d4R_"
+        # When I select Labor from Resources

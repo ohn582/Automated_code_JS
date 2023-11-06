@@ -1,28 +1,30 @@
 const { action } = require('../../../utilities/action')
 
 const locators = {
-    skillTypeNav: {
-        skillTypeAddBtn: `[id="AssignmentMainContainer"] [role="toolbar"] [data-qtip="Add Assignment"]`,
+    laborTypeNav: {
+        laborTypeLegendBtn: `[id="AssignmentMainContainer"] [role="toolbar"] [aria-label="Legend"]`,
     },
 
     skillTypeData: {
         //Creating a data
         addSkillAssignment: `//*[text()="Add Skill Assignment"]`,
         skillProject: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogProjectCombo"] [id="AddSkillAssignmentDialogProjectCombo-inputWrap"]`,
-        skillTextBoxObs: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogResourceNode"] [id="AddSkillAssignmentDialogResourceNode-inputWrap"]`,
+        skillOrg: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogResourceNode"] [id="AddSkillAssignmentDialogResourceNode-inputWrap"] [name="AddSkillAssignmentDialogResourceNode"]`,
+        //Skill creating data 1
+        skillOrgDemo: `//*[text()="Demo"]`,
+        skillOrgAcmeLifeSciences: `//*[text()="Acme Life Sciences"]`,
+        skillOrgEnterprise: `//*[text()="Enterprise"]`,
+        skillActiveTrue: `//*[text()="true"]`,
 
-        //Creating Skill Data A
-        skillATest: `//*[text()="ATest"]`,
-        skillOBS_A: `[role="treegrid"] [data-recordindex="2"]`,
-
-        //Creating Skill Data B
-        skillJerryTest: `//*[text()="Jerry Test Project Alpha"]`,
-        skillOBS_B: `[role="treegrid"] [data-recordindex="1"]`,
+        requiredSkillTechWritter: `//*[text()="Tech Writer 1"]`,
+        requiredSkillElectEngineer: `//*[text()="Elect Engineer"]`,
 
         skillGridselectA: `[id="AddSkillAssignmentDialogSkillGrid"] [data-recordindex="1"] [tabindex="-1"]`,
         skillGridselectB: `[id="AddSkillAssignmentDialogSkillGrid"] [data-recordindex="2"] [tabindex="-1"]`,
 
+        // addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [data-componentid="AddResourceAssignmentDialogAddClose"]`,
         addCloseButton: `//*[text()="Add & Close"]`,
+
 
 
 
@@ -75,56 +77,58 @@ class skillPage {
     //Labor: Create
     skillCreateDataA = async () => {
         let page = this.page;
-        let { skillTypeAddBtn } = locators.skillTypeNav;
-        let { addSkillAssignment, skillProject, skillTextBoxObs, skillGridselectA, addCloseButton, skillOBS_A, skillATest } = locators.skillTypeData;
+        let { laborTypeLegendBtn } = locators.laborTypeNav;
+        let { addSkillAssignment, skillProject, skillOrgDemo, skillActiveTrue, addCloseButton, requiredSkillTechWritter } = locators.skillTypeData;
         // await page.waitForTimeout(3000);
 
-        await page.click(skillTypeAddBtn);
+        await page.click(laborTypeLegendBtn);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
 
         await page.click(addSkillAssignment);
         await page.click(skillProject);
-        await page.keyboard.type("ATest");
-        await page.click(skillATest);
+        await page.keyboard.type("X2");
+        // await page.keyboard.press('Enter');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillOrgDemo);
 
-        // await page.waitForTimeout(1000)
-
-        await page.dblclick(skillTextBoxObs);
-        await page.click(skillOBS_A);
-
-        // await page.waitForTimeout(1000)
-
-        await page.click(skillGridselectA);
-
-        // await page.waitForTimeout(1000)
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillActiveTrue);
+        await page.click(requiredSkillTechWritter);
 
         await page.click(addCloseButton);
         
-        // await page.waitForTimeout(1000);
+        // await page.waitForTimeout(3000);
     }
 
     skillCreateDataB = async () => {
         let page = this.page;
-        let { skillTypeAddBtn } = locators.skillTypeNav;
-        let { addSkillAssignment, skillProject, skillTextBoxObs, skillGridselectA, addCloseButton, skillOBS_B, skillJerryTest } = locators.skillTypeData;
+        let { laborTypeLegendBtn } = locators.laborTypeNav;
+        let { addSkillAssignment, skillProject, skillOrgDemo, skillActiveTrue, addCloseButton, requiredSkillTechWritter } = locators.skillTypeData;
         // await page.waitForTimeout(3000);
 
-        await page.click(skillTypeAddBtn);
+        await page.click(laborTypeLegendBtn);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
 
         await page.click(addSkillAssignment);
         await page.click(skillProject);
-        await page.keyboard.type("Jerry Test Project Alpha");
-        // await page.click(skillJerryTest);
+        await page.keyboard.type("X2");
+        // await page.keyboard.press('Enter');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillOrgDemo);
 
-        // await page.waitForTimeout(1000)
-
-        await page.dblclick(skillTextBoxObs);
-        await page.click(skillOBS_B);
-
-        // await page.waitForTimeout(1000)
-
-        await page.click(skillGridselectA);
-
-        // await page.waitForTimeout(1000)
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillActiveTrue);
+        await page.click(requiredSkillTechWritter);
 
         await page.click(addCloseButton);
         

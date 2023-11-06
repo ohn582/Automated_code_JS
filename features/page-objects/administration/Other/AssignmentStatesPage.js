@@ -7,8 +7,8 @@ const locators = {
 
     asData: {
         //Creating a data
-        asName: `[id="adminListsEffortStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
-        // domainsName: `//*[text()="New Domain"]`,
+        // asName: `[id="adminListsEffortStateGrid-body"] [data-recordindex="0"] [role="presentation"]`,
+        assignmentStateID: `//*[text()="Pdw.R1.Model.EffortState-1"]`,
 
         asNameA: `//*[text()="tes1"]`,
         asNameB: `//*[text()="tes2"]`,
@@ -50,16 +50,21 @@ class AssignmentStatePage {
     listASWriteA = async () => {
         let page = this.page;
         let { asAddBtn } = locators.asNav;
-        let { asName } = locators.asData;
+        let { assignmentStateID } = locators.asData;
         // await page.waitForTimeout(3000);
 
-        await page.click(asAddBtn);
-        
-        let textInput = await page.$(asName, el=>el.getAttribute("id"));
+        await page.click(asAddBtn);       
 
-
-        await textInput.click({ clickCount: 3 })
+        // await page.click(assignmentStateID)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('tes1');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('89');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Acme Life Sciences');
         // await page.waitForTimeout(3000);
     }
 
@@ -67,32 +72,42 @@ class AssignmentStatePage {
     listASWriteB = async () => {
         let page = this.page;
         let { asAddBtn } = locators.asNav;
-        let { asName } = locators.asData;
+        let { assignmentStateID } = locators.asData;
         // await page.waitForTimeout(3000);
 
-        await page.click(asAddBtn);
-        
-        let textInput = await page.$(asName, el=>el.getAttribute("id"));
+        await page.click(asAddBtn);       
 
-
-        await textInput.click({ clickCount: 3 })
+        // await page.click(assignmentStateID)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('tes2');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('44');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 2');
         // await page.waitForTimeout(3000);
     }
 
     listASWriteC = async () => {
         let page = this.page;
         let { asAddBtn } = locators.asNav;
-        let { asName } = locators.asData;
+        let { assignmentStateID } = locators.asData;
         // await page.waitForTimeout(3000);
 
-        await page.click(asAddBtn);
-        
-        let textInput = await page.$(asName, el=>el.getAttribute("id"));
+        await page.click(asAddBtn);       
 
-
-        await textInput.click({ clickCount: 3 })
+        // await page.click(assignmentStateID)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('tes3');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('24');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 1');
         // await page.waitForTimeout(3000);
     }
 
@@ -100,39 +115,54 @@ class AssignmentStatePage {
 
 
     //Assignment States: Update
-    asReTypeData = async () => {
+    asReTypeDataA = async () => {
         let page = this.page;
         let { asNameA } = locators.asData;
-        // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(asNameA);
-
-        await textInput.click({ clickCount: 3 })
+        await page.click(asNameA)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('Re-Type 1');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('24');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 1');
         // await page.waitForTimeout(3000);
     }
 
     asReTypeDataB = async () => {
         let page = this.page;
         let { asNameB } = locators.asData;
-        // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(asNameB);
-
-        await textInput.click({ clickCount: 3 })
+        await page.click(asNameB)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('Re-Type 2');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('57');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('BU 1');
         // await page.waitForTimeout(3000);
     }
 
     asReTypeDataC = async () => {
         let page = this.page;
         let { asNameC } = locators.asData;
-        // await page.waitForTimeout(3000);
 
-        let textInput = await page.$(asNameC);
-
-        await textInput.click({ clickCount: 3 })
+        await page.click(asNameC)
+        await page.keyboard.press('Control+A');
         await page.keyboard.type('Re-Type 3');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('89');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('Acme Life Sciences');
         // await page.waitForTimeout(3000);
     }
 
