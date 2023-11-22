@@ -16,7 +16,7 @@ const locator = {
 
 }
 
-class resourceSkillTypeData {
+class skillMatrixTypeData {
     constructor(page) {
         this.page = page;
         //this.firstTuplebefore = null;
@@ -41,4 +41,4 @@ class resourceSkillTypeData {
 
 }
 
-exports.resourceSkillTypeData = resourceSkillTypeData;
+exports.skillMatrixTypeData = skillMatrixTypeData;

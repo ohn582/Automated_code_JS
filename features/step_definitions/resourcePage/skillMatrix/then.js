@@ -26,3 +26,14 @@ Then(`I create a new Data for Rescource Skill Matrix C`, timeout, async function
     listData.resourceCreateDataC();
     await page.waitForTimeout(2000);
 })
+
+
+
+
+//Skill Matrix Save:
+Then(`Select Save Button for Rescource Skill Matrix`, timeout, async function() {
+    let page = this.page;
+    const listData = new skillMatrixPage(page);
+    listData.skillMatrixSaveData();
+    await page.waitForTimeout(2000);
+})

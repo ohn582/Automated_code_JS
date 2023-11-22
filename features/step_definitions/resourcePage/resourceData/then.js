@@ -27,21 +27,10 @@ Then(`I create a new Data for Rescource Data C`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-
-
-
-//Saving the data
-Then(`Select Save Button for Rescource`, timeout, async function() {
-    let page = this.page;
-    const listData = new resourceDataPage(page);
-    listData.resourceSaveData();
-    await page.waitForTimeout(2000);
-})
-
-//verifying the data 
-Then(`I verify the Resource Data by re-loging admin account`, timeout, async function() {
-    let page = this.page;
-    const listData = new resourceDataPage(page);
-    listData.resourceReload();
-    await page.waitForTimeout(2000);
-})
+// //verifying the data 
+// Then(`I verify the Resource Data by re-loging admin account`, timeout, async function() {
+//     let page = this.page;
+//     const listData = new resourceDataPage(page);
+//     listData.resourceReload();
+//     await page.waitForTimeout(2000);
+// })

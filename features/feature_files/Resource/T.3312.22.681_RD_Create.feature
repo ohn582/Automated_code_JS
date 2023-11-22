@@ -9,13 +9,13 @@ Feature: Pdware Admin User Module
     Scenario: @T.3312.22.681-testing user data
         When I select Rescource
 
-        # Creating Data
-        When I select data link
-        Then I create a new Data for Rescource Data A
-        Then I create a new Data for Rescource Data B
-        Then I create a new Data for Rescource Data C
+        # # Creating Data
+        # When I select data link
+        # Then I create a new Data for Rescource Data A
+        # Then I create a new Data for Rescource Data B
+        # Then I create a new Data for Rescource Data C
 
-        Then Select Save Button for Rescource
+        # # Then Select Save Button for Rescource
 
         # creating Skill Matrix
         When I select Skill Matrix
@@ -23,7 +23,7 @@ Feature: Pdware Admin User Module
         Then I create a new Data for Rescource Skill Matrix B
         Then I create a new Data for Rescource Skill Matrix C
 
-        Then Select Save Button for Rescource
+        Then Select Save Button for Rescource Skill Matrix
 
         # creating Capacity
         When I select Capacity
@@ -31,12 +31,15 @@ Feature: Pdware Admin User Module
         Then I create a new Data for Capacity B
         Then I create a new Data for Capacity C
 
-        Then Select Save Button for Rescource
-        Then I verify the Resource Data by re-loging admin account
+        Then Select Save Button for Rescource Capacity
 
-        # When I login with the credentials : user "admin" and "zhti8d4R_"
-        # When I select Rescource
-        # When I select Rescource
-        # When I select data link
+        When I select Utilization
 
-        # Then I clicked add to create a new Rescource Assignments
+        Then I verify the Location by re-loging admin account
+
+        # Then Select Save Button for Rescource
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Rescource
+        When I select data link
+        When I select Skill Matrix
+        When I select Capacity
