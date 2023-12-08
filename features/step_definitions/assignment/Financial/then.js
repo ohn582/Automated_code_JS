@@ -20,6 +20,13 @@ Then(`I Create Rescource Assignment Data for Financial B`, timeout, async functi
     await page.waitForTimeout(2000);
 })
 
+Then(`I Create Rescource Assignment Data for Financial C`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialCreateDataC();
+    await page.waitForTimeout(2000);
+})
+
 
 
 //Financial Update

@@ -9,9 +9,9 @@ const locators = {
     },
 
     resourceSaveData: {
-        saveBtn: `[id="ResourceMainContainer"] [id="ResourceListToolBar"] [aria-label="Save"]`,
+        saveBtn: `[id="ResourceMainContainer"] [role="toolbar"] [aria-label="Save"]`,
         // saveOK: `[role="alertdialog"] [class="x-toolbar x-docked x-toolbar-footer x-box-layout-ct"] [tabindex="0"]`,
-        saveOK: `//*[text()="OK"]`,
+        saveOK: `[role="alertdialog"] [class="x-toolbar x-docked x-toolbar-footer x-box-layout-ct"] [tabindex="0"]`,
     },
 
 }

@@ -10,12 +10,16 @@ Feature: Pdware Admin User Module
         When I select Rescource
 
         # # Creating Data
-        # When I select data link
-        # Then I create a new Data for Rescource Data A
-        # Then I create a new Data for Rescource Data B
-        # Then I create a new Data for Rescource Data C
+        When I select data link
+        Then I create a new Data for Rescource Data A
+        Then I create a new Data for Rescource Data B
+        Then I create a new Data for Rescource Data C
 
-        # # Then Select Save Button for Rescource
+        # When I select Skill Matrix
+        # Then Select Save Button for Rescource Skill Matrix
+        # When I select Rescource
+
+        # Then Select Save Button for Rescource
 
         # creating Skill Matrix
         When I select Skill Matrix

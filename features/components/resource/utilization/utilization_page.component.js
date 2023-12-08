@@ -22,7 +22,7 @@ class utilizationTypeData {
     //Rescource Skill Matrix
     resourceUtilizationLink = async() => {
         let page=this.page;
-        let { resUtilization }=locator.capacity_Page;
+        let { resUtilization }=locator.utilization_Page;
         await page.click(resUtilization);
         
         await page.waitForTimeout(3000);

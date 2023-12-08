@@ -3,17 +3,13 @@ const { action } = require('../../../utilities/action')
 const locators = {        
     resourceDataPage: {
         // Creating Skill Matrix
-        resOrgDemo: `[class="x-grid-scrollbar-clipper x-grid-scrollbar-clipper-locked "] [class="x-grid-item-container"] [style="text-align:left;"] [data-recordindex="1"]`,
-        resOrgEnterprise: `[class="x-grid-scrollbar-clipper x-grid-scrollbar-clipper-locked "] [class="x-grid-item-container"] [style="text-align:left;"] [data-recordindex="2"]`,
-        resOrgAcmeLifeSciences: `[class="x-grid-scrollbar-clipper x-grid-scrollbar-clipper-locked "] [class="x-grid-item-container"] [style="text-align:left;"] [data-recordindex="0"]`,
+        // resTes1: `[class="x-grid-item-container"] [data-recordindex="2"] [data-qtip="Tes1"]`,
+        // resTes2: `[class="x-grid-item-container"] [data-recordindex="1"] [data-qtip="Tes2"]`,
+        // resTes3: `[class="x-grid-item-container"] [data-recordindex="0"] [data-qtip="Tes3"]`,
 
-        tes1: `//*[text()="Tes1"]`,
-        tes2: `//*[text()="Tes2"]`,
-        tes3: `//*[text()="Tes3"]`,
-
-        // tes1: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [data-recordindex="2"] [class=" x-grid-row"] [tabindex="-1"]`,
-        // tes2: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [data-recordindex="1"] [class=" x-grid-row"] [tabindex="-1"]`,
-        // tes3: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [data-recordindex="0"] [class=" x-grid-row"] [tabindex="-1"]`,
+        resTes1: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [class="x-grid-scrollbar-clipper "] [data-recordindex="2"] [tabindex="-1"]`,
+        resTes2: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [class="x-grid-scrollbar-clipper "] [data-recordindex="1"] [tabindex="-1"]`,
+        resTes3: `[id="r1SkillAssignmentGrid-body"] [class="x-grid-scroll-container "] [class="x-grid-scrollbar-clipper "] [data-recordindex="0"] [tabindex="-1"]`,
 
         resOrgA: `//*[text()="Enterprise"]`,
         resOrgB: `//*[text()="Demo"]`,
@@ -32,18 +28,12 @@ class skillMatrixPage {
         this.page = page;
     }
 
-
     //Rescource data
     resourceCreateDataA = async() => {
         let page=this.page;
-        let { resOrgEnterprise, tes1 }=locators.resourceDataPage;
+        let { resOrgEnterprise, resTes1 }=locators.resourceDataPage;
 
-        await page.click(tes1);
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('Enter');
+        await page.click(resTes1);
 
         //Selecting a dropdown for Cost Category
         await page.keyboard.type("H");
@@ -63,22 +53,17 @@ class skillMatrixPage {
         await page.keyboard.type("L");
         await page.keyboard.press('Enter');
 
-        await page.click(tes1);
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('Enter');
+        // await page.click(resTes1);
+        // await page.keyboard.press('Tab');
+        // await page.keyboard.press('ArrowDown');
+        // await page.keyboard.press('Enter');
     }
 
     resourceCreateDataB = async() => {
         let page=this.page;
-        let { resOrgDemo, tes2 }=locators.resourceDataPage;
+        let { resOrgDemo, resTes2 }=locators.resourceDataPage;
 
-        await page.click(tes2);
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('Enter');
+        await page.click(resTes2);
 
         //Selecting a dropdown for Cost Category
         // await page.keyboard.press('Tab');
@@ -99,7 +84,7 @@ class skillMatrixPage {
         await page.keyboard.type("L")
         await page.keyboard.press('Enter');
 
-        // await page.click(resOrg);
+        // await page.click(resTes2);
         // await page.keyboard.press('Tab');
         // await page.keyboard.press('Tab');
         // await page.keyboard.press('Tab');
@@ -109,17 +94,11 @@ class skillMatrixPage {
 
     resourceCreateDataC = async() => {
         let page=this.page;
-        let { resOrgAcmeLifeSciences, tes3 }=locators.resourceDataPage;
+        let { resOrgAcmeLifeSciences, resTes3 }=locators.resourceDataPage;
 
-        await page.click(tes3);
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('Enter');
+        await page.click(resTes3);
 
         //Selecting a dropdown for Cost Category
-        await page.keyboard.press('Tab');
         await page.keyboard.type("M");
         await page.keyboard.press('Tab');
         await page.keyboard.type("M");
@@ -137,11 +116,11 @@ class skillMatrixPage {
         await page.keyboard.type("L");
         await page.keyboard.press('Enter');
 
-        await page.click(tes3);
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('Enter');
+        // await page.click(resTes3);
+        // await page.keyboard.press('Tab');
+        // await page.keyboard.press('ArrowDown');
+        // await page.keyboard.press('ArrowDown');
+        // await page.keyboard.press('Enter');
     }
 
 

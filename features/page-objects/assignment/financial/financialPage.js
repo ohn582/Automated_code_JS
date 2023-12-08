@@ -7,22 +7,16 @@ const locators = {
 
     financialTypeData: {
         //Creating a data 1
-        financialProject: `[id="insert_costItem_assignment_form"] [id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogProjectCombo-trigger-picker"]`,
+        financialProject: `[id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogProjectCombo"] [id="AddCostItemAssignmentDialogProjectCombo-inputWrap"]`,
+
         financialP10: `//*[text()="P10"]`,
-
-        financialCostCenter: `[id="insert_costItem_assignment_form"] [id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogCostCenterNode"] [id="AddCostItemAssignmentDialogCostCenterNode-trigger-picker"]`,
-        financialEnterprise: `[role="treegrid"] [role="rowgroup"] [data-recordindex="1"]`,
-
-        financialCheckboxA: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="1"]`,
-
-
-        //Creating Data 2
-        financialProject: `[id="insert_costItem_assignment_form"] [id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogProjectCombo-trigger-picker"]`,
         financialJerryTest: `//*[text()="Jerry Test Project Alpha"]`,
 
         financialCostCenter: `[id="insert_costItem_assignment_form"] [id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogCostCenterNode"] [id="AddCostItemAssignmentDialogCostCenterNode-trigger-picker"]`,
+        financialEnterprise: `[role="treegrid"] [role="rowgroup"] [data-recordindex="1"]`,
         financialNewResourceNode: `[role="treegrid"] [role="rowgroup"] [data-recordindex="2"]`,
 
+        financialCheckboxA: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="1"]`,
         financialCheckboxB: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="3"]`,
 
         addCloseButton: `//*[text()="Add & Close"]`,
@@ -81,7 +75,7 @@ class financialPage {
 
         await page.click(financialProject);
         await page.keyboard.type("P10");
-        await page.click(financialP10);
+        await page.keyboard.press('Enter');
 
         // await page.waitForTimeout(1000)
 
@@ -110,7 +104,37 @@ class financialPage {
 
         await page.click(financialProject);
         await page.keyboard.type("Jerry Test Project Alpha");
-        await page.click(financialJerryTest);
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        // await page.waitForTimeout(1000)
+
+        // await page.dblclick( financialCostCenter);
+        await page.click(financialNewResourceNode);
+
+        await page.waitForTimeout(1000)
+
+        await page.click(financialCheckboxB);
+
+        await page.waitForTimeout(1000)
+
+        await page.click(addCloseButton);
+        
+        await page.waitForTimeout(1000);
+    }
+
+    financialCreateDataB = async () => {
+        let page = this.page;
+        let { financialTypeAddBtn } = locators.financialTypeNav;
+        let { financialProject, financialCostCenter, financialJerryTest, financialNewResourceNode, financialCheckboxB, addCloseButton } = locators.financialTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(financialTypeAddBtn);
+
+        await page.click(financialProject);
+        await page.keyboard.type("Jerry Test Project Alpha");
+        await page.keyboard.press('Enter');
 
         await page.keyboard.press('Tab');
         await page.keyboard.press('ArrowDown');
