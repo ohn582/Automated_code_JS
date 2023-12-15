@@ -11,8 +11,11 @@ Feature: Pdware Admin User Module
         When I select Financial
 
         Then I Create Rescource Assignment Data for Financial A
+        Then I Create multiple numbers for Financial A
         Then I Create Rescource Assignment Data for Financial B
+        Then I Create multiple numbers for Financial B
         Then I Create Rescource Assignment Data for Financial C
+        Then I Create multiple numbers for Financial C
 
         Then Select Save Button for Financial
         Then I verify the Location by re-loging admin account

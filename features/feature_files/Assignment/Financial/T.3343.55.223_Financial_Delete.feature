@@ -12,6 +12,7 @@ Feature: Pdware Admin User Module
         
         Then I delete Financial Data A
         Then I delete Financial Data B
+        Then I delete Financial Data C
         
         Then Select Save Button for Financial
         Then I verify the Location by re-loging admin account

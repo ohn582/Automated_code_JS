@@ -29,14 +29,17 @@ const locators = {
 
         laborGridBoxA: `//*[text()="3456"]`,
         laborGridBoxB: `//*[text()="3456"]`,
+        laborGridBoxC: `//*[text()="3456"]`,
 
         laborIDGridBoxA: `//*[text()="13"]`,
         laborIDGridBoxB: `//*[text()="14"]`,
+        laborIDGridBoxC: `//*[text()="15"]`,
 
 
         // For updating labor data
         laborOrgA: `//*[text()="Cary"]`,
         laborOrgB: `//*[text()="Biosciences"]`,
+        laborOrgC: `//*[text()="Biosciences"]`,
 
         //Labor selecting Assignment: Update
         laborUpdateA: `//*[text()="Acme Life Sciences"]`,
@@ -63,9 +66,11 @@ const locators = {
         logoutUserBtn: `//*[text()="Logout"]`,
         logOutYes: `//*[text()="Yes"]`,
         logoutHereLink: `//*[text()=" here"]`,
-    }
+    },
 
 }
+
+
 
 
 
@@ -187,7 +192,65 @@ class resourcePage {
         await page.waitForTimeout(3000);
     }
 
+
+    laborCreateDataC = async () => {
+        let page = this.page;
+        let { laborTypeAddBtn } = locators.laborTypeNav;
+        let { laborOrg, laborProject, laborSkill, skillCheckBox, laborGridselectC, addCloseButton, laborDemo, laborGridBoxC } = locators.laborTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(laborTypeAddBtn);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
+        
+        await page.click(laborProject);
+        await page.keyboard.type("X0");
+
+        await page.click(laborOrg);
+        await page.click(laborDemo);
+
+        // await page.waitForTimeout(1000)
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("DBA");
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        // await page.waitForTimeout(1000)
+
+        await page.click(skillCheckBox);
+        await page.click(laborGridselectC);
+
+        // await page.waitForTimeout(1000)
+
+        await page.click(addCloseButton);
+        
+        // await page.waitForTimeout(2000);
+
+        await page.click(laborGridBoxC);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+
+        await page.keyboard.press('Enter');
+        await page.keyboard.type("5");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("5");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("13");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("1");
+
+        await page.waitForTimeout(3000);
+    }
     
+
 
 
     //Labor: Update
@@ -207,6 +270,46 @@ class resourcePage {
         await page.waitForTimeout(1000);
         await page.click(laborOrgA); 
 
+        await page.keyboard.down('Control');
+        await page.keyboard.press('KeyA');
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("6");
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("6");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("89");
+        
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("6");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("11");
+
         // await page.waitForTimeout(3000);
     }
 
@@ -225,11 +328,103 @@ class resourcePage {
         await page.keyboard.press('ArrowUp');
         await page.keyboard.press('ArrowRight');
         await page.waitForTimeout(1000);
-        await page.click(laborOrgB);
-         
+        await page.click(laborOrgB); 
         
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("8");
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("2");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("33");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("45");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("1");
         // await page.waitForTimeout(3000);
     }
+
+    laborUpdateDataC = async () => {
+        let page = this.page;
+        let { laborOrgC, laborIDGridBoxC } = locators.laborTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(laborIDGridBoxC);    
+        
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowUp');
+        await page.keyboard.press('ArrowRight');
+        await page.waitForTimeout(1000);
+        await page.click(laborOrgC);
+        
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("8");
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("8");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("2");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("11");
+
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+        await page.keyboard.type("12");
+        // await page.waitForTimeout(3000);
+    }
+
 
 
 

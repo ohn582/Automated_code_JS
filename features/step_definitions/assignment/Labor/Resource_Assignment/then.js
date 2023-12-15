@@ -20,6 +20,15 @@ Then(`I Create Rescource Assignment Data for labor B`, timeout, async function()
     await page.waitForTimeout(2000);
 })
 
+Then(`I Create Rescource Assignment Data for labor C`, timeout, async function() {
+    let page = this.page;
+    const listData = new resourcePage(page);
+    listData.laborCreateDataC();
+    await page.waitForTimeout(2000);
+})
+
+
+
 
 //Labor Data Update
 Then(`I Updated my Rescource Assignment Data for labor A`, timeout, async function() {
@@ -35,6 +44,14 @@ Then(`I Updated my Rescource Assignment Data for labor B`, timeout, async functi
     listData.laborUpdateDataB();
     await page.waitForTimeout(2000);
 })
+
+Then(`I Updated my Rescource Assignment Data for labor C`, timeout, async function() {
+    let page = this.page;
+    const listData = new resourcePage(page);
+    listData.laborUpdateDataC();
+    await page.waitForTimeout(2000);
+})
+
 
 
 

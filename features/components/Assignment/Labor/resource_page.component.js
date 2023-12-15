@@ -8,9 +8,11 @@ const locator = {
     labor_CheckBox: {
         assignmentSelectA: `[id="r1LaborAssignmentPanel-innerCt"] [class="x-grid-scroll-container "] [data-recordindex="12"] [role="gridcell"]`,
         assignmentSelectB: `[id="r1LaborAssignmentPanel-innerCt"] [class="x-grid-scroll-container "] [data-recordindex="13"] [role="gridcell"]`,
+        assignmentSelectC: `[id="r1LaborAssignmentPanel-innerCt"] [class="x-grid-scroll-container "] [data-recordindex="14"] [role="gridcell"]`,
 
         laborGridBoxA: `//*[text()="3456"]`,
         laborGridBoxB: `//*[text()="3456"]`,
+        laborGridBoxC: `//*[text()="3456"]`,
     },
 }
 
@@ -32,10 +34,11 @@ class resourceTypeData {
 
     laborCheckBox = async() => {
         let page=this.page;
-        let { assignmentSelectA, assignmentSelectB }=locator.labor_CheckBox;
+        let { assignmentSelectA, assignmentSelectB, assignmentSelectC }=locator.labor_CheckBox;
         await page.click(assignmentSelectA);
         // await page.waitForTimeout(1000);
         await page.click(assignmentSelectB);
+        await page.click(assignmentSelectC);
         await page.waitForTimeout(3000);
     }
 }

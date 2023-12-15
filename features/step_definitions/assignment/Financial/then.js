@@ -13,6 +13,15 @@ Then(`I Create Rescource Assignment Data for Financial A`, timeout, async functi
     await page.waitForTimeout(2000);
 })
 
+Then(`I Create multiple numbers for Financial A`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialNumberDataA();
+    await page.waitForTimeout(2000);
+})
+
+
+
 Then(`I Create Rescource Assignment Data for Financial B`, timeout, async function() {
     let page = this.page;
     const listData = new financialPage(page);
@@ -20,10 +29,26 @@ Then(`I Create Rescource Assignment Data for Financial B`, timeout, async functi
     await page.waitForTimeout(2000);
 })
 
+Then(`I Create multiple numbers for Financial B`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialNumberDataB();
+    await page.waitForTimeout(2000);
+})
+
+
+
 Then(`I Create Rescource Assignment Data for Financial C`, timeout, async function() {
     let page = this.page;
     const listData = new financialPage(page);
     listData.financialCreateDataC();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I Create multiple numbers for Financial C`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialNumberDataC();
     await page.waitForTimeout(2000);
 })
 
@@ -44,6 +69,14 @@ Then(`I Update my Rescource Assignment Data for Financial B`, timeout, async fun
     await page.waitForTimeout(2000);
 })
 
+Then(`I Update my Rescource Assignment Data for Financial C`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialUpdateC();
+    await page.waitForTimeout(2000);
+})
+
+
 
 
 //Financial Delete
@@ -58,6 +91,13 @@ Then(`I delete Financial Data B`, timeout, async function() {
     let page = this.page;
     const listData = new financialPage(page);
     listData.financialDeleteB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I delete Financial Data C`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialPage(page);
+    listData.financialDeleteC();
     await page.waitForTimeout(2000);
 })
 

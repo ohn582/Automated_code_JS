@@ -11,9 +11,10 @@ Feature: Pdware Admin User Module
         
         Then I Updated my Rescource Assignment Data for labor A
         Then I Updated my Rescource Assignment Data for labor B
+        Then I Updated my Rescource Assignment Data for labor C
 
         Then I select Save button for Labor Data
-        Then I verify the Labor data by re-loging admin account B
+        Then I verify the Labor data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Resource and Labor

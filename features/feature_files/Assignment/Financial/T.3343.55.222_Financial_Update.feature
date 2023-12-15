@@ -12,6 +12,7 @@ Feature: Pdware Admin User Module
         
         Then I Update my Rescource Assignment Data for Financial A
         Then I Update my Rescource Assignment Data for Financial B
+        Then I Update my Rescource Assignment Data for Financial C
 
         Then Select Save Button for Financial
         Then I verify the Location by re-loging admin account

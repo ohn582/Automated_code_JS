@@ -11,6 +11,7 @@ Feature: Pdware Admin User Module
         
         Then I Create Rescource Assignment Data for labor A
         Then I Create Rescource Assignment Data for labor B
+        Then I Create Rescource Assignment Data for labor C
         
         Then I select Save button for Labor Data
         Then I verify the Labor data by re-loging admin account

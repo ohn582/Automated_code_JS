@@ -13,13 +13,21 @@ const locators = {
         financialJerryTest: `//*[text()="Jerry Test Project Alpha"]`,
 
         financialCostCenter: `[id="insert_costItem_assignment_form"] [id="insert_costItem_assignment_form-bodyWrap"] [id="AddCostItemAssignmentDialogCostCenterNode"] [id="AddCostItemAssignmentDialogCostCenterNode-trigger-picker"]`,
-        financialEnterprise: `[role="treegrid"] [role="rowgroup"] [data-recordindex="1"]`,
-        financialNewResourceNode: `[role="treegrid"] [role="rowgroup"] [data-recordindex="2"]`,
+        
+        financialLifeSciences: `[role="treegrid"] [role="rowgroup"] [data-recordindex="0"]`,
+        financialDemo: `[role="treegrid"] [role="rowgroup"] [data-recordindex="1"]`,
+        financialEnterprise: `[role="treegrid"] [role="rowgroup"] [data-recordindex="2"]`,
 
-        financialCheckboxA: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="1"]`,
-        financialCheckboxB: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="3"]`,
+        financialCheckboxExpense: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="0"]`,
+        financialCheckboxLabor: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="1"]`,
+        financialCheckboxHBLab1: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="2"]`,
+        financialCheckboxMaterial: `[id="AddCostItemAssignmentDialogCostItemGrid-bodyWrap"] [data-recordindex="3"]`,
 
         addCloseButton: `//*[text()="Add & Close"]`,
+
+        finData1: `//*[text()="8"]`,
+        finData2: `//*[text()="3456"]`,
+        finData3: `//*[text()="1334"]`,
 
     
         //Financial: Org
@@ -29,8 +37,9 @@ const locators = {
 
 
         //Financial: selecting created checkbox
-        checkBoxDataA: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="0"] [tabindex="-1"]`,
-        checkBoxDataB: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="2"] [tabindex="-1"]`,
+        checkBoxDataP10: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="1"] [tabindex="-1"]`,
+        checkBoxDataSource: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="4"] [tabindex="-1"]`,
+        checkBoxDataAsdasd: `[id="r1FinancialAssignmentPanel-bodyWrap"] [data-recordindex="4"] [tabindex="-1"]`,
     },
 
     deleteNav: {
@@ -68,7 +77,7 @@ class financialPage {
     financialCreateDataA = async () => {
         let page = this.page;
         let { financialTypeAddBtn } = locators.financialTypeNav;
-        let { financialProject, financialCostCenter, financialP10, financialEnterprise, financialCheckboxA, addCloseButton } = locators.financialTypeData;
+        let { financialProject, financialCostCenter, financialP10, financialDemo, financialCheckboxLabor, addCloseButton, finData1 } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
         await page.click(financialTypeAddBtn);
@@ -80,12 +89,12 @@ class financialPage {
         // await page.waitForTimeout(1000)
 
         await page.click(financialCostCenter);
-        await page.click(financialEnterprise);
+        await page.click(financialDemo);
 
 
         await page.waitForTimeout(1000)
 
-        await page.click(financialCheckboxA);
+        await page.click(financialCheckboxLabor);
 
         await page.waitForTimeout(1000)
 
@@ -94,64 +103,150 @@ class financialPage {
         await page.waitForTimeout(2000);
     }
 
-    financialCreateDataB = async () => {
+    financialNumberDataA = async () => {
         let page = this.page;
-        let { financialTypeAddBtn } = locators.financialTypeNav;
-        let { financialProject, financialCostCenter, financialJerryTest, financialNewResourceNode, financialCheckboxB, addCloseButton } = locators.financialTypeData;
+        let { finData1 } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
-        await page.click(financialTypeAddBtn);
-
-        await page.click(financialProject);
-        await page.keyboard.type("Jerry Test Project Alpha");
+        //Creating multiple numbers
+        await page.click(finData1);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
         await page.keyboard.press('Enter');
 
+        await page.keyboard.type("10");
         await page.keyboard.press('Tab');
-        await page.keyboard.press('ArrowDown');
-        // await page.waitForTimeout(1000)
-
-        // await page.dblclick( financialCostCenter);
-        await page.click(financialNewResourceNode);
-
-        await page.waitForTimeout(1000)
-
-        await page.click(financialCheckboxB);
-
-        await page.waitForTimeout(1000)
-
-        await page.click(addCloseButton);
-        
-        await page.waitForTimeout(1000);
+        await page.keyboard.type("3");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("6");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("22");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("10");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("5");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
     }
 
+
+
     financialCreateDataB = async () => {
         let page = this.page;
         let { financialTypeAddBtn } = locators.financialTypeNav;
-        let { financialProject, financialCostCenter, financialJerryTest, financialNewResourceNode, financialCheckboxB, addCloseButton } = locators.financialTypeData;
+        let { financialProject, financialCostCenter, financialJerryTest, financialLifeSciences, financialCheckboxMaterial, addCloseButton, finData2 } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
         await page.click(financialTypeAddBtn);
 
         await page.click(financialProject);
-        await page.keyboard.type("Jerry Test Project Alpha");
+        await page.keyboard.type("Source");
         await page.keyboard.press('Enter');
 
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('ArrowDown');
-        // await page.waitForTimeout(1000)
-
         // await page.dblclick( financialCostCenter);
-        await page.click(financialNewResourceNode);
+        await page.click(financialCostCenter);
+        await page.click(financialLifeSciences);
 
         await page.waitForTimeout(1000)
 
-        await page.click(financialCheckboxB);
+        await page.click(financialCheckboxMaterial);
 
         await page.waitForTimeout(1000)
 
         await page.click(addCloseButton);
         
-        await page.waitForTimeout(1000);
+        await page.waitForTimeout(2000);
+    }
+
+    financialNumberDataB = async () => {
+        let page = this.page;
+        let { finData2 } = locators.financialTypeData;
+        // await page.waitForTimeout(3000);
+
+        //Creating multiple numbers
+        await page.click(finData2);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("3");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("67");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("11");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("3");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("2");
+    }
+
+
+
+    financialCreateDataC = async () => {
+        let page = this.page;
+        let { financialTypeAddBtn } = locators.financialTypeNav;
+        let { financialProject, financialCostCenter, financialJerryTest, financialLifeSciences, financialCheckboxExpense, addCloseButton, finData3 } = locators.financialTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(financialTypeAddBtn);
+
+        await page.click(financialProject);
+        await page.keyboard.type("asdasd");
+        await page.keyboard.press('Enter');
+
+
+        // await page.dblclick( financialCostCenter);
+        await page.click(financialCostCenter);
+        await page.click(financialLifeSciences);
+
+        await page.waitForTimeout(1000)
+
+        await page.click(financialCheckboxExpense);
+
+        await page.waitForTimeout(1000)
+
+        await page.click(addCloseButton);
+        
+        await page.waitForTimeout(2000);
+    }
+
+    financialNumberDataC = async () => {
+        let page = this.page;
+        let { finData3 } = locators.financialTypeData;
+        // await page.waitForTimeout(3000);
+
+        //Creating multiple numbers
+        await page.click(finData3);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.type("31");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("6");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("4");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("6");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("21");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("164");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("9");
+        await page.keyboard.press('Tab');
+        await page.keyboard.type("78");
     }
 
     
@@ -160,54 +255,141 @@ class financialPage {
     //Labor: Update
     financialUpdateA = async () => {
         let page = this.page;
-        let { financialRepDemo } = locators.financialTypeData;
+        let { finData1 } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
-        await page.click(financialRepDemo)
-
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
+        //Creating multiple numbers
+        await page.click(finData1);
         await page.keyboard.press('ArrowRight');
         await page.keyboard.press('Enter');
-
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('Enter');
+
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("5");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("43");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("14");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("32");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("21");
 
         // await page.waitForTimeout(3000);
     }
 
     financialUpdateB = async () => {
         let page = this.page;
-        let { financialRepNode } = locators.financialTypeData;
+        let { finData2 } = locators.financialTypeData;
         // await page.waitForTimeout(3000);
 
-        await page.click(financialRepNode)
-
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
+        //Creating multiple numbers
+        await page.click(finData2);
         await page.keyboard.press('ArrowRight');
         await page.keyboard.press('Enter');
-
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('Enter');
+
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("1");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("86");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("34");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("7");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("11");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("99");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("2");
+
+        // await page.waitForTimeout(3000);
+    }
+
+    financialUpdateC = async () => {
+        let page = this.page;
+        let { finData3 } = locators.financialTypeData;
+        // await page.waitForTimeout(3000);
+
+        //Creating multiple numbers
+        await page.click(finData3);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("2");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("8");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("4");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("4");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("11");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("34");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("22");
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type("8");
 
         // await page.waitForTimeout(3000);
     }
 
 
 
+
     //Labor: Delete
     financialDeleteA = async () => {
         let page = this.page;
-        let { checkBoxDataA } = locators.financialTypeData;
+        let { checkBoxDataP10 } = locators.financialTypeData;
         let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
         // await page.waitForTimeout(3000);
     
-        await page.click(checkBoxDataA);
+        await page.click(checkBoxDataP10);
     
         await page.click(deleteBtn);
         await page.click(yesDeleteBtn);
@@ -217,11 +399,25 @@ class financialPage {
     
     financialDeleteB = async () => {
         let page = this.page;
-        let { checkBoxDataB } = locators.financialTypeData;
+        let { checkBoxDataSource } = locators.financialTypeData;
         let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
         // await page.waitForTimeout(3000);
     
-        await page.click(checkBoxDataB);
+        await page.click(checkBoxDataSource);
+
+        await page.click(deleteBtn);
+        await page.click(yesDeleteBtn);
+            
+        // await page.waitForTimeout(3000);
+    }
+
+    financialDeleteC = async () => {
+        let page = this.page;
+        let { checkBoxDataAsdasd } = locators.financialTypeData;
+        let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
+        // await page.waitForTimeout(3000);
+    
+        await page.click(checkBoxDataAsdasd);
 
         await page.click(deleteBtn);
         await page.click(yesDeleteBtn);

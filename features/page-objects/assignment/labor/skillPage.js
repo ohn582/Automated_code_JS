@@ -23,7 +23,7 @@ const locators = {
         skillGridselectB: `[id="AddSkillAssignmentDialogSkillGrid"] [data-recordindex="2"] [tabindex="-1"]`,
 
         // addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [data-componentid="AddResourceAssignmentDialogAddClose"]`,
-        addCloseButton: `//*[text()="Add & Close"]`,
+        addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [data-componentid="AddSkillAssignmentDialogAddClose"]`,
 
 
 
@@ -99,8 +99,10 @@ class skillPage {
         await page.keyboard.press('ArrowDown');
         await page.click(skillActiveTrue);
         await page.click(requiredSkillTechWritter);
+        await page.keyboard.press('Tab');
 
-        await page.click(addCloseButton);
+        // await page.click(addCloseButton);
+        await page.keyboard.press('Enter');
         
         // await page.waitForTimeout(3000);
     }
