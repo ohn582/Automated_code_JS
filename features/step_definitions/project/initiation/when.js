@@ -13,6 +13,19 @@ When(`I select Project and Initiation`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+When(`I select Project and Initiation B`, timeout, async function() {
+    let page = this.page;
+    const listData = new initiationTypeData(page);
+    listData.initiationLinkB();
+    await page.waitForTimeout(2000);
+})
+
+When(`I select Initiation`, timeout, async function() {
+    let page = this.page;
+    const listData = new initiationTypeData(page);
+    listData.initiationLinkB();
+    await page.waitForTimeout(2000);
+})
 
 
 //Project Demand

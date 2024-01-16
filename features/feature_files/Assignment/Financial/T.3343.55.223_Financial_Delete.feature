@@ -9,14 +9,17 @@ Feature: Pdware Admin User Module
     Scenario: @T.3343.55.223-testing user data
         When I select Assignment
         When I select Financial
-        
-        Then I delete Financial Data A
-        Then I delete Financial Data B
-        Then I delete Financial Data C
+
+        When I select check box in Financial A
+        Then I delete Financial Data
+
+        When I select check box in Financial B
+        Then I delete Financial Data
         
         Then Select Save Button for Financial
         Then I verify the Location by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Assignment
         When I select Assignment
         When I select Financial

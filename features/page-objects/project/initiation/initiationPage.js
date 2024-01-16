@@ -8,32 +8,22 @@ const locators = {
     initiationData: {
         //Project Data Add
         initiationName: `[id="projectAddPanel"] [id="projectAddPanel-body"] [id="r1ProjectAddName-bodyEl"]`,
-        initiationOwnerDropdown: `[id="projectAddPanel"] [id="r1ProjectAddNodes-triggerWrap"] [id="r1ProjectAddNodes-trigger-_trigger1"]`,
-        initiationApply: `//*[text()="Apply"]`,
+        initiationOwnerDropdown: `[id="projectAddPanel"] [id="r1ProjectAddNodes-bodyEl"] [id="r1ProjectAddNodes-trigger-picker"]`,
+        // initiationApply: `//*[text()="Apply"]`,
         intAddProjectCloseBtn: `[id="projectAddPanel"] [role="toolbar"] [aria-label="Add & Close"]`,
 
+        initiationAcmeLifeSciences: `[role="treegrid"] [data-recordindex="0"]`,
+        initiationEnterprise: `[role="treegrid"] [data-recordindex="1"]`,
+        initiationPeter: `[role="treegrid"] [data-recordindex="2"]`,
 
-        //Project Data Update
-        initiationDataSelectA: `[id="ProjectInitiationList-targetEl"] [data-recordindex="0"]`,
-        // initiationDataSelectB: `[id="ProjectInitiationList-targetEl"] [data-recordindex="0"]`,
+        //Updating 
+        // tes1: `[id="ProjectInitiationList"] [class="x-panel x-border-item x-box-item x-panel-default"] [data-recordindex="2"]`,
+        // tes2: `[id="ProjectInitiationList"] [class="x-panel x-border-item x-box-item x-panel-default"] [data-recordindex="1"]`,
+        // tes3: `[id="ProjectInitiationList"] [class="x-panel x-border-item x-box-item x-panel-default"] [data-recordindex="0"]`,
 
-        initiationLaborNav: `[id="ProjectInitiationMainContainer"] [role="toolbar"] [data-qtip="Labor"]`,
-        initiationLaborAddBtn: `[id="ProjectInitiationMainContainer"] [aria-label="Add Assignment"]`,
-        initiationLaborAddSkills: `//*[text()="Add Skill Assignment"]`,
-
-        initiationOBS: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogResourceNode-triggerWrap"]`,
-        initiationOBSEnterprise: `//*[text()="Enterprise"]`,
-        initiationOBSResourceNode: `//*[text()="New Resource Node"]`,
-
-        initiationActive: `[id="insert_skill_assignment_form"] [id="PdwInsertSkillAssignmentrActive-triggerWrap"]`,
-        initiationActiveTrue: `//*[text="true"]`,
-
-
-        initiationEnterprise: `[id="ProjectNodeFieldTreePanel"] [id="ProjectNodeFieldPanelTree-body"] [data-recordindex="0"]`,
-        initiationApply: `//*[text()="Apply"]`,
-        intAddBtn: `[id="ProjectNodeFieldTreePanel"] [role="toolbar"] [aria-label="Apply"]`,
-        intAddCloseBtn: `[id="projectAddPanel"] [role="toolbar"] [data-componentid="ProjectAddPanelAddCloseButton"]`,
-
+        tes1: `//*[text()="1"]`,
+        tes2: `//*[text()="2"]`,
+        tes3: `//*[text()="3"]`,
     },
 
     deleteNav: {
@@ -56,21 +46,21 @@ class initiationPage {
     //Project Data Create
     initiationAddDataA = async() => {
         let page=this.page;
-        let { initiationName, initiationOwnerDropdown, initiationEnterprise, initiationApply, intAddBtn, intAddProjectCloseBtn }=locators.initiationData;
+        let { initiationName, initiationOwnerDropdown, initiationEnterprise, intAddProjectCloseBtn }=locators.initiationData;
         let { addInitiationData }=locators.initiationNav;
 
         await page.click(addInitiationData);
         // await page.waitForTimeout(1000);
 
         await page.click(initiationName);
-        await page.keyboard.type('tes1');
+        await page.keyboard.type('1');
         // await page.waitForTimeout(1000);
         
         await page.click(initiationOwnerDropdown);
         await page.click(initiationEnterprise);
-        // await page.click(initiationApply);
         // await page.waitForTimeout(1000);
-        await page.click(intAddBtn);
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('24');
 
         await page.click(intAddProjectCloseBtn);
         // await page.waitForTimeout(2000);
@@ -78,21 +68,43 @@ class initiationPage {
 
     initiationAddDataB = async() => {
         let page=this.page;
-        let { initiationName, initiationOwnerDropdown, initiationEnterprise, initiationApply, intAddBtn, intAddProjectCloseBtn }=locators.initiationData;
+        let { initiationName, initiationOwnerDropdown, initiationAcmeLifeSciences, intAddProjectCloseBtn }=locators.initiationData;
         let { addInitiationData }=locators.initiationNav;
 
         await page.click(addInitiationData);
         // await page.waitForTimeout(1000);
 
         await page.click(initiationName);
-        await page.keyboard.type('tes2');
+        await page.keyboard.type('2');
         // await page.waitForTimeout(1000);
         
         await page.click(initiationOwnerDropdown);
-        await page.click(initiationEnterprise);
-        await page.click(initiationApply);
+        await page.click(initiationAcmeLifeSciences);
         // await page.waitForTimeout(1000);
-        await page.click(intAddBtn);
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('45');
+
+        await page.click(intAddProjectCloseBtn);
+        // await page.waitForTimeout(2000);
+    }
+
+    initiationAddDataC = async() => {
+        let page=this.page;
+        let { initiationName, initiationOwnerDropdown, initiationPeter, intAddProjectCloseBtn }=locators.initiationData;
+        let { addInitiationData }=locators.initiationNav;
+
+        await page.click(addInitiationData);
+        // await page.waitForTimeout(1000);
+
+        await page.click(initiationName);
+        await page.keyboard.type('3');
+        // await page.waitForTimeout(1000);
+        
+        await page.click(initiationOwnerDropdown);
+        await page.click(initiationPeter);
+        // await page.waitForTimeout(1000);
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('300');
 
         await page.click(intAddProjectCloseBtn);
         // await page.waitForTimeout(2000);
@@ -101,23 +113,14 @@ class initiationPage {
 
 
 
+
     //Project Data Update
     initiationUpdateA = async() => {
         let page=this.page;
-        let { initiationDataSelectA, initiationLaborNav, initiationLaborAddBtn, initiationLaborAddSkills, initiationOBS, initiationOBSEnterprise, initiationActive, initiationActiveTrue }=locators.initiationData;
-        await page.click(initiationDataSelectA)
-        await page.click(initiationLaborNav)
-        await page.click(initiationLaborAddBtn)
-        await page.click(initiationLaborAddSkills)
-
-        await page.click(initiationOBS)
-        await page.click(initiationOBSEnterprise)
-
-        await page.click(initiationActive)
-        await page.keyboard.type('true');
-        await page.click(initiationActiveTrue)
+        let { tes1 }=locators.initiationData;
+        await page.click(tes1)
         // await page.dblclick(initiationProjectStateDropdownB)
-        // await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);
     }
 
     initiationUpdateB = async() => {
@@ -136,6 +139,25 @@ class initiationPage {
         // await page.dblclick(initiationProjectStateDropdownB)
         // await page.waitForTimeout(1000);
     }
+
+    initiationUpdateC = async() => {
+        let page=this.page;
+        let { initiationDataSelectC, initiationLaborNav, initiationLaborAddBtn, initiationLaborAddSkills, initiationOBS, initiationOBSEnterprise, initiationActive, initiationActiveTrue }=locators.initiationData;
+        await page.click(initiationDataSelectC)
+        await page.click(initiationLaborNav)
+        await page.click(initiationLaborAddBtn)
+        await page.click(initiationLaborAddSkills)
+
+        await page.click(initiationOBS)
+        await page.click(initiationOBSEnterprise)
+
+        await page.click(initiationActive)
+        await page.click(initiationActiveTrue)
+        // await page.dblclick(initiationProjectStateDropdownB)
+        // await page.waitForTimeout(1000);
+    }
+
+
 
 
 

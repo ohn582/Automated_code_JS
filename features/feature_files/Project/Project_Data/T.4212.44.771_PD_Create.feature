@@ -11,12 +11,22 @@ Feature: Pdware Admin User Module
         When I select Project Grid Mode
 
         Then I create a Project Data
-        Then I create a Project Data B
-        # Then I create a Project Data C
+        Then I create a Date
 
-        # Then Select Save Button for Project Data
+        # When I Select Project Demand
+        # Then I create a Project Demand Data
+
+        When I select Project Data
+        Then I create a Project Data B
+        Then I create a Date B
+        
+        # When I Select Project Demand
+        # Then I create a Project Demand Data B
+
+        Then Select Save Button for Project Data
         Then I verify the Project Data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Project and Project Data
         When I select Project and Project Data
 

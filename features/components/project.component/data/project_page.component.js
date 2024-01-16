@@ -6,11 +6,11 @@ const locator = {
     project_Page: {
         //Project Data
         projLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-2"]`,
-        projData: `//*[text()="Data"]`,
+        projData: `[id="r1ProjectMain"] [class="x-container x-box-item x-container-default x-box-layout-ct"] [id="ProjectMainData"]`,
 
 
-        pdBoxA:`[role="rowgroup"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
-        pdBoxB:`[role="rowgroup"] [data-recordindex="8"] [role="row"] [tabindex="-1"]`,
+        pdBoxA:`[id="ProjectListGrid-body"] [role="rowgroup"] [data-recordindex="13"] [role="row"] [tabindex="-1"]`,
+        pdBoxB:`[id="ProjectListGrid-body"] [role="rowgroup"] [data-recordindex="14"] [role="row"] [tabindex="-1"]`,
         // pdBoxC:`[role="rowgroup"] [data-recordindex="7"] [role="row"] [tabindex="-1"]`,
     },
 }
@@ -33,6 +33,15 @@ class projectTypeData {
         await page.waitForTimeout(1000);
     }
 
+    projLinkSelectB = async() => {
+        let page=this.page;
+        let { projData }=locator.project_Page;
+        // await page.click(MenuSliderBtn);
+        // await page.waitForTimeout(1000);
+        await page.click(projData);
+        await page.waitForTimeout(1000);
+    }
+
     projGridModeSelect = async() => {
         let page=this.page;
         let { projectGridMode }=locator.projectNav;
@@ -45,7 +54,7 @@ class projectTypeData {
     // Project Data Delete
     listProjectSelect = async() => {
         let page=this.page;
-        let { pdBoxA, pdBoxB, pdBoxC }=locator.project_Page;
+        let { pdBoxA, pdBoxB }=locator.project_Page;
         await page.click(pdBoxA);
         await page.click(pdBoxB);
         // await page.click(pdBoxC);

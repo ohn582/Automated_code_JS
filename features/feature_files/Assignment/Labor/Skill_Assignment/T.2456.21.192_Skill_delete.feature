@@ -12,6 +12,7 @@ Feature: Pdware Admin User Module
         
         Then I delete Skill Assignment Data A
         Then I delete Skill Assignment Data B
+        Then I delete Skill Assignment Data C
 
         Then I select Save button for Skill Assignment Data
         Then I verify the Skill Assignment data by re-loging admin account

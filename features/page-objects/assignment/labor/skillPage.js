@@ -11,19 +11,21 @@ const locators = {
         skillProject: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogProjectCombo"] [id="AddSkillAssignmentDialogProjectCombo-inputWrap"]`,
         skillOrg: `[id="insert_skill_assignment_form"] [id="AddSkillAssignmentDialogResourceNode"] [id="AddSkillAssignmentDialogResourceNode-inputWrap"] [name="AddSkillAssignmentDialogResourceNode"]`,
         //Skill creating data 1
-        skillOrgDemo: `//*[text()="Demo"]`,
-        skillOrgAcmeLifeSciences: `//*[text()="Acme Life Sciences"]`,
-        skillOrgEnterprise: `//*[text()="Enterprise"]`,
+        skillOrgDemo: `[role="treegrid"] [data-ref="body"] [data-recordindex="1"]`,
+        skillOrgAcmeLifeSciences: `[role="treegrid"] [data-ref="body"] [data-recordindex="0"]`,
+        skillOrgEnterprise: `[role="treegrid"] [data-ref="body"] [data-recordindex="2"]`,
         skillActiveTrue: `//*[text()="true"]`,
 
-        requiredSkillTechWritter: `//*[text()="Tech Writer 1"]`,
-        requiredSkillElectEngineer: `//*[text()="Elect Engineer"]`,
+        requiredSkillTechWritter: `[id="AddSkillAssignmentDialogSkillGrid-body"] [class="x-grid-item-container"] [data-recordindex="3"]`,
+        requiredSkillElectEngineer: `[id="AddSkillAssignmentDialogSkillGrid-body"] [class="x-grid-item-container"] [data-recordindex="0"]`,
+        requiredSkillQAAnalyst: `[id="AddSkillAssignmentDialogSkillGrid-body"] [class="x-grid-item-container"] [data-recordindex="1"]`,
+        requiredSkillSoftwareEngineer: `[id="AddSkillAssignmentDialogSkillGrid-body"] [class="x-grid-item-container"] [data-recordindex="2"]`,
 
         skillGridselectA: `[id="AddSkillAssignmentDialogSkillGrid"] [data-recordindex="1"] [tabindex="-1"]`,
         skillGridselectB: `[id="AddSkillAssignmentDialogSkillGrid"] [data-recordindex="2"] [tabindex="-1"]`,
 
         // addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [data-componentid="AddResourceAssignmentDialogAddClose"]`,
-        addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [data-componentid="AddSkillAssignmentDialogAddClose"]`,
+        addCloseButton: `[id="insert_skill_assignment_form"] [role="toolbar"] [tabindex="0"]`,
 
 
 
@@ -101,8 +103,8 @@ class skillPage {
         await page.click(requiredSkillTechWritter);
         await page.keyboard.press('Tab');
 
-        // await page.click(addCloseButton);
-        await page.keyboard.press('Enter');
+        await page.click(addCloseButton);
+        // await page.keyboard.press('Enter');
         
         // await page.waitForTimeout(3000);
     }
@@ -110,7 +112,42 @@ class skillPage {
     skillCreateDataB = async () => {
         let page = this.page;
         let { laborTypeLegendBtn } = locators.laborTypeNav;
-        let { addSkillAssignment, skillProject, skillOrgDemo, skillActiveTrue, addCloseButton, requiredSkillTechWritter } = locators.skillTypeData;
+        let { addSkillAssignment, skillProject, skillOrgEnterprise, skillActiveTrue, addCloseButton, requiredSkillQAAnalyst } = locators.skillTypeData;
+        // await page.waitForTimeout(3000);
+
+        await page.click(laborTypeLegendBtn);
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.click(addSkillAssignment);
+        await page.click(skillProject);
+        await page.keyboard.type("Source");
+        // await page.keyboard.press('Enter');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillOrgEnterprise);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(skillActiveTrue);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        // await page.click(requiredSkillQAAnalyst);
+        await page.keyboard.press('Tab');
+
+        await page.click(addCloseButton);
+        
+        // await page.waitForTimeout(1000);
+    }
+
+    skillCreateDataC = async () => {
+        let page = this.page;
+        let { laborTypeLegendBtn } = locators.laborTypeNav;
+        let { addSkillAssignment, skillProject, skillOrgEnterprise, skillActiveTrue, addCloseButton, requiredSkillSoftwareEngineer } = locators.skillTypeData;
         // await page.waitForTimeout(3000);
 
         await page.click(laborTypeLegendBtn);
@@ -123,19 +160,26 @@ class skillPage {
         // await page.keyboard.press('Enter');
         await page.keyboard.press('Tab');
         await page.keyboard.press('ArrowDown');
-        await page.click(skillOrgDemo);
+        await page.click(skillOrgEnterprise);
 
         await page.keyboard.press('Tab');
         await page.keyboard.press('Tab');
         await page.keyboard.press('Tab');
         await page.keyboard.press('ArrowDown');
         await page.click(skillActiveTrue);
-        await page.click(requiredSkillTechWritter);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        // await page.click(requiredSkillSoftwareEngineer);
+        await page.keyboard.press('Tab');
 
         await page.click(addCloseButton);
         
         // await page.waitForTimeout(1000);
     }
+
+
 
     
 

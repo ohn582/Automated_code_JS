@@ -10,7 +10,8 @@ Feature: Pdware Admin User Module
         When I select Project and Initiation
 
         Then I updated Initiation Data A
-        # Then I updated Initiation Data B
+        Then I updated Initiation Data B
+        Then I updated Initiation Data C
 
         Then I verify the Project Initiation by re-loging admin account
 

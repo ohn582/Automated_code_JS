@@ -6,7 +6,9 @@ const locator = {
     project_Page: {
         //Project Data
         projLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-2"]`,
-        projInitiation: `//*[text()="Initiation"]`,
+        // projInitiation: `[id="R1TProject"] [class="x-container x-box-item x-container-default x-box-layout-ct"] [id="ProjectMainInitiation"]`,
+        // projInitiation: `//*[text()="Initiation"]`,
+        projInitiation: `[id="r1ProjectMain"] [class="x-container x-box-item x-container-default x-box-layout-ct"] [id="ProjectMainInitiation"]`,
 
 
         initiationDataSelectA: `[id="ProjectInitiationList-targetEl"] [data-recordindex="2"]`,
@@ -25,7 +27,6 @@ class initiationTypeData {
     initiationLink = async() => {
         let page=this.page;
         let { projLink, projInitiation }=locator.project_Page;
-        // await page.click(MenuSliderBtn);
         // await page.waitForTimeout(1000);
         await page.click(projLink);
         // await page.waitForTimeout(1000);
@@ -33,6 +34,32 @@ class initiationTypeData {
         await page.waitForTimeout(1000);
     }
 
+    initiationLinkB = async() => {
+        let page=this.page;
+        let { projLink, projInitiation }=locator.project_Page;
+        // await page.waitForTimeout(1000);
+        await page.click(projLink);
+        await page.click(projInitiation);
+
+        await page.waitForTimeout(1000);
+
+        await page.click(projLink);
+        await page.click(projInitiation);
+        
+        await page.waitForTimeout(1000);
+    }
+
+    initiationLinkB = async() => {
+        let page=this.page;
+        let { projInitiation }=locator.project_Page;
+        // await page.waitForTimeout(1000);
+
+        await page.click(projInitiation);
+        await page.waitForTimeout(1000);
+    }
+
+
+    
     listInitiationSelectA = async() => {
         let page=this.page;
         let { projectGridMode }=locator.projectNav;

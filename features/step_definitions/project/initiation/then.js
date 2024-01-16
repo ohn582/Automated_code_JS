@@ -20,6 +20,12 @@ Then(`I create a Project Initiation B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I create a Project Initiation C`, timeout, async function() {
+    let page = this.page;
+    const listData = new initiationPage(page);
+    listData.initiationAddDataC();
+    await page.waitForTimeout(2000);
+})
 
 
 
@@ -35,6 +41,13 @@ Then(`I updated Initiation Data B`, timeout, async function() {
     let page = this.page;
     const listData = new initiationPage(page);
     listData.initiationUpdateB();
+    await page.waitForTimeout(2000);
+})
+
+Then(`I updated Initiation Data C`, timeout, async function() {
+    let page = this.page;
+    const listData = new initiationPage(page);
+    listData.initiationUpdateC();
     await page.waitForTimeout(2000);
 })
 

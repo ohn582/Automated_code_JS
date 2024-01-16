@@ -19,4 +19,5 @@ Feature: Pdware Admin User Module
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Project and Project Data
+        When I select Project and Project Data
 

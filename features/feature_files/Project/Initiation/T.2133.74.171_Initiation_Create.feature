@@ -10,10 +10,12 @@ Feature: Pdware Admin User Module
         When I select Project and Initiation
 
         Then I create a Project Initiation A
-        # Then I create a Project Initiation B
+        Then I create a Project Initiation B
+        Then I create a Project Initiation C
 
         Then I verify the Project Initiation by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
         When I select Project and Initiation
+        When I select Initiation
 

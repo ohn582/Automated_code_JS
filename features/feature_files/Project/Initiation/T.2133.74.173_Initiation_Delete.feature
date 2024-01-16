@@ -10,7 +10,7 @@ Feature: Pdware Admin User Module
         When I select Project and Initiation
 
         Then I Delete Initiation Data A
-        # Then I Delete Initiation Data B
+        Then I Delete Initiation Data B
 
         Then I verify the Project Initiation by re-loging admin account
 

@@ -12,7 +12,7 @@ const locators = {
         project: {
             links: {
                 project_Data: "'Data'",
-                demand: "'Demand'",
+                initiation: "'Initiation'",
             }
         },
         rescource: {
@@ -55,16 +55,16 @@ class HomePage {
             try {
                 switch (String(link)) {
                     case `project`:
-                        let { project_Data, demand } = locators.navbar.project.links
+                        let { project_Data, Initiation } = locators.navbar.project.links
                         await action.hover(this.page, locators.navbar.project.icon);
                         expect(await this.page.$(project_Data)).to.be.ok;
-                        expect(await this.page.$(demand)).to.be.ok;
+                        expect(await this.page.$(Initiation)).to.be.ok;
                         switch (String(link)) {
                             case `Data`:
                                 await action.click(this.page, project_Data);
                                 break;
-                            case `Demand`:
-                                await action.click(this.page, demand);
+                            case `Initiation`:
+                                await action.click(this.page, Initiation);
                                 break;
                         }
                     break;

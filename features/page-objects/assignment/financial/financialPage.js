@@ -27,7 +27,7 @@ const locators = {
 
         finData1: `//*[text()="8"]`,
         finData2: `//*[text()="3456"]`,
-        finData3: `//*[text()="1334"]`,
+        finData3: `//*[text()="1"]`,
 
     
         //Financial: Org
@@ -190,65 +190,6 @@ class financialPage {
         await page.keyboard.type("2");
     }
 
-
-
-    financialCreateDataC = async () => {
-        let page = this.page;
-        let { financialTypeAddBtn } = locators.financialTypeNav;
-        let { financialProject, financialCostCenter, financialJerryTest, financialLifeSciences, financialCheckboxExpense, addCloseButton, finData3 } = locators.financialTypeData;
-        // await page.waitForTimeout(3000);
-
-        await page.click(financialTypeAddBtn);
-
-        await page.click(financialProject);
-        await page.keyboard.type("asdasd");
-        await page.keyboard.press('Enter');
-
-
-        // await page.dblclick( financialCostCenter);
-        await page.click(financialCostCenter);
-        await page.click(financialLifeSciences);
-
-        await page.waitForTimeout(1000)
-
-        await page.click(financialCheckboxExpense);
-
-        await page.waitForTimeout(1000)
-
-        await page.click(addCloseButton);
-        
-        await page.waitForTimeout(2000);
-    }
-
-    financialNumberDataC = async () => {
-        let page = this.page;
-        let { finData3 } = locators.financialTypeData;
-        // await page.waitForTimeout(3000);
-
-        //Creating multiple numbers
-        await page.click(finData3);
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('Enter');
-
-        await page.keyboard.type("31");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("6");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("4");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("6");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("21");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("164");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("9");
-        await page.keyboard.press('Tab');
-        await page.keyboard.type("78");
-    }
-
     
 
 
@@ -337,59 +278,16 @@ class financialPage {
         // await page.waitForTimeout(3000);
     }
 
-    financialUpdateC = async () => {
-        let page = this.page;
-        let { finData3 } = locators.financialTypeData;
-        // await page.waitForTimeout(3000);
-
-        //Creating multiple numbers
-        await page.click(finData3);
-        await page.keyboard.press('ArrowRight');
-        await page.keyboard.press('Enter');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('ArrowDown');
-        await page.keyboard.press('Enter');
-
-        await page.keyboard.press('Tab')
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("2");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("8");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("4");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("4");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("11");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("34");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("22");
-        await page.keyboard.press('Tab');
-        await page.keyboard.press('Backspace');
-        await page.keyboard.type("8");
-
-        // await page.waitForTimeout(3000);
-    }
+    
 
 
 
 
     //Labor: Delete
-    financialDeleteA = async () => {
+    financialDelete = async () => {
         let page = this.page;
-        let { checkBoxDataP10 } = locators.financialTypeData;
         let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
         // await page.waitForTimeout(3000);
-    
-        await page.click(checkBoxDataP10);
     
         await page.click(deleteBtn);
         await page.click(yesDeleteBtn);
@@ -397,35 +295,6 @@ class financialPage {
         // await page.waitForTimeout(3000);
     }
     
-    financialDeleteB = async () => {
-        let page = this.page;
-        let { checkBoxDataSource } = locators.financialTypeData;
-        let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
-        // await page.waitForTimeout(3000);
-    
-        await page.click(checkBoxDataSource);
-
-        await page.click(deleteBtn);
-        await page.click(yesDeleteBtn);
-            
-        // await page.waitForTimeout(3000);
-    }
-
-    financialDeleteC = async () => {
-        let page = this.page;
-        let { checkBoxDataAsdasd } = locators.financialTypeData;
-        let { deleteBtn, yesDeleteBtn } = locators.deleteNav;
-        // await page.waitForTimeout(3000);
-    
-        await page.click(checkBoxDataAsdasd);
-
-        await page.click(deleteBtn);
-        await page.click(yesDeleteBtn);
-            
-        // await page.waitForTimeout(3000);
-    }
-
-
 
 
     //Financial: Save

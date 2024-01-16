@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.2.2",
+    "cucumber-html-reporter": "^7.1.1",
     "playwright": "^1.22.1"
   },
   "cypress-cucumber-preprocessor": {

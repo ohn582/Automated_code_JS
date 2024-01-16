@@ -5,13 +5,21 @@ const { timeout } = require('../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-//Project Data Create
+//Project Create Data & Date
 Then(`I create a Project Data`, timeout, async function() {
     let page = this.page;
     const listData = new projectDataPage(page);
     listData.projectAddDataA();
     await page.waitForTimeout(2000);
 })
+
+Then(`I create a Date`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectDataPage(page);
+    listData.projectAddDateA();
+    await page.waitForTimeout(2000);
+})
+
 
 Then(`I create a Project Data B`, timeout, async function() {
     let page = this.page;
@@ -20,17 +28,15 @@ Then(`I create a Project Data B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
-Then(`I create a Project Data C`, timeout, async function() {
+Then(`I create a Date B`, timeout, async function() {
     let page = this.page;
     const listData = new projectDataPage(page);
-    listData.projectAddDataC();
+    listData.projectAddDateB();
     await page.waitForTimeout(2000);
 })
 
 
-
-
-//Project Data Update
+//Project Data & Date Update
 Then(`I Re-Type Diffrent Name A`, timeout, async function() {
     let page = this.page;
     const listData = new projectDataPage(page);
@@ -42,12 +48,6 @@ Then(`I Re-Type Diffrent Name B`, timeout, async function() {
     let page = this.page;
     const listData = new projectDataPage(page);
     listData.projectUpdateB();
-    await page.waitForTimeout(2000);
-})
-Then(`I Re-Type Diffrent Name C`, timeout, async function() {
-    let page = this.page;
-    const listData = new projectDataPage(page);
-    listData.projectUpdateC();
     await page.waitForTimeout(2000);
 })
 

@@ -12,8 +12,8 @@ Feature: Pdware Admin User Module
         Then I Create Skill Assignment Data for labor A
         Then I Create Skill Assignment Data for labor B
         
-        # Then I select Save button for Skill Assignment Data
-        # Then I verify the Skill Assignment data by re-loging admin account
+        Then I select Save button for Skill Assignment Data
+        Then I verify the Skill Assignment data by re-loging admin account
 
-        # When I login with the credentials : user "admin" and "zhti8d4R_"
-        # When I select Labor from Resources
+        When I login with the credentials : user "admin" and "zhti8d4R_"
+        When I select Labor from Resources

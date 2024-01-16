@@ -2,7 +2,7 @@ const { action } = require('../../../utilities/action')
 
 const locators = {        
     projectNav: {
-        addProjectData:`[id="R1TProject"] [id="ProjectListToolBar"] [data-qtip="Add"]`,
+        addProjectData:`[id="ProjectMainContainer"] [id="ProjectListToolBar"] [data-qtip="Add"]`,
     },
 
     projectData: {
@@ -15,10 +15,18 @@ const locators = {
         projDropdownApply: `[id="ProjectNodeFieldTreePanel-bodyWrap"] [role="toolbar"] [tabindex="0"]`,
         projAddClose: `[id="projectAddPanel"] [role="toolbar"] [aria-label="Add & Close"]`,
 
+        projAcmeLifeSciences: `//*[text()="Acme Life Sciences"]`,
+        projEnterprise: `//*[text()="Enterprise"]`,
+        projPeter: `//*[text()="Peter"]`,
+
 
         reTypeProjA: `//*[text()="tes1"]`,
         reTypeProjB: `//*[text()="tes2"]`,
-        reTypeProjC: `//*[text()="tes3"]`,
+
+        reUnitPriorityA: `//*[text()="33"]`,
+        reUnitPriorityB: `//*[text()="187"]`,
+
+        //Updating a data
     },
 
     deleteNav: {
@@ -46,7 +54,7 @@ class projectDataPage {
     //Project Data Create
     projectAddDataA = async() => {
         let page=this.page;
-        let { projectName, projectOwner, projectDropdownEnterprise, projDropdownApply, projAddClose }=locators.projectData;
+        let { projectName, projectOwner, projAcmeLifeSciences, projDropdownApply, projAddClose, reTypeProjA }=locators.projectData;
         let { addProjectData }=locators.projectNav;
 
         await page.click(addProjectData);
@@ -57,7 +65,8 @@ class projectDataPage {
         // await page.waitForTimeout(1000);
         
         await page.keyboard.press('Tab');
-        await page.keyboard.type('Acme Life Sciences');
+        await page.keyboard.press('ArrowDown');
+        await page.click(projAcmeLifeSciences);
         await page.waitForTimeout(1000);
 
         await page.keyboard.press('Tab');
@@ -65,12 +74,47 @@ class projectDataPage {
         await page.waitForTimeout(1000);
 
         await page.click(projAddClose);
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
     }
+
+    projectAddDateA = async() => {
+        let page=this.page;
+        let { projectName, projectOwner, projAcmeLifeSciences, projDropdownApply, projAddClose, reTypeProjA }=locators.projectData;
+        let { addProjectData }=locators.projectNav;
+
+        await page.click(reTypeProjA);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        //Selecting status color Green
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+
+        //Selecting "apiguy_pm" as a Manager
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+
+        //Start Date
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('03/11/2024');
+        await page.keyboard.press('Enter');
+
+        //Finish Date
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+        await page.keyboard.type('03/20/2024');
+    }
+
+
+
+
 
     projectAddDataB = async() => {
         let page=this.page;
-        let { projectName, projectOwner, projectDropdownEnterprise, projDropdownApply, projAddClose }=locators.projectData;
+        let { projectName, projectOwner, projPeter, projDropdownApply, projAddClose, reTypeProjB }=locators.projectData;
         let { addProjectData }=locators.projectNav;
 
         await page.click(addProjectData);
@@ -80,35 +124,56 @@ class projectDataPage {
         await page.keyboard.type('tes2');
         // await page.waitForTimeout(1000);
         
-        await page.click(projectOwner);
-        await page.click(projectDropdownEnterprise);
-        await page.click(projDropdownApply);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.click(projPeter);
+        await page.waitForTimeout(1000);
+
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('10');
         await page.waitForTimeout(1000);
 
         await page.click(projAddClose);
-        await page.waitForTimeout(1000);
+        // await page.waitForTimeout(1000);
     }
 
-    projectAddDataC = async() => {
+
+    projectAddDateB = async() => {
         let page=this.page;
-        let { projectName, projectOwner, projectDropdownEnterprise, projDropdownApply, projAddClose }=locators.projectData;
+        let { projectName, projectOwner, projPeter, projDropdownApply, projAddClose, reTypeProjB }=locators.projectData;
         let { addProjectData }=locators.projectNav;
 
-        await page.click(addProjectData);
-        await page.waitForTimeout(1000);
+        await page.click(reTypeProjB);
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
 
-        await page.click(projectName);
-        await page.keyboard.type('tes3');
-        // await page.waitForTimeout(1000);
-        
-        await page.click(projectOwner);
-        await page.click(projectDropdownEnterprise);
-        await page.click(projDropdownApply);
-        await page.waitForTimeout(1000);
+        //Selecting status color red
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
 
-        await page.click(projAddClose);
-        await page.waitForTimeout(1000);
+        //Selecting "Jerry Manas" as a Manager
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+
+        //Start Date
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('05/21/2024');
+
+        //Finish Date
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('07/09/2024');
     }
+
+
+
 
 
 
@@ -119,25 +184,96 @@ class projectDataPage {
         let { reTypeProjA }=locators.projectData;
         await page.dblclick(reTypeProjA)
         await page.keyboard.type('UPDATE A');
-        await page.waitForTimeout(1000);
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('xde');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+
+        await page.keyboard.type('33');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
+
+    
+        //Start Date
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+
+        await page.keyboard.type('04/22/2024');
+        await page.keyboard.press('Enter');
+
+        //Finish Date
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+
+        await page.keyboard.type('07/17/2024');
+        await page.keyboard.press('Enter');
+        // await page.waitForTimeout(1000);
     }
+
+
+
 
     projectUpdateB = async() => {
         let page=this.page;
         let { reTypeProjB }=locators.projectData;
         await page.dblclick(reTypeProjB)
         await page.keyboard.type('UPDATE B');
-        await page.waitForTimeout(1000);
-    }
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('1x2');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
+        await page.keyboard.type('187');
+        await page.keyboard.press('Tab');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('ArrowDown');
+        await page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
 
-    projectUpdateC = async() => {
-        let page=this.page;
-        let { reTypeProjC }=locators.projectData;
-        await page.dblclick(reTypeProjC)
-        await page.keyboard.type('UPDATE C');
-        await page.waitForTimeout(1000);
-    }
 
+        //Start Date
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+
+        await page.keyboard.type('07/07/2024');
+        await page.keyboard.press('Enter');
+
+        //Finish Date
+        await page.keyboard.press('ArrowRight');
+        await page.keyboard.press('Enter');
+
+        await page.keyboard.down('Control');
+        await page.keyboard.press('A');
+        await page.keyboard.up('Control');
+
+        await page.keyboard.type('08/15/2024');
+        await page.keyboard.press('Enter');
+        // await page.waitForTimeout(1000);
+    }
     
 
 

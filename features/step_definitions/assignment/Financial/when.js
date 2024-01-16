@@ -19,3 +19,20 @@ When(`I select Financial`, timeout, async function() {
     listData.financialLink();
     await page.waitForTimeout(2000);
 })
+
+
+
+
+When(`I select check box in Financial A`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialTypeData(page);
+    listData.financialMultipleBox_A();
+    await page.waitForTimeout(2000);
+})
+
+When(`I select check box in Financial B`, timeout, async function() {
+    let page = this.page;
+    const listData = new financialTypeData(page);
+    listData.financialMultipleBox_B();
+    await page.waitForTimeout(2000);
+})

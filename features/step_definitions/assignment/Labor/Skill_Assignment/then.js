@@ -20,6 +20,16 @@ Then(`I Create Skill Assignment Data for labor B`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+Then(`I Create Skill Assignment Data for labor C`, timeout, async function() {
+    let page = this.page;
+    const listData = new skillPage(page);
+    listData.skillCreateDataC();
+    await page.waitForTimeout(2000);
+})
+
+
+
+
 
 
 //Labor Data Update

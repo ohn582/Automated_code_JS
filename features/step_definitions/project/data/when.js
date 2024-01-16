@@ -13,6 +13,15 @@ When(`I select Project and Project Data`, timeout, async function() {
     await page.waitForTimeout(2000);
 })
 
+When(`I select Project Data`, timeout, async function() {
+    let page = this.page;
+    const listData = new projectTypeData(page);
+    listData.projLinkSelectB();
+    await page.waitForTimeout(2000);
+})
+
+
+
 When(`I select Project Grid Mode`, timeout, async function() {
     let page = this.page;
     const listData = new projectTypeData(page);
