@@ -8,22 +8,22 @@ require('dotenv').config()
  */
 
 var options = {
-        theme: 'bootstrap',
-        jsonFile: 'cucumber_report.json',
-        output: 'report/cucumber_report.html',
-        reportSuiteAsScenarios: true,
-        scenarioTimestamp: true,
-        launchReport: true,
-        brandTitle: "PDWare ResourceFirst Report",
-        metadata: {
-            "App Version": process.env.APP_VERSION,
-            "Test Environment": process.env.TEST_ENVIRONMENT,
-            "Browser": `${process.env.BROWSER_NAME}  ${process.env.BROWSER_VERSION}`,
-            "Platform": platform(),
-            "Parallel": "Scenarios",
-            "Executed": "Local"
-        }
-    };
+    theme: 'bootstrap',
+    jsonFile: 'cucumber_report.json',
+    output: 'report/cucumber_report.html',
+    reportSuiteAsScenarios: true,
+    scenarioTimestamp: true,
+    launchReport: true,
+    brandTitle: "PDWare ResourceFirst Report",
+    metadata: {
+        "App Version": process.env.APP_VERSION,
+        "Test Environment": process.env.TEST_ENVIRONMENT,
+        "Browser": `${process.env.BROWSER_NAME}  ${process.env.BROWSER_VERSION}`,
+        "Platform": platform(),
+        "Parallel": "Scenarios",
+        "Executed": "Local"
+    }
+};
 
 /**
  * Moving reports to history

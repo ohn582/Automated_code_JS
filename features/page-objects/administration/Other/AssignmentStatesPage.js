@@ -176,6 +176,7 @@ class AssignmentStatePage {
         // await page.waitForTimeout(3000);
 
         await page.click(deleteBtn);
+        await page.waitForTimeout(1000);
         await page.click(yesDeleteBtn);
         // await page.waitForTimeout(3000);
     }
@@ -185,6 +186,7 @@ class AssignmentStatePage {
         let page = this.page;
         let { saveBtn, saveOK } = locators.saveNav;
         await page.click(saveBtn);
+        await page.waitForTimeout(1000);
         await page.click(saveOK);
         // await page.waitForTimeout(3000);
     }
@@ -195,7 +197,9 @@ class AssignmentStatePage {
         let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.asLogoutBtn;
     
         await page.click(adminUserBtn);
+        await page.waitForTimeout(1000);
         await page.click(logoutUserBtn);
+        await page.waitForTimeout(1000);
         await page.click(hereLinkLogout);
     }
 }
