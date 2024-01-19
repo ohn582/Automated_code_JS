@@ -32,7 +32,7 @@ When(`I login with the credentials : user {string} and {string}`, timeout, async
     await page.waitForNavigation({
         waitUntil: 'networkidle0', timeout: 0
     })
-    await page.waitForTimeout(1000);
+    // await page.waitForTimeout(1000);
 })
 
 When(`I click over the {string} nav and click on {string}`, timeout, async function (icon, link) {

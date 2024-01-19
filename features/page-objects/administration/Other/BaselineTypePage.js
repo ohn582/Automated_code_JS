@@ -143,6 +143,7 @@ class BaselineTypePage {
         // await page.waitForTimeout(3000);
 
         await page.click(deleteBtn);
+        await page.waitForTimeout(2000);
         await page.click(yesDeleteBtn);
         // await page.waitForTimeout(3000);
     }
@@ -151,8 +152,9 @@ class BaselineTypePage {
         let page = this.page;
         let { saveBtn, saveOK } = locators.saveNav;
         await page.click(saveBtn);
+        await page.waitForTimeout(2000);
         await page.click(saveOK);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listBTReload = async () => {
@@ -160,7 +162,9 @@ class BaselineTypePage {
         let { adminUserBtn, logoutUserBtn, hereLinkLogout } = locators.baseTypeLogoutBtn;
     
         await page.click(adminUserBtn);
+        await page.waitForTimeout(2000);
         await page.click(logoutUserBtn);
+        await page.waitForTimeout(2000);
         await page.click(hereLinkLogout);
     }
 }

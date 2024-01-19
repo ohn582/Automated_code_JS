@@ -2,14 +2,18 @@ const { expect } = require('chai').use(require('chai-as-promised'));
 const { action } = require('../utilities/action');
 
 const locators = {
-    proj: '"Project"',
-    reso: '"Resource"',
-    ana: '"Anaysis"',
-    admin: '"Administration"',
+    // project: '"Project"',
+    // resource: '"Resource"',
+    // anaysis: '"Anaysis"',
+    // administration: '"Administration"',
     usersNavIcon: '.fa-users',
     navCogIcon: '.fa-cogs',
+
+
+
     navbar: {
         project: {
+            icon: `[id="ext-customtreelistitem-2"]`,
             links: {
                 project_Data: "'Data'",
                 initiation: "'Initiation'",
@@ -30,16 +34,18 @@ const locators = {
             }
         },
         administration: {
+            icon: `[id="ext-customtreelistitem-8"]`,
             links: {
                 settings: "'Settings'",
-                users: "'Users & Rights'",
-                objects: "'Objects'",
+                users_Rights: "'Users & Rights'",
+                system_Lists: "'System Lists'",
                 project_Lists: "'Project Lists'",
                 resource_Lists: "'Resource Lists'",
                 financial_Lists: "'Financial Lists'",
                 agile: "'Agile'",
                 views_Filters: "'Views & Filters'",
-                Other: "'Other'",
+                other: "'Other'",
+                about: "'About'",
             }
         },
     }
@@ -109,50 +115,54 @@ class HomePage {
                     
 
                     case `Administration`:
-                        let { settings, users, objects, project_Lists, resource_Lists, financial_Lists, agile, views_Filters, Other } = locators.navbar.administration.links
+                        let { settings, users_Rights, system_Lists, project_Lists, resource_Lists, financial_Lists, agile, views_Filters, other, about } = locators.navbar.administration.links
                         await action.hover(this.page, locators.navbar.administration.icon);
                         expect(await this.page.$(settings)).to.be.ok;
-                        expect(await this.page.$(users)).to.be.ok;
-                        expect(await this.page.$(objects)).to.be.ok;
+                        expect(await this.page.$(users_Rights)).to.be.ok;
+                        expect(await this.page.$(system_Lists)).to.be.ok;
                         expect(await this.page.$(project_Lists)).to.be.ok;
                         expect(await this.page.$(resource_Lists)).to.be.ok;
                         expect(await this.page.$(financial_Lists)).to.be.ok;
                         expect(await this.page.$(agile)).to.be.ok;
                         expect(await this.page.$(views_Filters)).to.be.ok;
-                        expect(await this.page.$(Other)).to.be.ok;
+                        expect(await this.page.$(other)).to.be.ok;
+                        expect(await this.page.$(about)).to.be.ok;
                         switch (String(link)) {
                             case `Settings`:
                                 await action.click(this.page, settings);
                                 break;
-                            case `Edit OBSs`:
-                                await action.click(this.page, users);
+                            case `Users & Rights`:
+                                await action.click(this.page, users_Rights);
                                 break;
-                            case `Columns`:
-                                await action.click(this.page, objects);
-                                await this.page.waitForTimeout(5000)
+                            case `System Lists`:
+                                await action.click(this.page, system_Lists);
                                 break;
-                            case `Views`:
+                            case `project Lists`:
                                 await action.click(this.page, project_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
-                            case `Lists`:
+                            case `Resource Lists`:
                                 await action.click(this.page, resource_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
-                            case `Periods`:
+                            case `Financial Lists`:
                                 await action.click(this.page, financial_Lists);
                                 await this.page.waitForTimeout(5000)
                                 break;
-                            case `Baselines`:
+                            case `Agile`:
                                 await action.click(this.page, agile);
                                 await this.page.waitForTimeout(5000)
                                 break;
-                            case `Pulse`:
+                            case `Views & Filters`:
                                 await action.click(this.page, views_Filters);
                                 await this.page.waitForTimeout(5000)
                                 break;
+                            case `Other`:
+                                await action.click(this.page, other);
+                                await this.page.waitForTimeout(5000)
+                                break;
                             case `About`:
-                                await action.click(this.page, Other);
+                                await action.click(this.page, about);
                                 await this.page.waitForTimeout(5000)
                                 break;
                         }
@@ -167,19 +177,19 @@ class HomePage {
     }
 
     async clickAdministration() {
-        await this.page.click(locators.admin)
+        await this.page.click(locators.administration)
     }
 
     async clickProject() {
-        await this.page.click(locators.proj)
+        await this.page.click(locators.project)
     }
 
     async clickResource() {
-        await this.page.click(locators.reso)
+        await this.page.click(locators.resource)
     }
 
     async clickAnaysis() {
-        await this.page.click(locators.ana)
+        await this.page.click(locators.anaysis)
     }
 
     async hoverOverAssignments() {

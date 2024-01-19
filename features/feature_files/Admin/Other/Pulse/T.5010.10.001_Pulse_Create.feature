@@ -10,8 +10,8 @@ Feature: Pdware Admin User Module
         When I select Administration and select Pulse
 
         Then I created a new Pulse Data A
-        # Then I created a new Pulse Data B
-        # Then I created a new Pulse Data C
+        Then I created a new Pulse Data B
+        Then I created a new Pulse Data C
 
         Then I verify the Pulse data by re-loging admin account
 

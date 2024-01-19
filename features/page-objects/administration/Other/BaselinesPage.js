@@ -146,6 +146,7 @@ class BaselinePage {
         // await page.waitForTimeout(3000);
 
         await page.click(deleteBtn);
+        await page.waitForTimeout(2000);
         await page.click(yesDeleteBtn);
         // await page.waitForTimeout(3000);
     }
@@ -154,16 +155,18 @@ class BaselinePage {
         let page = this.page;
         let { saveBtn, saveOK } = locators.saveNav;
         await page.click(saveBtn);
+        await page.waitForTimeout(2000);
         await page.click(saveOK);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 
     listBaselineReload = async () => {
         let page = this.page;
         let { relBtn, reloadNavBtn } = locators.reloadBtn;
         await page.click(relBtn);
+        await page.waitForTimeout(2000);
         await page.click(reloadNavBtn);
-        await page.waitForTimeout(3000);
+        // await page.waitForTimeout(3000);
     }
 }
 
