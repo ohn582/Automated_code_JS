@@ -38,8 +38,7 @@ const locators = {
                 financial_Lists: "'Financial Lists'",
                 agile: "'Agile'",
                 views_Filters: "'Views & Filters'",
-                other: `//*[text()="Other"]`,
-                // other: "'Other'",
+                other: "'Other'",
                 about: "'About'",
             }
         },

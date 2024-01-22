@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "pdware-admin-user-module;@t.6690.50.001-testing-user-data",
+        "id": "pdware-admin-user-module;@t.4567.15.501-testing-user-data",
         "keyword": "Scenario",
         "line": 8,
-        "name": "@T.6690.50.001-testing user data",
+        "name": "@T.4567.15.501-testing user data",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 620670400
+              "duration": 618600099
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1528236799
+              "duration": 1815206999.9999998
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5568345899
+              "duration": 6097334299
             }
           },
           {
@@ -53,86 +53,85 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6158981599
+              "duration": 7157132899
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "I select Baseline Types",
+            "name": "I select Scenario Status",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\when.js:10"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 2007380900
+              "duration": 2010355100
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 10,
-            "name": "I typed a new Baseline Types tes1",
+            "name": "I typed a new Scenario Status tes1",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:9"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 2124327699.9999998
+              "duration": 2143673299
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 11,
-            "name": "I typed a new Baseline Types tes2",
+            "name": "I typed a new Scenario Status tes2",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:16"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:16"
             },
             "result": {
-              "status": "failed",
-              "duration": 1816600,
-              "error_message": "page.click: Target closed\n=========================== logs ===========================\nwaiting for selector \"[id=\"adminListsBaselineTypeGrid\"] [role=\"toolbar\"] [data-qtip=\"Add\"]\"\n============================================================\n    at BaselineTypePage.listBTWriteB (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\page-objects\\administration\\Other\\BaselineTypePage.js:72:20)\n    at CustomWorld.<anonymous> (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:19:20)"
+              "status": "passed",
+              "duration": 2155704600
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 12,
-            "name": "I typed a new Baseline Types tes3",
+            "name": "I typed a new Scenario Status tes3",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:23"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:23"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2126170099.9999998
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 14,
-            "name": "I clicked save button in Baseline Types",
+            "name": "I clicked save button in Scenario Status",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:65"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:65"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 5205505100
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 15,
-            "name": "I verify the Baseline Types data by re-loging admin account",
+            "name": "I verify the Scenario Status data by re-loging admin account",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\then.js:72"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:72"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 3334046899
             }
           },
           {
@@ -144,40 +143,42 @@
               "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 3031607100
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 18,
-            "name": "I select Administration and Baseline Types List",
+            "name": "I click over the \"Administration\" nav and click on \"Other\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 8166630799
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 19,
-            "name": "I select Baseline Types",
+            "name": "I select Scenario Status",
             "match": {
-              "location": "features\\step_definitions\\administration\\Other\\Baseline_Types\\when.js:10"
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2005941900
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 952700,
-              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (C:\\Users\\Admin\\Desktop\\New_Autimation\\r1testC\\features\\support\\world.js:52:27)"
+              "status": "passed",
+              "duration": 1067299
             }
           }
         ],
@@ -187,11 +188,11 @@
             "line": 7
           },
           {
-            "name": "@443",
+            "name": "@799",
             "line": 7
           },
           {
-            "name": "@T.6690.50.001",
+            "name": "@T.4567.15.501",
             "line": 7
           }
         ],
@@ -203,6 +204,407 @@
     "keyword": "Feature",
     "name": "Pdware Admin User Module",
     "tags": [],
-    "uri": "features\\feature_files\\Admin\\Other\\baseline_types\\T.6690.50.001_BT_Create.feature"
+    "uri": "features\\feature_files\\Admin\\Other\\Scenario_Status\\T.4567.15.501_SS_Create.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pdware-admin-user-module;@t.4567.15.502-testing-user-data",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "@T.4567.15.502-testing user data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 524178399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I visit the pdware r1test landing page 'https://r1test.pdware.com/'",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1522158399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5502427500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I click over the \"Administration\" nav and click on \"Other\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7167797500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I select Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2010562200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I Re-Typed a new Scenario Status tes1",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2012946000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I Re-Typed a new Scenario Status tes2",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2010255900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I Re-Typed a new Scenario Status tes3",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2002615099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I clicked save button in Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5213801599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I verify the Scenario Status data by re-loging admin account",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3305324200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3013438199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I click over the \"Administration\" nav and click on \"Other\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36559376399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I select Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2010458599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1187299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@update",
+            "line": 7
+          },
+          {
+            "name": "@799",
+            "line": 7
+          },
+          {
+            "name": "@T.4567.15.502",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pdware-admin-user-module",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pdware Admin User Module",
+    "tags": [],
+    "uri": "features\\feature_files\\Admin\\Other\\Scenario_Status\\T.4567.15.502_SS_Update.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pdware-admin-user-module;@t.4567.15.503-testing-user-data",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "@T.4567.15.503-testing user data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 494954500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I visit the pdware r1test landing page 'https://r1test.pdware.com/'",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1558482998.9999998
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5526821099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I click over the \"Administration\" nav and click on \"Other\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7164849400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I select Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2010401000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I select multiple Scenario Status datas",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2008356500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I delete the Scenario Status data",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2123432398.9999998
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I clicked save button in Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5172302799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I verify the Scenario Status data by re-loging admin account",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\then.js:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3356953899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I login with the credentials : user \"admin\" and \"zhti8d4R_\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3015994300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I click over the \"Administration\" nav and click on \"Other\"",
+            "match": {
+              "location": "features\\step_definitions\\LoginPage\\frontPageLogin.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8053946399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I select Scenario Status",
+            "match": {
+              "location": "features\\step_definitions\\administration\\Other\\Scenario_Status\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2008341300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 982699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@delete",
+            "line": 7
+          },
+          {
+            "name": "@799",
+            "line": 7
+          },
+          {
+            "name": "@T.4567.15.503",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pdware-admin-user-module",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pdware Admin User Module",
+    "tags": [],
+    "uri": "features\\feature_files\\Admin\\Other\\Scenario_Status\\T.4567.15.503_SS_Delete.feature"
   }
 ]

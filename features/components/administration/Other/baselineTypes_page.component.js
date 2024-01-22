@@ -17,7 +17,7 @@ class BaselineTypesData {
         this.page = page;
     }
 
-    // Project OBS
+    //Baseline Type Link
     listBaseTypeSelect = async () => {
         let page = this.page;
         let { baseTypeLink } = locator.admin_Page;
@@ -25,6 +25,7 @@ class BaselineTypesData {
         await page.waitForTimeout(3000);
     }
 
+    //Check Box
     listBaseTypeSelectData = async () => {
         let page = this.page;
         let { baseTypeBox, baseTypeBoxB, baseTypeBoxC } = locator.baseTypeCheckBox;

@@ -15,5 +15,5 @@ Feature: Pdware Admin User Module
         Then I verify the Baseline Types data by re-loging admin account
 
         When I login with the credentials : user "admin" and "zhti8d4R_"
-        When I select Administration and Baseline Types List
+        When I click over the "Administration" nav and click on "Other"
         When I select Baseline Types

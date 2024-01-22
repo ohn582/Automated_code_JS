@@ -6,14 +6,7 @@ const { timeout } = require('../../../../test.config').test;
 
 setDefaultTimeout(60 * 1000);
 
-// Lists Categories
-When(`I select Administration and Scenario Status List`, timeout, async function() {
-    let page = this.page;
-    const listData = new ScenarioStatusData(page);
-    listData.otherListLink();
-    await page.waitForTimeout(2000);
-})
-
+//Scenario Status Link
 When(`I select Scenario Status`, timeout, async function() {
     let page = this.page;
     const listData = new ScenarioStatusData(page);
