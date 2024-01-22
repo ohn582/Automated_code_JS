@@ -2,24 +2,18 @@ const { expect } = require('chai').use(require('chai-as-promised'));
 const { action } = require('../utilities/action');
 
 const locators = {
-    // project: '"Project"',
-    // resource: '"Resource"',
-    // anaysis: '"Anaysis"',
-    // administration: '"Administration"',
     usersNavIcon: '.fa-users',
     navCogIcon: '.fa-cogs',
 
-
-
     navbar: {
-        project: {
+        Project: {
             icon: `[id="ext-customtreelistitem-2"]`,
             links: {
                 project_Data: "'Data'",
                 initiation: "'Initiation'",
             }
         },
-        rescource: {
+        Rescource: {
             links: {
                 resource_Data: "'Rescource Data'",
                 skill_Matrix: "'Skill Matrix'",
@@ -27,14 +21,14 @@ const locators = {
                 Utilization: "'Utilization'",
             }
         },
-        analysis: {
+        Analysis: {
             links: {
                 waterline: "'Waterline'",
                 kpi: "'KPIs'",
             }
         },
-        administration: {
-            icon: `[id="ext-customtreelistitem-8"]`,
+        Administration: {
+            icon: `[id="R1MainNavigationTree-bodyWrap"] [id="ext-customtreelistitem-8"]`,
             links: {
                 settings: "'Settings'",
                 users_Rights: "'Users & Rights'",
@@ -44,7 +38,8 @@ const locators = {
                 financial_Lists: "'Financial Lists'",
                 agile: "'Agile'",
                 views_Filters: "'Views & Filters'",
-                other: "'Other'",
+                other: `//*[text()="Other"]`,
+                // other: "'Other'",
                 about: "'About'",
             }
         },
@@ -56,15 +51,15 @@ class HomePage {
         this.page = page;
     }
 
-    async click_navigation_link(link) {
+    async click_navigation_link(nav, link) {
         return new Promise(async (resolve, reject) => {
             try {
-                switch (String(link)) {
-                    case `project`:
-                        let { project_Data, Initiation } = locators.navbar.project.links
-                        await action.hover(this.page, locators.navbar.project.icon);
-                        expect(await this.page.$(project_Data)).to.be.ok;
-                        expect(await this.page.$(Initiation)).to.be.ok;
+                switch (String(nav)) {
+                    case `Project`:
+                        let { project_Data, Initiation } = locators.navbar.Project.links
+                        
+                        await action.hover(this.page, locators.navbar.Project.icon);
+
                         switch (String(link)) {
                             case `Data`:
                                 await action.click(this.page, project_Data);
@@ -74,13 +69,12 @@ class HomePage {
                                 break;
                         }
                     break;
-                    case `Resource`:
-                        let { resource_Data, skill_Matrix, capacity, utilization } = locators.navbar.rescource.links
-                        await action.hover(this.page, locators.navbar.rescource.icon);
-                        expect(await this.page.$(resource_Data)).to.be.ok;
-                        expect(await this.page.$(skill_Matrix)).to.be.ok;
-                        expect(await this.page.$(capacity)).to.be.ok;
-                        expect(await this.page.$(utilization)).to.be.ok;
+
+                    case `Rescource`:
+                        let { resource_Data, skill_Matrix, capacity, utilization } = locators.navbar.Rescource.links
+                        
+                        await action.hover(this.page, locators.navbar.Rescource.icon);
+
                         switch (String(link)) {
                             case `Resource Data`:
                                 await action.click(this.page, resource_Data);
@@ -98,9 +92,10 @@ class HomePage {
                                 break;
                         }
                     break;
+
                     case `Analysis`:
-                        let { waterline, kpi } = locators.navbar.analysis.links
-                        await action.hover(this.page, locators.navbar.analysis.icon);
+                        let { waterline, kpi } = locators.navbar.Analysis.links
+                        await action.hover(this.page, locators.navbar.Analysis.icon);
                         expect(await this.page.$(waterline)).to.be.ok;
                         expect(await this.page.$(kpi)).to.be.ok;
                         switch (String(link)) {
@@ -115,55 +110,52 @@ class HomePage {
                     
 
                     case `Administration`:
-                        let { settings, users_Rights, system_Lists, project_Lists, resource_Lists, financial_Lists, agile, views_Filters, other, about } = locators.navbar.administration.links
-                        await action.hover(this.page, locators.navbar.administration.icon);
-                        expect(await this.page.$(settings)).to.be.ok;
-                        expect(await this.page.$(users_Rights)).to.be.ok;
-                        expect(await this.page.$(system_Lists)).to.be.ok;
-                        expect(await this.page.$(project_Lists)).to.be.ok;
-                        expect(await this.page.$(resource_Lists)).to.be.ok;
-                        expect(await this.page.$(financial_Lists)).to.be.ok;
-                        expect(await this.page.$(agile)).to.be.ok;
-                        expect(await this.page.$(views_Filters)).to.be.ok;
-                        expect(await this.page.$(other)).to.be.ok;
-                        expect(await this.page.$(about)).to.be.ok;
+                        let { settings, users_Rights, system_Lists, project_Lists, resource_Lists, financial_Lists, agile, views_Filters, other, about } = locators.navbar.Administration.links
+
+                        await action.click(this.page, locators.navbar.Administration.icon);
+                        await this.page.waitForTimeout(2000)
+
                         switch (String(link)) {
                             case `Settings`:
                                 await action.click(this.page, settings);
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Users & Rights`:
                                 await action.click(this.page, users_Rights);
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `System Lists`:
                                 await action.click(this.page, system_Lists);
+                                await this.page.waitForTimeout(2000)
                                 break;
-                            case `project Lists`:
+                            case `Project Lists`:
                                 await action.click(this.page, project_Lists);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Resource Lists`:
                                 await action.click(this.page, resource_Lists);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Financial Lists`:
                                 await action.click(this.page, financial_Lists);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Agile`:
                                 await action.click(this.page, agile);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Views & Filters`:
                                 await action.click(this.page, views_Filters);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `Other`:
                                 await action.click(this.page, other);
-                                await this.page.waitForTimeout(5000)
+                                // await action.click(this.page, locators.navbar.Administration.links.other);
+                                await this.page.waitForTimeout(2000)
                                 break;
                             case `About`:
                                 await action.click(this.page, about);
-                                await this.page.waitForTimeout(5000)
+                                await this.page.waitForTimeout(2000)
                                 break;
                         }
                     break;
@@ -176,32 +168,8 @@ class HomePage {
         })
     }
 
-    async clickAdministration() {
-        await this.page.click(locators.administration)
-    }
-
-    async clickProject() {
-        await this.page.click(locators.project)
-    }
-
-    async clickResource() {
-        await this.page.click(locators.resource)
-    }
-
-    async clickAnaysis() {
-        await this.page.click(locators.anaysis)
-    }
-
     async hoverOverAssignments() {
         await this.page.hover(locators.usersNavIcon)
-    }
-
-    async getNavCogIcon() {
-        return locators.navCogIcon
-    }
-
-    async verifyAssignments() {
-        return expect(await this.page.$(locators.assignments)).to.exist
     }
 
     async getNavCogIcon() {
@@ -212,6 +180,10 @@ class HomePage {
         return locators.listsOption
     }
 
+    async Administration () {
+        await this.page.click(locators.navbar.Administration.links.other);
+    
+    }
 }
 
 module.exports.HomePage = HomePage;

@@ -1,8 +1,5 @@
 const locator = {
     admin_Page: {
-        // adminLink: `[id="panel-1021-bodyWrap"] [id="R1Navigation"] [data-recordid="76"]`,
-        adminLink: `[id="R1WestNav"] [id="R1MainNavigationTree"] [data-componentid="ext-customtreelistitem-8"]`,
-        otherLink: `//*[text()="Other"]`,
         baseTypeLink: `//*[text()="Baseline Types"]`,
     },
 
@@ -21,20 +18,9 @@ class BaselineTypesData {
     }
 
     // Project OBS
-    otherListLink = async () => {
-        let page = this.page;
-        let { adminLink } = locator.admin_Page;
-        await page.click(adminLink);
-        // await page.waitForTimeout(1000);
-        await page.waitForTimeout(3000);
-    }
-
     listBaseTypeSelect = async () => {
         let page = this.page;
-        let { baseTypeLink, otherLink } = locator.admin_Page;
-
-        await page.click(otherLink);
-        // await page.waitForTimeout(1000);
+        let { baseTypeLink } = locator.admin_Page;
         await page.click(baseTypeLink);
         await page.waitForTimeout(3000);
     }
@@ -42,7 +28,6 @@ class BaselineTypesData {
     listBaseTypeSelectData = async () => {
         let page = this.page;
         let { baseTypeBox, baseTypeBoxB, baseTypeBoxC } = locator.baseTypeCheckBox;
-
         await page.click(baseTypeBox);
         await page.click(baseTypeBoxB);
         await page.click(baseTypeBoxC);
